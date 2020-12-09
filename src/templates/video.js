@@ -42,13 +42,14 @@ export default ({ data: { video }, location }) => {
                 subText={video.singers.map(singer => singer.name).join(' & ')}
             />
 
-            {video.thumbnail_image?.childImageSharp?.fluid &&
+            {video.thumbnail_image?.childImageSharp?.fluid ?
                 <YouTubePlayer
                     videoId={video.id}
                     nextVideoId={location?.state?.nextVideoId}
                     thumbnailFluid={video.thumbnail_image?.childImageSharp?.fluid}
                 />
-            }
+            : <p>動画を取得できませんでした。</p>}
+
             <div className='mb-5' />
 
             <Link to={`/music/${video.music.id}`}>
