@@ -10,7 +10,7 @@ const youtubeApiKey = 'AIzaSyBkn0LB-sw4ZiPEs069rCEotczo1Qi6ZPY'
 
 const client = new ApolloClient({
     link: createHttpLink({
-        uri: 'https://vtuber-music.com/graphql',
+        uri: 'https://api.vtuber-music.com/graphql',
         // uri: 'http://vtuber-music.test/graphql',
         fetch
     }),
