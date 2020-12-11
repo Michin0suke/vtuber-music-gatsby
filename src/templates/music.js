@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import SEO from '../components/seo'
 import ArtistCard from '../components/artistCard'
 import Layout from '../components/layout'
 import VideoCard from '../components/videoCard'
@@ -8,8 +9,24 @@ import Breadcrumb from '../components/breadcrumb'
 import Heading, { HeadingH2 } from '../components/heading'
 
 export default ({ data: { music } }) => {
+    const creators = []
+    music.composers
+        .concat(music.lyricists)
+        .forEach(artist => {
+            if (!creators.includes(artist.name)) {
+                creators.push(artist.name)
+            }
+        })
+    
+
 return (
 <Layout>
+    <SEO
+        title={music.title}
+        description={`[楽曲] ${music.title}(${creators.join('&')})の詳細ページです。${music.videos.length}本の歌ってみた動画が登録されています。`}
+        imgUrl={`https://vtuber-music.com/${music.videos?.[Math.floor(Math.random() * music.videos.length)]?.thumbnail_image?.childImageSharp?.fixed?.src}`}
+        isLargeCard
+    />
     <Breadcrumb type='music' text={music.title}/>
 
     <div className='relative mb-5 w-full h-0 overflow-hidden' style={{ paddingBottom: '56.25%' }}>
@@ -113,6 +130,9 @@ query($id: String!) {
                 childImageSharp {
                     fluid {
                         ...GatsbyImageSharpFluid_withWebp
+                    }
+                    fixed {
+                        ...GatsbyImageSharpFixed
                     }
                 }
             }

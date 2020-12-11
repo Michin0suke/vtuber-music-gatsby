@@ -26,10 +26,23 @@ const dateFormatter = (string) => {
 }
 
 export default ({ data: { artist }}) => {
+    const isVtuber = artist.singer_videos.length !== 0
+    const isGroup = artist.childrenArtist.length !== 0
+
+    let artistType = 'アーティスト'
+    if (isVtuber) artistType = 'Vtuber'
+    if (isGroup) artistType = 'グループ'
+
+    let honorific = isGroup ? '' : 'さん'
 
     return (
     <Layout>
-        <SEO title={`${artist.name}`}/>
+        <SEO
+            title={`${artist.name}`}
+            description={`[${artistType}] ${artist.name}${honorific}のプロフィールページです。${artist.singer_videos.length}本の歌ってみた動画が登録されています。`}
+            url={`https://vtuber-music.com/artist/${artist.id}`}
+            imgUrl={`https://vtuber-music.com/${artist.profile_image?.childImageSharp?.fixed?.src}`}
+        />
         <Breadcrumb type='artist' text={artist.name}/>
 
         <div style={{
@@ -37,7 +50,7 @@ export default ({ data: { artist }}) => {
             paddingBottom: '20%'
         }} className='mb-14 bg-blue-100 shadow'></div>
 
-        <Heading text={artist.childrenArtist.length === 0 ? 'アーティスト' : 'グループ'} className='mb-5'/>
+        <Heading text={artistType} className='mb-5'/>
 
         <ArtistCard artist={artist} className='mb-16' noLink withRuby withSexColor/>
 
@@ -74,7 +87,7 @@ export default ({ data: { artist }}) => {
             </div>
         }
 
-        <div className='px-5 pb-8'>
+        <div className='pb-8'>
             <ArtistCardLinks artist={artist}/>
         </div>
 
@@ -114,12 +127,12 @@ export default ({ data: { artist }}) => {
 
         { artist.singer_videos.length !== 0 &&
             <div className='pb-10'>
-                <Heading text='歌っている動画'/>
+                <Heading text='歌っている動画' count={artist.singer_videos.length}/>
                 <M mb='5' />
     
-                <div className='max-w-lg mx-auto'>
+                <div className='flex flex-wrap'>
                     {artist.singer_videos.map((video,key) => (
-                        <VideoCard key={key} video={video} className='mb-6'/>
+                        <VideoCard key={key} video={video} className='mb-16 sm:w-1/2 sm:px-3'/>
                     ))}
                 </div>
             </div>
@@ -130,9 +143,9 @@ export default ({ data: { artist }}) => {
                 <Heading text='アレンジを担当した動画'/>
                 <M mb='5' />
     
-                <div className='max-w-lg mx-auto'>
+                <div className='flex flex-wrap'>
                     {artist.arranger_videos.map((video,key) => (
-                        <VideoCard key={key} video={video} />
+                        <VideoCard key={key} video={video} className='mb-16 sm:w-1/2 sm:px-3'/>
                     ))}
                 </div>
             </div>
@@ -143,9 +156,9 @@ export default ({ data: { artist }}) => {
                 <Heading text='ミックスを担当した動画'/>
                 <M mb='5' />
     
-                <div className='max-w-lg mx-auto'>
+                <div className='flex flex-wrap'>
                     {artist.mixer_videos.map((video,key) => (
-                        <VideoCard key={key} video={video} />
+                        <VideoCard key={key} video={video} className='mb-16 sm:w-1/2 sm:px-3'/>
                     ))}
                 </div>
             </div>
@@ -156,9 +169,9 @@ export default ({ data: { artist }}) => {
                 <Heading text='オフボーカルを担当した動画'/>
                 <M mb='5' />
     
-                <div className='max-w-lg mx-auto'>
+                <div className='flex flex-wrap'>
                     {artist.off_vocal_videos.map((video,key) => (
-                        <VideoCard key={key} video={video} />
+                        <VideoCard key={key} video={video} className='mb-16 sm:w-1/2 sm:px-3'/>
                     ))}
                 </div>
             </div>
@@ -195,6 +208,9 @@ query($id: String!){
             childImageSharp {
                 fluid {
                     ...GatsbyImageSharpFluid_withWebp
+                }
+                fixed {
+                    ...GatsbyImageSharpFixed
                 }
             }
         }

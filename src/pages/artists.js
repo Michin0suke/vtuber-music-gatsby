@@ -4,6 +4,7 @@ import Layout from '../components/layout'
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Breadcrumb from '../components/breadcrumb'
 import ArtistCard from '../components/artistCard'
+import SEO from '../components/seo'
 
 export default ({ data: {allArtist} }) => {
     const [hasMore, setHasMore] = useState(true);
@@ -19,6 +20,7 @@ export default ({ data: {allArtist} }) => {
 
     return (
         <Layout currentPage='/artists'>
+            <SEO title='アーティスト一覧' description='アーティスト一覧のページです。'/>
             <Breadcrumb type='artist'/>
             <InfiniteScroll
                 dataLength={showCount} //This is important field to render the next data

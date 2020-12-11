@@ -63,7 +63,7 @@ const IndexPage = ({ data: { allArtist, allVideo } }) => (
         }
     </Slider>
     
-    <HeadingH2 text='100人以上のVtuberを登録済み！' className='mb-2'/>
+    <HeadingH2 text='100名以上のVtuberを登録済み！' className='mb-2'/>
     
     <Slider {...sliderSettingsProfileImages} className='mb-10'>
         {allArtist.nodes
