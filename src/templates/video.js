@@ -41,7 +41,7 @@ export default ({ data: { video }, location }) => {
                 title={`${video.music.title}`}
                 description={`[動画] ${video.music.title}をVtuberの${video.singers.map(a => a.name).join('さんと')}さんが歌っている動画です。`}
                 url={`https://vtuber-music.com/video/${video.id}`}
-                imgUrl={`https://vtuber-music.com/${video.thumbnail_image?.childImageSharp?.fixed?.src}`}
+                imgUrl={`https://vtuber-music.com${video.thumbnail_image?.childImageSharp?.fixed?.src}`}
                 isLargeCard
             />
             <Breadcrumb

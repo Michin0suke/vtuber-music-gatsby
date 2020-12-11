@@ -41,7 +41,7 @@ export default ({ data: { artist }}) => {
             title={`${artist.name}`}
             description={`[${artistType}] ${artist.name}${honorific}のプロフィールページです。${artist.singer_videos.length}本の歌ってみた動画が登録されています。`}
             url={`https://vtuber-music.com/artist/${artist.id}`}
-            imgUrl={`https://vtuber-music.com/${artist.profile_image?.childImageSharp?.fixed?.src}`}
+            imgUrl={`https://vtuber-music.com${artist.profile_image?.childImageSharp?.fixed?.src}`}
         />
         <Breadcrumb type='artist' text={artist.name}/>
 
