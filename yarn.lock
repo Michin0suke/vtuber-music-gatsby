@@ -4391,12 +4391,7 @@ dataloader@2.0.0:
   resolved "https://registry.npmjs.org/dataloader/-/dataloader-2.0.0.tgz"
   integrity sha512-YzhyDAwA4TaQIhM5go+vCLmU0UikghC/t9DTQYZR2M/UvZ1MdOhPezSDZcjj9uqQJOMqjLcpWtyW2iNINdlatQ==
 
-date-fns@^2.14.0:
-  version "2.16.1"
-  resolved "https://registry.npmjs.org/date-fns/-/date-fns-2.16.1.tgz"
-  integrity sha512-sAJVKx/FqrLYHAQeN7VpJrPhagZc9R4ImZIWYRFZaaohR3KzmuK88touwsSwSVT8Qcbd4zoDsnGfX4GFB4imyQ==
-
-date-fns@^2.16.1:
+date-fns@^2.14.0, date-fns@^2.16.1:
   version "2.16.1"
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.16.1.tgz#05775792c3f3331da812af253e1a935851d3834b"
   integrity sha512-sAJVKx/FqrLYHAQeN7VpJrPhagZc9R4ImZIWYRFZaaohR3KzmuK88touwsSwSVT8Qcbd4zoDsnGfX4GFB4imyQ==
@@ -6292,6 +6287,14 @@ gatsby-page-utils@^0.3.0:
     glob "^7.1.6"
     lodash "^4.17.20"
     micromatch "^4.0.2"
+
+gatsby-plugin-google-analytics@^2.7.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.7.0.tgz#93b061ac3d98130bea21905fcfdb1f57803be0a4"
+  integrity sha512-MJir2U3Dk9waATUl60XS1WhHtWQnRTWEm9qwhTEmP83phTsts2WXNhgDgqE/OZ6B0pZn6cSb4zVY86x2zDch0g==
+  dependencies:
+    "@babel/runtime" "^7.12.5"
+    minimatch "3.0.4"
 
 gatsby-plugin-manifest@^2.6.1:
   version "2.6.1"
