@@ -134,7 +134,7 @@ export const query = graphql`
     }
     vtuberMusicIcon:file(base: {eq: "vtuber-music-icon-for-ogp.png"}) {
         childImageSharp {
-            fixed(width: 300) {
+            fixed(width: 500) {
                 src
             }
         }
