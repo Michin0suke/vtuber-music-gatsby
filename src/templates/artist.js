@@ -54,9 +54,6 @@ export default ({ data: { artist }}) => {
 
         <ArtistCard artist={artist} className='mb-16' noLink withRuby withSexColor/>
 
-        {artist.birthday &&
-            <p className='px-5 mb-5'>誕生日: {dateFormatter(artist.birthday)}</p>}
-
         { artist.profile &&
             <div className='mb-16'>
                 <Heading text='プロフィール'/>
@@ -64,6 +61,9 @@ export default ({ data: { artist }}) => {
                 <p className='px-5 text-gray-700 whitespace-pre-wrap'>{artist.profile}</p>
             </div>
         }
+
+        {artist.birthday &&
+            <p className='px-6 mb-16'>誕生日: {dateFormatter(artist.birthday)}</p>}
 
         {/* <Heading text='所属しているグループ'/>
         <M mb='5' /> */}
@@ -132,7 +132,7 @@ export default ({ data: { artist }}) => {
     
                 <div className='flex flex-wrap'>
                     {artist.singer_videos.map((video,key) => (
-                        <VideoCard key={key} video={video} className='mb-16 sm:w-1/2 sm:px-3'/>
+                        <VideoCard key={key} video={video} className='mb-16 w-full sm:w-1/2 sm:px-3'/>
                     ))}
                 </div>
             </div>
@@ -145,7 +145,7 @@ export default ({ data: { artist }}) => {
     
                 <div className='flex flex-wrap'>
                     {artist.arranger_videos.map((video,key) => (
-                        <VideoCard key={key} video={video} className='mb-16 sm:w-1/2 sm:px-3'/>
+                        <VideoCard key={key} video={video} className='mb-16 w-full sm:w-1/2 sm:px-3'/>
                     ))}
                 </div>
             </div>
@@ -158,7 +158,7 @@ export default ({ data: { artist }}) => {
     
                 <div className='flex flex-wrap'>
                     {artist.mixer_videos.map((video,key) => (
-                        <VideoCard key={key} video={video} className='mb-16 sm:w-1/2 sm:px-3'/>
+                        <VideoCard key={key} video={video} className='mb-16 w-full sm:w-1/2 sm:px-3'/>
                     ))}
                 </div>
             </div>
@@ -171,7 +171,7 @@ export default ({ data: { artist }}) => {
     
                 <div className='flex flex-wrap'>
                     {artist.off_vocal_videos.map((video,key) => (
-                        <VideoCard key={key} video={video} className='mb-16 sm:w-1/2 sm:px-3'/>
+                        <VideoCard key={key} video={video} className='mb-16 w-full sm:w-1/2 sm:px-3'/>
                     ))}
                 </div>
             </div>
