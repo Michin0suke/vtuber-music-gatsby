@@ -132,7 +132,7 @@ export const query = graphql`
             }
         }
     }
-    vtuberMusicIcon:file(base: {eq: "vtuber-music-icon.png"}) {
+    vtuberMusicIcon:file(base: {eq: "vtuber-music-icon-for-ogp.png"}) {
         childImageSharp {
             fixed(width: 300) {
                 src
