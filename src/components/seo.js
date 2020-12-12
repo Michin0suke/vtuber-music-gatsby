@@ -77,7 +77,9 @@ function SEO({ description, lang, meta, title, url, imgUrl, isTop, isLargeCard})
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <script data-ad-client="ca-pub-5595803406159604" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    </Helmet>
   )
 }
 
