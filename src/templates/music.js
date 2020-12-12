@@ -131,7 +131,7 @@ query($id: String!) {
                     fluid {
                         ...GatsbyImageSharpFluid_withWebp
                     }
-                    fixed {
+                    fixed(width: 600) {
                         ...GatsbyImageSharpFixed
                     }
                 }

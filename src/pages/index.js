@@ -51,9 +51,10 @@ const sliderSettingsProfileImages = {
     ]
   };
 
-const IndexPage = ({ data: { allArtist, allVideo } }) => (
+const IndexPage = ({ data: { allArtist, allVideo, vtuberMusicIcon } }) => (
   <Layout currentPage='/'>
-    <SEO isTop/>
+      {console.log(vtuberMusicIcon)}
+    <SEO isTop imgUrl={`https://vtuber-music.com${vtuberMusicIcon.childImageSharp.fixed.src}`}/>
     <p className='px-2 py-1 text-gray-500 text-xs'>Vtuberの歌ってみた動画をまとめたサイトです。</p>
 
     <Slider {...sliderSettingsHeader} className='mx-auto mb-16'>
@@ -128,6 +129,13 @@ export const query = graphql`
                         }
                     }
                 }
+            }
+        }
+    }
+    vtuberMusicIcon:file(base: {eq: "vtuber-music-icon.png"}) {
+        childImageSharp {
+            fixed(width: 300) {
+                src
             }
         }
     }

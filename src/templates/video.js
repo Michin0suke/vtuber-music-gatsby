@@ -212,7 +212,7 @@ export const pageQuery = graphql`
                 fluid {
                     ...GatsbyImageSharpFluid_withWebp
                 }
-                fixed {
+                fixed(width: 600) {
                     ...GatsbyImageSharpFixed
                 }
             }
