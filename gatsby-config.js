@@ -68,6 +68,18 @@ module.exports = {
         cookieDomain: "vtuber-music.com",
       },
     },
+    {
+      resolve: 'gatsby-plugin-html2amp',
+      options: {
+        files: ['index.html'],
+        publicPath: 'public',
+        gaConfigPath: 'gaConfig.json',
+        dist: 'public/amp',
+        optimize: true,
+        htmlPlugins: [],
+        cssPlugins: []
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
