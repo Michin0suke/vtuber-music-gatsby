@@ -96,7 +96,7 @@ export const query = graphql`
             profile_image {
                 childImageSharp {
                     fluid {
-                        ...GatsbyImageSharpFluid
+                        ...GatsbyImageSharpFluid_withWebp
                     }
                 }
             }
@@ -111,7 +111,7 @@ export const query = graphql`
             thumbnail_image {
                 childImageSharp {
                     fluid {
-                        ...GatsbyImageSharpFluid
+                        ...GatsbyImageSharpFluid_withWebp
                     }
                 }
             }
@@ -125,7 +125,7 @@ export const query = graphql`
                 profile_image {
                     childImageSharp {
                         fluid {
-                            ...GatsbyImageSharpFluid
+                            ...GatsbyImageSharpFluid_withWebp
                         }
                     }
                 }
