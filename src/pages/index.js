@@ -70,6 +70,7 @@ const IndexPage = ({ data: { allArtist, allVideo, vtuberMusicIcon } }) => (
         {allArtist.nodes
             .filter(artist => (artist.singer_videos.length !== 0))
             .filter(artist => (artist.profile_image !== null))
+            .slice(0, 15)
             .map((artist, key) => (
             <Link to={`/artist/${artist.id}`} key={key}>
                 <ProfileImage fluid={artist.profile_image?.childImageSharp?.fluid} key={key} className='mx-3 w-20 h-20'/>
@@ -95,7 +96,7 @@ export const query = graphql`
             name
             profile_image {
                 childImageSharp {
-                    fluid {
+                    fluid(maxWidth: 80) {
                         ...GatsbyImageSharpFluid_withWebp
                     }
                 }
@@ -110,7 +111,7 @@ export const query = graphql`
             id
             thumbnail_image {
                 childImageSharp {
-                    fluid {
+                    fluid(maxWidth: 640) {
                         ...GatsbyImageSharpFluid_withWebp
                     }
                 }
@@ -124,7 +125,7 @@ export const query = graphql`
                 name
                 profile_image {
                     childImageSharp {
-                        fluid {
+                        fluid(maxWidth: 80) {
                             ...GatsbyImageSharpFluid_withWebp
                         }
                     }
