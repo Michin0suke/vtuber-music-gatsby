@@ -77,6 +77,10 @@ function SEO({ description, lang, meta, title, url, imgUrl, isTop, isLargeCard})
           content: metaDescription,
         },
       ].concat(meta)}
+
+      link={[
+        { rel: 'canonical', href: url || `https://vtuber-music.com/` }
+      ]}
     >
       <script data-ad-client="ca-pub-5595803406159604" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     </Helmet>
