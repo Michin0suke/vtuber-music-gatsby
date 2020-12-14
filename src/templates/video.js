@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout'
 import ArtistCard from '../components/artistCard'
@@ -11,6 +11,61 @@ import SEO from '../components/seo'
 
 export default ({ data: { video }, location }) => {
     console.log('nextURL: ', `/video/${location?.state?.nextVideoId}`)
+
+    const [nextVideoId, setNextVideoId] = useState('')
+
+    const decideNextVideoId = (video) => {
+        let videoIdList = []
+    
+        video.singers.forEach(singer => {
+            // 動画のアーティストの他の動画
+            singer.singer_videos.forEach(singerVideo => {
+                videoIdList.push(singerVideo.id)
+            })
+
+            singer.parents.forEach(parent => {
+                // 動画のアーティストの所属グループの他の動画
+                parent.singer_videos.forEach(parentSingerVideo => {
+                    videoIdList.push(parentSingerVideo.id)
+                })
+                // 動画のアーティストと同じグループに所属しているアーティストの動画
+                parent.children
+                    .filter(child => child.id !== singer.id)
+                    .forEach(parentChild => {
+                        parentChild.singer_videos.forEach(parentChildVideo => {
+                            videoIdList.push(parentChildVideo.id)
+                        }
+                    )
+                })
+            })
+
+            singer.children.forEach(child => {
+                child.singer_videos.forEach(childVideo => {
+                    videoIdList.push(childVideo.id)
+                })
+                child.parents
+                    .filter(parent => parent.id !== singer.id)
+                    .forEach(childParent => {
+                        childParent.singer_videos.forEach(childParentVideo => {
+                            videoIdList.push(childParentVideo.id)
+                        })
+                    })
+            })
+        })
+
+        videoIdList = Array.from(new Set(videoIdList))
+
+        // 現在の動画URLは抜く
+        videoIdList = videoIdList.filter(id => id !== video.id)
+
+        console.log('videoIdList', videoIdList)
+
+        setNextVideoId(videoIdList[Math.floor(videoIdList.length * Math.random())])
+    }
+
+    useEffect(() => {
+        decideNextVideoId(video)
+    }, [video])
 
     const sameSingerVideos = (() => {
         let isEmptySameSingerVideos = true
@@ -32,8 +87,6 @@ export default ({ data: { video }, location }) => {
 
         return isEmptySameSingerVideos ? undefined : videoElements
     })()
-
-    console.log(video.thumbnail_image)
     
     return (
         <Layout>
@@ -53,7 +106,7 @@ export default ({ data: { video }, location }) => {
             {video.thumbnail_image?.childImageSharp?.fluid ?
                 <YouTubePlayer
                     videoId={video.id}
-                    nextVideoId={location?.state?.nextVideoId}
+                    nextVideoId={nextVideoId}
                     thumbnailFluid={video.thumbnail_image?.childImageSharp?.fluid}
                 />
             : <p>動画を取得できませんでした。</p>}
@@ -186,6 +239,28 @@ export const pageQuery = graphql`
                         fluid {
                             ...GatsbyImageSharpFluid_withWebp
                         }
+                    }
+                }
+            }
+            children:childrenArtist {
+                singer_videos {
+                    id
+                }
+                parents {
+                    id
+                    singer_videos {
+                        id
+                    }
+                }
+            }
+            parents {
+                singer_videos {
+                    id
+                }
+                children:childrenArtist {
+                    id
+                    singer_videos {
+                        id
                     }
                 }
             }
