@@ -3,6 +3,7 @@ module.exports = {
     title: `Vtuber Music`,
     description: `Vtuber Musicは、Vtuberの歌ってみた動画をまとめたサイトです。`,
     author: `@VtuberMusicCom`,
+    siteUrl: `https://vtuber-music.com`,
   },
   plugins: [
     `gatsby-plugin-postcss`,
@@ -39,6 +40,7 @@ module.exports = {
         icon: `src/images/vtuber-music-icon.png`, // This path is relative to the root of the site.
       },
     },
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -68,18 +70,18 @@ module.exports = {
         cookieDomain: "vtuber-music.com",
       },
     },
-    {
-      resolve: 'gatsby-plugin-html2amp',
-      options: {
-        files: ['index.html'],
-        publicPath: 'public',
-        gaConfigPath: 'gaConfig.json',
-        dist: 'public/amp',
-        optimize: true,
-        htmlPlugins: [],
-        cssPlugins: []
-      }
-    }
+    // {
+    //   resolve: 'gatsby-plugin-html2amp',
+    //   options: {
+    //     files: ['index.html'],
+    //     publicPath: 'public',
+    //     gaConfigPath: 'gaConfig.json',
+    //     dist: 'public/amp',
+    //     optimize: true,
+    //     htmlPlugins: [],
+    //     cssPlugins: []
+    //   }
+    // }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
