@@ -4,7 +4,7 @@ import Youtube from 'react-youtube'
 import VideoThumbnail from './videoThumbnail'
 import './youtube-player.css'
 
-const YouTubePlayer = ({ videoId, nextVideoId, thumbnailFluid }) => {
+const YouTubePlayer = ({ videoId, nextVideoId, thumbnailFluid, className }) => {
     const [isReadyPlayer, setIsReadyPlayer] = useState(false)
     // const [a, setA] = useState(false)
 
@@ -31,7 +31,7 @@ const YouTubePlayer = ({ videoId, nextVideoId, thumbnailFluid }) => {
     // )
 
     return (
-        <div className='relative w-full max-w-4xl overflow-hidden mx-auto'>
+        <div className={`relative overflow-hidden ${className}`}>
             {/* { isReadyPlayer ? <p>isReadyPlayer: true</p> : <p>isReadyPlayer: false</p>} */}
             <Youtube
                 videoId={videoId}

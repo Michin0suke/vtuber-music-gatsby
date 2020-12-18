@@ -1,0 +1,9 @@
+.rightArrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 0 20px 34.6px;
+    border-color: transparent transparent transparent #ffffff;
+    z-index: 20;
+    pointer-events: none;
+}

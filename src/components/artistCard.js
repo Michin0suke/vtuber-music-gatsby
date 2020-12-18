@@ -20,16 +20,14 @@ export default ({ artist, className, noLink, roleText, withRuby, withSexColor })
                 ringColorStyle += 'border-2 border-white'
         }
     }
-
-    console.log(ringColorStyle)
     
     if (noLink) {
         return (
             <div className={`py-2 px-5 rounded-md text-gray-800 ${className}`}>
-                { roleText && <span>{roleText}：</span> }
+                { roleText && <span className='mr-3 text-md'>{roleText}：</span> }
                 <div className='flex items-center'>
-                    <ProfileImg fluid={artist.profile_image?.childImageSharp?.fluid} className={`flex-shrink-0 w-16 h-16 ${ringColorStyle}`}/>
-                    <span className='pl-5 text-lg'>
+                    <ProfileImg fluid={artist.profile_image?.childImageSharp?.fluid} className={`flex-shrink-0 w-14 h-14 ${ringColorStyle}`}/>
+                    <span className='pl-5 text-md'>
                         {artist.name}{withRuby && artist.name_ruby && `（${artist.name_ruby}）`}
                     </span>
                 </div>
@@ -40,9 +38,9 @@ export default ({ artist, className, noLink, roleText, withRuby, withSexColor })
             <div className={`py-2 px-5 rounded-md text-gray-800 hover:bg-gray-200 ${className}`}>
                 <Link to={`/artist/${artist.id}`}>
                     <div className='flex items-center'>
-                        { roleText && <span className='mr-3'>{roleText}：</span> }
-                        <ProfileImg fluid={artist.profile_image?.childImageSharp?.fluid} className={`flex-shrink-0 w-16 h-16 ${ringColorStyle}`}/>
-                        <span className='pl-5 text-lg'>
+                        { roleText && <span className='mr-3 text-md'>{roleText}：</span> }
+                        <ProfileImg fluid={artist.profile_image?.childImageSharp?.fluid} className={`flex-shrink-0 w-14 h-14 ${ringColorStyle}`}/>
+                        <span className='pl-5 text-md'>
                             {artist.name}{withRuby && artist.name_ruby && `（${artist.name_ruby}）`}
                         </span>
                     </div>

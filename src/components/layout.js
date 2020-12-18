@@ -6,14 +6,12 @@ import SMMenu from './smMenu'
 import PCMenuLeft from './pcMenuLeft'
 
 const Layout = ({ children, currentPage }) => (
-  <div className='relative bg-gray-100' style={{minHeight: '100vh'}}>
+  <div className='relative' style={{minHeight: '100vh'}}>
     <Header/>
-    <div className='flex'>
+    <div className='flex w-full'>
       <PCMenuLeft currentPage={currentPage}/>
-      <div className='w-full'>
-        <main className='max-w-screen-md mx-auto pb-24'>{children}</main>
-      </div>
-      <nav className='hidden xl:block w-1/4 z-10 bg-white' style={{minHeight: '100vh'}}></nav>
+      <main className='pb-24 w-full z-20 gb-white md:bg-gray-50'>{children}</main>
+      {/* <nav className='hidden xl:block w-1/4 z-10 bg-white' style={{minHeight: '100vh'}}></nav> */}
     </div>
     <Footer/>
     <SMMenu currentPage={currentPage}/>

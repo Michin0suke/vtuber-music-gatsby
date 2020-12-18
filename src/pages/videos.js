@@ -1,84 +1,62 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Breadcrumb from '../components/breadcrumb'
 import VideoCard from '../components/videoCard'
+import InfiniteScroll from 'react-infinite-scroll-component'
+import SearchIcon from '../components/svg/search'
+import Fuse from 'fuse.js'
 
 export default ({ data: { allVideo } }) => {
-    // const [videos, setVideos] = useState([])
-    // const [isCompleteShows, setIsCompleteShows] = useState(false)
+    const [videos, setVideos] = useState(allVideo.nodes)
+    const [showVideoIndex, setShowVideoIndex] = useState(24)
+    const [search, setSearch] = useState(() => {})
 
     useEffect(() => {
-        // const queueVideos = []
+        createFuse()
+    }, [allVideo])
 
-        // for(let i = 1; i <= 10; i++) {
-        //     const currentVideo = allVideo.nodes[i]
-        //     // const nextVideo = allVideo.nodes[i + 1]
-    
-        //     if (!currentVideo) {
-        //         setIsCompleteShows(true)
-        //         continue
-        //     }
+    const createFuse = async() => {
+        const options = {
+            includeScore: false,
+            keys: ['music.name', 'music.title', 'singers.name', 'singers.name_ruby']
+        }
+        const fuse = new Fuse(allVideo.nodes, options)
+        setSearch(fuse)
+    }
 
-        //     if (!currentVideo.thumbnail_image) {
-        //         console.log(`${currentVideo.id} has beed deleted`)
-        //         continue
-        //     }
-    
-        //     queueVideos.push(
-        //         <VideoCard video={currentVideo} className='mb-5 w-3/5'/>
-        //     )
-        // }
-        // setVideos(queueVideos)
-    }, [allVideo.nodes])
-
-    // const appendVideos = () => {
-    //     if (isCompleteShows) {
-    //         console.log('is finished')
-    //         return
-    //     }
-
-    //     const queueVideos = []
-    //     const stateLength = videos.length
-    //     for(let i = 1; i <= 5; i++) {
-    //         const currentVideo = allVideo.nodes[stateLength + i]
-    //         const nextVideo = allVideo.nodes[stateLength + i + 1]
-
-    //         console.log(currentVideo)
-
-    //         if (!currentVideo) {
-    //             console.log(`!currentVideo`)
-    //             setIsCompleteShows(true)
-    //             continue
-    //         }
-
-    //         if (!currentVideo.thumbnail_image) {
-    //             console.log(`${currentVideo.id} has beed deleted`)
-    //             queueVideos.push('')
-    //             continue
-    //         }
-
-    //         queueVideos.push(
-    //             <VideoCard video={currentVideo} className='mb-5 w-3/5'/>
-    //         )
-    //     }
-    //     setVideos(videos.concat(queueVideos))
-    // }
+    const searchVideo = async (e) => {
+        setShowVideoIndex(24)
+        if (e.target.value === '') {
+            setVideos(allVideo.nodes)
+        } else {
+            const result = search.search(e.target.value).map(r => r.item)
+            setVideos(result)
+        }
+    }
 
     return (
         <Layout currentPage='/videos'>
             <Breadcrumb type='video'/>
-            {/* <div className='flex flex-wrap justify-between'> */}
-            {/* <Infinite containerHeight={1000} elementHeight={250} infiniteLoadBeginEdgeOffset={0} onInfiniteLoad={() => appendVideos()}>
-                {videos}
-            </Infinite> */}
-            {/* </div> */}
-            { allVideo.nodes.map((video, key) => (
-                <div key={key} className='w-1/2 mx-auto mb-10'>
-                    {video.id}
-                    <VideoCard video={video}/>
-                </div>
-            ))}
+            <div className='flex mx-auto px-2 mt-4 mb-7 w-full max-w-xl h-10'>
+                <SearchIcon color='#555' className='w-10 p-2'/>
+                <input
+                    type='text'
+                    className='outline-none w-full h-full px-2 border border-gray-200 rounded shadow-inner'
+                    placeholder='キーワードを入力してください。'
+                    onChange={(e) => searchVideo(e)}
+                />
+            </div>
+            <InfiniteScroll
+                dataLength={showVideoIndex} //This is important field to render the next data
+                next={() => setShowVideoIndex(showVideoIndex + 12)}
+                hasMore={videos.length > showVideoIndex}
+                className='sm:flex flex-wrap justify-start'
+            >
+                {videos.slice(0, showVideoIndex).map((video, key) => (
+                    <VideoCard video={video} className='mb-16 sm:px-3 w-full sm:w-1/2 md:w-1/3 xl:w-1/4 transition-all' key={key}/>
+                ))}
+            </InfiniteScroll>
         </Layout>
     )
 }
@@ -91,6 +69,7 @@ export const query = graphql`
             music {
                 id
                 title
+                title_ruby
             }
             release_date
             is_mv
@@ -99,10 +78,11 @@ export const query = graphql`
             singers {
                 id
                 name
+                name_ruby
                 profile_image {
                     childImageSharp {
                         id
-                        fluid {
+                        fluid(maxWidth: 60) {
                             ...GatsbyImageSharpFluid_withWebp
                         }
                     }
@@ -111,14 +91,17 @@ export const query = graphql`
             mixers {
                 id
                 name
+                name_ruby
             }
             off_vocals {
                 id
                 name
+                name_ruby
             }
             arrangers {
                 id
                 name
+                name_ruby
             }
             recommends {
                 id
@@ -126,7 +109,7 @@ export const query = graphql`
             thumbnail_image {
                 childImageSharp {
                     id
-                    fluid {
+                    fluid(maxWidth: 200) {
                         ...GatsbyImageSharpFluid_withWebp
                     }
                 }
