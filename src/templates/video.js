@@ -12,33 +12,33 @@ import SEO from '../components/seo'
 export default ({ data: { video, allVideo }, location }) => {
     console.log('nextURL: ', `/video/${location?.state?.nextVideoId}`)
 
-    const [nextVideo, setNextVideo] = useState(undefined)
-    const [nextVideoChoices, setNextVideoChoices] = useState([])
+    const [nextVideoId, setNextVideoId] = useState(undefined)
+    const [nextVideoChoicesId, setNextVideoChoicesId] = useState([])
 
     useEffect(() => {
         decideNextVideoId(video, allVideo)
     }, [video, allVideo])
 
     const decideNextVideoId = async (video, allVideo) => {
-        let nextVideoChoices = []
+        let nextVideoChoicesId = []
     
         video.singers.forEach(singer => {
             // 動画のアーティストの他の動画
             singer.singer_videos.forEach(singerVideo => {
-                nextVideoChoices.push(singerVideo)
+                nextVideoChoicesId.push(singerVideo.id)
             })
     
             singer.parents.forEach(parent => {
                 // 動画のアーティストの所属グループの他の動画
                 parent.singer_videos.forEach(parentSingerVideo => {
-                    nextVideoChoices.push(parentSingerVideo)
+                    nextVideoChoicesId.push(parentSingerVideo.id)
                 })
                 // 動画のアーティストと同じグループに所属しているアーティストの動画
                 parent.children
                     .filter(child => child.id !== singer)
                     .forEach(parentChild => {
                         parentChild.singer_videos.forEach(parentChildVideo => {
-                            nextVideoChoices.push(parentChildVideo)
+                            nextVideoChoicesId.push(parentChildVideo.id)
                         }
                     )
                 })
@@ -46,35 +46,27 @@ export default ({ data: { video, allVideo }, location }) => {
     
             singer.children.forEach(child => {
                 child.singer_videos.forEach(childVideo => {
-                    nextVideoChoices.push(childVideo)
+                    nextVideoChoicesId.push(childVideo.id)
                 })
                 child.parents
                     .filter(parent => parent.id !== singer.id)
                     .forEach(childParent => {
                         childParent.singer_videos.forEach(childParentVideo => {
-                            nextVideoChoices.push(childParentVideo)
+                            nextVideoChoicesId.push(childParentVideo.id)
                         })
                     })
             })
         })
-    
-        // 現在の動画URLは抜く
-        // nextVideoChoices = nextVideoChoices.filter(nextVideo => nextVideo.id !== video.id)
-    
-        const nextVideoChoicesIdList = []
-        // console.log('nextVideoChoices', nextVideoChoices)
 
-    
-        nextVideoChoices = nextVideoChoices.filter(choiceVideo => {
-            if (nextVideoChoicesIdList.includes(choiceVideo.id) || choiceVideo.id === video.id) {
-                return false
+        nextVideoChoicesId = nextVideoChoicesId.reduce((acc, cur) => {
+            if (!acc.includes(cur) && cur !== video.id) {
+                return acc.concat(cur)
             }
-            nextVideoChoicesIdList.push(choiceVideo.id)
-            return true
-        })
+            return acc
+        }, [])
 
         let countOfAddRandomVideos = 0;
-        switch(nextVideoChoices.length) {
+        switch(nextVideoChoicesId.length) {
             case 0:
             case 1:
                 countOfAddRandomVideos = 1
@@ -93,13 +85,13 @@ export default ({ data: { video, allVideo }, location }) => {
         }
 
         for(let i = 0; i < countOfAddRandomVideos; i++) {
-            nextVideoChoices.push(
-                allVideo.nodes[Math.floor(allVideo.nodes.length * Math.random())]
+            nextVideoChoicesId.push(
+                allVideo.nodes[Math.floor(allVideo.nodes.length * Math.random())].id
             )
         }
 
-        setNextVideoChoices(nextVideoChoices)
-        setNextVideo(nextVideoChoices[Math.floor(nextVideoChoices.length * Math.random())])
+        setNextVideoChoicesId(nextVideoChoicesId)
+        setNextVideoId(nextVideoChoicesId[Math.floor(nextVideoChoicesId.length * Math.random())])
     }
     
 
@@ -145,7 +137,7 @@ export default ({ data: { video, allVideo }, location }) => {
                 {video.thumbnail_image?.childImageSharp?.fluid ?
                     <YouTubePlayer
                         videoId={video.id}
-                        nextVideoId={nextVideo ? nextVideo.id : ''}
+                        nextVideoId={nextVideoId}
                         thumbnailFluid={video.thumbnail_image?.childImageSharp?.fluid}
                         className='mb-7 w-full'
                     />
@@ -185,8 +177,8 @@ export default ({ data: { video, allVideo }, location }) => {
                 }
                 <div className='mb-16' />
 
-                <Heading text='次に再生' className='mb-5'/>
-                {nextVideo && <VideoCard video={nextVideo} className='mx-auto w-full max-w-md mb-16'/>}
+                {/* <Heading text='次に再生' className='mb-5'/>
+                {nextVideo && <VideoCard video={nextVideo} className='mx-auto w-full max-w-md mb-16'/>} */}
 
 
                 {sameSingerVideos &&
@@ -200,7 +192,8 @@ export default ({ data: { video, allVideo }, location }) => {
 
             </div>
 
-            {console.log(nextVideoChoices.map(video => `${video.id} ${video.singers[0].name} ${video.music.title}`).join('\n'))}
+            {/* {console.log(nextVideoChoices.map(video => `${video.id} ${video.singers[0].name} ${video.music.title}`).join('\n'))} */}
+            {console.log(`next video choices: \n\n・${nextVideoChoicesId.join('\n・')}`)}
         </Layout>
     )
 }
@@ -210,30 +203,30 @@ export const pageQuery = graphql`
     allVideo {
         nodes {
             id
-            custom_music_name
-            music {
-                id
-                title
-            }
-            singers {
-                id
-                name
-                profile_image {
-                    childImageSharp {
-                        fluid {
-                            ...GatsbyImageSharpFluid_withWebp
-                        }
-                    }
-                }
-            }
-            thumbnail_image {
-                id
-                childImageSharp {
-                    fluid {
-                        ...GatsbyImageSharpFluid_withWebp
-                    }
-                }
-            }
+            # custom_music_name
+            # music {
+            #     id
+            #     title
+            # }
+            # singers {
+            #     id
+            #     name
+            #     profile_image {
+            #         childImageSharp {
+            #             fluid {
+            #                 ...GatsbyImageSharpFluid_withWebp
+            #             }
+            #         }
+            #     }
+            # }
+            # thumbnail_image {
+            #     id
+            #     childImageSharp {
+            #         fluid {
+            #             ...GatsbyImageSharpFluid_withWebp
+            #         }
+            #     }
+            # }
         }
     }
     video(id: {eq: $id}) {
@@ -321,140 +314,140 @@ export const pageQuery = graphql`
             children:childrenArtist {
                 singer_videos {
                     id
-                    custom_music_name
-                    music {
-                        id
-                        title
-                    }
+                    # custom_music_name
+                    # music {
+                    #     id
+                    #     title
+                    # }
                     singers {
                         id
-                        name
-                        profile_image {
-                            childImageSharp {
-                                fluid {
-                                    ...GatsbyImageSharpFluid_withWebp
-                                }
-                            }
-                        }
+                        # name
+                        # profile_image {
+                        #     childImageSharp {
+                        #         fluid {
+                        #             ...GatsbyImageSharpFluid_withWebp
+                        #         }
+                        #     }
+                        # }
                     }
-                    thumbnail_image {
-                        id
-                        childImageSharp {
-                            id
-                            fluid {
-                                ...GatsbyImageSharpFluid_withWebp
-                            }
-                        }
-                    }
+                    # thumbnail_image {
+                    #     id
+                    #     childImageSharp {
+                    #         id
+                    #         fluid {
+                    #             ...GatsbyImageSharpFluid_withWebp
+                    #         }
+                    #     }
+                    # }
                 }
                 parents {
                     id
-                    name
-                    profile_image {
-                        childImageSharp {
-                            fluid {
-                                ...GatsbyImageSharpFluid_withWebp
-                            }
-                        }
-                    }
+                    # name
+                    # profile_image {
+                    #     childImageSharp {
+                    #         fluid {
+                    #             ...GatsbyImageSharpFluid_withWebp
+                    #         }
+                    #     }
+                    # }
                     singer_videos {
                         id
-                        custom_music_name
-                        music {
-                            id
-                            title
-                        }
+                        # custom_music_name
+                        # music {
+                        #     id
+                        #     title
+                        # }
                         singers {
                             id
-                            name
-                            profile_image {
-                                childImageSharp {
-                                    fluid {
-                                        ...GatsbyImageSharpFluid_withWebp
-                                    }
-                                }
-                            }
+                            # name
+                            # profile_image {
+                            #     childImageSharp {
+                            #         fluid {
+                            #             ...GatsbyImageSharpFluid_withWebp
+                            #         }
+                            #     }
+                            # }
                         }
-                        thumbnail_image {
-                            id
-                            childImageSharp {
-                                id
-                                fluid {
-                                    ...GatsbyImageSharpFluid_withWebp
-                                }
-                            }
-                        }
+                        # thumbnail_image {
+                        #     id
+                        #     childImageSharp {
+                        #         id
+                        #         fluid {
+                        #             ...GatsbyImageSharpFluid_withWebp
+                        #         }
+                        #     }
+                        # }
                     }
                 }
             }
             parents {
                 id
-                name
-                profile_image {
-                    childImageSharp {
-                        fluid {
-                            ...GatsbyImageSharpFluid_withWebp
-                        }
-                    }
-                }
+                # name
+                # profile_image {
+                #     childImageSharp {
+                #         fluid {
+                #             ...GatsbyImageSharpFluid_withWebp
+                #         }
+                #     }
+                # }
                 singer_videos {
                     id
-                    custom_music_name
-                    music {
-                        id
-                        title
-                    }
+                    # custom_music_name
+                    # music {
+                    #     id
+                    #     title
+                    # }
                     singers {
                         id
-                        name
-                        profile_image {
-                            childImageSharp {
-                                fluid {
-                                    ...GatsbyImageSharpFluid_withWebp
-                                }
-                            }
-                        }
+                        # name
+                        # profile_image {
+                        #     childImageSharp {
+                        #         fluid {
+                        #             ...GatsbyImageSharpFluid_withWebp
+                        #         }
+                        #     }
+                        # }
                     }
-                    thumbnail_image {
-                        id
-                        childImageSharp {
-                            id
-                            fluid {
-                                ...GatsbyImageSharpFluid_withWebp
-                            }
-                        }
-                    }
+                    # thumbnail_image {
+                    #     id
+                    #     childImageSharp {
+                    #         id
+                    #         fluid {
+                    #             ...GatsbyImageSharpFluid_withWebp
+                    #         }
+                    #     }
+                    # }
                 }
                 children:childrenArtist {
                     id
-                    name
+                    # name
                     singer_videos {
                         id
-                        custom_music_name
-                        music {
-                            id
-                            title
-                        }
+                        # custom_music_name
+                        # music {
+                        #     id
+                        #     title
+                        # }
                         singers {
                             id
-                            name
-                            profile_image {
-                                childImageSharp {
-                                    fluid {
-                                        ...GatsbyImageSharpFluid_withWebp
-                                    }
-                                }
-                            }
+                            # name
+                            # profile_image {
+                            #     childImageSharp {
+                            #         fluid {
+                            #             ...GatsbyImageSharpFluid_withWebp
+                            #         }
+                            #     }
+                            # }
                         }
-                        thumbnail_image {
-                            id
-                            childImageSharp {
-                                id
-                                fluid {
-                                    ...GatsbyImageSharpFluid_withWebp
-                                }
-                            }
-                        }
+                        # thumbnail_image {
+                        #     id
+                        #     childImageSharp {
+                        #         id
+                        #         fluid {
+                        #             ...GatsbyImageSharpFluid_withWebp
+                        #         }
+                        #     }
+                        # }
                     }
                 }
             }
@@ -462,14 +455,35 @@ export const pageQuery = graphql`
         mixers {
             id
             name
+            profile_image {
+                childImageSharp {
+                    fluid {
+                        ...GatsbyImageSharpFluid_withWebp
+                    }
+                }
+            }
         }
         off_vocals {
             id
             name
+            profile_image {
+                childImageSharp {
+                    fluid {
+                        ...GatsbyImageSharpFluid_withWebp
+                    }
+                }
+            }
         }
         arrangers {
             id
             name
+            profile_image {
+                childImageSharp {
+                    fluid {
+                        ...GatsbyImageSharpFluid_withWebp
+                    }
+                }
+            }
         }
         recommends {
             id
