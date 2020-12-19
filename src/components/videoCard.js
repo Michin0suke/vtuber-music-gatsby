@@ -13,7 +13,7 @@ export const VideoCardHeader = ({ video, className }) => (
                 <div className='absolute top-0 right-0 w-full h-full rounded-full bg-white opacity-50'/>
                 <div className='flex relative'>
                     <Link to={`/artist/${video.singers[0].id}`} className='relative'>
-                        <ProfileImg fluid={video.singers[0]?.profile_image?.childImageSharp?.fluid} className='w-12 h-12 w-16 h-16'/>
+                        <ProfileImg artist={video.singers[0]} className='w-12 h-12 w-16 h-16'/>
                     </Link>
                     <div className='ml-3'>
                         <h4 className='py-1 text-lg text-black font-bold'>{video.music.title}</h4>
@@ -32,7 +32,7 @@ export default ({ video, className }) => (
         <VideoThumbnail to={`/video/${video.id}`} video={video} className='mb-2' withHoverLink/>
         <div className='z-10 flex'>
             <Link to={`/artist/${video.singers[0].id}`} className='relative'>
-                <ProfileImg fluid={video.singers[0]?.profile_image?.childImageSharp?.fluid} className='mx-2 w-14 h-14'/>
+                <ProfileImg artist={video.singers[0]} className='mx-2 w-14 h-14'/>
             </Link>
             <div>
                 <Link to={`/video/${video.id}`}>

@@ -26,7 +26,7 @@ export default ({ artist, className, noLink, roleText, withRuby, withSexColor })
             <div className={`py-2 px-5 rounded-md text-gray-800 ${className}`}>
                 { roleText && <span className='mr-3 text-md'>{roleText}：</span> }
                 <div className='flex items-center'>
-                    <ProfileImg fluid={artist.profile_image?.childImageSharp?.fluid} className={`flex-shrink-0 w-14 h-14 ${ringColorStyle}`}/>
+                    <ProfileImg artist={artist} className={`flex-shrink-0 w-14 h-14 ${ringColorStyle}`}/>
                     <span className='pl-5 text-md'>
                         {artist.name}{withRuby && artist.name_ruby && `（${artist.name_ruby}）`}
                     </span>
@@ -39,7 +39,7 @@ export default ({ artist, className, noLink, roleText, withRuby, withSexColor })
                 <Link to={`/artist/${artist.id}`}>
                     <div className='flex items-center'>
                         { roleText && <span className='mr-3 text-md'>{roleText}：</span> }
-                        <ProfileImg fluid={artist.profile_image?.childImageSharp?.fluid} className={`flex-shrink-0 w-14 h-14 ${ringColorStyle}`}/>
+                        <ProfileImg artist={artist} className={`flex-shrink-0 w-14 h-14 ${ringColorStyle}`}/>
                         <span className='pl-5 text-md'>
                             {artist.name}{withRuby && artist.name_ruby && `（${artist.name_ruby}）`}
                         </span>
