@@ -33,8 +33,8 @@ exports.sourceNodes = async ({ actions: { createNode }, createNodeId, createCont
                     off_vocals { id }
                     arrangers { id }
                     recommends { id }
-                    # created_at
-                    # updated_at
+                    created_at
+                    updated_at
                 }
             }
         `
