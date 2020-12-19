@@ -70,10 +70,10 @@ export default ({ artist, className }) => {
         const url = convertFullUrl(artist[type], type)
 
         return (
-            <li key={`${artist.id}-${type}`} className='mb-2 px-5 py-2 h-16 hover:bg-gray-200 rounded'>
+            <li key={`${artist.id}-${type}`} className='mb-2 pl-5 py-2 h-14 hover:bg-gray-200 rounded'>
                 <a href={url} target='_brank' className='h-full flex items-center'>
                     {logo}
-                    {disp && <span className='text-2xl font-bold text-gray-800'>{disp}</span>}
+                    {disp && <span className='text-xl font-bold text-gray-800'>{disp}</span>}
                 </a>
             </li>
         )

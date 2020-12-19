@@ -5,7 +5,7 @@ import VideoThumbnail from './videoThumbnail'
 
 export const VideoCardHeader = ({ video, className }) => (
     <div className={`relative overflow-hidden ${className}`}>
-        <VideoThumbnail fluid={video.thumbnail_image?.childImageSharp?.fluid} className='mb-2'/>
+        <VideoThumbnail video={video} className='mb-2'/>
         <Link to={`/video/${video.id}`} className='absolute top-0 right-0 bottom-0 left-0 w-full h-full opacity-10 hover:bg-white'/>
         {/* <div className='absolute bottom-0 left-0 w-100 h-30 bg-white'/> */}
         <div className='absolute bottom-5 left-3'>
@@ -29,7 +29,7 @@ export const VideoCardHeader = ({ video, className }) => (
 
 export default ({ video, className }) => (
     <div className={`relative md:rounded overflow-hidden ${className}`}>
-        <VideoThumbnail to={`/video/${video.id}`} fluid={video.thumbnail_image?.childImageSharp?.fluid} className='mb-2' withHoverLink/>
+        <VideoThumbnail to={`/video/${video.id}`} video={video} className='mb-2' withHoverLink/>
         <div className='z-10 flex'>
             <Link to={`/artist/${video.singers[0].id}`} className='relative'>
                 <ProfileImg fluid={video.singers[0]?.profile_image?.childImageSharp?.fluid} className='mx-2 w-14 h-14'/>

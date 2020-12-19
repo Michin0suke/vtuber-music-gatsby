@@ -10,7 +10,54 @@ import Breadcrumb from '../components/breadcrumb'
 import ArtistCardLinks from '../components/artistLinks'
 import MusicTitle from '../components/musicTitle'
 
-const M = ({mb}) => <div className={`mb-${mb}`}/>
+const ArtistSection = ({ headingText, artists }) => {
+    if (artists.length !== 0) {
+        return (
+            <div className='pb-10'>
+                <Heading text={ headingText } className='mb-5'/>
+
+                <div className='px-5'>
+                    {artists.map((artist, key) => (
+                        <ArtistCard key={key} artist={artist} className='mb-5'/>
+                    ))}
+                </div>
+            </div>
+        )
+    } else {
+        return ''
+    }
+}
+
+const MusicSection = ({ headingText, music }) => {
+    if (music.length !== 0) {
+        return (
+            <div className='pb-10'>
+                <Heading text={headingText} className='mb-5' />
+                { music.map((music, key) => <MusicTitle key={key} music={music} className='mb-5 mx-5'/> )}
+            </div>
+        )
+    } else {
+        return ''
+    }
+}
+
+const VideoSection = ({ headingText, videos }) => {
+    if (videos.length !== 0) {
+        return (
+            <div className='pb-10'>
+                <Heading text={headingText} count={videos.length} className='mb-5'/>
+    
+                <div className='flex flex-wrap'>
+                    {videos.map((video,key) => (
+                        <VideoCard key={key} video={video} className='mb-16 sm:px-3 sm:w-1/2 md:w-1/3'/>
+                    ))}
+                </div>
+            </div>
+        )
+    } else {
+        return ''
+    }
+}
 
 const dateFormatter = (string) => {
     const date = new Date(string)
@@ -45,137 +92,42 @@ export default ({ data: { artist }}) => {
         />
         <Breadcrumb type='artist' text={artist.name}/>
 
-        <div style={{
-            width: '100%',
-            paddingBottom: '20%'
-        }} className='mb-14 bg-blue-100 shadow'></div>
+        <div className='max-w-4xl mx-auto'>
 
-        <Heading text={artistType} className='mb-5'/>
+            <div style={{
+                width: '100%',
+                paddingBottom: '20%'
+            }} className='mb-14 bg-blue-100 shadow'></div>
 
-        <ArtistCard artist={artist} className='mb-16' noLink withRuby withSexColor/>
+            <Heading text={artistType} className='mb-5'/>
 
-        { artist.profile &&
-            <div className='mb-16'>
-                <Heading text='プロフィール'/>
-                <M mb='5' />
-                <p className='px-5 text-gray-700 whitespace-pre-wrap'>{artist.profile}</p>
-            </div>
-        }
+            <ArtistCard artist={artist} className='mb-16' noLink withRuby withSexColor/>
 
-        {artist.birthday &&
-            <p className='px-6 mb-16'>誕生日: {dateFormatter(artist.birthday)}</p>}
+            { artist.profile &&
+                <div className='mb-16'>
+                    <Heading text='プロフィール' className='mb-5'/>
+                    <p className='px-5 text-gray-700 whitespace-pre-wrap'>{artist.profile}</p>
+                </div>
+            }
 
-        {/* <Heading text='所属しているグループ'/>
-        <M mb='5' /> */}
-        
-        { artist.childrenArtist.length !== 0 &&
-            <div className='mb-16'>
-                <Heading text='所属しているアーティスト'/>
-                <M mb='5' />
-                { artist.childrenArtist.map((artist, key) => (
-                    <ArtistCard artist={artist} className='mb-5' key={key}/>
-                ))}
-            </div>
-        }
+            {artist.birthday &&
+                <p className='px-6 mb-16'>誕生日: {dateFormatter(artist.birthday)}</p>}
 
-        { artist.parents.length !== 0 &&
-            <div className='mb-16'>
-                <Heading text='所属しているグループ' className='mb-5'/>
-                { artist.parents.map((parent, key) => (
-                    <ArtistCard artist={parent} className='mb-5' key={key}/>
-                ))}
-            </div>
-        }
+            <ArtistSection headingText='所属しているアーティスト' artists={artist.childrenArtist}/>
+            <ArtistSection headingText='所属しているグループ' artists={artist.parents}/>
+            <ArtistSection headingText='似ているタイプのアーティスト' artists={artist.recommends}/>
+            
+            <ArtistCardLinks artist={artist} className='pb-8'/>
 
-        <div className='pb-8'>
-            <ArtistCardLinks artist={artist}/>
+            <MusicSection headingText='作曲した楽曲' music={artist.composer_music}/>
+            <MusicSection headingText='作詞した楽曲' music={artist.lyricist_music}/>
+            <MusicSection headingText='編曲した楽曲' music={artist.arranger_music}/>
+
+            <VideoSection headingText='歌っている動画' videos={artist.singer_videos}/>
+            <VideoSection headingText='アレンジを担当した動画' videos={artist.arranger_videos}/>
+            <VideoSection headingText='ミックスを担当した動画' videos={artist.mixer_videos}/>
+            <VideoSection headingText='オフボーカルを担当した動画' videos={artist.off_vocal_videos}/>
         </div>
-
-        { artist.recommends.length !== 0 &&
-            <div className='pb-10'>
-                <Heading text='似ているタイプのアーティスト'/>
-                <M mb='5' />
-
-                <div className='px-5'>
-                    {artist.recommends.map((artist, key) => (
-                        <ArtistCard key={key} artist={artist} className='mb-5'/>
-                    ))}
-                </div>
-            </div>
-        }
-
-        { artist.composer_music.length !== 0 &&
-            <div className='pb-10'>
-                <Heading text='作曲した楽曲' className='mb-5' />
-                { artist.composer_music.map((music, key) => <MusicTitle key={key} music={music} className='mb-5 mx-5'/> )}
-            </div>
-        }
-
-        { artist.lyricist_music.length !== 0 &&
-            <div className='pb-10'>
-                <Heading text='作詞した楽曲' className='mb-5'/>
-                { artist.lyricist_music.map((music, key) => <MusicTitle key={key} music={music} className='mb-5 mx-5'/> )}
-            </div>
-        }
-
-        { artist.arranger_music.length !== 0 &&
-            <div className='pb-10'>
-                <Heading text='編曲した楽曲' className='mb-5'/>
-                { artist.arranger_music.map((music, key) => <MusicTitle key={key} music={music} className='mb-5 mx-5'/> )}
-            </div>
-        }
-
-        { artist.singer_videos.length !== 0 &&
-            <div className='pb-10'>
-                <Heading text='歌っている動画' count={artist.singer_videos.length}/>
-                <M mb='5' />
-    
-                <div className='flex flex-wrap'>
-                    {artist.singer_videos.map((video,key) => (
-                        <VideoCard key={key} video={video} className='mb-16 w-full sm:w-1/2 sm:px-3'/>
-                    ))}
-                </div>
-            </div>
-        }
-
-        { artist.arranger_videos.length !== 0 &&
-            <div className='pb-10'>
-                <Heading text='アレンジを担当した動画'/>
-                <M mb='5' />
-    
-                <div className='flex flex-wrap'>
-                    {artist.arranger_videos.map((video,key) => (
-                        <VideoCard key={key} video={video} className='mb-16 w-full sm:w-1/2 sm:px-3'/>
-                    ))}
-                </div>
-            </div>
-        }
-
-        { artist.mixer_videos.length !== 0 &&
-            <div className='pb-10'>
-                <Heading text='ミックスを担当した動画'/>
-                <M mb='5' />
-    
-                <div className='flex flex-wrap'>
-                    {artist.mixer_videos.map((video,key) => (
-                        <VideoCard key={key} video={video} className='mb-16 w-full sm:w-1/2 sm:px-3'/>
-                    ))}
-                </div>
-            </div>
-        }
-
-        { artist.off_vocal_videos.length !== 0 &&
-            <div className='pb-10'>
-                <Heading text='オフボーカルを担当した動画'/>
-                <M mb='5' />
-    
-                <div className='flex flex-wrap'>
-                    {artist.off_vocal_videos.map((video,key) => (
-                        <VideoCard key={key} video={video} className='mb-16 w-full sm:w-1/2 sm:px-3'/>
-                    ))}
-                </div>
-            </div>
-        }
     </Layout>
     )
 }

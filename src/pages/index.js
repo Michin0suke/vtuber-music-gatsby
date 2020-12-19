@@ -57,7 +57,6 @@ const IndexPage = ({ data: { allArtist, allVideo, vtuberMusicIcon } }) => {
 
     return (
     <Layout currentPage='/'>
-        {console.log(vtuberMusicIcon)}
         <SEO isTop imgUrl={`https://vtuber-music.com${vtuberMusicIcon.childImageSharp.fixed.src}`}/>
         <p className='px-2 py-1 text-gray-500 text-xs'>Vtuberの歌ってみた動画をまとめたサイトです。</p>
 
@@ -129,7 +128,7 @@ export const query = graphql`
             }
         }
     }
-    allVideo {
+    allVideo(sort: {order: DESC, fields: created_at}) {
         nodes {
             id
             thumbnail_image {

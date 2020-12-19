@@ -8,14 +8,15 @@ import YouTubePlayer from '../components/youtube-player'
 import Heading, { HeadingH2 } from '../components/heading'
 import MusicTitle from '../components/musicTitle'
 import SEO from '../components/seo'
+// import modernizr from 'modernizr'
 
 export default ({ data: { video, allVideo }, location }) => {
-    console.log('nextURL: ', `/video/${location?.state?.nextVideoId}`)
-
     const [nextVideoId, setNextVideoId] = useState(undefined)
     const [nextVideoChoicesId, setNextVideoChoicesId] = useState([])
 
     useEffect(() => {
+        // const Modernizer = modernizr.build({})
+        // console.log(Modernizer.videoautoplay)
         decideNextVideoId(video, allVideo)
     }, [video, allVideo])
 
@@ -100,18 +101,19 @@ export default ({ data: { video, allVideo }, location }) => {
 
         const videoElements = (
             video.singers.map(singer => (
-            singer.singer_videos.map((singerVideo, key) => {
-                const showedVideos = [video.id]
-                // ページの動画と同じ動画は関連にあげない
-                if (showedVideos.includes(singerVideo.id)) {
-                    // console.log(`is exist: ${singerVideo.id}`)
-                    return ''
-                }
-                showedVideos.push(singerVideo.id)
-                isEmptySameSingerVideos = false
-                return <VideoCard key={`same-singer-videos-${key}`} video={singerVideo} className='mb-16 sm:px-3 sm:w-1/2 md:w-1/3'/>
-            })
-        )))
+                singer.singer_videos.map((singerVideo, key) => {
+                    const showedVideos = [video.id]
+                    // ページの動画と同じ動画は関連にあげない
+                    if (showedVideos.includes(singerVideo.id)) {
+                        // console.log(`is exist: ${singerVideo.id}`)
+                        return ''
+                    }
+                    showedVideos.push(singerVideo.id)
+                    isEmptySameSingerVideos = false
+                    return <VideoCard key={`same-singer-videos-${key}`} video={singerVideo} className='mb-16 sm:px-3 sm:w-1/2 md:w-1/3'/>
+                })
+            ))
+        )
 
         return isEmptySameSingerVideos ? undefined : videoElements
     })()
@@ -136,9 +138,8 @@ export default ({ data: { video, allVideo }, location }) => {
 
                 {video.thumbnail_image?.childImageSharp?.fluid ?
                     <YouTubePlayer
-                        videoId={video.id}
                         nextVideoId={nextVideoId}
-                        thumbnailFluid={video.thumbnail_image?.childImageSharp?.fluid}
+                        video={video}
                         className='mb-7 w-full'
                     />
                 : <p>動画を取得できませんでした。</p>}
