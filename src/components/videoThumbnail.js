@@ -12,7 +12,7 @@ export default ({ video, to, withHoverLink, className }) => {
             <div className='relative'>
                 <div className='relative overflow-hidden' style={{ paddingBottom: '56.25%' }}>
                     <div className='absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
-                        <Img fluid={video.thumbnail_image?.childImageSharp?.fluid} className='w-full' alt={`${video.singers.map(i=>i.name).join('&')}が歌う${video.music?.title}のサムネイル画像`}/>
+                        <Img fluid={video.thumbnail_image?.childImageSharp?.fluid} className='w-full' alt={`${video.singers?.map(i=>i.name).join('&')}が歌う${video.music?.title}のサムネイル画像`}/>
                     </div>
                 </div>
                 {withHoverLink && 
