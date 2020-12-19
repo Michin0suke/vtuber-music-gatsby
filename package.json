@@ -27,6 +27,7 @@
     "graphql-tag": "^2.11.0",
     "js-search": "^2.0.0",
     "lunr": "^2.3.9",
+    "modernizr": "^3.11.4",
     "node-fetch": "^2.6.1",
     "pleasejs": "^0.4.2",
     "postcss": "^8.1.10",
