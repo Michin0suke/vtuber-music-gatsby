@@ -211,8 +211,12 @@ exports.onCreateNode = async ({ actions: { createNode }, node, getCache, createN
     } else if (node.internal.type === 'Artist') {
         const profileImgUrl = await fetch(`https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${node.id_youtube}&key=${youtubeApiKey}`)
             .then(response => response.json())
-            .then(json => json?.items?.[0]?.snippet?.thumbnails?.high?.url)
-
+            .then(json => json.items && 
+                            json.items[0] &&
+                            json.items[0].snippet &&
+                            json.items[0].snippet.thumbnails &&
+                            json.items[0].snippet.thumbnails.high &&
+                            json.items[0].snippet.thumbnails.high.url)
         let fileNode
 
         if (profileImgUrl) {
