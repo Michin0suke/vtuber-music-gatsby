@@ -6,6 +6,7 @@ module.exports = {
     siteUrl: `https://vtuber-music.com`,
   },
   plugins: [
+    '@bumped-inc/gatsby-plugin-optional-chaining',
     `gatsby-plugin-postcss`,
     // { 
     //   resolve: `gatsby-plugin-purgecss`,
