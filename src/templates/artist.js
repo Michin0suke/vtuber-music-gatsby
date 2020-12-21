@@ -1,9 +1,11 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import { format, differenceInYears } from 'date-fns';
 import SEO from '../components/seo'
 import Layout from '../components/layout'
 import ArtistCard from '../components/artistCard'
+import ProfileImg from '../components/profileImage'
 import Heading from '../components/heading'
 import VideoCard from '../components/videoCard'
 import Breadcrumb from '../components/breadcrumb'
@@ -13,12 +15,12 @@ import MusicTitle from '../components/musicTitle'
 const ArtistSection = ({ headingText, artists }) => {
     if (artists.length !== 0) {
         return (
-            <div className='pb-10'>
+            <div className='mb-10 pb-5 lg:px-5 bg-white lg:shadow'>
                 <Heading text={ headingText } className='mb-5'/>
 
                 <div className='px-5'>
                     {artists.map((artist, key) => (
-                        <ArtistCard key={key} artist={artist} className='mb-5'/>
+                        <ArtistCard key={key} artist={artist} className='mb-2'/>
                     ))}
                 </div>
             </div>
@@ -31,7 +33,7 @@ const ArtistSection = ({ headingText, artists }) => {
 const MusicSection = ({ headingText, music }) => {
     if (music.length !== 0) {
         return (
-            <div className='pb-10'>
+            <div className='mb-10 pb-5 lg:px-5 bg-white lg:shadow'>
                 <Heading text={headingText} className='mb-5' />
                 { music.map((music, key) => <MusicTitle key={key} music={music} className='mb-5 mx-5'/> )}
             </div>
@@ -44,12 +46,12 @@ const MusicSection = ({ headingText, music }) => {
 const VideoSection = ({ headingText, videos }) => {
     if (videos.length !== 0) {
         return (
-            <div className='pb-10'>
+            <div className='mb-10 pb-5 lg:px-5 bg-white lg:shadow'>
                 <Heading text={headingText} count={videos.length} className='mb-5'/>
     
                 <div className='flex flex-wrap'>
                     {videos.map((video,key) => (
-                        <VideoCard key={key} video={video} className='mb-16 sm:px-3 sm:w-1/2 md:w-1/3'/>
+                        <VideoCard key={key} video={video} className='mb-16 sm:px-3 w-full sm:w-1/2 md:w-1/3'/>
                     ))}
                 </div>
             </div>
@@ -77,10 +79,24 @@ export default ({ data: { artist }}) => {
     const isGroup = artist.childrenArtist.length !== 0
 
     let artistType = 'アーティスト'
-    if (isVtuber) artistType = 'Vtuber'
+    // if (isVtuber) artistType = 'Vtuber'
     if (isGroup) artistType = 'グループ'
 
     let honorific = isGroup ? '' : 'さん'
+
+    // let ringColorStyle = ''
+    // if (withSexColor) {
+    //     switch(artist.sex) {
+    //         case 'male':
+    //             ringColorStyle += 'border-2 border-blue-500'
+    //             break;
+    //         case 'female':
+    //             ringColorStyle += 'border-2 border-pink-500'
+    //             break
+    //         default:
+    //             ringColorStyle += 'border-2 border-white'
+    //     }
+    // }
 
     return (
     <Layout>
@@ -94,30 +110,46 @@ export default ({ data: { artist }}) => {
 
         <div className='max-w-4xl mx-auto'>
 
-            <div style={{
-                width: '100%',
-                paddingBottom: '20%'
-            }} className='mb-14 bg-blue-100 shadow'></div>
+        {artist.header_image !== null &&
+            <div className='bg-white lg:shadow mb-10'>
+                <div className='relative w-full'>
+                    <Img fluid={artist.header_image?.childImageSharp?.fluid}/>
+                    <div class='absolute'>
+                        <ProfileImg artist={artist} className='absolute left-5 lg:left-10 bottom-12 lg:bottom-14 w-24 lg:w-28 shadow-lg m-0'/>
+                    </div>
+                </div>
+                <h1 className='px-5 lg:px-10 pt-16 lg:pt-20 pb-7 text-xl text-gray-700'>{artist.name}{artist.name_ruby && `（${artist.name_ruby}）`}</h1>
+            </div>
+        }
 
-            <Heading text={artistType} className='mb-5'/>
-
-            <ArtistCard artist={artist} className='mb-16' noLink withRuby withSexColor/>
+        {artist.header_image !== null ||
+            <div className='mb-10 pb-7 lg:px-5 bg-white lg:shadow'>
+                <Heading text={artistType} className='mb-5'/>
+                <ArtistCard artist={artist} imgSize={20} noLink withRuby/>
+            </div>
+        }
 
             { artist.profile &&
-                <div className='mb-16'>
+                <div className='mb-10 pb-7 bg-white lg:shadow'>
                     <Heading text='プロフィール' className='mb-5'/>
                     <p className='px-5 text-gray-700 whitespace-pre-wrap'>{artist.profile}</p>
                 </div>
             }
 
             {artist.birthday &&
-                <p className='px-6 mb-16'>誕生日: {dateFormatter(artist.birthday)}</p>}
+                <div className='mb-10 pb-5 bg-white lg:shadow'>
+                    <Heading text='誕生日' className='mb-5'/>
+                    <p className='px-6'>{dateFormatter(artist.birthday)}</p>
+                </div>
+            }
 
             <ArtistSection headingText='所属しているアーティスト' artists={artist.childrenArtist}/>
             <ArtistSection headingText='所属しているグループ' artists={artist.parents}/>
             <ArtistSection headingText='似ているタイプのアーティスト' artists={artist.recommends}/>
             
-            <ArtistCardLinks artist={artist} className='pb-8'/>
+            <div className='mb-10 pb-5 bg-white lg:shadow'>
+                <ArtistCardLinks artist={artist} className='px-5'/>
+            </div>
 
             <MusicSection headingText='作曲した楽曲' music={artist.composer_music}/>
             <MusicSection headingText='作詞した楽曲' music={artist.lyricist_music}/>
@@ -162,6 +194,16 @@ query($id: String!){
                     ...GatsbyImageSharpFluid_withWebp
                 }
                 fixed(width: 500) {
+                    ...GatsbyImageSharpFixed
+                }
+            }
+        }
+        header_image {
+            childImageSharp {
+                fluid {
+                    ...GatsbyImageSharpFluid_withWebp
+                }
+                fixed {
                     ...GatsbyImageSharpFixed
                 }
             }
@@ -221,6 +263,13 @@ query($id: String!){
             singers {
                 id
                 name
+                profile_image {
+                    childImageSharp {
+                        fluid {
+                            ...GatsbyImageSharpFluid_withWebp
+                        }
+                    }
+                }
             }
             thumbnail_image {
                 childImageSharp {
@@ -240,6 +289,13 @@ query($id: String!){
             singers {
                 id
                 name
+                profile_image {
+                    childImageSharp {
+                        fluid {
+                            ...GatsbyImageSharpFluid_withWebp
+                        }
+                    }
+                }
             }
             thumbnail_image {
                 childImageSharp {
@@ -259,6 +315,13 @@ query($id: String!){
             singers {
                 id
                 name
+                profile_image {
+                    childImageSharp {
+                        fluid {
+                            ...GatsbyImageSharpFluid_withWebp
+                        }
+                    }
+                }
             }
             thumbnail_image {
                 childImageSharp {

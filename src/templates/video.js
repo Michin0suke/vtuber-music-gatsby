@@ -135,21 +135,23 @@ export default ({ data: { video, allVideo }, location }) => {
 
 
             <div className='w-full max-w-4xl mx-auto'>
+                <div className='mb-10 bg-white lg:shadow'>
+                    {video.thumbnail_image?.childImageSharp?.fluid ?
+                        <YouTubePlayer
+                            nextVideoId={nextVideoId}
+                            video={video}
+                            className='w-full'
+                        />
+                    : <p>動画を取得できませんでした。</p>}
+                    <div className='lg:px-5'>
+                        <Link to={`/music/${video.music.id}`}>
+                            <Heading text={video.custom_music_name || video.music.title} className='mb-5' hoverEffect isMusicTitle/>
+                        </Link>
 
-                {video.thumbnail_image?.childImageSharp?.fluid ?
-                    <YouTubePlayer
-                        nextVideoId={nextVideoId}
-                        video={video}
-                        className='mb-7 w-full'
-                    />
-                : <p>動画を取得できませんでした。</p>}
-
-                <Link to={`/music/${video.music.id}`}>
-                    <Heading text={video.custom_music_name || video.music.title} className='mb-5' hoverEffect isMusicTitle/>
-                </Link>
-
-                <div className='pb-10 mb-6 border-b'>
-                    {video.singers.map((singer, key) => <ArtistCard artist={singer} key={key} className='mb-5'/>)}
+                        <div className='pb-3'>
+                            {video.singers.map((singer, key) => <ArtistCard artist={singer} key={key} className='mb-2' imgSize={16}/>)}
+                        </div>
+                    </div>
                 </div>
 
                 {video.custom_music_name &&
@@ -159,32 +161,28 @@ export default ({ data: { video, allVideo }, location }) => {
                     </div>
                 }
 
-                {video.music.lyricists.map((lyricist, key) => <ArtistCard artist={lyricist} key={key} className='mb-5' roleText='作詞'/>)}
-
-                {video.music.composers.map((composer, key) => <ArtistCard artist={composer} key={key} className='mb-5' roleText='作曲'/>)}
-
-                {video.music.arrangers.map((arranger, key) => <ArtistCard artist={arranger} key={key} className='mb-5' roleText='編曲'/>)}
-
-                {video.mixers.map((mixer, key) => <ArtistCard artist={mixer} key={key} className='mb-5' roleText='ミックス'/>)}
-
-                {video.off_vocals.map((off_vocal, key) => <ArtistCard artist={off_vocal} key={key} className='mb-5' roleText='オフボーカル'/>)}
-
-                {video.arrangers.map((arranger, key) => <ArtistCard artist={arranger} key={key} className='mb-5' roleText='アレンジ'/>)}
+                <div className='mb-10 lg:px-5 pt-5 pb-1 bg-white lg:shadow'>
+                    {video.music.lyricists.map((lyricist, key) => <ArtistCard artist={lyricist} key={key} className='mb-3' roleText='作詞'/>)}
+                    {video.music.composers.map((composer, key) => <ArtistCard artist={composer} key={key} className='mb-3' roleText='作曲'/>)}
+                    {video.music.arrangers.map((arranger, key) => <ArtistCard artist={arranger} key={key} className='mb-3' roleText='編曲'/>)}
+                    {video.mixers.map((mixer, key) => <ArtistCard artist={mixer} key={key} className='mb-3' roleText='ミックス'/>)}
+                    {video.off_vocals.map((off_vocal, key) => <ArtistCard artist={off_vocal} key={key} className='mb-3' roleText='オフボーカル'/>)}
+                    {video.arrangers.map((arranger, key) => <ArtistCard artist={arranger} key={key} className='mb-3' roleText='アレンジ'/>)}
+                </div>
 
                 {video.music.lyrics_url &&
-                    <div className='text-gray-700 ml-5 py-5'>
+                    <div className='mb-10 text-gray-700 ml-5 py-5'>
                         歌詞：<a href={video.music.lyrics_url} className='inline-block hover:bg-gray-200 rounded p-3'>外部サイトへジャンプ</a>
                     </div>
                 }
-                <div className='mb-16' />
 
                 {/* <Heading text='次に再生' className='mb-5'/>
                 {nextVideo && <VideoCard video={nextVideo} className='mx-auto w-full max-w-md mb-16'/>} */}
 
 
                 {sameSingerVideos &&
-                    <div>
-                        <HeadingH2 text='同じアーティストが歌っている動画' className='mb-5 w-full max-w-4xl mx-auto'/>
+                    <div className='lg:px-5 py-3 bg-white lg:shadow'>
+                        <Heading text='同じアーティストが歌っている動画' className='mb-5 w-full max-w-4xl mx-auto'/>
                         <div className='w-full sm:flex flex-wrap justify-start'>
                             {sameSingerVideos}
                         </div>

@@ -154,88 +154,101 @@ exports.sourceNodes = async ({ actions: { createNode }, createNodeId, createCont
     })
 }
 
+
 exports.onCreateNode = async ({ actions: { createNode }, node, getCache, createNodeId, boundActionCreators }) => {
     const { deleteNode } = boundActionCreators
+
+    const tryCreateRemoteFileNode = async (url, node_id) => {
+        let fileNode
+        try {
+            fileNode = await createRemoteFileNode({
+                url,
+                parentNodeId: node_id,
+                getCache,
+                createNode,
+                createNodeId,
+            })
+        } catch(e) {
+            // console.log(e)
+        }
+        return fileNode
+    }
 
     if (node.internal.type === 'Video') {
         let fileNode
 
         // たぶん一番綺麗なサムネイル。hq720との違いは不明
-        try {
-            fileNode = await createRemoteFileNode({
-                url: `https://i.ytimg.com/vi/${node.id}/maxresdefault.jpg`,
-                parentNodeId: node.id,
-                getCache,
-                createNode,
-                createNodeId,
-            })
-        } catch (e) {
-            // ignore
-        }
-
-        // 高画質なサムネイルを取得しようとするが、存在しない場合もある
-        try {
-            fileNode = await createRemoteFileNode({
-                url: `https://i.ytimg.com/vi/${node.id}/hq720.jpg`,
-                parentNodeId: node.id,
-                getCache,
-                createNode,
-                createNodeId,
-            })
-        } catch (e) {
-            // ignore
-        }
-
-        // 高画質版がない場合は、低画質版を取得する
-        if (!fileNode) {
-            try {
-                fileNode = await createRemoteFileNode({
-                    url: `https://i.ytimg.com/vi/${node.id}/sddefault.jpg`,
-                    parentNodeId: node.id,
-                    getCache,
-                    createNode,
-                    createNodeId,
-                })
-            } catch (e) {
-                // ignore
-            }
-        }
+        fileNode = await tryCreateRemoteFileNode(
+            `https://i.ytimg.com/vi/${node.id}/maxresdefault.jpg`,
+            node.id
+        )
+        ||
+        await tryCreateRemoteFileNode(
+            `https://i.ytimg.com/vi/${node.id}/hq720.jpg`,
+            node.id
+        )
+        ||
+        await tryCreateRemoteFileNode(
+            `https://i.ytimg.com/vi/${node.id}/sddefault.jpg`,
+            node.id
+        )
 
         // 高画質版、低画質版のいずれかが取得できている場合は、ノードの追加する
         if (fileNode) {
             node.thumbnail_image = fileNode.id
         } else {
-            console.log(`can't fetch thumbnail image (video_id: ${node.id})`)
+            // console.log(`can't fetch thumbnail image (video_id: ${node.id})`)
             deleteNode(node)
         }
     } else if (node.internal.type === 'Artist') {
-        const profileImgUrl = await fetch(`https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${node.id_youtube}&key=${youtubeApiKey}`)
-            .then(response => response.json())
-            .then(json => json.items && 
-                            json.items[0] &&
-                            json.items[0].snippet &&
-                            json.items[0].snippet.thumbnails &&
-                            json.items[0].snippet.thumbnails.high &&
-                            json.items[0].snippet.thumbnails.high.url)
-        let fileNode
+        let fileNodeIcon
 
-        if (profileImgUrl) {
-            fileNode = await createRemoteFileNode({
-                url: profileImgUrl,
-                parentNodeId: node.id,
-                getCache,
-                createNode,
-                createNodeId
-            })
-        }
+        fileNodeIcon = await tryCreateRemoteFileNode(
+            `https://assets.vtuber-music.com/img/icon/primary/${node.id}`,
+            node.id
+        )
+        ||
+        await tryCreateRemoteFileNode(
+            `https://assets.vtuber-music.com/img/icon/twitter/${node.id}`,
+            node.id
+        )
+        ||
+        await tryCreateRemoteFileNode(
+            `https://assets.vtuber-music.com/img/icon/youtube/${node.id}`,
+            node.id
+        )
 
-        if (fileNode) {
-            console.log('success fetch profile image')
-            node.profile_image = fileNode.id
+        if (fileNodeIcon) {
+            // console.log('success fetch profile image')
+            node.profile_image = fileNodeIcon.id
         } else {
             console.log('can\'t fetch profile image')
         }
-        
+
+
+        let fileNodeHeader
+
+        fileNodeHeader = await tryCreateRemoteFileNode(
+            `https://assets.vtuber-music.com/img/header/primary/${node.id}`,
+            node.id
+        )
+        ||
+        await tryCreateRemoteFileNode(
+            `https://assets.vtuber-music.com/img/header/twitter/${node.id}`,
+            node.id
+        )
+        ||
+        await tryCreateRemoteFileNode(
+            `https://assets.vtuber-music.com/img/header/youtube/${node.id}`,
+            node.id
+        )
+
+        if (fileNodeHeader) {
+            // console.log('success fetch header image')
+            node.header_image = fileNodeHeader.id
+        } else {
+            console.log('can\'t fetch header image')
+        }
     }
 }
 
@@ -361,6 +374,7 @@ exports.createSchemaCustomization = ({ actions: { createTypes } }) => {
             arranger_videos: [Video]! @link
             singer_videos: [Video]! @link
             profile_image: File @link
+            header_image: File @link
             created_at: Date! @dateformat
             updated_at: Date! @dateformat
         }

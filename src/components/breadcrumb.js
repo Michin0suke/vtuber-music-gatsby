@@ -35,8 +35,8 @@ export default ({ type, text, subText, className }) => {
             <nav className={`ml-1 ${className}`}>
                 <ul className='flex items-center text-gray-600 overflow-hidden'>
                     <li className='flex-shrink-0'>
-                        <div className='p-1.5 rounded-full'>
-                            <Home color='#777' className='w-5 h-5 mb-0.5'/>
+                        <div className='p-1 rounded-full'>
+                            <Home color='#777' className='w-4 h-4 mb-0.5'/>
                         </div>
                     </li>
                 </ul>
@@ -47,8 +47,8 @@ export default ({ type, text, subText, className }) => {
         list.push(
             <li className='flex-shrink-0' key={0}>
                 <Link to='/'>
-                    <div className='p-1.5 hover:bg-gray-200 rounded-full'>
-                        <Home color='#777' className='w-5 h-5 mb-0.5'/>
+                    <div className='p-1 hover:bg-gray-200 rounded-full'>
+                        <Home color='#777' className='w-4 h-4 mb-0.5'/>
                     </div>
                 </Link>
             </li>
@@ -59,25 +59,25 @@ export default ({ type, text, subText, className }) => {
         // HOME > ARTIST > EMA
         list.push(
             <li className='flex-shrink-0' key={1}>
-                <span className='p-1 pointer-events-none'>{`>`}</span>
-                <span className={`p-1 rounded ${text && 'hover:bg-gray-200 hover:text-black'}`}>
+                <span className='p-0.5 pointer-events-none'>{`>`}</span>
+                <span className={`p-0.5 rounded ${text && 'hover:bg-gray-200 hover:text-black'}`}>
                     <Link to={`/${typeList[type].url}`}>{typeList[type].text}</Link>
                 </span>
             </li>
         )
         list.push(
             <li className='flex-shrink-0 whitespace-nowrap flex' key={2}>
-                <span className='px-1 pointer-events-none'>{`>`}</span>
-                <span className='px-1 font-bold text-gray-800'>{text}</span>
-                {subText && <span className='pl-1'>({subText})</span>}
+                <span className='p-0.5 pointer-events-none'>{`>`}</span>
+                <span className='p-0.5 text-gray-800'>{text}</span>
+                {subText && <span className='p-0.5'>({subText})</span>}
             </li>
         )
     } else {
         // HOME > ARTIST
         list.push(
             <li className='flex-shrink-0' key={1}>
-                <span className='p-1 pointer-events-none'>{`>`}</span>
-                <span className={`p-1 rounded ${text && 'hover:bg-gray-200 hover:text-black'}`}>
+                <span className='p-0.5 pointer-events-none'>{`>`}</span>
+                <span className={`p-0.5 rounded ${text && 'hover:bg-gray-200 hover:text-black'}`}>
                     <span>{typeList[type].text}</span>
                 </span>
             </li>
@@ -86,7 +86,7 @@ export default ({ type, text, subText, className }) => {
 
     return (
         // HOME > VIDEO > CULT (EMA)
-        <nav className={`ml-1 ${className}`}>
+        <nav className={`ml-0.5 text-xs ${className}`}>
             <ul className='flex items-center text-gray-600 overflow-hidden'>
                 {list}
             </ul>
