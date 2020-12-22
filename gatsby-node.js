@@ -5,6 +5,9 @@ const { createHttpLink } = require('apollo-link-http')
 const { createRemoteFileNode } = require('gatsby-source-filesystem')
 const gql = require('graphql-tag')
 const { useStaticQuery, graphql } = require('gatsby')
+const realFs = require('fs')
+const gracefulFs = require('graceful-fs')
+gracefulFs.gracefulify(realFs)
 
 const youtubeApiKey = 'AIzaSyBkn0LB-sw4ZiPEs069rCEotczo1Qi6ZPY'
 
