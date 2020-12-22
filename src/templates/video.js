@@ -13,11 +13,23 @@ import SEO from '../components/seo'
 export default ({ data: { video, allVideo }, location }) => {
     const [nextVideoId, setNextVideoId] = useState(undefined)
     const [nextVideoChoicesId, setNextVideoChoicesId] = useState([])
+    const [sameSingerVideos, setSameSingerVideos] = useState([])
 
     useEffect(() => {
         // const Modernizer = modernizr.build({})
         // console.log(Modernizer.videoautoplay)
         decideNextVideoId(video, allVideo)
+
+        const sameSingerVideos = video.singers
+            .map(singer => (
+                singer.singer_videos)
+            )
+            .flat()
+            .reduce((acc, cur) => {
+                if(acc.map(i=>i.id).includes(cur.id) || cur.id === video.id) return acc
+                else return acc.concat(cur)
+            },[])
+        setSameSingerVideos(sameSingerVideos)
     }, [video, allVideo])
 
     const decideNextVideoId = async (video, allVideo) => {
@@ -95,34 +107,11 @@ export default ({ data: { video, allVideo }, location }) => {
         setNextVideoId(nextVideoChoicesId[Math.floor(nextVideoChoicesId.length * Math.random())])
     }
     
-
-    const sameSingerVideos = (() => {
-        let isEmptySameSingerVideos = true
-
-        const videoElements = (
-            video.singers.map(singer => (
-                singer.singer_videos.map((singerVideo, key) => {
-                    const showedVideos = [video.id]
-                    // ページの動画と同じ動画は関連にあげない
-                    if (showedVideos.includes(singerVideo.id)) {
-                        // console.log(`is exist: ${singerVideo.id}`)
-                        return ''
-                    }
-                    showedVideos.push(singerVideo.id)
-                    isEmptySameSingerVideos = false
-                    return <VideoCard key={`same-singer-videos-${key}`} video={singerVideo} className='mb-16 sm:px-3 sm:w-1/2 md:w-1/3'/>
-                })
-            ))
-        )
-
-        return isEmptySameSingerVideos ? undefined : videoElements
-    })()
-    
     return (
         <Layout>
             <SEO
                 title={`${video.music.title}`}
-                description={`[動画] ${video.music.title}をVtuberの${video.singers.map(a => a.name).join('さんと')}さんが歌っている動画です。`}
+                description={`${video.music.title}を${video.singers.map(a => a.name).join('さんと')}さんが歌っている動画です。`}
                 url={`https://vtuber-music.com/video/${video.id}`}
                 imgUrl={`https://vtuber-music.com${video.thumbnail_image?.childImageSharp?.fixed?.src}`}
                 isLargeCard
@@ -179,12 +168,19 @@ export default ({ data: { video, allVideo }, location }) => {
                 {/* <Heading text='次に再生' className='mb-5'/>
                 {nextVideo && <VideoCard video={nextVideo} className='mx-auto w-full max-w-md mb-16'/>} */}
 
-
-                {sameSingerVideos &&
+                {sameSingerVideos.length !== 0 &&
                     <div className='lg:px-5 py-3 bg-white lg:shadow'>
                         <Heading text='同じアーティストが歌っている動画' className='mb-5 w-full max-w-4xl mx-auto'/>
                         <div className='w-full sm:flex flex-wrap justify-start'>
-                            {sameSingerVideos}
+                            {
+                                sameSingerVideos.map((video, key) => 
+                                    <VideoCard
+                                        key={`same-singer-videos-${key}`}
+                                        video={video}
+                                        className='mb-16 sm:px-3 sm:w-1/2 md:w-1/3'
+                                    />
+                                )
+                            }
                         </div>
                     </div>
                 }

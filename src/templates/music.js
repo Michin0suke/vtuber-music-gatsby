@@ -23,7 +23,7 @@ return (
 <Layout>
     <SEO
         title={music.title}
-        description={`[楽曲] ${music.title}(${creators.join('&')})の詳細ページです。${music.videos.length}本の歌ってみた動画が登録されています。`}
+        description={`楽曲 ${music.title}(${creators.join('&')})のページです。${music.videos.length}本の歌ってみた動画が登録されています。`}
         imgUrl={`https://vtuber-music.com${music.videos?.[Math.floor(Math.random() * music.videos.length)]?.thumbnail_image?.childImageSharp?.fixed?.src}`}
         isLargeCard
     />

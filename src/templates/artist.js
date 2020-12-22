@@ -104,7 +104,7 @@ export default ({ data: { artist }}) => {
     <Layout>
         <SEO
             title={`${artist.name}`}
-            description={`[${artistType}] ${artist.name}${honorific}のプロフィールページです。${artist.singer_videos.length}本の歌ってみた動画が登録されています。`}
+            description={`${artist.name}${honorific}のプロフィールページです。${artist.singer_videos.length}本の歌ってみた動画が登録されています。`}
             url={`https://vtuber-music.com/artist/${artist.id}`}
             imgUrl={`https://vtuber-music.com${artist.profile_image?.childImageSharp?.fixed?.src}`}
         />
@@ -176,19 +176,24 @@ export default ({ data: { artist }}) => {
             <VideoSection headingText='ミックスを担当した動画' videos={artist.mixer_videos}/>
             <VideoSection headingText='オフボーカルを担当した動画' videos={artist.off_vocal_videos}/>
 
-            {artist.profile_source_type && artist.header_source_type &&
+            {(
+                artist.profile_source_type === 'twitter' ||
+                artist.header_source_type === 'youtube' ||
+                (artist.profile_source_type === 'primary' && artist.image_url_profile_icon_source_url) ||
+                (artist.profile_source_type === 'primary' && artist.image_url_profile_header_source_url)
+            ) &&
                 <div className='mb-7 pb-7 lg:px-5 bg-white lg:shadow'>
                     <Heading text='プロフィール画像の出典元' className='mb-5'/>
                     {artist.profile_source_type &&
                         <div className='px-5 text-xs text-gray-600'>
-                            {artist.profile_source_type === 'primary' && <p>アイコン画像: <a target='_blank' href={artist.image_url_profile_icon_source_url}>{artist.image_url_profile_icon_source_url}</a></p>}
+                            {artist.profile_source_type === 'primary' && artist.image_url_profile_icon_source_url && <p>アイコン画像: <a target='_blank' href={artist.image_url_profile_icon_source_url}>{artist.image_url_profile_icon_source_url}</a></p>}
                             {artist.profile_source_type === 'twitter' && <p>{`アイコン画像: ${artist.name}さん(@${artist.id_twitter})の${artist.profile_source_type}より(https://twitter.com/${artist.id_twitter})`}</p>}
                             {artist.profile_source_type === 'youtube' && <p>{`アイコン画像: ${artist.name}さんの${artist.profile_source_type}より(https://www.youtube.com/channel/${artist.id_youtube})`}</p>}
                         </div>
                     }
                     {artist.header_source_type &&
                         <div className='px-5 text-xs text-gray-600'>
-                            {artist.profile_source_type === 'primary' && <p>ヘッダー画像: <a target='_blank' href={artist.image_url_profile_header_source_url}>{artist.image_url_profile_header_source_url}</a></p>}
+                            {artist.profile_source_type === 'primary' && artist.image_url_profile_header_source_url && <p>ヘッダー画像: <a target='_blank' href={artist.image_url_profile_header_source_url}>{artist.image_url_profile_header_source_url}</a></p>}
                             {artist.header_source_type === 'twitter' && <p>{`ヘッダー画像: ${artist.name}さん(@${artist.id_twitter})の${artist.header_source_type}より(https://twitter.com/${artist.id_twitter})`}</p>}
                             {artist.header_source_type === 'youtube' && <p>{`ヘッダー画像: ${artist.name}さんの${artist.header_source_type}より(https://www.youtube.com/channel/${artist.id_youtube})`}</p>}
                         </div>

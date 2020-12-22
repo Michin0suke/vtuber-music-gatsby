@@ -8,17 +8,12 @@ module.exports = {
   plugins: [
     '@bumped-inc/gatsby-plugin-optional-chaining',
     `gatsby-plugin-postcss`,
-    // { 
-    //   resolve: `gatsby-plugin-purgecss`,
-    //   options: {
-    //     printRejected: true, // Print removed selectors and processed file names
-    //     develop: true, // Enable while using `gatsby develop`
-    //     tailwind: true, // Enable tailwindcss support
-    //     // whitelist: ['.youtubeContainer iframe'], // Don't remove this selector
-    //     // ignore: ['src/'], // Ignore files/folders
-    //     purgeOnly : ['node_modules/tailwindcss/'], // Purge only these files/folders
-    //   }
-    // },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://vtuber-music.com`,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

@@ -6,11 +6,11 @@ import SMMenu from './smMenu'
 import PCMenuLeft from './pcMenuLeft'
 
 const Layout = ({ children, currentPage }) => (
-  <div className='relative' style={{minHeight: '100vh'}}>
+  <div className='relative min-h-screen'>
     <Header/>
     <div className='flex w-full'>
       <PCMenuLeft currentPage={currentPage}/>
-      <main className='w-full z-20 gb-white lg:bg-gray-50'>
+      <main className='w-full pb-16 z-20 gb-white lg:bg-gray-50'>
         {children}
         <Footer/>
       </main>
