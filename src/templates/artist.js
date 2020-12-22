@@ -116,8 +116,17 @@ export default ({ data: { artist }}) => {
                 <div className='bg-white lg:shadow mb-10'>
                     <div className='relative w-full'>
                         <Img fluid={artist.header_image?.childImageSharp?.fluid}/>
-                        <div class='absolute'>
-                            <ProfileImg artist={artist} className='absolute left-5 lg:left-10 bottom-12 lg:bottom-14 w-24 lg:w-28 shadow-lg m-0'/>
+                        {artist.image_url_profile_header_source_url &&
+                            <a href={artist.image_url_profile_header_source_url}
+                                 target='_blank'
+                                 className='absolute top-0 left-0 w-full h-full opacity-10 hover:bg-white'
+                            />}
+                        <div class='absolute left-5 lg:left-10 -bottom-12 lg:-bottom-14'>
+                            <ProfileImg
+                                artist={artist}
+                                href={artist.image_url_profile_icon_source_url}
+                                className='w-24 lg:w-28 shadow-lg m-0'
+                            />
                         </div>
                     </div>
                     <h1 className='px-5 lg:px-10 pt-16 lg:pt-20 pb-7 text-xl text-gray-700'>{artist.name}{artist.name_ruby && `（${artist.name_ruby}）`}</h1>
@@ -131,37 +140,24 @@ export default ({ data: { artist }}) => {
                 </div>
             }
 
+            {artist.name_original &&
+                <div className='mb-10 pb-7 lg:px-5 bg-white lg:shadow'>
+                    <Heading text='フルネーム' className='mb-5'/>
+                    <p className='px-5 text-gray-700 whitespace-pre-wrap'>{artist.name_original}</p>
+                </div>
+            }
+
             {artist.profile &&
-                <div className='mb-10 pb-7 bg-white lg:shadow'>
+                <div className='mb-10 pb-7 lg:px-5 bg-white lg:shadow'>
                     <Heading text='プロフィール' className='mb-5'/>
                     <p className='px-5 text-gray-700 whitespace-pre-wrap'>{artist.profile}</p>
                 </div>
             }
 
             {artist.birthday &&
-                <div className='mb-10 pb-5 bg-white lg:shadow'>
+                <div className='mb-10 pb-5 lg:px-5 bg-white lg:shadow'>
                     <Heading text='誕生日' className='mb-5'/>
                     <p className='px-6'>{dateFormatter(artist.birthday)}</p>
-                </div>
-            }
-
-            {artist.profile_source_type && artist.header_source_type &&
-                <div className='mb-10 pb-7 lg:px-5 bg-white lg:shadow'>
-                    <Heading text='プロフィール画像の出典元' className='mb-5'/>
-                    {artist.profile_source_type &&
-                        <div className='text-xs text-gray-600'>
-                            {artist.profile_source_type === 'primary' && <p>{`アイコン画像: ${artist.image_url_profile_icon_source_url}`}</p>}
-                            {artist.profile_source_type === 'twitter' && <p>{`アイコン画像: ${artist.name}さん(@${artist.id_twitter})の${artist.profile_source_type}より(https://twitter.com/${artist.id_twitter})`}</p>}
-                            {artist.profile_source_type === 'youtube' && <p>{`アイコン画像: ${artist.name}さんの${artist.profile_source_type}より(https://www.youtube.com/channel/${artist.id_youtube})`}</p>}
-                        </div>
-                    }
-                    {artist.header_source_type &&
-                        <div className='text-xs text-gray-600'>
-                            {artist.profile_source_type === 'primary' && <p>ヘッダー画像: <a target='_blank' href={artist.image_url_profile_header_source_url}>{artist.image_url_profile_header_source_url}</a></p>}
-                            {artist.header_source_type === 'twitter' && <p>{`ヘッダー画像: ${artist.name}さん(@${artist.id_twitter})の${artist.header_source_type}より(https://twitter.com/${artist.id_twitter})`}</p>}
-                            {artist.header_source_type === 'youtube' && <p>{`ヘッダー画像: ${artist.name}さんの${artist.header_source_type}より(https://www.youtube.com/channel/${artist.id_youtube})`}</p>}
-                        </div>
-                    }
                 </div>
             }
 
@@ -179,6 +175,26 @@ export default ({ data: { artist }}) => {
             <VideoSection headingText='アレンジを担当した動画' videos={artist.arranger_videos}/>
             <VideoSection headingText='ミックスを担当した動画' videos={artist.mixer_videos}/>
             <VideoSection headingText='オフボーカルを担当した動画' videos={artist.off_vocal_videos}/>
+
+            {artist.profile_source_type && artist.header_source_type &&
+                <div className='mb-10 pb-7 lg:px-5 bg-white lg:shadow'>
+                    <Heading text='プロフィール画像の出典元' className='mb-5'/>
+                    {artist.profile_source_type &&
+                        <div className='text-xs text-gray-600'>
+                            {artist.profile_source_type === 'primary' && <p>アイコン画像: <a target='_blank' href={artist.image_url_profile_icon_source_url}>{artist.image_url_profile_icon_source_url}</a></p>}
+                            {artist.profile_source_type === 'twitter' && <p>{`アイコン画像: ${artist.name}さん(@${artist.id_twitter})の${artist.profile_source_type}より(https://twitter.com/${artist.id_twitter})`}</p>}
+                            {artist.profile_source_type === 'youtube' && <p>{`アイコン画像: ${artist.name}さんの${artist.profile_source_type}より(https://www.youtube.com/channel/${artist.id_youtube})`}</p>}
+                        </div>
+                    }
+                    {artist.header_source_type &&
+                        <div className='text-xs text-gray-600'>
+                            {artist.profile_source_type === 'primary' && <p>ヘッダー画像: <a target='_blank' href={artist.image_url_profile_header_source_url}>{artist.image_url_profile_header_source_url}</a></p>}
+                            {artist.header_source_type === 'twitter' && <p>{`ヘッダー画像: ${artist.name}さん(@${artist.id_twitter})の${artist.header_source_type}より(https://twitter.com/${artist.id_twitter})`}</p>}
+                            {artist.header_source_type === 'youtube' && <p>{`ヘッダー画像: ${artist.name}さんの${artist.header_source_type}より(https://www.youtube.com/channel/${artist.id_youtube})`}</p>}
+                        </div>
+                    }
+                </div>
+            }
         </div>
     </Layout>
     )
@@ -190,6 +206,7 @@ query($id: String!){
         id
         name
         name_ruby
+        name_original
         profile
         sex
         birthday
