@@ -89,6 +89,6 @@ export default ({ artist, className }) => {
             </div>
         )
     } else {
-        return ''
+        return null
     }
 }

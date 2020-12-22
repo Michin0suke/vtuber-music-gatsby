@@ -97,6 +97,7 @@ exports.sourceNodes = async ({ actions: { createNode }, createNodeId, createCont
                     id
                     name
                     name_ruby
+                    name_original
                     profile
                     sex
                     birthday
@@ -115,6 +116,8 @@ exports.sourceNodes = async ({ actions: { createNode }, createNodeId, createCont
                     id_twitcasting
                     id_facebook
                     id_pixiv
+                    image_url_profile_icon_source_url
+                    image_url_profile_header_source_url
                     youtube_channel_is_user
                     recommends { id }
                     children { id }
@@ -201,53 +204,46 @@ exports.onCreateNode = async ({ actions: { createNode }, node, getCache, createN
             deleteNode(node)
         }
     } else if (node.internal.type === 'Artist') {
-        let fileNodeIcon
-
-        fileNodeIcon = await tryCreateRemoteFileNode(
-            `https://assets.vtuber-music.com/img/icon/primary/${node.id}`,
-            node.id
-        )
-        ||
-        await tryCreateRemoteFileNode(
-            `https://assets.vtuber-music.com/img/icon/twitter/${node.id}`,
-            node.id
-        )
-        ||
-        await tryCreateRemoteFileNode(
-            `https://assets.vtuber-music.com/img/icon/youtube/${node.id}`,
-            node.id
-        )
-
-        if (fileNodeIcon) {
-            // console.log('success fetch profile image')
-            node.profile_image = fileNodeIcon.id
-        } else {
-            console.log('can\'t fetch profile image')
+        const fetchImageFromAssets = async (imgType, srcType) => {
+            const fileNode = await tryCreateRemoteFileNode(
+                `https://assets.vtuber-music.com/img/${imgType}/${srcType}/${node.id}`,
+                node.id
+            )
+            if (fileNode) {
+                switch(imgType) {
+                    case 'icon':
+                        node.profile_source_type = srcType
+                        break
+                    case 'header':
+                        node.header_source_type = srcType
+                        break
+                    default:
+                        console.log(`予期されていないsrcType(${srcType})です。(fetchImageFromAssets)`)
+                }
+            }
+            return fileNode
         }
 
-
-        let fileNodeHeader
-
-        fileNodeHeader = await tryCreateRemoteFileNode(
-            `https://assets.vtuber-music.com/img/header/primary/${node.id}`,
-            node.id
-        )
+        // プロフィール画像のフェッチ
+        let fileNodeIcon = await fetchImageFromAssets('icon', 'primary')
         ||
-        await tryCreateRemoteFileNode(
-            `https://assets.vtuber-music.com/img/header/twitter/${node.id}`,
-            node.id
-        )
+        await fetchImageFromAssets('icon', 'twitter')
         ||
-        await tryCreateRemoteFileNode(
-            `https://assets.vtuber-music.com/img/header/youtube/${node.id}`,
-            node.id
-        )
+        await fetchImageFromAssets('icon', 'youtube')
+
+        if (fileNodeIcon) {
+            node.profile_image = fileNodeIcon.id
+        }
+
+        // ヘッダー画像のフェッチ
+        let fileNodeHeader = await fetchImageFromAssets('header', 'primary')
+        ||
+        await fetchImageFromAssets('header', 'twitter')
+        ||
+        await fetchImageFromAssets('header', 'youtube')
 
         if (fileNodeHeader) {
-            // console.log('success fetch header image')
             node.header_image = fileNodeHeader.id
-        } else {
-            console.log('can\'t fetch header image')
         }
     }
 }
@@ -344,6 +340,7 @@ exports.createSchemaCustomization = ({ actions: { createTypes } }) => {
             id: String!
             name: String!
             name_ruby: String
+            name_original: String
             profile: String
             sex: String
             birthday: Date @dateformat
@@ -362,6 +359,8 @@ exports.createSchemaCustomization = ({ actions: { createTypes } }) => {
             id_twitcasting: String
             id_facebook: String
             id_pixiv: Int
+            image_url_profile_icon_source_url: String
+            image_url_profile_header_source_url: String
             youtube_channel_is_user: Boolean!
             recommends: [Artist]! @link
             children: [Artist]! @link
@@ -374,7 +373,9 @@ exports.createSchemaCustomization = ({ actions: { createTypes } }) => {
             arranger_videos: [Video]! @link
             singer_videos: [Video]! @link
             profile_image: File @link
+            profile_source_type: String
             header_image: File @link
+            header_source_type: String
             created_at: Date! @dateformat
             updated_at: Date! @dateformat
         }
