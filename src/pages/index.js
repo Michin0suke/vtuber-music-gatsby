@@ -69,7 +69,7 @@ const IndexPage = ({ data: { allArtist, allVideo, vtuberMusicIcon } }) => {
 
         <div className='sm:flex flex-wrap justify-between'>
             {allVideo.nodes.slice(0, 12).map((video, key) => (
-                <VideoCard video={video} className='mb-16 sm:px-3 w-full sm:w-1/2 md:w-1/3 xl:w-1/4' key={key}/>
+                <VideoCard video={video} className='mb-12 sm:px-3 w-full sm:w-1/2 md:w-1/3 xl:w-1/4' key={key}/>
             ))}
         </div>
 

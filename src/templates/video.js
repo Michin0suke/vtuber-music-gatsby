@@ -135,12 +135,12 @@ export default ({ data: { video, allVideo }, location }) => {
 
 
             <div className='w-full max-w-4xl mx-auto'>
-                <div className='mb-10 bg-white lg:shadow'>
+                <div className='mb-7 bg-white lg:shadow'>
                     {video.thumbnail_image?.childImageSharp?.fluid ?
                         <YouTubePlayer
                             nextVideoId={nextVideoId}
                             video={video}
-                            className='w-full'
+                            className='mb-2 w-full'
                         />
                     : <p>動画を取得できませんでした。</p>}
                     <div className='lg:px-5'>
@@ -161,7 +161,7 @@ export default ({ data: { video, allVideo }, location }) => {
                     </div>
                 }
 
-                <div className='mb-10 lg:px-5 pt-5 pb-1 bg-white lg:shadow'>
+                <div className='mb-7 lg:px-5 pt-5 pb-1 bg-white lg:shadow'>
                     {video.music.lyricists.map((lyricist, key) => <ArtistCard artist={lyricist} key={key} className='mb-3' roleText='作詞'/>)}
                     {video.music.composers.map((composer, key) => <ArtistCard artist={composer} key={key} className='mb-3' roleText='作曲'/>)}
                     {video.music.arrangers.map((arranger, key) => <ArtistCard artist={arranger} key={key} className='mb-3' roleText='編曲'/>)}
@@ -171,7 +171,7 @@ export default ({ data: { video, allVideo }, location }) => {
                 </div>
 
                 {video.music.lyrics_url &&
-                    <div className='mb-10 text-gray-700 ml-5 py-5'>
+                    <div className='mb-7 text-gray-700 ml-5 py-5'>
                         歌詞：<a href={video.music.lyrics_url} className='inline-block hover:bg-gray-200 rounded p-3'>外部サイトへジャンプ</a>
                     </div>
                 }

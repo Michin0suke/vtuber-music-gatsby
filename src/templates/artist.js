@@ -15,7 +15,7 @@ import MusicTitle from '../components/musicTitle'
 const ArtistSection = ({ headingText, artists }) => {
     if (artists.length !== 0) {
         return (
-            <div className='mb-10 pb-5 lg:px-5 bg-white lg:shadow'>
+            <div className='mb-7 pb-5 lg:px-5 bg-white lg:shadow'>
                 <Heading text={ headingText } className='mb-5'/>
 
                 <div className='px-5'>
@@ -33,7 +33,7 @@ const ArtistSection = ({ headingText, artists }) => {
 const MusicSection = ({ headingText, music }) => {
     if (music.length !== 0) {
         return (
-            <div className='mb-10 pb-5 lg:px-5 bg-white lg:shadow'>
+            <div className='mb-7 pb-5 lg:px-5 bg-white lg:shadow'>
                 <Heading text={headingText} className='mb-5' />
                 <div className='px-5 flex flex-wrap'>
                 { music.map((music, key) => <MusicTitle key={key} music={music} className='mb-2 w-full sm:w-1/2 lg:w-1/3'/> )}
@@ -48,12 +48,12 @@ const MusicSection = ({ headingText, music }) => {
 const VideoSection = ({ headingText, videos }) => {
     if (videos.length !== 0) {
         return (
-            <div className='mb-10 pb-5 lg:px-5 bg-white lg:shadow'>
+            <div className='mb-7 pb-5 lg:px-5 bg-white lg:shadow'>
                 <Heading text={headingText} count={videos.length} className='mb-5'/>
     
                 <div className='flex flex-wrap'>
                     {videos.map((video,key) => (
-                        <VideoCard key={key} video={video} className='mb-16 sm:px-3 w-full sm:w-1/2 md:w-1/3'/>
+                        <VideoCard key={key} video={video} className='mb-12 sm:px-3 w-full sm:w-1/2 md:w-1/3'/>
                     ))}
                 </div>
             </div>
@@ -113,7 +113,7 @@ export default ({ data: { artist }}) => {
         <div className='max-w-4xl mx-auto'>
 
             {artist.header_image !== null &&
-                <div className='bg-white lg:shadow mb-10'>
+                <div className='bg-white lg:shadow mb-7'>
                     <div className='relative w-full'>
                         <Img fluid={artist.header_image?.childImageSharp?.fluid}/>
                         {artist.image_url_profile_header_source_url &&
@@ -134,28 +134,28 @@ export default ({ data: { artist }}) => {
             }
 
             {artist.header_image !== null ||
-                <div className='mb-10 pb-7 lg:px-5 bg-white lg:shadow'>
+                <div className='mb-7 pb-7 lg:px-5 bg-white lg:shadow'>
                     <Heading text={artistType} className='mb-5'/>
                     <ArtistCard artist={artist} imgSize={20} noLink withRuby/>
                 </div>
             }
 
             {artist.name_original &&
-                <div className='mb-10 pb-7 lg:px-5 bg-white lg:shadow'>
+                <div className='mb-7 pb-7 lg:px-5 bg-white lg:shadow'>
                     <Heading text='フルネーム' className='mb-5'/>
                     <p className='px-5 text-gray-700 whitespace-pre-wrap'>{artist.name_original}</p>
                 </div>
             }
 
             {artist.profile &&
-                <div className='mb-10 pb-7 lg:px-5 bg-white lg:shadow'>
+                <div className='mb-7 pb-7 lg:px-5 bg-white lg:shadow'>
                     <Heading text='プロフィール' className='mb-5'/>
                     <p className='px-5 text-gray-700 whitespace-pre-wrap'>{artist.profile}</p>
                 </div>
             }
 
             {artist.birthday &&
-                <div className='mb-10 pb-5 lg:px-5 bg-white lg:shadow'>
+                <div className='mb-7 pb-5 lg:px-5 bg-white lg:shadow'>
                     <Heading text='誕生日' className='mb-5'/>
                     <p className='px-6'>{dateFormatter(artist.birthday)}</p>
                 </div>
@@ -165,7 +165,7 @@ export default ({ data: { artist }}) => {
             <ArtistSection headingText='所属しているグループ' artists={artist.parents}/>
             <ArtistSection headingText='似ているタイプのアーティスト' artists={artist.recommends}/>
             
-            <ArtistCardLinks artist={artist} className='mb-10 pb-5 px-5 bg-white lg:shadow'/>
+            <ArtistCardLinks artist={artist} className='mb-7 pb-5 px-5 bg-white lg:shadow'/>
 
             <MusicSection headingText='作曲した楽曲' music={artist.composer_music}/>
             <MusicSection headingText='作詞した楽曲' music={artist.lyricist_music}/>
@@ -177,17 +177,17 @@ export default ({ data: { artist }}) => {
             <VideoSection headingText='オフボーカルを担当した動画' videos={artist.off_vocal_videos}/>
 
             {artist.profile_source_type && artist.header_source_type &&
-                <div className='mb-10 pb-7 lg:px-5 bg-white lg:shadow'>
+                <div className='mb-7 pb-7 lg:px-5 bg-white lg:shadow'>
                     <Heading text='プロフィール画像の出典元' className='mb-5'/>
                     {artist.profile_source_type &&
-                        <div className='text-xs text-gray-600'>
+                        <div className='px-5 text-xs text-gray-600'>
                             {artist.profile_source_type === 'primary' && <p>アイコン画像: <a target='_blank' href={artist.image_url_profile_icon_source_url}>{artist.image_url_profile_icon_source_url}</a></p>}
                             {artist.profile_source_type === 'twitter' && <p>{`アイコン画像: ${artist.name}さん(@${artist.id_twitter})の${artist.profile_source_type}より(https://twitter.com/${artist.id_twitter})`}</p>}
                             {artist.profile_source_type === 'youtube' && <p>{`アイコン画像: ${artist.name}さんの${artist.profile_source_type}より(https://www.youtube.com/channel/${artist.id_youtube})`}</p>}
                         </div>
                     }
                     {artist.header_source_type &&
-                        <div className='text-xs text-gray-600'>
+                        <div className='px-5 text-xs text-gray-600'>
                             {artist.profile_source_type === 'primary' && <p>ヘッダー画像: <a target='_blank' href={artist.image_url_profile_header_source_url}>{artist.image_url_profile_header_source_url}</a></p>}
                             {artist.header_source_type === 'twitter' && <p>{`ヘッダー画像: ${artist.name}さん(@${artist.id_twitter})の${artist.header_source_type}より(https://twitter.com/${artist.id_twitter})`}</p>}
                             {artist.header_source_type === 'youtube' && <p>{`ヘッダー画像: ${artist.name}さんの${artist.header_source_type}より(https://www.youtube.com/channel/${artist.id_youtube})`}</p>}
