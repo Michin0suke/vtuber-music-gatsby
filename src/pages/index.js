@@ -52,13 +52,34 @@ const sliderSettingsProfileImages = {
     ]
   };
 
-const IndexPage = ({ data: { allArtist, allVideo, vtuberMusicIcon } }) => {
+const IndexPage = ({ data: { allVideoSortByCreatedAt, allVideoSortByReleaseDate, vtuberMusicIcon } }) => {
     const [showVideoIndex, setShowVideoIndex] = useState(24)
+    const [showVideos, setShowVideos] = useState(allVideoSortByReleaseDate.nodes)
+    const [sortSelected, setSortSelected] = useState(0)
 
     return (
     <Layout currentPage='/'>
         <SEO isTop imgUrl={`https://vtuber-music.com${vtuberMusicIcon.childImageSharp.fixed.src}`}/>
         <p className='px-2 py-1 text-gray-500 text-xs'>Vtuberの歌ってみた動画をまとめたサイトです。</p>
+
+        <div className='max-w-lg mx-auto py-2 pb-5 px-5'>
+            <ul className='flex justify-around w-full border bg-white text-gray-700 rounded cursor-pointer'>
+                <li
+                    onClick={() => {
+                        setShowVideos(allVideoSortByReleaseDate.nodes)
+                        setSortSelected(0)
+                    }}
+                    className={`border-r w-1/2 text-center ${sortSelected === 0 && 'bg-gray-100'}`}
+                >アップロード日順</li>
+                <li
+                    onClick={() => {
+                        setShowVideos(allVideoSortByCreatedAt.nodes)
+                        setSortSelected(1)
+                    }}
+                    className={`w-1/2 text-center ${sortSelected === 1 && 'bg-gray-100'}`}
+                >追加日順</li>
+            </ul>
+        </div>
 
         {/* <Slider {...sliderSettingsHeader} className='mx-auto mb-16'>
             { headerVideos
@@ -68,13 +89,13 @@ const IndexPage = ({ data: { allArtist, allVideo, vtuberMusicIcon } }) => {
         </Slider> */}
 
         <div className='sm:flex flex-wrap justify-between'>
-            {allVideo.nodes.slice(0, 12).map((video, key) => (
+            {showVideos.slice(0, 12).map((video, key) => (
                 <VideoCard video={video} className='mb-12 sm:px-3 w-full sm:w-1/2 md:w-1/3 xl:w-1/4' key={key}/>
             ))}
         </div>
 
         {/* <pre>
-            {JSON.stringify(allVideo.nodes[9], null, 4)}
+            {JSON.stringify(showVideos.nodes[9], null, 4)}
         </pre> */}
         
         {/* <HeadingH2 text='100名以上のVtuberを登録済み！' className='mb-2'/> */}
@@ -95,11 +116,10 @@ const IndexPage = ({ data: { allArtist, allVideo, vtuberMusicIcon } }) => {
         <InfiniteScroll
             dataLength={showVideoIndex - 12} //This is important field to render the next data
             next={() => setShowVideoIndex(showVideoIndex + 12)}
-            hasMore={allVideo.nodes.length > showVideoIndex}
-            // loader={<h4>Loading...</h4>}
+            hasMore={showVideos.length > showVideoIndex}
             className='sm:flex flex-wrap justify-start'
         >
-            {allVideo.nodes.slice(12, showVideoIndex).map((video, key) => (
+            {showVideos.slice(12, showVideoIndex).map((video, key) => (
                 <VideoCard video={video} className='mb-16 sm:px-3 w-full sm:w-1/2 md:w-1/3 xl:w-1/4' key={key}/>
             ))}
         </InfiniteScroll>
@@ -128,7 +148,34 @@ export const query = graphql`
             }
         }
     }
-    allVideo(sort: {order: DESC, fields: created_at}) {
+    allVideoSortByCreatedAt:allVideo(sort: {order: DESC, fields: created_at}) {
+        nodes {
+            id
+            thumbnail_image {
+                childImageSharp {
+                    fluid(maxWidth: 300) {
+                        ...GatsbyImageSharpFluid_withWebp
+                    }
+                }
+            }
+            music {
+                id
+                title
+            }
+            singers {
+                id
+                name
+                profile_image {
+                    childImageSharp {
+                        fluid(maxWidth: 60) {
+                            ...GatsbyImageSharpFluid_withWebp
+                        }
+                    }
+                }
+            }
+        }
+    }
+    allVideoSortByReleaseDate:allVideo(sort: {order: DESC, fields: release_date}) {
         nodes {
             id
             thumbnail_image {

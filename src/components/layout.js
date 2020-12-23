@@ -10,7 +10,7 @@ const Layout = ({ children, currentPage }) => (
     <Header/>
     <div className='flex w-full'>
       <PCMenuLeft currentPage={currentPage}/>
-      <main className='w-full pb-16 z-20 gb-white lg:bg-gray-50'>
+      <main className='w-full pb-16 z-20 gb-white sm:bg-gray-50'>
         {children}
         <Footer/>
       </main>
