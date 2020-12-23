@@ -1,40 +1,18 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import React from "react"
-import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
 
 function SEO({ description, lang, meta, title, url, imgUrl, isTop, isLargeCard}) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `
-  )
+  const metaTitle = isTop ? `Vtuber Music | バーチャルYouTuberの歌ってみた動画まとめ` : `${title} | Vtuber Music`
+  const metaDescription = isTop ? `Vtuberの歌ってみた動画をまとめたサイトです。` : description
 
-  const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
+  console.log(metaDescription)
 
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={isTop ? defaultTitle : title}
-      titleTemplate={isTop ? null : `%s | ${defaultTitle}`}
+      title={metaTitle}
       meta={[
         {
           name: `description`,
@@ -42,7 +20,7 @@ function SEO({ description, lang, meta, title, url, imgUrl, isTop, isLargeCard})
         },
         {
           property: `og:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           property: `og:description`,
@@ -66,35 +44,21 @@ function SEO({ description, lang, meta, title, url, imgUrl, isTop, isLargeCard})
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata?.author || ``,
+          content: `@VtuberMusicCom` || ``,
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           name: `twitter:description`,
           content: metaDescription,
         },
-      ].concat(meta)}
+      ]}
     >
       <script data-ad-client="ca-pub-5595803406159604" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     </Helmet>
   )
-}
-
-SEO.defaultProps = {
-  lang: `ja`,
-  meta: [],
-  title: `Vtuber Music - バーチャルYouTuberの歌ってみた動画まとめ`,
-  description: `Vtuberの歌ってみた動画をまとめたサイトです。`,
-}
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
 }
 
 export default SEO
