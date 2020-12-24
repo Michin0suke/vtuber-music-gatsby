@@ -10,6 +10,7 @@ const gracefulFs = require('graceful-fs')
 gracefulFs.gracefulify(realFs)
 
 const youtubeApiKey = 'AIzaSyBkn0LB-sw4ZiPEs069rCEotczo1Qi6ZPY'
+const remoteAssetRandom = 'b4IGVlrljGlek3CVfK9Ig8yzGzEmQo7'
 
 const client = new ApolloClient({
     link: createHttpLink({
@@ -209,7 +210,7 @@ exports.onCreateNode = async ({ actions: { createNode }, node, getCache, createN
     } else if (node.internal.type === 'Artist') {
         const fetchImageFromAssets = async (imgType, srcType) => {
             const fileNode = await tryCreateRemoteFileNode(
-                `https://assets.vtuber-music.com/img/${imgType}/${srcType}/${node.id}`,
+                `https://images.vtuber-music.com/img_${remoteAssetRandom}/${imgType}/${srcType}/${node.id}`,
                 node.id
             )
             if (fileNode) {
