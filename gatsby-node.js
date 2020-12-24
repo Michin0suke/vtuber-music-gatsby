@@ -210,7 +210,7 @@ exports.onCreateNode = async ({ actions: { createNode }, node, getCache, createN
     } else if (node.internal.type === 'Artist') {
         const fetchImageFromAssets = async (imgType, srcType) => {
             const fileNode = await tryCreateRemoteFileNode(
-                `https://images.vtuber-music.com/img_${remoteAssetRandom}/${imgType}/${srcType}/${node.id}`,
+                `https://statics.vtuber-music.com/img_${remoteAssetRandom}/${imgType}/${srcType}/${node.id}`,
                 node.id
             )
             if (fileNode) {
