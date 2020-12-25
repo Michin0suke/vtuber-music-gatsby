@@ -19,14 +19,14 @@ const Row = ({ currentPage, href, text, Img, imgClassName }) => (
 )
 
 export default ({ currentPage }) => (
-    <div className={`hidden sm:block w-48 bg-white`} style={{minHeight: '100vh'}}>
+    <nav className={`hidden sm:block w-48 bg-white`} style={{minHeight: '100vh'}}>
         <ul className='fixed mt-10 w-48'>
             <Row currentPage={currentPage} href='/' text='ホーム' Img={Home} imgClassName='w-5'/>
-            <Row currentPage={currentPage} href='/recommends' text='おすすめ' Img={ThumbsUp} imgClassName='w-5'/>
-            <Row currentPage={currentPage} href='/hots' text='人気' Img={Fire} imgClassName='w-4'/>
+            {/* <Row currentPage={currentPage} href='/recommends' text='おすすめ' Img={ThumbsUp} imgClassName='w-5'/> */}
+            {/* <Row currentPage={currentPage} href='/hots' text='人気' Img={Fire} imgClassName='w-4'/> */}
             <Row currentPage={currentPage} href='/artists' text='アーティスト' Img={Profile} imgClassName='w-3'/>
             <Row currentPage={currentPage} href='/videos' text='検索' Img={Search} imgClassName='w-5'/>
-            <Row currentPage={currentPage} href='/others' text='その他' Img={Ellipsis} imgClassName='w-5'/>
+            {/* <Row currentPage={currentPage} href='/others' text='その他' Img={Ellipsis} imgClassName='w-5'/> */}
         </ul>
-    </div>
+    </nav>
 )

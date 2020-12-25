@@ -157,7 +157,12 @@ export default ({ data: { artist }}) => {
             {artist.birthday &&
                 <div className='mb-7 pb-5 lg:px-5 bg-white lg:shadow'>
                     <Heading text='誕生日' className='mb-5'/>
-                    <p className='px-6'>{dateFormatter(artist.birthday)}</p>
+                    <time
+                        datetime={artist.birthday && artist.birthday.replace('9999-', '')}
+                        className='px-6'
+                    >
+                        {dateFormatter(artist.birthday)}
+                    </time>
                 </div>
             }
 

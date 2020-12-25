@@ -28,7 +28,7 @@ export const VideoCardHeader = ({ video, className }) => (
 )
 
 export default ({ video, className }) => (
-    <div className={`relative md:rounded overflow-hidden ${className}`}>
+    <article className={`relative md:rounded overflow-hidden ${className}`}>
         <VideoThumbnail to={`/video/${video.id}`} video={video} className='mb-2' withHoverLink/>
         <div className='z-10 flex'>
             <Link to={`/artist/${video.singers[0].id}`} className='relative'>
@@ -36,12 +36,14 @@ export default ({ video, className }) => (
             </Link>
             <div>
                 <Link to={`/video/${video.id}`}>
-                    <h4 className='py-1 text-md text-gray-900'>{video.custom_music_name || video.music.title}</h4>
+                    <h2 className='py-1'>
+                        <cite className='text-md text-gray-900 not-italic'>{video.custom_music_name || video.music.title}</cite>
+                    </h2>
                 </Link>
                 <Link to={`/artist/${video.singers[0].id}`}>
                     <p className='pb-2.5 text-sm text-gray-500 hover:text-black'>{video.singers.map(singer => singer.name).join(' & ')}</p>
                 </Link>
             </div>
         </div>
-    </div>
+    </article>
 )

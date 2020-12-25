@@ -1,15 +1,11 @@
 import React, { useState } from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import SEO from '../components/seo'
-import ProfileImage from '../components/profileImage'
 import Layout from "../components/layout"
-import { HeadingH2 } from '../components/heading'
-import Slider from "react-slick";
-import VideoCard, { VideoCardHeader } from '../components/videoCard'
+import VideoCard from '../components/videoCard'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './index.css'
-import { headerVideos } from '../custom/index'
 import InfiniteScroll from 'react-infinite-scroll-component'
 
 const sliderSettingsHeader = {
@@ -64,20 +60,28 @@ const IndexPage = ({ data: { allVideoSortByCreatedAt, allVideoSortByReleaseDate,
 
         <div className='max-w-lg mx-auto py-2 pb-5 px-5'>
             <ul className='flex justify-around w-full border bg-white text-gray-700 rounded cursor-pointer'>
-                <li
-                    onClick={() => {
-                        setShowVideos(allVideoSortByReleaseDate.nodes)
-                        setSortSelected(0)
-                    }}
-                    className={`border-r w-1/2 text-center ${sortSelected === 0 && 'bg-gray-100'}`}
-                >アップロード日順</li>
-                <li
-                    onClick={() => {
-                        setShowVideos(allVideoSortByCreatedAt.nodes)
-                        setSortSelected(1)
-                    }}
-                    className={`w-1/2 text-center ${sortSelected === 1 && 'bg-gray-100'}`}
-                >追加日順</li>
+                <li className='w-1/2 border-r'>
+                    <button
+                        className={`inline-block w-full focus:outline-none text-center ${sortSelected === 0 && 'bg-gray-100'}`}
+                        onClick={() => {
+                            setShowVideos(allVideoSortByReleaseDate.nodes)
+                            setSortSelected(0)
+                        }}
+                    >
+                        アップロード日順
+                    </button>
+                </li>
+                <li className='w-1/2'>
+                    <button
+                        className={`inline-block w-full focus:outline-none text-center ${sortSelected === 1 && 'bg-gray-100'}`}
+                        onClick={() => {
+                            setShowVideos(allVideoSortByCreatedAt.nodes)
+                            setSortSelected(1)
+                        }}
+                    >
+                        追加日順
+                    </button>
+                </li>
             </ul>
         </div>
 
