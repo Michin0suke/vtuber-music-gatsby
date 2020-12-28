@@ -170,7 +170,9 @@ exports.onCreateNode = async ({ actions: { createNode }, node, getCache, createN
                 createNode,
                 createNodeId,
             })
-        } catch(e) {}
+        } catch(e) {
+            console.log(e)
+        }
         return fileNode
     }
 

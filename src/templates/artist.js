@@ -121,6 +121,13 @@ export default ({ data: { artist }}) => {
                                  target='_blank'
                                  className='absolute top-0 left-0 w-full h-full opacity-10 hover:bg-white'
                             />}
+                        {artist.header_source_type &&
+                            <div className='absolute right-2 bottom-0 text-xs'>
+                                {artist.profile_source_type === 'primary' && artist.image_url_profile_header_source_url && <span>{artist.image_url_profile_header_source_url}</span>}
+                                {artist.header_source_type === 'twitter' && <span>{`https://twitter.com/${artist.id_twitter}`}</span>}
+                                {artist.header_source_type === 'youtube' && <span>{`https://www.youtube.com/channel/${artist.id_youtube}`}</span>}
+                            </div>
+                        }
                         <div class='absolute left-5 lg:left-10 -bottom-12 lg:-bottom-14'>
                             <ProfileImg
                                 artist={artist}
