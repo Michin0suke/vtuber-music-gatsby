@@ -52,7 +52,9 @@ const VideoSection = ({ headingText, videos }) => {
                 <Heading text={headingText} count={videos.length} className='mb-5'/>
     
                 <div className='flex flex-wrap'>
-                    {videos.map((video,key) => (
+                    {videos
+                    .reduce((acc, cur) => acc.map(v=>v.id).includes(cur.id) ? acc : acc.concat(cur),[])
+                    .map((video,key) => (
                         <VideoCard key={key} video={video} className='mb-12 sm:px-3 w-full sm:w-1/2 md:w-1/3'/>
                     ))}
                 </div>
@@ -104,7 +106,7 @@ export default ({ data: { artist }}) => {
     <Layout>
         <SEO
             title={`${artist.name}`}
-            description={`${artist.name}${honorific}のプロフィールページです。${artist.singer_videos.length}本の歌ってみた動画が登録されています。`}
+            description={`${artist.name}${honorific}のプロフィールページです。${artist.singer_videos.length + artist.childrenArtist.map(child=>child.singer_videos).flat().length}本の歌ってみた動画が登録されています。`}
             url={`https://vtuber-music.com/artist/${artist.id}`}
             imgUrl={`https://vtuber-music.com${artist.profile_image?.childImageSharp?.fixed?.src}`}
         />
@@ -116,18 +118,18 @@ export default ({ data: { artist }}) => {
                 <div className='bg-white lg:shadow mb-7'>
                     <div className='relative w-full'>
                         <Img fluid={artist.header_image?.childImageSharp?.fluid}/>
-                        {artist.image_url_profile_header_source_url &&
-                            <a href={artist.image_url_profile_header_source_url}
-                                 target='_blank'
-                                 className='absolute top-0 left-0 w-full h-full opacity-10 hover:bg-white'
-                            />}
                         {artist.header_source_type &&
-                            <div className='absolute right-2 bottom-0 text-xs'>
+                            <div className='absolute -right-6 bottom-0 text-xs text-gray-700' style={{transform: 'scale(0.7)'}}>
                                 {artist.profile_source_type === 'primary' && artist.image_url_profile_header_source_url && <span>{artist.image_url_profile_header_source_url}</span>}
                                 {artist.header_source_type === 'twitter' && <span>{`https://twitter.com/${artist.id_twitter}`}</span>}
                                 {artist.header_source_type === 'youtube' && <span>{`https://www.youtube.com/channel/${artist.id_youtube}`}</span>}
                             </div>
                         }
+                        {artist.image_url_profile_header_source_url &&
+                            <a href={artist.image_url_profile_header_source_url}
+                                 target='_blank'
+                                 className='absolute top-0 left-0 flex items-center justify-center w-full h-full bg-white opacity-0 hover:opacity-30 text-xl'
+                            >{artist.image_url_profile_header_source_url}</a>}
                         <div class='absolute left-5 lg:left-10 -bottom-12 lg:-bottom-14'>
                             <ProfileImg
                                 artist={artist}
@@ -184,6 +186,7 @@ export default ({ data: { artist }}) => {
             <MusicSection headingText='編曲した楽曲' music={artist.arranger_music}/>
 
             <VideoSection headingText='歌っている動画' videos={artist.singer_videos}/>
+            <VideoSection headingText='所属しているアーティストが歌っている動画' videos={artist.childrenArtist.map(child=>child.singer_videos).flat()}/>
             <VideoSection headingText='アレンジを担当した動画' videos={artist.arranger_videos}/>
             <VideoSection headingText='ミックスを担当した動画' videos={artist.mixer_videos}/>
             <VideoSection headingText='オフボーカルを担当した動画' videos={artist.off_vocal_videos}/>
@@ -273,6 +276,32 @@ query($id: String!){
                 childImageSharp {
                     fluid {
                         ...GatsbyImageSharpFluid_withWebp
+                    }
+                }
+            }
+            singer_videos {
+                id
+                custom_music_name
+                music {
+                    id
+                    title
+                }
+                singers {
+                    id
+                    name
+                    profile_image {
+                        childImageSharp {
+                            fluid {
+                                ...GatsbyImageSharpFluid_withWebp
+                            }
+                        }
+                    }
+                }
+                thumbnail_image {
+                    childImageSharp {
+                        fluid {
+                            ...GatsbyImageSharpFluid_withWebp
+                        }
                     }
                 }
             }

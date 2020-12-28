@@ -12,7 +12,8 @@ export default ({ artist, href, className, hoverEffect }) => {
             { artist.profile_image?.childImageSharp?.fluid &&
                 <Img fluid={artist.profile_image.childImageSharp.fluid} alt={`${artist.name}さんのプロフィール画像`}/> }
             <div className={`absolute top-0 left-0 w-full h-full opacity-20 ${hoverEffect && 'hover:bg-white'}`}/>
-            {href && <a href={href} target='_blank' className='absolute top-0 left-0 w-full h-full opacity-20 hover:bg-white'/>}
+            {href && 
+            <a href={href} target='_blank' className='absolute top-0 left-0 w-full h-full bg-white opacity-0 hover:opacity-20 text-xs flex items-center justify-center whitespace-pre'>{href.replaceAll('/', '\n')}</a>}
         </div>
     )
 }
