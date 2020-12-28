@@ -60,7 +60,7 @@ export default ({ data: {allArtist} }) => {
             {artists
                 .slice(0, showCount)
                 .map((artist, key) => {
-                    return (<ArtistCard key={key} artist={artist} className='w-full md:w-1/2 lg:w-1/3' withParent/>)
+                    return (<ArtistCard key={key} artist={artist} className='w-full md:w-1/2 lg:w-1/3' withParent withVideoCount/>)
                 })
             }
             </InfiniteScroll>
