@@ -197,10 +197,6 @@ exports.onCreateNode = async ({ actions: { createNode }, node, getCache, createN
             )
             ||
             await tryCreateRemoteFileNode(
-                `https://vtuber-music-assets.vercel.app/img/${imgType}/${srcType}/${node.id}.jpeg`
-            )
-            ||
-            await tryCreateRemoteFileNode(
                 `https://vtuber-music-assets.vercel.app/img/${imgType}/${srcType}/${node.id}.png`
             )
             node.header_source_type = fileNode && srcType
