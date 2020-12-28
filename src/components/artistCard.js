@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import ProfileImg from './profileImage'
 
-export default ({ artist, className, noLink, roleText, withRuby, imgSize }) => {
+export default ({ artist, className, noLink, roleText, withRuby, imgSize, withParent }) => {
     if (artist.id === 'unknown') {
         return <div className={`py-2 px-5 rounded-md text-gray-800 ${className}`}>{roleText}：不明</div>
     }
@@ -10,28 +10,29 @@ export default ({ artist, className, noLink, roleText, withRuby, imgSize }) => {
     const imageSize = imgSize || 14
 
     const innerElement = (
-        <div className='flex items-center'>
+        <li className='flex items-center'>
             { roleText && <span className='mr-3 text-md'>{roleText}：</span> }
             <ProfileImg artist={artist} className={`flex-shrink-0 w-${imageSize} h-${imageSize}`} style={{width: imgSize, height: imgSize}}/>
-            <span className='pl-5 text-md'>
+            <h2 className='pl-5 w-full text-md relative'>
+                {withParent && artist.parents.length > 0 && <span className='absolute w-full -top-4 text-xs text-gray-400'>{artist.parents[0].name}</span>}
                 {artist.name}{withRuby && artist.name_ruby && `（${artist.name_ruby}）`}
-            </span>
-        </div>
+            </h2>
+        </li>
     )
     
     if (noLink) {
         return (
-            <div className={`py-2 px-5 rounded-md text-gray-800 ${className}`}>
+            <ul className={`py-2 px-5 rounded-md text-gray-800 ${className}`}>
                 {innerElement}
-            </div>
+            </ul>
         )
     } else {
         return (
-            <div className={`py-2 px-5 rounded-md text-gray-800 hover:bg-gray-200 ${className}`}>
+            <ul className={`py-2 px-5 rounded-md text-gray-800 hover:bg-gray-200 ${className}`}>
                 <Link to={`/artist/${artist.id}`}>
                     {innerElement}
                 </Link>
-            </div>
+            </ul>
         )
     }
 }
