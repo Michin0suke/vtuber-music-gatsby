@@ -10,13 +10,13 @@ const Layout = ({ children, currentPage }) => (
     <Header/>
     <div className='flex w-full'>
       <PCMenuLeft currentPage={currentPage}/>
-      <main className='w-full pb-16 z-20 gb-white sm:bg-gray-50'>
+      <main className='w-full pb-32 z-10 gb-white sm:bg-gray-50'>
         {children}
-        <Footer/>
       </main>
       {/* <nav className='hidden xl:block w-1/4 z-10 bg-white' style={{minHeight: '100vh'}}></nav> */}
     </div>
     <SMMenu currentPage={currentPage}/>
+    <Footer/>
   </div>
 )
 
