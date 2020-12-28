@@ -4,12 +4,7 @@ const fetch = require('node-fetch')
 const { createHttpLink } = require('apollo-link-http')
 const { createRemoteFileNode } = require('gatsby-source-filesystem')
 const gql = require('graphql-tag')
-const { useStaticQuery, graphql } = require('gatsby')
-const realFs = require('fs')
-const gracefulFs = require('graceful-fs')
-gracefulFs.gracefulify(realFs)
 
-const youtubeApiKey = 'AIzaSyBkn0LB-sw4ZiPEs069rCEotczo1Qi6ZPY'
 const remoteAssetRandom = 'b4IGVlrljGlek3CVfK9Ig8yzGzEmQo7'
 
 const client = new ApolloClient({
@@ -21,7 +16,7 @@ const client = new ApolloClient({
     cache: new InMemoryCache(),
 })
 
-exports.sourceNodes = async ({ actions: { createNode }, createNodeId, createContentDigest }) => {
+exports.sourceNodes = async ({ actions: { createNode }, createContentDigest }) => {
     const { data: { allVideo } } = await client.query({
         query: gql`
             {
@@ -133,8 +128,8 @@ exports.sourceNodes = async ({ actions: { createNode }, createNodeId, createCont
                     off_vocal_videos { id }
                     arranger_videos { id }
                     singer_videos { id }
-                    # created_at
-                    # updated_at
+                    created_at
+                    updated_at
                 }
             }
         `
@@ -165,19 +160,17 @@ exports.sourceNodes = async ({ actions: { createNode }, createNodeId, createCont
 exports.onCreateNode = async ({ actions: { createNode }, node, getCache, createNodeId, boundActionCreators }) => {
     const { deleteNode } = boundActionCreators
 
-    const tryCreateRemoteFileNode = async (url, node_id) => {
+    const tryCreateRemoteFileNode = async (url) => {
         let fileNode
         try {
             fileNode = await createRemoteFileNode({
                 url,
-                parentNodeId: node_id,
+                parentNodeId: node.id,
                 getCache,
                 createNode,
                 createNodeId,
             })
-        } catch(e) {
-            // console.log(e)
-        }
+        } catch(e) {}
         return fileNode
     }
 
@@ -186,22 +179,12 @@ exports.onCreateNode = async ({ actions: { createNode }, node, getCache, createN
 
         // たぶん一番綺麗なサムネイル。hq720との違いは不明
         fileNode = await tryCreateRemoteFileNode(
-            `https://i.ytimg.com/vi/${node.id}/maxresdefault.jpg`,
-            node.id
-        )
-        ||
-        await tryCreateRemoteFileNode(
-            `https://i.ytimg.com/vi/${node.id}/hq720.jpg`,
-            node.id
-        )
-        ||
-        await tryCreateRemoteFileNode(
-            `https://i.ytimg.com/vi/${node.id}/sddefault.jpg`,
-            node.id
+            `https://vtuber-music-assets.vercel.app/img/video_thumbnail/youtube/${node.id}.jpg`,
         )
 
         // 高画質版、低画質版のいずれかが取得できている場合は、ノードの追加する
         if (fileNode) {
+            console.log(node.id)
             node.thumbnail_image = fileNode.id
         } else {
             // console.log(`can't fetch thumbnail image (video_id: ${node.id})`)
@@ -210,21 +193,17 @@ exports.onCreateNode = async ({ actions: { createNode }, node, getCache, createN
     } else if (node.internal.type === 'Artist') {
         const fetchImageFromAssets = async (imgType, srcType) => {
             const fileNode = await tryCreateRemoteFileNode(
-                `https://statics.vtuber-music.com/img_${remoteAssetRandom}/${imgType}/${srcType}/${node.id}`,
-                node.id
+                `https://vtuber-music-assets.vercel.app/img/${imgType}/${srcType}/${node.id}.jpg`
             )
-            if (fileNode) {
-                switch(imgType) {
-                    case 'icon':
-                        node.profile_source_type = srcType
-                        break
-                    case 'header':
-                        node.header_source_type = srcType
-                        break
-                    default:
-                        console.log(`予期されていないsrcType(${srcType})です。(fetchImageFromAssets)`)
-                }
-            }
+            ||
+            await tryCreateRemoteFileNode(
+                `https://vtuber-music-assets.vercel.app/img/${imgType}/${srcType}/${node.id}.jpeg`
+            )
+            ||
+            await tryCreateRemoteFileNode(
+                `https://vtuber-music-assets.vercel.app/img/${imgType}/${srcType}/${node.id}.png`
+            )
+            node.header_source_type = fileNode && srcType
             return fileNode
         }
 
@@ -236,6 +215,7 @@ exports.onCreateNode = async ({ actions: { createNode }, node, getCache, createN
         await fetchImageFromAssets('icon', 'youtube')
 
         if (fileNodeIcon) {
+            console.log(node.id)
             node.profile_image = fileNodeIcon.id
         }
 
@@ -247,6 +227,7 @@ exports.onCreateNode = async ({ actions: { createNode }, node, getCache, createN
         await fetchImageFromAssets('header', 'youtube')
 
         if (fileNodeHeader) {
+            console.log(node.id)
             node.header_image = fileNodeHeader.id
         }
     }
