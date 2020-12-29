@@ -117,6 +117,8 @@ exports.sourceNodes = async ({ actions: { createNode }, createContentDigest }) =
                     id_pixiv
                     image_url_profile_icon_source_url
                     image_url_profile_header_source_url
+                    image_front_type_icon
+                    image_front_type_header
                     youtube_channel_is_user
                     recommends { id }
                     children { id }
@@ -193,28 +195,24 @@ exports.onCreateNode = async ({ actions: { createNode }, node, getCache, createN
             deleteNode(node)
         }
     } else if (node.internal.type === 'Artist') {
-        const fetchImageFromAssets = async (imgType, srcType) => {
-            const fileNode = await tryCreateRemoteFileNode(
-                `https://vtuber-music-assets.vercel.app/img/${imgType}/${srcType}/${node.id}.jpg`
-            )
-            ||
-            await tryCreateRemoteFileNode(
-                `https://vtuber-music-assets.vercel.app/img/${imgType}/${srcType}/${node.id}.png`
+        const fetchImageFromAssets = async (imgType) => {
+            let img_front_type
+            switch (imgType) {
+                case 'icon': img_front_type = node.image_front_type_icon
+                break; case 'header': img_front_type = node.image_front_type_header
+            }
+            const fileNode = img_front_type && await tryCreateRemoteFileNode(
+                `https://vtuber-music-assets.vercel.app/img/${imgType}/${img_front_type}/${node.id}.jpg`
             )
             switch(imgType) {
-                case 'icon': node.profile_source_type = fileNode && srcType
-                break; case 'header': node.header_source_type = fileNode && srcType
+                case 'icon': node.profile_source_type = img_front_type
+                break; case 'header': node.header_source_type = img_front_type
             }
-            node.header_source_type = fileNode && srcType
             return fileNode
         }
 
         // プロフィール画像のフェッチ
-        let fileNodeIcon = await fetchImageFromAssets('icon', 'twitter')
-        ||
-        await fetchImageFromAssets('icon', 'youtube')
-        ||
-        await fetchImageFromAssets('icon', 'primary')
+        let fileNodeIcon = await fetchImageFromAssets('icon')
 
         if (fileNodeIcon) {
             console.log(node.id)
@@ -222,11 +220,7 @@ exports.onCreateNode = async ({ actions: { createNode }, node, getCache, createN
         }
 
         // ヘッダー画像のフェッチ
-        let fileNodeHeader = await fetchImageFromAssets('header', 'twitter')
-        ||
-        await fetchImageFromAssets('header', 'youtube')
-        ||
-        await fetchImageFromAssets('header', 'primary')
+        let fileNodeHeader = await fetchImageFromAssets('header')
 
         if (fileNodeHeader) {
             console.log(node.id)
@@ -348,6 +342,8 @@ exports.createSchemaCustomization = ({ actions: { createTypes } }) => {
             id_pixiv: Int
             image_url_profile_icon_source_url: String
             image_url_profile_header_source_url: String
+            image_front_type_icon: String
+            image_front_type_header: String
             youtube_channel_is_user: Boolean!
             recommends: [Artist]! @link
             children: [Artist]! @link

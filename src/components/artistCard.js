@@ -11,7 +11,7 @@ export default ({ artist, className, noLink, roleText, withRuby, imgSize, withPa
 
     const innerElement = (
         <li className='flex items-center'>
-            { roleText && <span className='mr-3 text-md'>{roleText}：</span> }
+            { roleText && <span className='whitespace-nowrap mr-3 text-md'>{roleText}：</span> }
             <ProfileImg artist={artist} className={`flex-shrink-0 w-${imageSize} h-${imageSize}`} style={{width: imgSize, height: imgSize}}/>
             <h2 className='pl-5 w-full text-md relative'>
                 {withParent && artist.parents.length > 0 && <span className='absolute w-full -top-4 text-xs text-gray-400'>{artist.parents[0].name}</span>}

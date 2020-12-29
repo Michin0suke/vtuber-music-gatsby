@@ -138,7 +138,7 @@ export default ({ data: { video, allVideo }, location }) => {
                         </Link>
 
                         <div className='pb-3'>
-                            {video.singers.map((singer, key) => <ArtistCard artist={singer} key={key} className='mb-2' imgSize={16}/>)}
+                            {video.singers.map((singer, key) => <ArtistCard artist={singer} key={key} className='mb-2' imgSize={16} withParent/>)}
                         </div>
                     </div>
                 </div>
@@ -151,12 +151,12 @@ export default ({ data: { video, allVideo }, location }) => {
                 }
 
                 <div className='mb-7 lg:px-5 pt-5 pb-1 bg-white lg:shadow'>
-                    {video.music.lyricists.map((lyricist, key) => <ArtistCard artist={lyricist} key={key} className='mb-3' roleText='作詞'/>)}
-                    {video.music.composers.map((composer, key) => <ArtistCard artist={composer} key={key} className='mb-3' roleText='作曲'/>)}
-                    {video.music.arrangers.map((arranger, key) => <ArtistCard artist={arranger} key={key} className='mb-3' roleText='編曲'/>)}
-                    {video.mixers.map((mixer, key) => <ArtistCard artist={mixer} key={key} className='mb-3' roleText='ミックス'/>)}
-                    {video.off_vocals.map((off_vocal, key) => <ArtistCard artist={off_vocal} key={key} className='mb-3' roleText='オフボーカル'/>)}
-                    {video.arrangers.map((arranger, key) => <ArtistCard artist={arranger} key={key} className='mb-3' roleText='アレンジ'/>)}
+                    {video.music.lyricists.map((lyricist, key) => <ArtistCard artist={lyricist} key={key} className='mb-3' roleText='作詞' withParent/>)}
+                    {video.music.composers.map((composer, key) => <ArtistCard artist={composer} key={key} className='mb-3' roleText='作曲' withParent/>)}
+                    {video.music.arrangers.map((arranger, key) => <ArtistCard artist={arranger} key={key} className='mb-3' roleText='編曲' withParent/>)}
+                    {video.mixers.map((mixer, key) => <ArtistCard artist={mixer} key={key} className='mb-3' roleText='ミックス' withParent/>)}
+                    {video.off_vocals.map((off_vocal, key) => <ArtistCard artist={off_vocal} key={key} className='mb-3' roleText='オフボーカル' withParent/>)}
+                    {video.arrangers.map((arranger, key) => <ArtistCard artist={arranger} key={key} className='mb-3' roleText='アレンジ' withParent/>)}
                 </div>
 
                 {video.music.lyrics_url &&
@@ -241,6 +241,9 @@ export const pageQuery = graphql`
                         }
                     }
                 }
+                parents {
+                    name
+                }
             }
             composers {
                 id
@@ -252,6 +255,9 @@ export const pageQuery = graphql`
                         }
                     }
                 }
+                parents {
+                    name
+                }
             }
             arrangers {
                 id
@@ -262,6 +268,9 @@ export const pageQuery = graphql`
                             ...GatsbyImageSharpFluid_withWebp
                         }
                     }
+                }
+                parents {
+                    name
                 }
             }
         }
@@ -278,6 +287,9 @@ export const pageQuery = graphql`
                         ...GatsbyImageSharpFluid_withWebp
                     }
                 }
+            }
+            parents {
+                name
             }
             singer_videos {
                 id
@@ -457,6 +469,9 @@ export const pageQuery = graphql`
                     }
                 }
             }
+            parents {
+                name
+            }
         }
         off_vocals {
             id
@@ -468,6 +483,9 @@ export const pageQuery = graphql`
                     }
                 }
             }
+            parents {
+                name
+            }
         }
         arrangers {
             id
@@ -478,6 +496,9 @@ export const pageQuery = graphql`
                         ...GatsbyImageSharpFluid_withWebp
                     }
                 }
+            }
+            parents {
+                name
             }
         }
         recommends {
