@@ -201,16 +201,20 @@ exports.onCreateNode = async ({ actions: { createNode }, node, getCache, createN
             await tryCreateRemoteFileNode(
                 `https://vtuber-music-assets.vercel.app/img/${imgType}/${srcType}/${node.id}.png`
             )
+            switch(imgType) {
+                case 'icon': node.profile_source_type = fileNode && srcType
+                break; case 'header': node.header_source_type = fileNode && srcType
+            }
             node.header_source_type = fileNode && srcType
             return fileNode
         }
 
         // プロフィール画像のフェッチ
-        let fileNodeIcon = await fetchImageFromAssets('icon', 'primary')
-        ||
-        await fetchImageFromAssets('icon', 'twitter')
+        let fileNodeIcon = await fetchImageFromAssets('icon', 'twitter')
         ||
         await fetchImageFromAssets('icon', 'youtube')
+        ||
+        await fetchImageFromAssets('icon', 'primary')
 
         if (fileNodeIcon) {
             console.log(node.id)
@@ -218,11 +222,11 @@ exports.onCreateNode = async ({ actions: { createNode }, node, getCache, createN
         }
 
         // ヘッダー画像のフェッチ
-        let fileNodeHeader = await fetchImageFromAssets('header', 'primary')
-        ||
-        await fetchImageFromAssets('header', 'twitter')
+        let fileNodeHeader = await fetchImageFromAssets('header', 'twitter')
         ||
         await fetchImageFromAssets('header', 'youtube')
+        ||
+        await fetchImageFromAssets('header', 'primary')
 
         if (fileNodeHeader) {
             console.log(node.id)
