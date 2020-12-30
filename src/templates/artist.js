@@ -200,7 +200,7 @@ export default ({ data: { artist }}) => {
                 (artist.profile_source_type === 'primary' && artist.image_url_profile_icon_source_url) ||
                 (artist.profile_source_type === 'primary' && artist.image_url_profile_header_source_url)
             ) &&
-                <div className='mb-7 pb-7 lg:px-5 bg-white lg:shadow'>
+                <div className='mb-16 pb-7 lg:px-5 bg-white lg:shadow'>
                     <Heading text='プロフィール画像の出典元' className='mb-5'/>
                     {artist.profile_source_type &&
                         <div className='px-5 text-xs text-gray-600'>
@@ -218,6 +218,10 @@ export default ({ data: { artist }}) => {
                     }
                 </div>
             }
+            <a
+                className='block mx-auto py-1 px-3 w-44 max-w-md border bg-white hover:bg-gray-200 text-center'
+                href={`https://ws.formzu.net/dist/S956931/?importv=${artist.id}`}
+            >編集リクエスト</a>
         </div>
     </Layout>
     )
