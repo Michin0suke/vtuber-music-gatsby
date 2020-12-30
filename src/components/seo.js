@@ -20,7 +20,7 @@ function SEO({ description, lang, meta, title, url, imgUrl, isTop, isLargeCard})
         },
         {
           property: `og:title`,
-          content: metaTitle,
+          content: title,
         },
         {
           property: `og:description`,
@@ -48,7 +48,7 @@ function SEO({ description, lang, meta, title, url, imgUrl, isTop, isLargeCard})
         },
         {
           name: `twitter:title`,
-          content: metaTitle,
+          content: title,
         },
         {
           name: `twitter:description`,
