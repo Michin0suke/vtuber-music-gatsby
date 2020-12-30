@@ -43,7 +43,7 @@ export default ({ video, className, withPublishDate }) => (
                 <Link to={`/artist/${video.singers[0].id}`}>
                     <p className='text-sm text-gray-500 hover:text-black'>{video.singers.map(singer => singer.name).join(' & ')}</p>
                 </Link>
-                {withPublishDate && <time className='text-xs text-gray-500' datetime={video.release_date}>{video.release_date.replaceAll('-', '/')}</time>}
+                {withPublishDate && <time className='text-xs text-gray-500' datetime={video.release_date}>{video.release_date.replace(/-/g, '/')}</time>}
             </div>
         </div>
     </article>
