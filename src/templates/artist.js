@@ -102,11 +102,14 @@ export default ({ data: { artist }}) => {
     //     }
     // }
 
+    // 歌っている動画の本数(子も含む)
+    const singerVideoCount = artist.singer_videos.length + artist.childrenArtist.map(child=>child.singer_videos).flat().length
+
     return (
     <Layout>
         <SEO
             title={`${artist.name}`}
-            description={`${artist.name}${honorific}のプロフィールページです。${artist.singer_videos.length + artist.childrenArtist.map(child=>child.singer_videos).flat().length}本の歌ってみた動画が登録されています。`}
+            description={`${artist.name}${honorific}のプロフィールページです。${singerVideoCount > 0 ? `${singerVideoCount}本の歌ってみた動画が登録されています。` : ''}`}
             url={`https://vtuber-music.com/artist/${artist.id}`}
             imgUrl={`https://vtuber-music.com${artist.profile_image?.childImageSharp?.fixed?.src}`}
         />
