@@ -25,6 +25,7 @@ exports.sourceNodes = async ({ actions: { createNode }, createContentDigest }) =
                     music { id }
                     release_date
                     is_mv
+                    is_original_music
                     original_video_id
                     custom_music_name
                     singers { id }
@@ -69,8 +70,8 @@ exports.sourceNodes = async ({ actions: { createNode }, createContentDigest }) =
                     composers { id }
                     lyricists { id }
                     arrangers { id }
-                    # created_at
-                    # updated_at
+                    created_at
+                    updated_at
                 }
             }
         `
@@ -289,6 +290,7 @@ exports.createSchemaCustomization = ({ actions: { createTypes } }) => {
             music: Music! @link
             release_date: Date @dateformat
             is_mv: Boolean!
+            is_original_music: Boolean!
             original_video_id: String
             custom_music_name: String
             singers: [Artist!]! @link
