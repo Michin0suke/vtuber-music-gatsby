@@ -1,7 +1,9 @@
-const fs = require('fs')
+const realFs = require('fs')
+const gracefulFs = require('graceful-fs')
+gracefulFs.gracefulify(realFs)
 
 exports.sourceNodes = async ({ actions: { createNode }, createContentDigest }) => {
-    fs.readFile(`api/allVideo.json`, (err, data) => {
+    gracefulFs.readFile(`api/allVideo.json`, (err, data) => {
         if (err) throw new Error(err)
         JSON.parse(data).data.allVideo.forEach(video => {
             createNode({
@@ -20,7 +22,7 @@ exports.sourceNodes = async ({ actions: { createNode }, createContentDigest }) =
         })
     })
 
-    fs.readFile(`api/allMusic.json`, (err, data) => {
+    gracefulFs.readFile(`api/allMusic.json`, (err, data) => {
         if (err) throw new Error(err)
         JSON.parse(data).data.allMusic.forEach(music => {
             createNode({
@@ -37,7 +39,7 @@ exports.sourceNodes = async ({ actions: { createNode }, createContentDigest }) =
         })
     })
 
-    fs.readFile(`api/allArtist.json`, (err, data) => {
+    gracefulFs.readFile(`api/allArtist.json`, (err, data) => {
         if (err) throw new Error(err)
         JSON.parse(data).data.allArtist.forEach(artist => {
             createNode({
