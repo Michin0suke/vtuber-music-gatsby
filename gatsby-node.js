@@ -1,280 +1,157 @@
-const { ApolloClient } = require('apollo-client')
-const { InMemoryCache } = require('apollo-cache-inmemory')
-const fetch = require('node-fetch')
-const { createHttpLink } = require('apollo-link-http')
-const { createRemoteFileNode } = require('gatsby-source-filesystem')
-const gql = require('graphql-tag')
-
-const remoteAssetRandom = 'b4IGVlrljGlek3CVfK9Ig8yzGzEmQo7'
-
-const client = new ApolloClient({
-    link: createHttpLink({
-        uri: 'https://api.vtuber-music.com/graphql',
-        // uri: 'http://vtuber-music.test/graphql',
-        fetch
-    }),
-    cache: new InMemoryCache(),
-})
+const fs = require('fs')
 
 exports.sourceNodes = async ({ actions: { createNode }, createContentDigest }) => {
-    const { data: { allVideo } } = await client.query({
-        query: gql`
-            {
-                allVideo {
-                    id
-                    music { id }
-                    release_date
-                    is_mv
-                    is_original_music
-                    original_video_id
-                    custom_music_name
-                    singers { id }
-                    mixers { id }
-                    off_vocals { id }
-                    arrangers { id }
-                    recommends { id }
-                    created_at
-                    updated_at
+    fs.readFile(`api/allVideo.json`, (err, data) => {
+        if (err) throw new Error(err)
+        JSON.parse(data).data.allVideo.forEach(video => {
+            createNode({
+                ...video,
+                music: video.music.id,
+                singers: video.singers.map(i => i.id),
+                mixers: video.mixers.map(i => i.id),
+                off_vocals: video.off_vocals.map(i => i.id),
+                arrangers: video.arrangers.map(i => i.id),
+                recommends: video.recommends.map(i => i.id),
+                internal: {
+                    type: 'Video',
+                    contentDigest: createContentDigest(video)
                 }
-            }
-        `
-    })
-    allVideo.forEach(video => {
-        createNode({
-            ...video,
-            music: video.music.id,
-            singers: video.singers.map(i => i.id),
-            mixers: video.mixers.map(i => i.id),
-            off_vocals: video.off_vocals.map(i => i.id),
-            arrangers: video.arrangers.map(i => i.id),
-            recommends: video.recommends.map(i => i.id),
-            internal: {
-                type: 'Video',
-                contentDigest: createContentDigest(video)
-            }
-        })
-    })
-
-    const { data: { allMusic } } = await client.query({
-        query: gql`
-            {
-                allMusic {
-                    id
-                    title
-                    title_ruby
-                    lyrics
-                    lyrics_url
-                    genre
-                    original_video_youtube_id
-                    videos { id }
-                    composers { id }
-                    lyricists { id }
-                    arrangers { id }
-                    created_at
-                    updated_at
-                }
-            }
-        `
-    })
-    allMusic.forEach(m => {
-        createNode({
-            ...m,
-            videos: m.videos.map(v => v.id),
-            composers: m.composers.map(v => v.id),
-            lyricists: m.lyricists.map(v => v.id),
-            arrangers: m.arrangers.map(v => v.id),
-            internal: {
-                type: 'Music',
-                contentDigest: createContentDigest(m)
-            }
-        })
-    })
-
-    const { data: { allArtist } } = await client.query({
-        query: gql`
-            {
-                allArtist {
-                    id
-                    name
-                    name_ruby
-                    name_original
-                    profile
-                    sex
-                    birthday
-                    id_youtube
-                    youtube_registration_date
-                    id_twitter
-                    id_instagram
-                    url_niconico
-                    url_homepage
-                    id_spotify
-                    id_apple_music
-                    id_showroom
-                    id_openrec
-                    id_bilibili
-                    id_tiktok
-                    id_twitcasting
-                    id_facebook
-                    id_pixiv
-                    image_url_profile_icon_source_url
-                    image_url_profile_header_source_url
-                    image_front_type_icon
-                    image_front_type_header
-                    youtube_channel_is_user
-                    recommends { id }
-                    children { id }
-                    parents { id }
-                    composer_music { id }
-                    lyricist_music { id }
-                    arranger_music { id }
-                    mixer_videos { id }
-                    off_vocal_videos { id }
-                    arranger_videos { id }
-                    singer_videos { id }
-                    created_at
-                    updated_at
-                }
-            }
-        `
-    })
-
-    allArtist.forEach(artist => {
-        createNode({
-            ...artist,
-            recommends: artist.recommends.map(i => i.id),
-            children: artist.children.map(i => i.id),
-            parents: artist.parents.map(i => i.id),
-            composer_music: artist.composer_music.map(i => i.id),
-            lyricist_music: artist.lyricist_music.map(i => i.id),
-            arranger_music: artist.arranger_music.map(i => i.id),
-            mixer_videos: artist.mixer_videos.map(i => i.id),
-            off_vocal_videos: artist.off_vocal_videos.map(i => i.id),
-            arranger_videos: artist.arranger_videos.map(i => i.id),
-            singer_videos: artist.singer_videos.map(i => i.id),
-            internal: {
-                type: 'Artist',
-                contentDigest: createContentDigest(artist)
-            }
-        })
-    })
-}
-
-
-exports.onCreateNode = async ({ actions: { createNode }, node, getCache, createNodeId, boundActionCreators }) => {
-    const { deleteNode } = boundActionCreators
-
-    const tryCreateRemoteFileNode = async (url) => {
-        let fileNode
-        try {
-            fileNode = await createRemoteFileNode({
-                url,
-                parentNodeId: node.id,
-                getCache,
-                createNode,
-                createNodeId,
             })
-        } catch(e) {
-            console.log(e)
-        }
-        return fileNode
-    }
+        })
+    })
 
-    if (node.internal.type === 'Video') {
-        let fileNode
+    fs.readFile(`api/allMusic.json`, (err, data) => {
+        if (err) throw new Error(err)
+        JSON.parse(data).data.allMusic.forEach(music => {
+            createNode({
+                ...music,
+                videos: music.videos.map(i => i.id),
+                composers: music.composers.map(i => i.id),
+                lyricists: music.lyricists.map(i => i.id),
+                arrangers: music.arrangers.map(i => i.id),
+                internal: {
+                    type: 'Music',
+                    contentDigest: createContentDigest(music)
+                }
+            })
+        })
+    })
 
-        // たぶん一番綺麗なサムネイル。hq720との違いは不明
-        fileNode = await tryCreateRemoteFileNode(
-            `https://vtuber-music-assets.vercel.app/img/video_thumbnail/youtube/${node.id}.jpg`,
-        )
-
-        // 高画質版、低画質版のいずれかが取得できている場合は、ノードの追加する
-        if (fileNode) {
-            console.log(node.id)
-            node.thumbnail_image = fileNode.id
-        } else {
-            // console.log(`can't fetch thumbnail image (video_id: ${node.id})`)
-            deleteNode(node)
-        }
-    } else if (node.internal.type === 'Artist') {
-        const fetchImageFromAssets = async (imgType) => {
-            let img_front_type
-            switch (imgType) {
-                case 'icon': img_front_type = node.image_front_type_icon
-                break; case 'header': img_front_type = node.image_front_type_header
-            }
-            const fileNode = img_front_type && await tryCreateRemoteFileNode(
-                `https://vtuber-music-assets.vercel.app/img/${imgType}/${img_front_type}/${node.id}.jpg`
-            )
-            switch(imgType) {
-                case 'icon': node.profile_source_type = img_front_type
-                break; case 'header': node.header_source_type = img_front_type
-            }
-            return fileNode
-        }
-
-        // プロフィール画像のフェッチ
-        let fileNodeIcon = await fetchImageFromAssets('icon')
-
-        if (fileNodeIcon) {
-            console.log(node.id)
-            node.profile_image = fileNodeIcon.id
-        }
-
-        // ヘッダー画像のフェッチ
-        let fileNodeHeader = await fetchImageFromAssets('header')
-
-        if (fileNodeHeader) {
-            console.log(node.id)
-            node.header_image = fileNodeHeader.id
-        }
-    }
+    fs.readFile(`api/allArtist.json`, (err, data) => {
+        if (err) throw new Error(err)
+        JSON.parse(data).data.allArtist.forEach(artist => {
+            createNode({
+                ...artist,
+                recommends: artist.recommends.map(i => i.id),
+                children: artist.children.map(i => i.id),
+                parents: artist.parents.map(i => i.id),
+                composer_music: artist.composer_music.map(i => i.id),
+                lyricist_music: artist.lyricist_music.map(i => i.id),
+                arranger_music: artist.arranger_music.map(i => i.id),
+                mixer_videos: artist.mixer_videos.map(i => i.id),
+                off_vocal_videos: artist.off_vocal_videos.map(i => i.id),
+                arranger_videos: artist.arranger_videos.map(i => i.id),
+                singer_videos: artist.singer_videos.map(i => i.id),
+                internal: {
+                    type: 'Artist',
+                    contentDigest: createContentDigest(artist)
+                }
+            })
+        })
+    })
 }
 
-exports.createPages = async ({ graphql, actions: { createPage } }) => {
+exports.createPages = async ({ graphql, actions: { createPage }, getNode }) => {
+    const artistImageFileNode = async (type, id) => {
+        if (!['header', 'icon', 'video_thumbnail'].includes(type)) throw new Error(`invalid augment ${type}`)
+        let fileId
+        await Promise.all(['primary', 'twitter', 'youtube'].map(async frontType => {
+            if (!fileId) {
+                const result = await graphql(`
+                    {
+                        file(relativeDirectory: {eq: "img/${type}/${frontType}"}, name: {eq: "${id}"}) {
+                            id
+                        }
+                    }
+                `)
+                if (result.data.file?.id ) fileId = result.data.file?.id
+            }
+        }))
+        return fileId && getNode(fileId)
+    }
+
+    const videoImageFileNode = async id => {
+        const { data: { file } } = await graphql(`
+            {
+                file(relativeDirectory: {eq: "img/video_thumbnail/youtube"}, name: {eq: "${id}"}) {
+                    id
+                }
+            }`)
+        console.log(file?.id)
+        return file?.id && getNode(file?.id)
+    }
+
     const { data: { allArtist } } = await graphql(`
         {
             allArtist {
-                nodes {
-                    id
-                }
+                nodes { id }
             }
         }
     `)
-    allArtist.nodes.forEach(({ id }) => {
+    allArtist.nodes.forEach(async ({ id }) => {
         createPage({
             path: `/artist/${id}`,
             component: require.resolve('./src/templates/artist.js'),
             context: { id }
         })
+
+        // console.log(JSON.stringify(getNode({id}), null, 4))
+        const currentNode = getNode(id)
+
+        const headerImageNode = await artistImageFileNode('header', id)
+        if (headerImageNode) {
+            currentNode.header_image = headerImageNode.id
+            headerImageNode.parent = currentNode.id
+        }
+
+        const iconImageNode = await artistImageFileNode('icon', id)
+        if (iconImageNode) {
+            currentNode.profile_image = iconImageNode.id
+            iconImageNode.parent = currentNode.id
+        }
     })
 
     const { data: { allVideo }} = await graphql(`
     {
         allVideo {
-            nodes {
-                id
-            }
+            nodes { id }
         }
     }
     `)
-    allVideo.nodes.forEach(({ id }) => {
+    allVideo.nodes.forEach(async ({ id }) => {
         createPage({
             path: `/video/${id}`,
             component: require.resolve('./src/templates/video.js'),
             context: { id }
         })
+
+        const currentNode = getNode(id)
+        
+        const thumbnailNode = await videoImageFileNode(id)
+        if (thumbnailNode) {
+            currentNode.thumbnail_image = thumbnailNode.id
+            thumbnailNode.parent = currentNode.id
+        }
     })
 
     const { data: { allMusic }} = await graphql(`
     {
         allMusic {
-            nodes {
-                id
-            }
+            nodes { id }
         }
     }
     `)
-    allMusic.nodes.forEach(({id}) => {
+    allMusic.nodes.forEach(async ({id}) => {
         createPage({
             path: `/music/${id}`,
             component: require.resolve('./src/templates/music.js'),
