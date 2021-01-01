@@ -1474,6 +1474,37 @@
                 "__typename": "Music"
             },
             {
+                "id": "chocolate_eclair",
+                "title": "Chocolate Eclair",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "Cb5qaFxJQGI",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "kabosnikki_templime",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [],
+                "arrangers": [
+                    {
+                        "id": "kabosnikki_templime",
+                        "__typename": "Artist"
+                    }
+                ],
+                "created_at": "2021-01-01 08:14:39",
+                "updated_at": "2021-01-01 08:14:39",
+                "__typename": "Music"
+            },
+            {
                 "id": "cinderella_shine",
                 "title": "Shine!!",
                 "title_ruby": null,
@@ -1502,6 +1533,37 @@
                 "arrangers": [],
                 "created_at": "2020-12-10 02:45:23",
                 "updated_at": "2020-12-10 02:45:23",
+                "__typename": "Music"
+            },
+            {
+                "id": "crazy_beat",
+                "title": "クレイジー・ビート",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "JcFx1RAIq0M",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "satsuki_ga_tenkomori",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "satsuki_ga_tenkomori",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-01 08:26:06",
+                "updated_at": "2021-01-01 08:26:06",
                 "__typename": "Music"
             },
             {
@@ -3947,6 +4009,46 @@
                 "__typename": "Music"
             },
             {
+                "id": "kakusansei_ majority",
+                "title": "拡散性マジョリティ",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "11Ybh39IiU4",
+                        "__typename": "Video"
+                    },
+                    {
+                        "id": "82Ar5F4zfAA",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "aruka",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "aruka",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [
+                    {
+                        "id": "limpid",
+                        "__typename": "Artist"
+                    }
+                ],
+                "created_at": "2021-01-01 07:59:41",
+                "updated_at": "2021-01-01 07:59:41",
+                "__typename": "Music"
+            },
+            {
                 "id": "kami_no_manimani",
                 "title": "神のまにまに",
                 "title_ruby": null,
@@ -3984,6 +4086,42 @@
                 ],
                 "created_at": "2020-12-10 00:40:48",
                 "updated_at": "2020-12-10 00:40:48",
+                "__typename": "Music"
+            },
+            {
+                "id": "kansho_vector_heart",
+                "title": "干渉ベクトルハート",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "UvvYqqqCcno",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "aruka",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "aruka",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [
+                    {
+                        "id": "aruka",
+                        "__typename": "Artist"
+                    }
+                ],
+                "created_at": "2021-01-01 08:07:21",
+                "updated_at": "2021-01-01 08:07:21",
                 "__typename": "Music"
             },
             {
@@ -5488,6 +5626,37 @@
                 ],
                 "created_at": "2020-12-09 00:12:19",
                 "updated_at": "2020-12-09 00:12:19",
+                "__typename": "Music"
+            },
+            {
+                "id": "missing_xxx",
+                "title": "missing XXX",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "6DYdJLUWz1M",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "hama",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "x_flare",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-01 08:17:21",
+                "updated_at": "2021-01-01 08:17:21",
                 "__typename": "Music"
             },
             {
@@ -7287,6 +7456,46 @@
                 "__typename": "Music"
             },
             {
+                "id": "senritsu_nostalgia",
+                "title": "戦慄ノスタルジア",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "sfPPqKN_1e4",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "aruka",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "hama",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "shikiho",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [
+                    {
+                        "id": "hama",
+                        "__typename": "Artist"
+                    }
+                ],
+                "created_at": "2021-01-01 08:11:14",
+                "updated_at": "2021-01-01 08:11:14",
+                "__typename": "Music"
+            },
+            {
                 "id": "shinde_shimau_toha_nasakenai",
                 "title": "しんでしまうとはなさけない！",
                 "title_ruby": null,
@@ -8908,6 +9117,104 @@
                 "__typename": "Music"
             },
             {
+                "id": "x_end_crescendo",
+                "title": "X' End Crescendo",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "Qg-yu_IY-Tw",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "aruka",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "aruka",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-01 08:32:57",
+                "updated_at": "2021-01-01 08:32:57",
+                "__typename": "Music"
+            },
+            {
+                "id": "x_flare_odango",
+                "title": "ODANGO",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "tRe5rwSOzM0",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "limpid",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "x_flare",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [
+                    {
+                        "id": "limpid",
+                        "__typename": "Artist"
+                    }
+                ],
+                "created_at": "2021-01-01 08:09:14",
+                "updated_at": "2021-01-01 08:09:14",
+                "__typename": "Music"
+            },
+            {
+                "id": "xxxxx_prismatic",
+                "title": "Xxxxx prismatic",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "2LSZfphUp5U",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "k_ayutaka",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "shikiho",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-01 08:28:45",
+                "updated_at": "2021-01-01 08:28:45",
+                "__typename": "Music"
+            },
+            {
                 "id": "yankee_girl_yankee_boy",
                 "title": "Yankee Girl Yankee Boy",
                 "title_ruby": "やんきーがーるやんきーぼーい",
@@ -9238,5 +9545,5 @@
     "loading": false,
     "networkStatus": 7,
     "stale": false,
-    "fetched_at": "2020-12-31T17:27:10.758Z"
+    "fetched_at": "2021-01-01T19:16:37.933Z"
 }

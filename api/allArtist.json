@@ -2175,6 +2175,101 @@
                 "__typename": "Artist"
             },
             {
+                "id": "aruka",
+                "name": "あるか",
+                "name_ruby": null,
+                "name_original": null,
+                "profile": null,
+                "sex": null,
+                "birthday": null,
+                "id_youtube": null,
+                "youtube_registration_date": null,
+                "id_twitter": "music_garden",
+                "id_instagram": null,
+                "url_niconico": null,
+                "url_homepage": "https://soundcloud.com/arca_music_garden",
+                "id_spotify": null,
+                "id_apple_music": null,
+                "id_showroom": null,
+                "id_openrec": null,
+                "id_bilibili": null,
+                "id_tiktok": null,
+                "id_twitcasting": null,
+                "id_facebook": null,
+                "id_pixiv": null,
+                "image_url_profile_icon_source_url": null,
+                "image_url_profile_header_source_url": null,
+                "image_front_type_icon": "twitter",
+                "image_front_type_header": "twitter",
+                "youtube_channel_is_user": false,
+                "recommends": [],
+                "children": [],
+                "parents": [],
+                "composer_music": [
+                    {
+                        "id": "kakusansei_ majority",
+                        "__typename": "Music"
+                    },
+                    {
+                        "id": "kansho_vector_heart",
+                        "__typename": "Music"
+                    },
+                    {
+                        "id": "senritsu_nostalgia",
+                        "__typename": "Music"
+                    },
+                    {
+                        "id": "x_end_crescendo",
+                        "__typename": "Music"
+                    }
+                ],
+                "lyricist_music": [
+                    {
+                        "id": "kakusansei_ majority",
+                        "__typename": "Music"
+                    },
+                    {
+                        "id": "kansho_vector_heart",
+                        "__typename": "Music"
+                    },
+                    {
+                        "id": "x_end_crescendo",
+                        "__typename": "Music"
+                    }
+                ],
+                "arranger_music": [
+                    {
+                        "id": "kansho_vector_heart",
+                        "__typename": "Music"
+                    }
+                ],
+                "mixer_videos": [
+                    {
+                        "id": "-BiNMcmfP0A",
+                        "__typename": "Music"
+                    },
+                    {
+                        "id": "mh_h8xUUljo",
+                        "__typename": "Music"
+                    },
+                    {
+                        "id": "UvvYqqqCcno",
+                        "__typename": "Music"
+                    }
+                ],
+                "off_vocal_videos": [],
+                "arranger_videos": [
+                    {
+                        "id": "mh_h8xUUljo",
+                        "__typename": "Music"
+                    }
+                ],
+                "singer_videos": [],
+                "created_at": "2020-12-29 00:00:00",
+                "updated_at": "2020-12-29 00:00:00",
+                "__typename": "Artist"
+            },
+            {
                 "id": "aruma_zilou",
                 "name": "あるまじろ",
                 "name_ruby": null,
@@ -2890,8 +2985,8 @@
                 "id_pixiv": null,
                 "image_url_profile_icon_source_url": null,
                 "image_url_profile_header_source_url": null,
-                "image_front_type_icon": null,
-                "image_front_type_header": null,
+                "image_front_type_icon": "twitter",
+                "image_front_type_header": "twitter",
                 "youtube_channel_is_user": false,
                 "recommends": [],
                 "children": [],
@@ -2908,8 +3003,8 @@
                         "__typename": "Video"
                     }
                 ],
-                "created_at": "2020-12-31 07:58:10",
-                "updated_at": "2020-12-31 07:58:10",
+                "created_at": "2020-12-31 00:00:00",
+                "updated_at": "2020-12-31 00:00:00",
                 "__typename": "Artist"
             },
             {
@@ -2917,7 +3012,7 @@
                 "name": "BΣretta X' Rain",
                 "name_ruby": "べれったくろすれいん",
                 "name_original": null,
-                "profile": "X enc'ount所属のVsinger/Vtuber,BΣretta X' Rain(ベレッタクロスレイン)ですわ💍 \n赫眼の狙撃手と呼ばれていますの。 \n歌うこととホラーゲームが大好きです。",
+                "profile": "Vsinger/Vtuber,BΣretta X' Rain(ベレッタクロスレイン)ですわ💍 \n赫眼の狙撃手と呼ばれていますの。 \n歌うこととホラーゲームが大好きです。",
                 "sex": null,
                 "birthday": "9999-09-02",
                 "id_youtube": "UCJA_J8CpKRT78Sr1bylS1vA",
@@ -2940,14 +3035,14 @@
                 "image_front_type_icon": "twitter",
                 "image_front_type_header": "twitter",
                 "youtube_channel_is_user": false,
-                "recommends": [],
-                "children": [],
-                "parents": [
+                "recommends": [
                     {
                         "id": "x_encount",
                         "__typename": "Artist"
                     }
                 ],
+                "children": [],
+                "parents": [],
                 "composer_music": [],
                 "lyricist_music": [
                     {
@@ -3079,6 +3174,10 @@
                     },
                     {
                         "id": "2-0Qop1cY6o",
+                        "__typename": "Video"
+                    },
+                    {
+                        "id": "2LSZfphUp5U",
                         "__typename": "Video"
                     },
                     {
@@ -4081,8 +4180,8 @@
                 "id_pixiv": null,
                 "image_url_profile_icon_source_url": null,
                 "image_url_profile_header_source_url": null,
-                "image_front_type_icon": null,
-                "image_front_type_header": null,
+                "image_front_type_icon": "twitter",
+                "image_front_type_header": "twitter",
                 "youtube_channel_is_user": false,
                 "recommends": [],
                 "children": [],
@@ -4099,8 +4198,8 @@
                 "off_vocal_videos": [],
                 "arranger_videos": [],
                 "singer_videos": [],
-                "created_at": "2020-12-31 08:06:35",
-                "updated_at": "2020-12-31 08:06:35",
+                "created_at": "2020-12-31 00:00:00",
+                "updated_at": "2020-12-31 00:00:00",
                 "__typename": "Artist"
             },
             {
@@ -5269,6 +5368,53 @@
                 "singer_videos": [],
                 "created_at": "2020-12-30 00:00:00",
                 "updated_at": "2020-12-30 00:00:00",
+                "__typename": "Artist"
+            },
+            {
+                "id": "edogawa_smith",
+                "name": "音之宮 崇寛（江戸川スミス）",
+                "name_ruby": null,
+                "name_original": null,
+                "profile": null,
+                "sex": null,
+                "birthday": null,
+                "id_youtube": "null",
+                "youtube_registration_date": null,
+                "id_twitter": "edogawa_smith",
+                "id_instagram": null,
+                "url_niconico": null,
+                "url_homepage": null,
+                "id_spotify": null,
+                "id_apple_music": null,
+                "id_showroom": null,
+                "id_openrec": null,
+                "id_bilibili": null,
+                "id_tiktok": null,
+                "id_twitcasting": null,
+                "id_facebook": null,
+                "id_pixiv": null,
+                "image_url_profile_icon_source_url": null,
+                "image_url_profile_header_source_url": null,
+                "image_front_type_icon": "twitter",
+                "image_front_type_header": "twitter",
+                "youtube_channel_is_user": false,
+                "recommends": [],
+                "children": [],
+                "parents": [],
+                "composer_music": [],
+                "lyricist_music": [],
+                "arranger_music": [],
+                "mixer_videos": [
+                    {
+                        "id": "82Ar5F4zfAA",
+                        "__typename": "Music"
+                    }
+                ],
+                "off_vocal_videos": [],
+                "arranger_videos": [],
+                "singer_videos": [],
+                "created_at": "2021-01-01 00:00:00",
+                "updated_at": "2021-01-01 00:00:00",
                 "__typename": "Artist"
             },
             {
@@ -7392,10 +7538,23 @@
                     {
                         "id": "gluttonous_love",
                         "__typename": "Music"
+                    },
+                    {
+                        "id": "missing_xxx",
+                        "__typename": "Music"
+                    },
+                    {
+                        "id": "senritsu_nostalgia",
+                        "__typename": "Music"
                     }
                 ],
                 "lyricist_music": [],
-                "arranger_music": [],
+                "arranger_music": [
+                    {
+                        "id": "senritsu_nostalgia",
+                        "__typename": "Music"
+                    }
+                ],
                 "mixer_videos": [
                     {
                         "id": "1DnbuLjk800",
@@ -7411,6 +7570,10 @@
                     },
                     {
                         "id": "JNe16K_2jWs",
+                        "__typename": "Music"
+                    },
+                    {
+                        "id": "sfPPqKN_1e4",
                         "__typename": "Music"
                     },
                     {
@@ -8878,8 +9041,8 @@
                 "id_pixiv": null,
                 "image_url_profile_icon_source_url": null,
                 "image_url_profile_header_source_url": null,
-                "image_front_type_icon": null,
-                "image_front_type_header": null,
+                "image_front_type_icon": "twitter",
+                "image_front_type_header": "twitter",
                 "youtube_channel_is_user": false,
                 "recommends": [],
                 "children": [],
@@ -8896,8 +9059,8 @@
                         "__typename": "Video"
                     }
                 ],
-                "created_at": "2020-12-31 07:58:10",
-                "updated_at": "2020-12-31 07:58:10",
+                "created_at": "2020-12-31 00:00:00",
+                "updated_at": "2020-12-31 00:00:00",
                 "__typename": "Artist"
             },
             {
@@ -10489,8 +10652,8 @@
                 "id_pixiv": null,
                 "image_url_profile_icon_source_url": null,
                 "image_url_profile_header_source_url": null,
-                "image_front_type_icon": null,
-                "image_front_type_header": null,
+                "image_front_type_icon": "twitter",
+                "image_front_type_header": "twitter",
                 "youtube_channel_is_user": false,
                 "recommends": [],
                 "children": [],
@@ -10507,8 +10670,8 @@
                         "__typename": "Video"
                     }
                 ],
-                "created_at": "2020-12-31 07:58:10",
-                "updated_at": "2020-12-31 07:58:10",
+                "created_at": "2020-12-31 00:00:00",
+                "updated_at": "2020-12-31 00:00:00",
                 "__typename": "Artist"
             },
             {
@@ -12496,7 +12659,12 @@
                 "recommends": [],
                 "children": [],
                 "parents": [],
-                "composer_music": [],
+                "composer_music": [
+                    {
+                        "id": "xxxxx_prismatic",
+                        "__typename": "Music"
+                    }
+                ],
                 "lyricist_music": [],
                 "arranger_music": [],
                 "mixer_videos": [
@@ -12514,6 +12682,58 @@
                 "singer_videos": [],
                 "created_at": "2020-12-29 00:00:00",
                 "updated_at": "2020-12-29 00:00:00",
+                "__typename": "Artist"
+            },
+            {
+                "id": "kabosnikki_templime",
+                "name": "KABOSNIKKI(TEMPLIME)",
+                "name_ruby": null,
+                "name_original": null,
+                "profile": null,
+                "sex": null,
+                "birthday": null,
+                "id_youtube": "null",
+                "youtube_registration_date": null,
+                "id_twitter": "TEMPLIME",
+                "id_instagram": null,
+                "url_niconico": null,
+                "url_homepage": null,
+                "id_spotify": null,
+                "id_apple_music": null,
+                "id_showroom": null,
+                "id_openrec": null,
+                "id_bilibili": null,
+                "id_tiktok": null,
+                "id_twitcasting": null,
+                "id_facebook": null,
+                "id_pixiv": null,
+                "image_url_profile_icon_source_url": null,
+                "image_url_profile_header_source_url": null,
+                "image_front_type_icon": "twitter",
+                "image_front_type_header": "twitter",
+                "youtube_channel_is_user": false,
+                "recommends": [],
+                "children": [],
+                "parents": [],
+                "composer_music": [
+                    {
+                        "id": "chocolate_eclair",
+                        "__typename": "Music"
+                    }
+                ],
+                "lyricist_music": [],
+                "arranger_music": [
+                    {
+                        "id": "chocolate_eclair",
+                        "__typename": "Music"
+                    }
+                ],
+                "mixer_videos": [],
+                "off_vocal_videos": [],
+                "arranger_videos": [],
+                "singer_videos": [],
+                "created_at": "2021-01-01 00:00:00",
+                "updated_at": "2021-01-01 00:00:00",
                 "__typename": "Artist"
             },
             {
@@ -16220,8 +16440,8 @@
                 "id_pixiv": null,
                 "image_url_profile_icon_source_url": null,
                 "image_url_profile_header_source_url": null,
-                "image_front_type_icon": null,
-                "image_front_type_header": null,
+                "image_front_type_icon": "twitter",
+                "image_front_type_header": "twitter",
                 "youtube_channel_is_user": false,
                 "recommends": [],
                 "children": [],
@@ -16231,7 +16451,15 @@
                 "arranger_music": [],
                 "mixer_videos": [
                     {
+                        "id": "2LSZfphUp5U",
+                        "__typename": "Music"
+                    },
+                    {
                         "id": "4UsGOIhEqq4",
+                        "__typename": "Music"
+                    },
+                    {
+                        "id": "JcFx1RAIq0M",
                         "__typename": "Music"
                     }
                 ],
@@ -16243,8 +16471,8 @@
                     }
                 ],
                 "singer_videos": [],
-                "created_at": "2020-12-31 07:47:50",
-                "updated_at": "2020-12-31 07:47:50",
+                "created_at": "2020-12-31 00:00:00",
+                "updated_at": "2020-12-31 00:00:00",
                 "__typename": "Artist"
             },
             {
@@ -16532,6 +16760,10 @@
                         "__typename": "Video"
                     },
                     {
+                        "id": "2LSZfphUp5U",
+                        "__typename": "Video"
+                    },
+                    {
                         "id": "2qoKYQoJOWU",
                         "__typename": "Video"
                     },
@@ -16767,6 +16999,10 @@
                 "arranger_videos": [],
                 "singer_videos": [
                     {
+                        "id": "2LSZfphUp5U",
+                        "__typename": "Video"
+                    },
+                    {
                         "id": "5sZGenN57n0",
                         "__typename": "Video"
                     },
@@ -16889,6 +17125,10 @@
                     {
                         "id": "latatatata",
                         "__typename": "Music"
+                    },
+                    {
+                        "id": "x_flare_odango",
+                        "__typename": "Music"
                     }
                 ],
                 "lyricist_music": [
@@ -16905,6 +17145,14 @@
                     {
                         "id": "glorious_Island",
                         "__typename": "Music"
+                    },
+                    {
+                        "id": "kakusansei_ majority",
+                        "__typename": "Music"
+                    },
+                    {
+                        "id": "x_flare_odango",
+                        "__typename": "Music"
                     }
                 ],
                 "mixer_videos": [
@@ -16914,6 +17162,10 @@
                     },
                     {
                         "id": "2qoKYQoJOWU",
+                        "__typename": "Music"
+                    },
+                    {
+                        "id": "tRe5rwSOzM0",
                         "__typename": "Music"
                     }
                 ],
@@ -19118,62 +19370,6 @@
                 "__typename": "Artist"
             },
             {
-                "id": "mix_aruka",
-                "name": "あるか",
-                "name_ruby": null,
-                "name_original": null,
-                "profile": null,
-                "sex": null,
-                "birthday": null,
-                "id_youtube": null,
-                "youtube_registration_date": null,
-                "id_twitter": "music_garden",
-                "id_instagram": null,
-                "url_niconico": null,
-                "url_homepage": "https://soundcloud.com/arca_music_garden",
-                "id_spotify": null,
-                "id_apple_music": null,
-                "id_showroom": null,
-                "id_openrec": null,
-                "id_bilibili": null,
-                "id_tiktok": null,
-                "id_twitcasting": null,
-                "id_facebook": null,
-                "id_pixiv": null,
-                "image_url_profile_icon_source_url": null,
-                "image_url_profile_header_source_url": null,
-                "image_front_type_icon": "twitter",
-                "image_front_type_header": "twitter",
-                "youtube_channel_is_user": false,
-                "recommends": [],
-                "children": [],
-                "parents": [],
-                "composer_music": [],
-                "lyricist_music": [],
-                "arranger_music": [],
-                "mixer_videos": [
-                    {
-                        "id": "-BiNMcmfP0A",
-                        "__typename": "Music"
-                    },
-                    {
-                        "id": "mh_h8xUUljo",
-                        "__typename": "Music"
-                    }
-                ],
-                "off_vocal_videos": [],
-                "arranger_videos": [
-                    {
-                        "id": "mh_h8xUUljo",
-                        "__typename": "Music"
-                    }
-                ],
-                "singer_videos": [],
-                "created_at": "2020-12-29 00:00:00",
-                "updated_at": "2020-12-29 00:00:00",
-                "__typename": "Artist"
-            },
-            {
                 "id": "mix_auaua",
                 "name": "AUAUA",
                 "name_ruby": null,
@@ -19709,6 +19905,10 @@
                     },
                     {
                         "id": "5zfj2uUyFZY",
+                        "__typename": "Music"
+                    },
+                    {
+                        "id": "6DYdJLUWz1M",
                         "__typename": "Music"
                     },
                     {
@@ -21136,8 +21336,8 @@
                 "id_pixiv": null,
                 "image_url_profile_icon_source_url": null,
                 "image_url_profile_header_source_url": null,
-                "image_front_type_icon": null,
-                "image_front_type_header": null,
+                "image_front_type_icon": "twitter",
+                "image_front_type_header": "twitter",
                 "youtube_channel_is_user": false,
                 "recommends": [],
                 "children": [],
@@ -21159,8 +21359,8 @@
                 ],
                 "arranger_videos": [],
                 "singer_videos": [],
-                "created_at": "2020-12-31 08:06:35",
-                "updated_at": "2020-12-31 08:06:35",
+                "created_at": "2020-12-31 00:00:00",
+                "updated_at": "2020-12-31 00:00:00",
                 "__typename": "Artist"
             },
             {
@@ -21188,8 +21388,8 @@
                 "id_pixiv": null,
                 "image_url_profile_icon_source_url": null,
                 "image_url_profile_header_source_url": null,
-                "image_front_type_icon": null,
-                "image_front_type_header": null,
+                "image_front_type_icon": "twitter",
+                "image_front_type_header": "twitter",
                 "youtube_channel_is_user": false,
                 "recommends": [],
                 "children": [],
@@ -21206,8 +21406,8 @@
                         "__typename": "Video"
                     }
                 ],
-                "created_at": "2020-12-31 08:06:35",
-                "updated_at": "2020-12-31 08:06:35",
+                "created_at": "2020-12-31 00:00:00",
+                "updated_at": "2020-12-31 00:00:00",
                 "__typename": "Artist"
             },
             {
@@ -23081,8 +23281,8 @@
                 "id_pixiv": null,
                 "image_url_profile_icon_source_url": null,
                 "image_url_profile_header_source_url": null,
-                "image_front_type_icon": null,
-                "image_front_type_header": null,
+                "image_front_type_icon": "twitter",
+                "image_front_type_header": "twitter",
                 "youtube_channel_is_user": false,
                 "recommends": [],
                 "children": [],
@@ -23099,8 +23299,8 @@
                         "__typename": "Video"
                     }
                 ],
-                "created_at": "2020-12-31 07:58:10",
-                "updated_at": "2020-12-31 07:58:10",
+                "created_at": "2020-12-31 00:00:00",
+                "updated_at": "2020-12-31 00:00:00",
                 "__typename": "Artist"
             },
             {
@@ -23316,6 +23516,10 @@
                         "__typename": "Video"
                     },
                     {
+                        "id": "2LSZfphUp5U",
+                        "__typename": "Video"
+                    },
+                    {
                         "id": "9nex9_KBHZw",
                         "__typename": "Video"
                     },
@@ -23337,6 +23541,10 @@
                     },
                     {
                         "id": "PvQtBIrLMT0",
+                        "__typename": "Video"
+                    },
+                    {
+                        "id": "Qg-yu_IY-Tw",
                         "__typename": "Video"
                     },
                     {
@@ -23921,8 +24129,8 @@
                 "id_pixiv": null,
                 "image_url_profile_icon_source_url": null,
                 "image_url_profile_header_source_url": null,
-                "image_front_type_icon": null,
-                "image_front_type_header": null,
+                "image_front_type_icon": "twitter",
+                "image_front_type_header": "twitter",
                 "youtube_channel_is_user": false,
                 "recommends": [],
                 "children": [],
@@ -23939,8 +24147,8 @@
                 ],
                 "arranger_videos": [],
                 "singer_videos": [],
-                "created_at": "2020-12-31 07:58:10",
-                "updated_at": "2020-12-31 07:58:10",
+                "created_at": "2020-12-31 00:00:00",
+                "updated_at": "2020-12-31 00:00:00",
                 "__typename": "Artist"
             },
             {
@@ -29280,6 +29488,58 @@
                 "__typename": "Artist"
             },
             {
+                "id": "satsuki_ga_tenkomori",
+                "name": "さつき が てんこもり",
+                "name_ruby": null,
+                "name_original": null,
+                "profile": null,
+                "sex": null,
+                "birthday": null,
+                "id_youtube": "TENKOMOR1",
+                "youtube_registration_date": null,
+                "id_twitter": "TENKOMORI",
+                "id_instagram": null,
+                "url_niconico": null,
+                "url_homepage": null,
+                "id_spotify": null,
+                "id_apple_music": null,
+                "id_showroom": null,
+                "id_openrec": null,
+                "id_bilibili": null,
+                "id_tiktok": null,
+                "id_twitcasting": null,
+                "id_facebook": null,
+                "id_pixiv": null,
+                "image_url_profile_icon_source_url": null,
+                "image_url_profile_header_source_url": null,
+                "image_front_type_icon": "twitter",
+                "image_front_type_header": "twitter",
+                "youtube_channel_is_user": false,
+                "recommends": [],
+                "children": [],
+                "parents": [],
+                "composer_music": [
+                    {
+                        "id": "crazy_beat",
+                        "__typename": "Music"
+                    }
+                ],
+                "lyricist_music": [
+                    {
+                        "id": "crazy_beat",
+                        "__typename": "Music"
+                    }
+                ],
+                "arranger_music": [],
+                "mixer_videos": [],
+                "off_vocal_videos": [],
+                "arranger_videos": [],
+                "singer_videos": [],
+                "created_at": "2021-01-01 00:00:00",
+                "updated_at": "2021-01-01 00:00:00",
+                "__typename": "Artist"
+            },
+            {
                 "id": "savasti",
                 "name": "savasti",
                 "name_ruby": "さばすてぃ",
@@ -29578,8 +29838,8 @@
                 "id_pixiv": null,
                 "image_url_profile_icon_source_url": null,
                 "image_url_profile_header_source_url": null,
-                "image_front_type_icon": null,
-                "image_front_type_header": null,
+                "image_front_type_icon": "twitter",
+                "image_front_type_header": "twitter",
                 "youtube_channel_is_user": false,
                 "recommends": [],
                 "children": [],
@@ -29606,8 +29866,8 @@
                 "off_vocal_videos": [],
                 "arranger_videos": [],
                 "singer_videos": [],
-                "created_at": "2020-12-31 07:47:50",
-                "updated_at": "2020-12-31 07:47:50",
+                "created_at": "2020-12-31 00:00:00",
+                "updated_at": "2020-12-31 00:00:00",
                 "__typename": "Artist"
             },
             {
@@ -29842,6 +30102,14 @@
                     },
                     {
                         "id": "nero_x_fire_triumph",
+                        "__typename": "Music"
+                    },
+                    {
+                        "id": "senritsu_nostalgia",
+                        "__typename": "Music"
+                    },
+                    {
+                        "id": "xxxxx_prismatic",
                         "__typename": "Music"
                     }
                 ],
@@ -30247,8 +30515,8 @@
                 "id_pixiv": null,
                 "image_url_profile_icon_source_url": null,
                 "image_url_profile_header_source_url": null,
-                "image_front_type_icon": null,
-                "image_front_type_header": null,
+                "image_front_type_icon": "twitter",
+                "image_front_type_header": "twitter",
                 "youtube_channel_is_user": false,
                 "recommends": [],
                 "children": [],
@@ -30265,8 +30533,8 @@
                         "__typename": "Video"
                     }
                 ],
-                "created_at": "2020-12-31 07:58:10",
-                "updated_at": "2020-12-31 07:58:10",
+                "created_at": "2020-12-31 00:00:00",
+                "updated_at": "2020-12-31 00:00:00",
                 "__typename": "Artist"
             },
             {
@@ -33541,6 +33809,10 @@
                         "__typename": "Video"
                     },
                     {
+                        "id": "JcFx1RAIq0M",
+                        "__typename": "Video"
+                    },
+                    {
                         "id": "Ylhoi5HRe2E",
                         "__typename": "Video"
                     }
@@ -34608,12 +34880,13 @@
                 "image_front_type_icon": "twitter",
                 "image_front_type_header": "twitter",
                 "youtube_channel_is_user": false,
-                "recommends": [],
-                "children": [
+                "recommends": [
                     {
                         "id": "beretta_x_rain",
                         "__typename": "Artist"
-                    },
+                    }
+                ],
+                "children": [
                     {
                         "id": "lamuril_ragna_x",
                         "__typename": "Artist"
@@ -34680,7 +34953,16 @@
                     }
                 ],
                 "composer_music": [],
-                "lyricist_music": [],
+                "lyricist_music": [
+                    {
+                        "id": "missing_xxx",
+                        "__typename": "Music"
+                    },
+                    {
+                        "id": "x_flare_odango",
+                        "__typename": "Music"
+                    }
+                ],
                 "arranger_music": [],
                 "mixer_videos": [],
                 "off_vocal_videos": [],
@@ -34691,7 +34973,15 @@
                         "__typename": "Video"
                     },
                     {
+                        "id": "11Ybh39IiU4",
+                        "__typename": "Video"
+                    },
+                    {
                         "id": "1W0ru3OSIxA",
+                        "__typename": "Video"
+                    },
+                    {
+                        "id": "2LSZfphUp5U",
                         "__typename": "Video"
                     },
                     {
@@ -34703,6 +34993,10 @@
                         "__typename": "Video"
                     },
                     {
+                        "id": "6DYdJLUWz1M",
+                        "__typename": "Video"
+                    },
+                    {
                         "id": "BgGIEtdJbR0",
                         "__typename": "Video"
                     },
@@ -34711,11 +35005,31 @@
                         "__typename": "Video"
                     },
                     {
+                        "id": "Cb5qaFxJQGI",
+                        "__typename": "Video"
+                    },
+                    {
+                        "id": "JcFx1RAIq0M",
+                        "__typename": "Video"
+                    },
+                    {
                         "id": "mDdBPYhz_S4",
                         "__typename": "Video"
                     },
                     {
+                        "id": "sfPPqKN_1e4",
+                        "__typename": "Video"
+                    },
+                    {
                         "id": "SuzhJrIEsTE",
+                        "__typename": "Video"
+                    },
+                    {
+                        "id": "tRe5rwSOzM0",
+                        "__typename": "Video"
+                    },
+                    {
+                        "id": "UvvYqqqCcno",
                         "__typename": "Video"
                     },
                     {
@@ -35131,8 +35445,8 @@
                 "id_pixiv": null,
                 "image_url_profile_icon_source_url": null,
                 "image_url_profile_header_source_url": null,
-                "image_front_type_icon": null,
-                "image_front_type_header": null,
+                "image_front_type_icon": "twitter",
+                "image_front_type_header": "twitter",
                 "youtube_channel_is_user": false,
                 "recommends": [],
                 "children": [],
@@ -35149,8 +35463,8 @@
                 "off_vocal_videos": [],
                 "arranger_videos": [],
                 "singer_videos": [],
-                "created_at": "2020-12-31 08:06:35",
-                "updated_at": "2020-12-31 08:06:35",
+                "created_at": "2020-12-31 00:00:00",
+                "updated_at": "2020-12-31 00:00:00",
                 "__typename": "Artist"
             },
             {
@@ -36931,6 +37245,53 @@
                 "__typename": "Artist"
             },
             {
+                "id": "zakuro",
+                "name": "柘榴-zakuro-",
+                "name_ruby": null,
+                "name_original": null,
+                "profile": null,
+                "sex": null,
+                "birthday": null,
+                "id_youtube": "UCT0GO54cT_RxKN-Ou2PwTsw",
+                "youtube_registration_date": null,
+                "id_twitter": "zakuro_96",
+                "id_instagram": null,
+                "url_niconico": null,
+                "url_homepage": null,
+                "id_spotify": null,
+                "id_apple_music": null,
+                "id_showroom": null,
+                "id_openrec": null,
+                "id_bilibili": null,
+                "id_tiktok": null,
+                "id_twitcasting": null,
+                "id_facebook": null,
+                "id_pixiv": null,
+                "image_url_profile_icon_source_url": null,
+                "image_url_profile_header_source_url": null,
+                "image_front_type_icon": "twitter",
+                "image_front_type_header": "twitter",
+                "youtube_channel_is_user": false,
+                "recommends": [],
+                "children": [],
+                "parents": [],
+                "composer_music": [],
+                "lyricist_music": [],
+                "arranger_music": [],
+                "mixer_videos": [],
+                "off_vocal_videos": [],
+                "arranger_videos": [],
+                "singer_videos": [
+                    {
+                        "id": "82Ar5F4zfAA",
+                        "__typename": "Video"
+                    }
+                ],
+                "created_at": "2021-01-01 00:00:00",
+                "updated_at": "2021-01-01 00:00:00",
+                "__typename": "Artist"
+            },
+            {
                 "id": "zange_chan",
                 "name": "ざんげちゃん",
                 "name_ruby": null,
@@ -37123,5 +37484,5 @@
     "loading": false,
     "networkStatus": 7,
     "stale": false,
-    "fetched_at": "2020-12-31T17:27:12.982Z"
+    "fetched_at": "2021-01-01T19:16:40.436Z"
 }
