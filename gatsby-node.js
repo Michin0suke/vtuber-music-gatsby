@@ -74,7 +74,8 @@ exports.createPages = async ({ graphql, actions: { createPage }, getNode }) => {
                         }
                     }
                 `)
-                if (result.data.file?.id ) fileId = result.data.file?.id
+                const resultDataFileId = result && result.data && result.data.file && result.data.file.id
+                if (resultDataFileId) fileId = resultDataFileId
             }
         }))
         return fileId && getNode(fileId)
@@ -87,8 +88,7 @@ exports.createPages = async ({ graphql, actions: { createPage }, getNode }) => {
                     id
                 }
             }`)
-        console.log(file?.id)
-        return file?.id && getNode(file?.id)
+        return file && file.id && getNode(file.id)
     }
 
     const { data: { allArtist } } = await graphql(`
