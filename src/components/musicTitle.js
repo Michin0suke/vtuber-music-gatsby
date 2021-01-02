@@ -4,7 +4,7 @@ import ColorNote from './colorNote'
 
 export default ({ music, className }) => {
     return (
-        <div className={`px-3 py-2 hover:bg-gray-200 rounded ${className}`}>
+        <div className={`px-3 py-2 sm:hover:bg-gray-200 rounded ${className}`}>
             <Link to={`/music/${music.id}`}>
                 <p className='flex items-center'>
                     <ColorNote className='w-4 h-4'/>

@@ -92,9 +92,9 @@ const IndexPage = ({ data: { allVideoSortByCreatedAt, allVideoSortByReleaseDate,
             }
         </Slider> */}
 
-        <div className='sm:flex flex-wrap justify-between'>
+        <div className='sm:px-2 flex flex-wrap justify-between'>
             {showVideos.slice(0, 12).map((video, key) => (
-                <VideoCard video={video} className='mb-12 sm:px-3 w-full sm:w-1/2 md:w-1/3 xl:w-1/4' key={key} withPublishDate/>
+                <VideoCard video={video} className='mb-5 sm:px-1 w-full sm:w-1/2 md:w-1/3 xl:w-1/4' key={key} withPublishDate/>
             ))}
         </div>
 
@@ -121,10 +121,10 @@ const IndexPage = ({ data: { allVideoSortByCreatedAt, allVideoSortByReleaseDate,
             dataLength={showVideoIndex - 12} //This is important field to render the next data
             next={() => setShowVideoIndex(showVideoIndex + 12)}
             hasMore={showVideos.length > showVideoIndex}
-            className='sm:flex flex-wrap justify-start'
+            className='sm:px-2 flex flex-wrap justify-start'
         >
             {showVideos.slice(12, showVideoIndex).map((video, key) => (
-                <VideoCard video={video} className='mb-16 sm:px-3 w-full sm:w-1/2 md:w-1/3 xl:w-1/4' key={key} withPublishDate/>
+                <VideoCard video={video} className='mb-5 sm:px-1 w-full sm:w-1/2 md:w-1/3 xl:w-1/4' key={key} withPublishDate/>
             ))}
         </InfiniteScroll>
 
@@ -156,6 +156,7 @@ export const query = graphql`
         nodes {
             id
             release_date
+            is_original_music
             thumbnail_image {
                 childImageSharp {
                     fluid(maxWidth: 300) {
@@ -184,6 +185,7 @@ export const query = graphql`
         nodes {
             id
             release_date
+            is_original_music
             thumbnail_image {
                 childImageSharp {
                     fluid(maxWidth: 300) {

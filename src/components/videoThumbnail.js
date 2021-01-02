@@ -16,13 +16,14 @@ export default ({ video, to, withHoverLink, className }) => {
                     </div>
                 </div>
                 {withHoverLink && 
-                    <Link to={to} className='absolute top-0 right-0 bottom-0 left-0 opacity-0 hover:opacity-100 w-full h-full'>
+                    <Link to={to} className='absolute top-0 right-0 bottom-0 left-0 opacity-0 sm:hover:opacity-100 w-full h-full'>
                         <div className='relative flex items-center justify-center w-full h-full'>
                             <span className='absolute bg-black opacity-20 w-full h-full'></span>
                             <span className='rightArrow opacity-90'></span>
                         </div>
                     </Link>
                 }
+                {video.is_original_music && <span className='absolute top-1 right-1 px-2 py-0 bg-red-500 text-xs text-white rounded-full shadow'>ORIGINAL</span>}
             </div>
         </div>
     )

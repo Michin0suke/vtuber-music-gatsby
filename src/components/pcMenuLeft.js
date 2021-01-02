@@ -8,7 +8,7 @@ import ThumbsUp from './svg/thumbsUp'
 import Search from './svg/search'
 
 const Row = ({ currentPage, href, text, Img, imgClassName }) => (
-    <li className='hover:bg-gray-100 h-10'>
+    <li className='sm:hover:bg-gray-100 h-10'>
         <Link to={href} className='h-full py-3 flex items-center'>
             <div className='w-12'>
                 <Img color={currentPage === href ? 'red' : '#333'} className={`mx-auto ${imgClassName}`}/>

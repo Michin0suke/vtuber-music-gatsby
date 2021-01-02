@@ -124,21 +124,21 @@ export default ({ data: { video, allVideo }, location }) => {
 
 
             <div className='w-full max-w-4xl mx-auto'>
-                <div className='mb-7 bg-white lg:shadow'>
+                <div className='mb-4 bg-white lg:shadow'>
                     {video.thumbnail_image?.childImageSharp?.fluid ?
                         <YouTubePlayer
                             nextVideoId={nextVideoId}
                             video={video}
-                            className='mb-2 w-full'
-                        />
-                    : <p>動画を取得できませんでした。</p>}
+                            className='w-full mb-2'
+                        /> :
+                        <p>動画を取得できませんでした。</p>}
                     <div className='lg:px-5'>
                         <Link to={`/music/${video.music.id}`}>
-                            <Heading text={video.custom_music_name || video.music.title} className='mb-5' hoverEffect isMusicTitle/>
+                            <Heading text={video.custom_music_name || video.music.title} className='mb-2' hoverEffect isMusicTitle/>
                         </Link>
 
-                        <div className='pb-3'>
-                            {video.singers.map((singer, key) => <ArtistCard artist={singer} key={key} className='mb-2' imgSize={16} withParent/>)}
+                        <div className='pb-2'>
+                            {video.singers.map((singer, key) => <ArtistCard artist={singer} key={key} className='mb-2' cardSize='lg' withParent/>)}
                         </div>
                     </div>
                 </div>
@@ -150,18 +150,18 @@ export default ({ data: { video, allVideo }, location }) => {
                     </div>
                 }
 
-                <div className='mb-7 lg:px-5 pt-5 pb-1 bg-white lg:shadow'>
-                    {video.music.lyricists.map((lyricist, key) => <ArtistCard artist={lyricist} key={key} className='mb-3' roleText='作詞' withParent/>)}
-                    {video.music.composers.map((composer, key) => <ArtistCard artist={composer} key={key} className='mb-3' roleText='作曲' withParent/>)}
-                    {video.music.arrangers.map((arranger, key) => <ArtistCard artist={arranger} key={key} className='mb-3' roleText='編曲' withParent/>)}
-                    {video.mixers.map((mixer, key) => <ArtistCard artist={mixer} key={key} className='mb-3' roleText='ミックス' withParent/>)}
-                    {video.off_vocals.map((off_vocal, key) => <ArtistCard artist={off_vocal} key={key} className='mb-3' roleText='オフボーカル' withParent/>)}
-                    {video.arrangers.map((arranger, key) => <ArtistCard artist={arranger} key={key} className='mb-3' roleText='アレンジ' withParent/>)}
+                <div className='mb-4 lg:px-5 pt-4 pb-1 bg-white lg:shadow'>
+                    {video.music.lyricists.map((lyricist, key) => <ArtistCard artist={lyricist} key={key} className='mb-3' roleText='作詞'/>)}
+                    {video.music.composers.map((composer, key) => <ArtistCard artist={composer} key={key} className='mb-3' roleText='作曲'/>)}
+                    {video.music.arrangers.map((arranger, key) => <ArtistCard artist={arranger} key={key} className='mb-3' roleText='編曲'/>)}
+                    {video.mixers.map((mixer, key) => <ArtistCard artist={mixer} key={key} className='mb-3' roleText='ミックス'/>)}
+                    {video.off_vocals.map((off_vocal, key) => <ArtistCard artist={off_vocal} key={key} className='mb-3' roleText='オフボーカル'/>)}
+                    {video.arrangers.map((arranger, key) => <ArtistCard artist={arranger} key={key} className='mb-3' roleText='アレンジ'/>)}
                 </div>
 
                 {video.music.lyrics_url &&
-                    <div className='mb-7 text-gray-700 ml-5 py-5'>
-                        歌詞：<a href={video.music.lyrics_url} className='inline-block hover:bg-gray-200 rounded p-3'>外部サイトへジャンプ</a>
+                    <div className='mb-4 text-gray-700 ml-5 py-5'>
+                        歌詞：<a href={video.music.lyrics_url} className='inline-block sm:hover:bg-gray-200 rounded p-3'>外部サイトへジャンプ</a>
                     </div>
                 }
 
@@ -169,15 +169,16 @@ export default ({ data: { video, allVideo }, location }) => {
                 {nextVideo && <VideoCard video={nextVideo} className='mx-auto w-full max-w-md mb-16'/>} */}
 
                 {sameSingerVideos.length !== 0 &&
-                    <div className='lg:px-5 py-3 bg-white lg:shadow'>
-                        <Heading text='同じアーティストが歌っている動画' className='mb-5 w-full max-w-4xl mx-auto'/>
+                    <div className='lg:px-5 py-2 bg-white lg:shadow'>
+                        <Heading text='同じアーティストが歌っている動画' className='mb-2 w-full max-w-4xl mx-auto'/>
                         <div className='w-full sm:flex flex-wrap justify-start'>
                             {
                                 sameSingerVideos.map((video, key) => 
                                     <VideoCard
                                         key={`same-singer-videos-${key}`}
                                         video={video}
-                                        className='mb-16 sm:px-3 sm:w-1/2 md:w-1/3'
+                                        className='mb-5 sm:px-3 sm:w-1/2 md:w-1/3'
+                                        withPublishDate
                                     />
                                 )
                             }
@@ -294,6 +295,7 @@ export const pageQuery = graphql`
             singer_videos {
                 id
                 custom_music_name
+                release_date
                 music {
                     id
                     title

@@ -47,7 +47,7 @@ export default ({ type, text, subText, className }) => {
         list.push(
             <li className='flex-shrink-0' key={0}>
                 <Link to='/'>
-                    <div className='p-1 hover:bg-gray-200 rounded-full'>
+                    <div className='p-1 sm:hover:bg-gray-200 rounded-full'>
                         <Home color='#777' className='w-4 h-4 mb-0.5'/>
                     </div>
                 </Link>
@@ -60,7 +60,7 @@ export default ({ type, text, subText, className }) => {
         list.push(
             <li className='flex-shrink-0' key={1}>
                 <span className='p-0.5 pointer-events-none'>{`>`}</span>
-                <span className={`p-0.5 rounded ${text && 'hover:bg-gray-200 hover:text-black'}`}>
+                <span className={`p-0.5 rounded ${text && 'sm:hover:bg-gray-200 sm:hover:text-black'}`}>
                     <Link to={`/${typeList[type].url}`}>{typeList[type].text}</Link>
                 </span>
             </li>
@@ -77,7 +77,7 @@ export default ({ type, text, subText, className }) => {
         list.push(
             <li className='flex-shrink-0' key={1}>
                 <span className='p-0.5 pointer-events-none'>{`>`}</span>
-                <span className={`p-0.5 rounded ${text && 'hover:bg-gray-200 hover:text-black'}`}>
+                <span className={`p-0.5 rounded ${text && 'sm:hover:bg-gray-200 sm:hover:text-black'}`}>
                     <span>{typeList[type].text}</span>
                 </span>
             </li>

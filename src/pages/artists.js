@@ -70,7 +70,7 @@ export default ({ data: {allArtist} }) => {
 
 export const query = graphql`
 {
-    allArtist {
+    allArtist(sort: {order: ASC, fields: name_ruby}) {
         nodes {
             id
             name

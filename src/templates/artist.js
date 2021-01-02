@@ -15,8 +15,8 @@ import MusicTitle from '../components/musicTitle'
 const ArtistSection = ({ headingText, artists }) => {
     if (artists.length !== 0) {
         return (
-            <div className='mb-7 pb-5 lg:px-5 bg-white lg:shadow'>
-                <Heading text={ headingText } className='mb-5'/>
+            <div className='mb-4 pb-1 pt-1 lg:px-5 bg-white lg:shadow'>
+                <Heading text={ headingText } className='mb-2'/>
 
                 <div className='px-5'>
                     {artists.map((artist, key) => (
@@ -33,8 +33,8 @@ const ArtistSection = ({ headingText, artists }) => {
 const MusicSection = ({ headingText, music }) => {
     if (music.length !== 0) {
         return (
-            <div className='mb-7 pb-5 lg:px-5 bg-white lg:shadow'>
-                <Heading text={headingText} className='mb-5' />
+            <div className='mb-4 pb-1 pt-1 lg:px-5 bg-white lg:shadow'>
+                <Heading text={headingText} className='mb-2' />
                 <div className='px-5 flex flex-wrap'>
                 { music.map((music, key) => <MusicTitle key={key} music={music} className='mb-2 w-full sm:w-1/2 lg:w-1/3'/> )}
                 </div>
@@ -48,14 +48,14 @@ const MusicSection = ({ headingText, music }) => {
 const VideoSection = ({ headingText, videos }) => {
     if (videos.length !== 0) {
         return (
-            <div className='mb-7 pb-5 lg:px-5 bg-white lg:shadow'>
-                <Heading text={headingText} count={videos.length} className='mb-5'/>
+            <div className='mb-4 pb-5 lg:px-5 bg-white lg:shadow'>
+                <Heading text={headingText} count={videos.length} className='mb-2'/>
     
                 <div className='flex flex-wrap'>
                     {videos
                     .reduce((acc, cur) => acc.map(v=>v.id).includes(cur.id) ? acc : acc.concat(cur),[])
                     .map((video,key) => (
-                        <VideoCard key={key} video={video} className='mb-12 sm:px-3 w-full sm:w-1/2 md:w-1/3'/>
+                        <VideoCard key={key} video={video} className='mb-5 sm:px-3 w-full sm:w-1/2 md:w-1/3' withPublishDate/>
                     ))}
                 </div>
             </div>
@@ -118,7 +118,7 @@ export default ({ data: { artist }}) => {
         <div className='max-w-4xl mx-auto'>
 
             {artist.header_image !== null &&
-                <div className='bg-white lg:shadow mb-7'>
+                <div className='bg-white lg:shadow mb-4'>
                     <div className='relative w-full'>
                         <Img fluid={artist.header_image?.childImageSharp?.fluid}/>
                         {artist.header_source_type &&
@@ -131,9 +131,9 @@ export default ({ data: { artist }}) => {
                         {artist.image_url_profile_header_source_url &&
                             <a href={artist.image_url_profile_header_source_url}
                                  target='_blank'
-                                 className='absolute top-0 left-0 flex items-center justify-center w-full h-full bg-white opacity-0 hover:opacity-30 text-xl'
+                                 className='absolute top-0 left-0 flex items-center justify-center w-full h-full bg-white opacity-0 sm:hover:opacity-30 text-xl'
                             >{artist.image_url_profile_header_source_url}</a>}
-                        <div class='absolute left-5 lg:left-10 -bottom-12 lg:-bottom-14'>
+                        <div className='absolute left-5 lg:left-10 -bottom-12 lg:-bottom-14'>
                             <ProfileImg
                                 artist={artist}
                                 href={artist.image_url_profile_icon_source_url}
@@ -141,36 +141,36 @@ export default ({ data: { artist }}) => {
                             />
                         </div>
                     </div>
-                    <h1 className='px-5 lg:px-10 pt-16 lg:pt-20 pb-7 text-xl text-gray-700'>{artist.name}{artist.name_ruby && `（${artist.name_ruby}）`}</h1>
+                    <h1 className='px-5 lg:px-10 pt-16 lg:pt-20 pb-4 text-xl text-gray-700'>{artist.name}{artist.name_ruby && `（${artist.name_ruby}）`}</h1>
                 </div>
             }
 
             {artist.header_image !== null ||
-                <div className='mb-7 pb-7 lg:px-5 bg-white lg:shadow'>
-                    <Heading text={artistType} className='mb-5'/>
-                    <ArtistCard artist={artist} imgSize={20} noLink withRuby/>
+                <div className='mb-4 pb-4 pt-1 lg:px-5 bg-white lg:shadow'>
+                    <Heading text={artistType} className='mb-2'/>
+                    <ArtistCard artist={artist} cardSize='xl' noLink withRuby/>
                 </div>
             }
 
             {artist.name_original &&
-                <div className='mb-7 pb-7 lg:px-5 bg-white lg:shadow'>
-                    <Heading text='フルネーム' className='mb-5'/>
+                <div className='mb-4 pb-4 pt-1 lg:px-5 bg-white lg:shadow'>
+                    <Heading text='フルネーム' className='mb-2'/>
                     <p className='px-5 text-gray-700 whitespace-pre-wrap'>{artist.name_original}</p>
                 </div>
             }
 
             {artist.profile &&
-                <div className='mb-7 pb-7 lg:px-5 bg-white lg:shadow'>
-                    <Heading text='プロフィール' className='mb-5'/>
+                <div className='mb-4 pb-4 pt-1 lg:px-5 bg-white lg:shadow'>
+                    <Heading text='プロフィール' className='mb-2'/>
                     <p className='px-5 text-gray-700 whitespace-pre-wrap'>{artist.profile}</p>
                 </div>
             }
 
             {artist.birthday &&
-                <div className='mb-7 pb-5 lg:px-5 bg-white lg:shadow'>
-                    <Heading text='誕生日' className='mb-5'/>
+                <div className='mb-4 pb-4 pt-1 lg:px-5 bg-white lg:shadow'>
+                    <Heading text='誕生日' className='mb-2'/>
                     <time
-                        datetime={artist.birthday && artist.birthday.replace('9999-', '')}
+                        dateTime={artist.birthday && artist.birthday.replace('9999-', '')}
                         className='px-6'
                     >
                         {dateFormatter(artist.birthday)}
@@ -182,7 +182,7 @@ export default ({ data: { artist }}) => {
             <ArtistSection headingText='所属しているグループ' artists={artist.parents}/>
             <ArtistSection headingText='似ているタイプのアーティスト' artists={artist.recommends}/>
             
-            <ArtistCardLinks artist={artist} className='mb-7 pb-5 px-5 bg-white lg:shadow'/>
+            <ArtistCardLinks artist={artist} className='mb-4 pb-1 pt-2 lg:px-5 bg-white lg:shadow'/>
 
             <MusicSection headingText='作曲した楽曲' music={artist.composer_music}/>
             <MusicSection headingText='作詞した楽曲' music={artist.lyricist_music}/>
@@ -200,8 +200,8 @@ export default ({ data: { artist }}) => {
                 (artist.profile_source_type === 'primary' && artist.image_url_profile_icon_source_url) ||
                 (artist.profile_source_type === 'primary' && artist.image_url_profile_header_source_url)
             ) &&
-                <div className='mb-16 pb-7 lg:px-5 bg-white lg:shadow'>
-                    <Heading text='プロフィール画像の出典元' className='mb-5'/>
+                <div className='mb-16 pb-4 pt-1 lg:px-5 bg-white lg:shadow'>
+                    <Heading text='プロフィール画像の出典元' className='mb-2'/>
                     {artist.profile_source_type &&
                         <div className='px-5 text-xs text-gray-600'>
                             {artist.profile_source_type === 'primary' && artist.image_url_profile_icon_source_url && <p>アイコン画像: <a target='_blank' href={artist.image_url_profile_icon_source_url}>{artist.image_url_profile_icon_source_url}</a></p>}
@@ -219,7 +219,7 @@ export default ({ data: { artist }}) => {
                 </div>
             }
             <a
-                className='block mx-auto py-1 px-3 w-44 max-w-md border bg-white hover:bg-gray-200 text-center'
+                className='block mx-auto py-1 px-3 w-44 max-w-md border bg-white sm:hover:bg-gray-200 text-center'
                 href={`https://ws.formzu.net/dist/S956931/?importv=${artist.id}`}
             >編集リクエスト</a>
         </div>
@@ -289,6 +289,8 @@ query($id: String!){
             singer_videos {
                 id
                 custom_music_name
+                is_original_music
+                release_date
                 music {
                     id
                     title
@@ -350,6 +352,8 @@ query($id: String!){
         mixer_videos {
             id
             custom_music_name
+            is_original_music
+                release_date
             music {
                 id
                 title
@@ -376,6 +380,8 @@ query($id: String!){
         off_vocal_videos {
             id
             custom_music_name
+            is_original_music
+                release_date
             music {
                 id
                 title
@@ -402,6 +408,8 @@ query($id: String!){
         arranger_videos {
             id
             custom_music_name
+            is_original_music
+                release_date
             music {
                 id
                 title
@@ -428,6 +436,8 @@ query($id: String!){
         singer_videos {
             id
             custom_music_name
+            is_original_music
+                release_date
             music {
                 id
                 title

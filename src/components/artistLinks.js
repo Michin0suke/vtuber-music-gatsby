@@ -70,7 +70,7 @@ export default ({ artist, className }) => {
         const url = convertFullUrl(artist[type], type)
 
         return (
-            <li key={`${artist.id}-${type}`} className='mb-2 pl-5 py-2 h-14 hover:bg-gray-200 rounded'>
+            <li key={`${artist.id}-${type}`} className='mb-2 pl-5 py-2 h-14 sm:hover:bg-gray-200 rounded'>
                 <a href={url} target='_brank' className='h-full flex items-center'>
                     {logo}
                     {disp && <span className='text-xl font-bold text-gray-800'>{disp}</span>}
@@ -82,7 +82,7 @@ export default ({ artist, className }) => {
     if (isHasLink) {
         return (
             <div className={className}>
-                <Heading text='リンク' className='mb-5'/>
+                <Heading text='リンク' className='mb-1'/>
                 <ul>
                     {elements}
                 </ul>
