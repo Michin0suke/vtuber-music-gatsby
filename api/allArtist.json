@@ -304,7 +304,7 @@
                 "profile": "40mPは、日本のミュージシャン。主に音声合成技術VOCALOIDを使った初音ミク、Megpoidといったソフトウェアをボーカルに用いた楽曲を発表している、いわゆるボカロP。シンガーソングライターとしてはイナメトオル名義。岡山県岡山市出身。",
                 "sex": "male",
                 "birthday": "1986-02-04",
-                "id_youtube": "40meterP",
+                "id_youtube": "UCG09qajPDZdPtLsTkW7mJQA",
                 "youtube_registration_date": null,
                 "id_twitter": "40mP",
                 "id_instagram": null,
@@ -923,7 +923,7 @@
                 "profile": "18歳の女子高生3年。\n学校ではチャラく、ギャルに近い身なりやしゃべり方をしているが、本当はアニメゲーム漫画好きの隠れオタク。\n百合が大好きで、オタク仲間には女子の皮を被ったおっさんだと比喩される。",
                 "sex": "female",
                 "birthday": null,
-                "id_youtube": "AkabaneChannel",
+                "id_youtube": "UCBi8YaVyZpiKWN3_Z0dCTfQ",
                 "youtube_registration_date": null,
                 "id_twitter": "Youko_Akabane",
                 "id_instagram": null,
@@ -4902,6 +4902,10 @@
                         "__typename": "Music"
                     },
                     {
+                        "id": "moso_kansho_daisho_renmei",
+                        "__typename": "Music"
+                    },
+                    {
                         "id": "otome_dissection",
                         "__typename": "Music"
                     },
@@ -4917,6 +4921,10 @@
                     },
                     {
                         "id": "hibana",
+                        "__typename": "Music"
+                    },
+                    {
+                        "id": "moso_kansho_daisho_renmei",
                         "__typename": "Music"
                     },
                     {
@@ -20607,6 +20615,48 @@
                 "__typename": "Artist"
             },
             {
+                "id": "misya",
+                "name": "魅紗",
+                "name_ruby": "みしゃ",
+                "name_original": null,
+                "profile": "バ美肉VSinger魅紗（MI-SYA）じゃっ！全力個人勢じゃっ！EDM好き、歌ってみたも投稿中！",
+                "sex": null,
+                "birthday": null,
+                "id_youtube": "UCfUw0vcNJ7xOnMFMzOSah0g",
+                "youtube_registration_date": null,
+                "id_twitter": "misyasamadayo",
+                "id_instagram": null,
+                "url_niconico": null,
+                "url_homepage": null,
+                "id_spotify": null,
+                "id_apple_music": null,
+                "id_showroom": null,
+                "id_openrec": null,
+                "id_bilibili": null,
+                "id_tiktok": null,
+                "id_twitcasting": null,
+                "id_facebook": null,
+                "id_pixiv": null,
+                "image_url_profile_icon_source_url": null,
+                "image_url_profile_header_source_url": null,
+                "image_front_type_icon": null,
+                "image_front_type_header": null,
+                "youtube_channel_is_user": false,
+                "recommends": [],
+                "children": [],
+                "parents": [],
+                "composer_music": [],
+                "lyricist_music": [],
+                "arranger_music": [],
+                "mixer_videos": [],
+                "off_vocal_videos": [],
+                "arranger_videos": [],
+                "singer_videos": [],
+                "created_at": "2021-01-04 00:00:00",
+                "updated_at": "2021-01-04 00:00:00",
+                "__typename": "Artist"
+            },
+            {
                 "id": "mix_auaua",
                 "name": "AUAUA",
                 "name_ruby": null,
@@ -35607,6 +35657,53 @@
                 "__typename": "Artist"
             },
             {
+                "id": "toko_yu",
+                "name": "東狐ユウ",
+                "name_ruby": "とうこゆう",
+                "name_original": null,
+                "profile": "UTAU獣人系 新人VTuberの東狐ユウです！\n毎週土曜日の深夜24時過ぎから配信しています！\n三尾のおきつねVTuberです",
+                "sex": null,
+                "birthday": "9999-06-04",
+                "id_youtube": "UCHBUCXHtrii3LnGyXtyM3lw",
+                "youtube_registration_date": null,
+                "id_twitter": "ToukoYu_VTuber",
+                "id_instagram": null,
+                "url_niconico": null,
+                "url_homepage": null,
+                "id_spotify": null,
+                "id_apple_music": null,
+                "id_showroom": null,
+                "id_openrec": null,
+                "id_bilibili": null,
+                "id_tiktok": null,
+                "id_twitcasting": null,
+                "id_facebook": null,
+                "id_pixiv": null,
+                "image_url_profile_icon_source_url": null,
+                "image_url_profile_header_source_url": null,
+                "image_front_type_icon": null,
+                "image_front_type_header": null,
+                "youtube_channel_is_user": false,
+                "recommends": [],
+                "children": [],
+                "parents": [],
+                "composer_music": [],
+                "lyricist_music": [],
+                "arranger_music": [],
+                "mixer_videos": [],
+                "off_vocal_videos": [],
+                "arranger_videos": [],
+                "singer_videos": [
+                    {
+                        "id": "eByDl5SElf0",
+                        "__typename": "Video"
+                    }
+                ],
+                "created_at": "2021-01-04 00:00:00",
+                "updated_at": "2021-01-04 00:00:00",
+                "__typename": "Artist"
+            },
+            {
                 "id": "tokoyami_towa",
                 "name": "常闇トワ",
                 "name_ruby": "とこやみとわ",
@@ -40278,5 +40375,5 @@
     "loading": false,
     "networkStatus": 7,
     "stale": false,
-    "fetched_at": "2021-01-03T15:13:36.852Z"
+    "fetched_at": "2021-01-03T17:56:20.234Z"
 }

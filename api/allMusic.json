@@ -6262,6 +6262,37 @@
                 "__typename": "Music"
             },
             {
+                "id": "moso_kansho_daisho_renmei",
+                "title": "妄想感傷代償連盟",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "eByDl5SElf0",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "deco_27",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "deco_27",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-03 17:51:47",
+                "updated_at": "2021-01-03 17:51:47",
+                "__typename": "Music"
+            },
+            {
                 "id": "moudoku_ga_osou",
                 "title": "猛独が襲う",
                 "title_ruby": "もうどくがおそう",
@@ -10559,5 +10590,5 @@
     "loading": false,
     "networkStatus": 7,
     "stale": false,
-    "fetched_at": "2021-01-03T15:13:34.269Z"
+    "fetched_at": "2021-01-03T17:56:17.920Z"
 }
