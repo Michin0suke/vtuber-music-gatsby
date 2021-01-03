@@ -3981,6 +3981,31 @@
                 "__typename": "Video"
             },
             {
+                "id": "C6_e3M3z7vU",
+                "music": {
+                    "id": "die_another_day",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-11-29",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "otonashi_muon",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-03 00:00:00",
+                "updated_at": "2021-01-03 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "cAhKnolXkjU",
                 "music": {
                     "id": "inochi_ni_kirawareteiru",
@@ -14307,5 +14332,5 @@
     "loading": false,
     "networkStatus": 7,
     "stale": false,
-    "fetched_at": "2021-01-03T11:19:29.040Z"
+    "fetched_at": "2021-01-03T14:22:55.879Z"
 }
