@@ -3147,6 +3147,41 @@
                 "__typename": "Video"
             },
             {
+                "id": "a4thI28v_SM",
+                "music": {
+                    "id": "lisa_homura",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-10-17",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "quon_tama",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "quon_tama",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [
+                    {
+                        "id": "inst_sound_spin",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-03 00:00:00",
+                "updated_at": "2021-01-03 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "a9EZ2KFTbYM",
                 "music": {
                     "id": "arrive_factor",
@@ -3178,6 +3213,41 @@
                 "recommends": [],
                 "created_at": "2020-12-10 00:00:00",
                 "updated_at": "2020-12-10 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "AaIF6Aobf7g",
+                "music": {
+                    "id": "bokura_no_senjo",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-12-03",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "quon_tama",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "quon_tama",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [
+                    {
+                        "id": "victor_victor_macross_channel",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-03 00:00:00",
+                "updated_at": "2021-01-03 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -4289,6 +4359,41 @@
                 "__typename": "Video"
             },
             {
+                "id": "dG8YSoTpIjw",
+                "music": {
+                    "id": "onegai_darling",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-12-13",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "quon_tama",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "tokimiya_rei",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [
+                    {
+                        "id": "hayato",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-03 00:00:00",
+                "updated_at": "2021-01-03 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "dlVWaAQZPag",
                 "music": {
                     "id": "viviparity",
@@ -5121,6 +5226,36 @@
                 "__typename": "Video"
             },
             {
+                "id": "fOLD2Om-ino",
+                "music": {
+                    "id": "yoru_ni_kakeru",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-10-06",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "quon_tama",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [
+                    {
+                        "id": "bumpsan",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-03 00:00:00",
+                "updated_at": "2021-01-03 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "FVFCTxPyDFs",
                 "music": {
                     "id": "romeo_and_cinderella",
@@ -5181,6 +5316,41 @@
                 "__typename": "Video"
             },
             {
+                "id": "fZR3zr2R5Qc",
+                "music": {
+                    "id": "a_e_i_u_e_o_ao",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-11-17",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "quon_tama",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "quon_tama",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [
+                    {
+                        "id": "oniichandaisuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-03 00:00:00",
+                "updated_at": "2021-01-03 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "fZyARerDMf8",
                 "music": {
                     "id": "no_world_rain",
@@ -5212,6 +5382,41 @@
                 "recommends": [],
                 "created_at": "2020-12-24 00:00:00",
                 "updated_at": "2020-12-24 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "G0b6hmkgS3c",
+                "music": {
+                    "id": "gurenge",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-12-24",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "quon_tama",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "tokimiya_rei",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [
+                    {
+                        "id": "tokimiya_rei",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-03 00:00:00",
+                "updated_at": "2021-01-03 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -5348,6 +5553,41 @@
                 "recommends": [],
                 "created_at": "2020-12-30 00:00:00",
                 "updated_at": "2020-12-30 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "GDOQTShjTQs",
+                "music": {
+                    "id": "gurenge",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-09-26",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "quon_tama",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "mix_daifuku",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [
+                    {
+                        "id": "hayato",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-03 00:00:00",
+                "updated_at": "2021-01-03 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -6245,6 +6485,41 @@
                 "recommends": [],
                 "created_at": "2020-12-15 00:00:00",
                 "updated_at": "2020-12-15 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "iZcUFwlQtgM",
+                "music": {
+                    "id": "ninelie",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-12-25",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "quon_tama",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "tokimiya_rei",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [
+                    {
+                        "id": "tokimiya_rei",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-03 00:00:00",
+                "updated_at": "2021-01-03 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -7195,6 +7470,36 @@
                 "__typename": "Video"
             },
             {
+                "id": "ksy-vbtJBik",
+                "music": {
+                    "id": "freesia",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-11-06",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "quon_tama",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "quon_tama",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-03 00:00:00",
+                "updated_at": "2021-01-03 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "kVTCqArEG50",
                 "music": {
                     "id": "king",
@@ -7450,6 +7755,36 @@
                 "recommends": [],
                 "created_at": "2020-11-30 00:00:00",
                 "updated_at": "2020-03-03 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "lx7Hh8rHLxE",
+                "music": {
+                    "id": "happy_halloween",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-10-31",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "quon_tama",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "quon_tama",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-03 00:00:00",
+                "updated_at": "2021-01-03 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -7799,6 +8134,41 @@
                 "recommends": [],
                 "created_at": "2020-11-30 00:00:00",
                 "updated_at": "2020-03-03 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "MlTtKZTaGsk",
+                "music": {
+                    "id": "gurenge",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-11-24",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "quon_tama",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "mix_daifuku",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [
+                    {
+                        "id": "hayato",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-03 00:00:00",
+                "updated_at": "2021-01-03 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -12890,6 +13260,41 @@
                 "__typename": "Video"
             },
             {
+                "id": "Y-EVxJhfsfE",
+                "music": {
+                    "id": "snow_halation",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-12-19",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "quon_tama",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "quon_tama",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [
+                    {
+                        "id": "haikara_sound",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-03 00:00:00",
+                "updated_at": "2021-01-03 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "y0pgdddBuLQ",
                 "music": {
                     "id": "yappa_saikyo",
@@ -13584,6 +13989,41 @@
                 "__typename": "Video"
             },
             {
+                "id": "zPfLB7WWhao",
+                "music": {
+                    "id": "there_is_a_reason",
+                    "__typename": "Music"
+                },
+                "release_date": "2021-01-01",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "quon_tama",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "tokimiya_rei",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [
+                    {
+                        "id": "hayato",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-03 00:00:00",
+                "updated_at": "2021-01-03 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "ZpkCZkWHJhU",
                 "music": {
                     "id": "kimi_no_yozora_shokaihan",
@@ -13831,11 +14271,41 @@
                 "created_at": "2020-12-07 00:00:00",
                 "updated_at": "2020-12-07 00:00:00",
                 "__typename": "Video"
+            },
+            {
+                "id": "ZXNvteUXoZQ",
+                "music": {
+                    "id": "darling_dance",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-10-10",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "quon_tama",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "quon_tama",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-03 00:00:00",
+                "updated_at": "2021-01-03 00:00:00",
+                "__typename": "Video"
             }
         ]
     },
     "loading": false,
     "networkStatus": 7,
     "stale": false,
-    "fetched_at": "2021-01-02T18:11:11.602Z"
+    "fetched_at": "2021-01-03T11:19:29.040Z"
 }

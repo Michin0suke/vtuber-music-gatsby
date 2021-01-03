@@ -69,6 +69,37 @@
                 "__typename": "Music"
             },
             {
+                "id": "a_e_i_u_e_o_ao",
+                "title": "あ・え・い・う・え・お・あお!!",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "fZR3zr2R5Qc",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "matsura_yuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "matsura_yuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-03 10:51:05",
+                "updated_at": "2021-01-03 10:51:05",
+                "__typename": "Music"
+            },
+            {
                 "id": "aa_subarashiki_nyansei",
                 "title": "嗚呼、素晴らしきニャン生",
                 "title_ruby": null,
@@ -1098,6 +1129,41 @@
                 "__typename": "Music"
             },
             {
+                "id": "bokura_no_senjo",
+                "title": "僕らの戦場",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "AaIF6Aobf7g",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "kato_yusuke",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "karasawa_miho",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "kato_yusuke",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-03 10:59:44",
+                "updated_at": "2021-01-03 10:59:44",
+                "__typename": "Music"
+            },
+            {
                 "id": "booo",
                 "title": "Booo!",
                 "title_ruby": null,
@@ -1843,6 +1909,10 @@
                     {
                         "id": "h7_4qfFcXHY",
                         "__typename": "Video"
+                    },
+                    {
+                        "id": "ZXNvteUXoZQ",
+                        "__typename": "Video"
                     }
                 ],
                 "composers": [
@@ -2299,6 +2369,37 @@
                 "arrangers": [],
                 "created_at": "2020-12-21 09:45:51",
                 "updated_at": "2020-12-21 09:45:51",
+                "__typename": "Music"
+            },
+            {
+                "id": "freesia",
+                "title": "フリージア",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "ksy-vbtJBik",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "iwami_naoaki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "Uru",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-03 10:43:22",
+                "updated_at": "2021-01-03 10:43:22",
                 "__typename": "Music"
             },
             {
@@ -2953,6 +3054,18 @@
                     {
                         "id": "Fo6rERay8aU",
                         "__typename": "Video"
+                    },
+                    {
+                        "id": "G0b6hmkgS3c",
+                        "__typename": "Video"
+                    },
+                    {
+                        "id": "GDOQTShjTQs",
+                        "__typename": "Video"
+                    },
+                    {
+                        "id": "MlTtKZTaGsk",
+                        "__typename": "Video"
                     }
                 ],
                 "composers": [
@@ -3111,6 +3224,10 @@
                     },
                     {
                         "id": "ijc_jnRGB8U",
+                        "__typename": "Video"
+                    },
+                    {
+                        "id": "lx7Hh8rHLxE",
                         "__typename": "Video"
                     }
                 ],
@@ -5455,6 +5572,41 @@
                 "__typename": "Music"
             },
             {
+                "id": "lisa_homura",
+                "title": "炎",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "a4thI28v_SM",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "kajiura_yuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "kajiura_yuki",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "lisa",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-03 10:38:13",
+                "updated_at": "2021-01-03 10:38:13",
+                "__typename": "Music"
+            },
+            {
                 "id": "little_cry_of_the_abyss",
                 "title": "深海のリトルクライ",
                 "title_ruby": "しんかいのりとるくらい",
@@ -6554,6 +6706,37 @@
                 "__typename": "Music"
             },
             {
+                "id": "ninelie",
+                "title": "ninelie",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "iZcUFwlQtgM",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "sawano_hiroyuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "sawano_hiroyuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-03 11:11:43",
+                "updated_at": "2021-01-03 11:11:43",
+                "__typename": "Music"
+            },
+            {
                 "id": "nirugiri",
                 "title": "ニルギリ",
                 "title_ruby": null,
@@ -6998,6 +7181,37 @@
                 "arrangers": [],
                 "created_at": "2020-12-10 19:19:47",
                 "updated_at": "2020-12-10 19:19:47",
+                "__typename": "Music"
+            },
+            {
+                "id": "onegai_darling",
+                "title": "おねがいダーリン",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "dG8YSoTpIjw",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "nanahoshi_orchestra",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "nanahoshi_orchestra",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-03 11:05:09",
+                "updated_at": "2021-01-03 11:05:09",
                 "__typename": "Music"
             },
             {
@@ -8446,6 +8660,37 @@
                 "__typename": "Music"
             },
             {
+                "id": "snow_halation",
+                "title": "Snow halation",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "Y-EVxJhfsfE",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "yamada_takahiro",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "hataaki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-03 11:07:11",
+                "updated_at": "2021-01-03 11:07:11",
+                "__typename": "Music"
+            },
+            {
                 "id": "snow_jam",
                 "title": "snow jam",
                 "title_ruby": null,
@@ -9085,6 +9330,37 @@
                 "arrangers": [],
                 "created_at": "2020-12-30 07:41:58",
                 "updated_at": "2020-12-30 07:41:58",
+                "__typename": "Music"
+            },
+            {
+                "id": "there_is_a_reason",
+                "title": "THERE IS A REASON",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "zPfLB7WWhao",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "higedriver",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "iwasato_yuho",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-03 11:16:44",
+                "updated_at": "2021-01-03 11:16:44",
                 "__typename": "Music"
             },
             {
@@ -10059,6 +10335,10 @@
                         "__typename": "Video"
                     },
                     {
+                        "id": "fOLD2Om-ino",
+                        "__typename": "Video"
+                    },
+                    {
                         "id": "Qb46Hy8ygeY",
                         "__typename": "Video"
                     }
@@ -10248,5 +10528,5 @@
     "loading": false,
     "networkStatus": 7,
     "stale": false,
-    "fetched_at": "2021-01-02T18:11:11.216Z"
+    "fetched_at": "2021-01-03T11:19:28.649Z"
 }
