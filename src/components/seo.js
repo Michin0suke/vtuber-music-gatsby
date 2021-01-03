@@ -5,8 +5,6 @@ function SEO({ description, lang, meta, title, url, imgUrl, isTop, isLargeCard})
   const metaTitle = isTop ? `Vtuber Music | バーチャルYouTuberの歌ってみた動画まとめ` : `${title} | Vtuber Music`
   const metaDescription = isTop ? `Vtuberの歌ってみた動画をまとめたサイトです。` : description
 
-  console.log(metaDescription)
-
   return (
     <Helmet
       htmlAttributes={{

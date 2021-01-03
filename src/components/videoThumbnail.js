@@ -23,6 +23,7 @@ export default ({ video, to, withHoverLink, className }) => {
                         </div>
                     </Link>
                 }
+                {video.is_mv === false && <span className='absolute top-1 right-1 px-2 py-0 bg-gray-700 text-xs text-white rounded-full shadow'>CLIP</span>}
                 {video.is_original_music && <span className='absolute top-1 right-1 px-2 py-0 bg-red-500 text-xs text-white rounded-full shadow'>ORIGINAL</span>}
             </div>
         </div>

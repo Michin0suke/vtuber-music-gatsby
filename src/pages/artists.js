@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { graphql } from 'gatsby'
+import Heading from '../components/heading'
 import Layout from '../components/layout'
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Breadcrumb from '../components/breadcrumb'
@@ -7,11 +8,31 @@ import ArtistCard from '../components/artistCard'
 import SEO from '../components/seo'
 import SearchIcon from '../components/svg/search'
 import Fuse from 'fuse.js'
+import { parse } from 'date-fns';
 
 const initialShowCount = 42
 
+const today = new Date()
+
 export default ({ data: {allArtist} }) => {
-    const [artists, setArtists] = useState(allArtist.nodes.filter(artist => artist.singer_videos.length !== 0))
+    const [birthdayArtists, setBirthdayArtists] = useState(allArtist.nodes.filter(artist => {
+        if (!artist.birthday) return false
+        try{
+            const birthday = parse(artist.birthday, 'yyyy-MM-dd', today)
+            if (today.getMonth() === birthday.getMonth() && today.getDate() === birthday.getDate()) {
+                return true
+            }
+        } catch(e) {
+            console.log(e)
+        }
+        return false
+    }))
+    const [showBirthdayArtists, setShowBirthdayArtists] = useState(true)
+    const [artists, setArtists] = useState(
+        allArtist.nodes
+            .filter(artist => artist.singer_videos.length !== 0)
+            .sort((a, b) => b.singer_videos.length - a.singer_videos.length)
+    )
     const [showCount, setShowCount] = useState(initialShowCount)
     const [search, setSearch] = useState(() => {})
 
@@ -32,9 +53,11 @@ export default ({ data: {allArtist} }) => {
         setShowCount(initialShowCount)
         if (e.target.value === '') {
             setArtists(allArtist.nodes.filter(artist => artist.singer_videos.length !== 0))
+            setShowBirthdayArtists(true)
         } else {
             const result = search.search(e.target.value).map(r => r.item)
             setArtists(result)
+            setShowBirthdayArtists(false)
         }
     }
 
@@ -51,6 +74,14 @@ export default ({ data: {allArtist} }) => {
                     onChange={(e) => searchVideo(e)}
                 />
             </div>
+            {showBirthdayArtists && birthdayArtists.length > 0 &&
+                <div>
+                    <Heading text='今日が誕生日のアーティスト'/>
+                    <div className='sm:flex flex-wrap px-5'>
+                        {birthdayArtists.map((artist, key) => <ArtistCard key={key} artist={artist} className='w-full md:w-1/2 lg:w-1/3' cardSize='lg' withParent withVideoCount/>)}
+                    </div>
+                </div>
+            }
             <InfiniteScroll
                 dataLength={showCount} //This is important field to render the next data
                 next={() => setShowCount(showCount + 6)}
@@ -74,6 +105,7 @@ export const query = graphql`
         nodes {
             id
             name
+            birthday
             profile_image {
                 childImageSharp {
                     fluid {

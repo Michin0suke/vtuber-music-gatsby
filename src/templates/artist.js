@@ -297,7 +297,6 @@ query($id: String!){
             singer_videos {
                 id
                 custom_music_name
-                is_mv
                 is_original_music
                 release_date
                 music {
@@ -362,7 +361,8 @@ query($id: String!){
             id
             custom_music_name
             is_original_music
-                release_date
+            is_mv   
+            release_date
             music {
                 id
                 title
@@ -390,7 +390,8 @@ query($id: String!){
             id
             custom_music_name
             is_original_music
-                release_date
+            is_mv
+            release_date
             music {
                 id
                 title
@@ -418,7 +419,8 @@ query($id: String!){
             id
             custom_music_name
             is_original_music
-                release_date
+            is_mv
+            release_date
             music {
                 id
                 title
@@ -446,7 +448,8 @@ query($id: String!){
             id
             custom_music_name
             is_original_music
-                release_date
+            is_mv
+            release_date
             music {
                 id
                 title

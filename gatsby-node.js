@@ -112,7 +112,6 @@ exports.createPages = async ({ graphql, actions: { createPage }, getNode }) => {
             context: { id }
         })
 
-        // console.log(JSON.stringify(getNode({id}), null, 4))
         const currentNode = getNode(id)
 
         const headerImageNode = await artistImageFileNode('header', id)

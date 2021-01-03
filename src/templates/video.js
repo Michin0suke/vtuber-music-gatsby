@@ -16,8 +16,6 @@ export default ({ data: { video, allVideo }, location }) => {
     const [sameSingerVideos, setSameSingerVideos] = useState([])
 
     useEffect(() => {
-        // const Modernizer = modernizr.build({})
-        // console.log(Modernizer.videoautoplay)
         decideNextVideoId(video, allVideo)
 
         const sameSingerVideos = video.singers
@@ -187,9 +185,6 @@ export default ({ data: { video, allVideo }, location }) => {
                 }
 
             </div>
-
-            {/* {console.log(nextVideoChoices.map(video => `${video.id} ${video.singers[0].name} ${video.music.title}`).join('\n'))} */}
-            {console.log(`next video choices: \n\n・${nextVideoChoicesId.join('\n・')}`)}
         </Layout>
     )
 }

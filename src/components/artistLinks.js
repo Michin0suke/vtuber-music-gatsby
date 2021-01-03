@@ -35,7 +35,7 @@ const convertFullUrl = (id, type) => {
         case 'url_homepage':
             return id
         default:
-            console.log('[error] url type is not valid(artistLinks)')
+            throw new Error('[error] url type is not valid(artistLinks)')
             return ''
     }
 }
