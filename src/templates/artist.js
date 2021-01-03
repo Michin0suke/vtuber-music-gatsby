@@ -12,6 +12,13 @@ import Breadcrumb from '../components/breadcrumb'
 import ArtistCardLinks from '../components/artistLinks'
 import MusicTitle from '../components/musicTitle'
 
+const sortVideosByReleaseDate = (videos) => videos.sort((a, b) => {
+    if (!a.release_date) throw new Error('[error] release_date is undefined')
+    if (a.release_date > b.release_date) return -1
+    if (a.release_date < b.release_date) return 1
+    return 0
+})
+
 const ArtistSection = ({ headingText, artists }) => {
     if (artists.length !== 0) {
         return (
@@ -46,13 +53,14 @@ const MusicSection = ({ headingText, music }) => {
 }
 
 const VideoSection = ({ headingText, videos }) => {
-    if (videos.length !== 0) {
+    const sortedVideos = sortVideosByReleaseDate(videos)
+    if (sortedVideos.length !== 0) {
         return (
             <div className='mb-4 pb-5 lg:px-5 bg-white lg:shadow'>
-                <Heading text={headingText} count={videos.length} className='mb-2'/>
+                <Heading text={headingText} count={sortedVideos.length} className='mb-2'/>
     
                 <div className='flex flex-wrap'>
-                    {videos
+                    {sortedVideos
                     .reduce((acc, cur) => acc.map(v=>v.id).includes(cur.id) ? acc : acc.concat(cur),[])
                     .map((video,key) => (
                         <VideoCard key={key} video={video} className='mb-5 sm:px-3 w-full sm:w-1/2 md:w-1/3' withPublishDate/>
@@ -289,6 +297,7 @@ query($id: String!){
             singer_videos {
                 id
                 custom_music_name
+                is_mv
                 is_original_music
                 release_date
                 music {

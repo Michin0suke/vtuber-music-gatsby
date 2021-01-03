@@ -66,22 +66,25 @@ exports.sourceNodes = async ({ actions: { createNode }, createContentDigest }) =
 exports.createPages = async ({ graphql, actions: { createPage }, getNode }) => {
     const artistImageFileNode = async (type, id) => {
         if (!['header', 'icon', 'video_thumbnail'].includes(type)) throw new Error(`invalid augment ${type}`)
+
         let fileId
-        ['primary', 'twitter', 'youtube'].reduce((promise, cur) => {
-            promise.then(_ => {
-                if (!fileId) {
-                    const result = await graphql(`
-                        {
-                            file(relativeDirectory: {eq: "img/${type}/${cur}"}, name: {eq: "${id}"}) {
-                                id
-                            }
+
+        const frontTypes = ['primary', 'twitter', 'youtube']
+
+        for (const i in frontTypes) {
+            if (!fileId) {
+                const result = await graphql(`
+                    {
+                        file(relativeDirectory: {eq: "img/${type}/${frontTypes[i]}"}, name: {eq: "${id}"}) {
+                            id
                         }
-                    `)
-                    const resultDataFileId = result && result.data && result.data.file && result.data.file.id
-                    if (resultDataFileId) fileId = resultDataFileId
-                }
-            })
-        }, Promise.resolve())
+                    }
+                `)
+                const resultDataFileId = result && result.data && result.data.file && result.data.file.id
+                if (resultDataFileId) fileId = resultDataFileId
+            }
+        }
+
         return fileId && getNode(fileId)
     }
 
