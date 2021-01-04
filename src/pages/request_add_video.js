@@ -5,11 +5,11 @@ import Heading from '../components/heading'
 import Plus from '../components/svg/plus'
 
 const validateUrl = (url) => {
-    if (url.match(/^https:\/\/www.youtube.com\/watch\?v=(\w{11})(&.+)?$/)) {
-        return url.match(/^https:\/\/www.youtube.com\/watch\?v=(\w{11})(&.+)?$/)[1]
+    if (url.match(/^https:\/\/www.youtube.com\/watch\?v=([\w-]{11})(&.+)?$/)) {
+        return url.match(/^https:\/\/www.youtube.com\/watch\?v=([\w-]{11})(&.+)?$/)[1]
     }
-    if (url.match(/^https:\/\/youtu.be\/(\w{11})$/)) {
-        return url.match(/^https:\/\/youtu.be\/(\w{11})$/)[1]
+    if (url.match(/^https:\/\/youtu.be\/([\w-]{11})$/)) {
+        return url.match(/^https:\/\/youtu.be\/([\w-]{11})$/)[1]
     }
     return false
 }
