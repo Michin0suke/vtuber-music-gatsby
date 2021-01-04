@@ -1607,6 +1607,36 @@
                 "__typename": "Video"
             },
             {
+                "id": "3iTMDvLs8MA",
+                "music": {
+                    "id": "kujira_osmanthus",
+                    "__typename": "Music"
+                },
+                "release_date": null,
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "hakase_fuyuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "yab",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-04 06:25:52",
+                "updated_at": "2021-01-04 06:25:52",
+                "__typename": "Video"
+            },
+            {
                 "id": "3j0znl2cYAs",
                 "music": {
                     "id": "shindeshimattanodarouka",
@@ -14357,5 +14387,5 @@
     "loading": false,
     "networkStatus": 7,
     "stale": false,
-    "fetched_at": "2021-01-03T17:56:18.328Z"
+    "fetched_at": "2021-01-04T06:45:05.183Z"
 }

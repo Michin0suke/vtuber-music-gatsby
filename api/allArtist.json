@@ -7599,12 +7599,12 @@
                 "name": "葉加瀬 冬雪",
                 "name_ruby": "はかせふゆき",
                 "name_original": null,
-                "profile": null,
+                "profile": "実験大好き系女子高生。常に怪しい薬品を持ち歩いている。\n本人曰く、どの薬にもすごい効果が込められているらしいが……。\n\n初手性癖語りをかましたライバーの一人。また、お絵かきつよつよライバーでもあり、お絵かき配信で同期の夜見れなを描いたりする。\n理系女子ということで賢そうだと思いきや、ゲームをしていると途端にポンコツっぷりをいかんなく発揮する。\n髪飾りや自身のサインにはオイラーの等式があしらわれている。",
                 "sex": null,
-                "birthday": null,
-                "id_youtube": null,
+                "birthday": "9999-02-19",
+                "id_youtube": "UCGYAYLDE7TZiiC8U6teciDQ",
                 "youtube_registration_date": null,
-                "id_twitter": null,
+                "id_twitter": "Hakase_Fuyuki",
                 "id_instagram": null,
                 "url_niconico": null,
                 "url_homepage": null,
@@ -7638,12 +7638,16 @@
                 "arranger_videos": [],
                 "singer_videos": [
                     {
+                        "id": "3iTMDvLs8MA",
+                        "__typename": "Video"
+                    },
+                    {
                         "id": "Z-UJbyLqioM",
                         "__typename": "Video"
                     }
                 ],
-                "created_at": "2020-12-16 00:22:59",
-                "updated_at": "2020-12-16 00:22:59",
+                "created_at": "2020-12-16 00:00:00",
+                "updated_at": "2020-12-16 00:00:00",
                 "__typename": "Artist"
             },
             {
@@ -9778,6 +9782,14 @@
                     },
                     {
                         "id": "innk_music",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "murasaki_shion",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "shirakami_fubuki",
                         "__typename": "Artist"
                     }
                 ],
@@ -19750,7 +19762,12 @@
                 "youtube_channel_is_user": false,
                 "recommends": [],
                 "children": [],
-                "parents": [],
+                "parents": [
+                    {
+                        "id": "nijisanji",
+                        "__typename": "Artist"
+                    }
+                ],
                 "composer_music": [
                     {
                         "id": "melissa_haze",
@@ -22600,19 +22617,19 @@
                 "name": "紫咲シオン",
                 "name_ruby": "むらさきしおん",
                 "name_original": null,
-                "profile": null,
+                "profile": "「こんしお～、紫咲シオンだよ」\n\n魔界学校に出没する子供・・・ではなく本人曰く大人（らしい）。自称名門の出身で黒魔術を得意としている（らしい）\nあまり「こんしお」とは言わない。\n\n　ホ○ワーツ・○リフィンドール寮所属の、魔界出身の天才バーチャル魔法使い。一人称は「シオン」。\n\n　魔法使いらしくかつ自身も好きな色である紫を主軸としたダークな色合いの服装をしている。\n少々露出が高い自身の服装をとても大人らしく色気がある、ととても気に入っている。",
                 "sex": null,
-                "birthday": null,
-                "id_youtube": null,
+                "birthday": "9999-12-08",
+                "id_youtube": "UCXTpFs_3PqI41qX2d9tL2Rw",
                 "youtube_registration_date": null,
-                "id_twitter": null,
+                "id_twitter": "murasakishionch",
                 "id_instagram": null,
                 "url_niconico": null,
                 "url_homepage": null,
                 "id_spotify": null,
                 "id_apple_music": null,
                 "id_showroom": null,
-                "id_openrec": null,
+                "id_openrec": "murasakishion",
                 "id_bilibili": null,
                 "id_tiktok": null,
                 "id_twitcasting": null,
@@ -22625,7 +22642,12 @@
                 "youtube_channel_is_user": false,
                 "recommends": [],
                 "children": [],
-                "parents": [],
+                "parents": [
+                    {
+                        "id": "hololive",
+                        "__typename": "Artist"
+                    }
+                ],
                 "composer_music": [],
                 "lyricist_music": [],
                 "arranger_music": [],
@@ -22658,8 +22680,8 @@
                         "__typename": "Video"
                     }
                 ],
-                "created_at": "2020-12-10 18:37:55",
-                "updated_at": "2020-12-10 18:37:55",
+                "created_at": "2020-12-10 00:00:00",
+                "updated_at": "2020-12-10 00:00:00",
                 "__typename": "Artist"
             },
             {
@@ -24872,12 +24894,12 @@
                 "name": "猫又おかゆ",
                 "name_ruby": "ねこまたおかゆ",
                 "name_original": null,
-                "profile": null,
+                "profile": "「もぐもぐ～おかゆ～！」\n\nおにぎり屋さんを経営してるおばあさんに飼われてる猫。おばあちゃんの部屋にあるPCから配信している。\n\nおにぎり屋さんを経営しているおばあちゃんの一人娘（猫）\nボクっ娘で、ドクターマリオが大好きなゲーマーでもあるおばあちゃんの部屋のゲーミングPCから配信を行っている。\n\n主な活動はゲーム実況の配信で、「ゼルダの伝説　神々のトライフォース」、「クロノトリガー」、「風来のシレン」、「スーパーマリオRPG」など、おばあちゃんの影響でSFC（スーパーファミコン）のゲームを好んでプレイしている。\n\n第2回VTuber最協決定戦では、スケジュールの都合で出られなかったロボ子さんの代わりに出場。\nホロライブゲーマーズの戌神ころねとは、ホロライブゲーマーズに加入する前から仲が良い。",
                 "sex": null,
-                "birthday": null,
-                "id_youtube": null,
+                "birthday": "9999-02-22",
+                "id_youtube": "UCvaTdHTWBGv3MKj3KVqJVCw",
                 "youtube_registration_date": null,
-                "id_twitter": null,
+                "id_twitter": "nekomataokayu",
                 "id_instagram": null,
                 "url_niconico": null,
                 "url_homepage": null,
@@ -24885,7 +24907,7 @@
                 "id_apple_music": null,
                 "id_showroom": null,
                 "id_openrec": null,
-                "id_bilibili": null,
+                "id_bilibili": 412135222,
                 "id_tiktok": null,
                 "id_twitcasting": null,
                 "id_facebook": null,
@@ -24922,8 +24944,8 @@
                         "__typename": "Video"
                     }
                 ],
-                "created_at": "2020-12-10 18:55:33",
-                "updated_at": "2020-12-10 18:55:33",
+                "created_at": "2020-12-10 00:00:00",
+                "updated_at": "2020-12-10 00:00:00",
                 "__typename": "Artist"
             },
             {
@@ -25525,6 +25547,10 @@
                     },
                     {
                         "id": "lize_helesta",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "melissa",
                         "__typename": "Artist"
                     },
                     {
@@ -32468,19 +32494,19 @@
                 "name": "白上フブキ",
                 "name_ruby": "しらかみふぶき",
                 "name_original": null,
-                "profile": null,
+                "profile": "「こんばんきーつね！白上フブキです！」\n\n白髪ケモミミの女子高生。恥ずかしがり屋であり、おとなしめな性格だけれど、実は人と話すのが好きで、構ってもらえると喜ぶ。\n\nホロライブ所属、白上フブキです。(Fubuki Shirakami)🌽 狐(FOX)のバーチャル狐として活動しています。  ゲームや雑談放送や動画を投稿してますよっ。 少し…恥ずかしがりな所もあるのですが、皆さんと沢山お話していきたいので よろしくおねがいします。(^・ω・^§)ﾉ 基本オタクです。",
                 "sex": null,
-                "birthday": null,
-                "id_youtube": null,
+                "birthday": "9999-10-05",
+                "id_youtube": "UCdn5BQ06XqgXoAxIhbqw5Rg",
                 "youtube_registration_date": null,
-                "id_twitter": null,
+                "id_twitter": "shirakamifubuki",
                 "id_instagram": null,
                 "url_niconico": null,
                 "url_homepage": null,
                 "id_spotify": null,
                 "id_apple_music": null,
                 "id_showroom": null,
-                "id_openrec": null,
+                "id_openrec": "shirakamifubuki",
                 "id_bilibili": null,
                 "id_tiktok": null,
                 "id_twitcasting": null,
@@ -32493,7 +32519,12 @@
                 "youtube_channel_is_user": false,
                 "recommends": [],
                 "children": [],
-                "parents": [],
+                "parents": [
+                    {
+                        "id": "hololive",
+                        "__typename": "Artist"
+                    }
+                ],
                 "composer_music": [],
                 "lyricist_music": [],
                 "arranger_music": [],
@@ -32526,8 +32557,8 @@
                         "__typename": "Video"
                     }
                 ],
-                "created_at": "2020-12-09 06:10:59",
-                "updated_at": "2020-12-09 06:10:59",
+                "created_at": "2020-12-09 00:00:00",
+                "updated_at": "2020-12-09 00:00:00",
                 "__typename": "Artist"
             },
             {
@@ -37874,6 +37905,10 @@
                 "arranger_music": [],
                 "mixer_videos": [
                     {
+                        "id": "3iTMDvLs8MA",
+                        "__typename": "Music"
+                    },
+                    {
                         "id": "ADgodTeFaMM",
                         "__typename": "Music"
                     },
@@ -40375,5 +40410,5 @@
     "loading": false,
     "networkStatus": 7,
     "stale": false,
-    "fetched_at": "2021-01-03T17:56:20.234Z"
+    "fetched_at": "2021-01-04T06:45:07.415Z"
 }
