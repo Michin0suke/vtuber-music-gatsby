@@ -4018,6 +4018,53 @@
                 "__typename": "Artist"
             },
             {
+                "id": "carpainter",
+                "name": "Carpainter",
+                "name_ruby": null,
+                "name_original": null,
+                "profile": null,
+                "sex": null,
+                "birthday": null,
+                "id_youtube": "UCxvyMkYO0qNZjYehGopuuKQ",
+                "youtube_registration_date": null,
+                "id_twitter": "Carpainter_TT",
+                "id_instagram": null,
+                "url_niconico": null,
+                "url_homepage": null,
+                "id_spotify": null,
+                "id_apple_music": null,
+                "id_showroom": null,
+                "id_openrec": null,
+                "id_bilibili": null,
+                "id_tiktok": null,
+                "id_twitcasting": null,
+                "id_facebook": null,
+                "id_pixiv": null,
+                "image_url_profile_icon_source_url": null,
+                "image_url_profile_header_source_url": null,
+                "image_front_type_icon": null,
+                "image_front_type_header": null,
+                "youtube_channel_is_user": false,
+                "recommends": [],
+                "children": [],
+                "parents": [],
+                "composer_music": [],
+                "lyricist_music": [],
+                "arranger_music": [
+                    {
+                        "id": "sense_of_wonder",
+                        "__typename": "Music"
+                    }
+                ],
+                "mixer_videos": [],
+                "off_vocal_videos": [],
+                "arranger_videos": [],
+                "singer_videos": [],
+                "created_at": "2021-01-04 00:00:00",
+                "updated_at": "2021-01-04 00:00:00",
+                "__typename": "Artist"
+            },
+            {
                 "id": "cat_allergies",
                 "name": "猫アレルギー",
                 "name_ruby": "ねこあれるぎー",
@@ -6069,6 +6116,185 @@
                 "singer_videos": [],
                 "created_at": "2020-12-31 00:00:00",
                 "updated_at": "2020-12-31 00:00:00",
+                "__typename": "Artist"
+            },
+            {
+                "id": "eurobeat_union_dj_command",
+                "name": "DJ Command (Eurobeat Union)",
+                "name_ruby": null,
+                "name_original": null,
+                "profile": null,
+                "sex": null,
+                "birthday": null,
+                "id_youtube": "UCxvyMkYO0qNZjYehGopuuKQ",
+                "youtube_registration_date": null,
+                "id_twitter": "null",
+                "id_instagram": null,
+                "url_niconico": null,
+                "url_homepage": null,
+                "id_spotify": null,
+                "id_apple_music": null,
+                "id_showroom": null,
+                "id_openrec": null,
+                "id_bilibili": null,
+                "id_tiktok": null,
+                "id_twitcasting": null,
+                "id_facebook": null,
+                "id_pixiv": null,
+                "image_url_profile_icon_source_url": null,
+                "image_url_profile_header_source_url": null,
+                "image_front_type_icon": null,
+                "image_front_type_header": null,
+                "youtube_channel_is_user": false,
+                "recommends": [],
+                "children": [],
+                "parents": [],
+                "composer_music": [
+                    {
+                        "id": "border_reign",
+                        "__typename": "Music"
+                    },
+                    {
+                        "id": "just_in_my_heart",
+                        "__typename": "Music"
+                    },
+                    {
+                        "id": "marinasu_polyfull",
+                        "__typename": "Music"
+                    },
+                    {
+                        "id": "marinasu_spark_spark",
+                        "__typename": "Music"
+                    },
+                    {
+                        "id": "marinasu_wonderland",
+                        "__typename": "Music"
+                    }
+                ],
+                "lyricist_music": [],
+                "arranger_music": [
+                    {
+                        "id": "border_reign",
+                        "__typename": "Music"
+                    }
+                ],
+                "mixer_videos": [],
+                "off_vocal_videos": [],
+                "arranger_videos": [],
+                "singer_videos": [],
+                "created_at": "2021-01-04 00:00:00",
+                "updated_at": "2021-01-04 00:00:00",
+                "__typename": "Artist"
+            },
+            {
+                "id": "eurobeat_union_lan_na",
+                "name": "LAN.na (Eurobeat Union) ",
+                "name_ruby": null,
+                "name_original": null,
+                "profile": null,
+                "sex": null,
+                "birthday": null,
+                "id_youtube": "UCxvyMkYO0qNZjYehGopuuKQ",
+                "youtube_registration_date": null,
+                "id_twitter": "null",
+                "id_instagram": null,
+                "url_niconico": null,
+                "url_homepage": null,
+                "id_spotify": null,
+                "id_apple_music": null,
+                "id_showroom": null,
+                "id_openrec": null,
+                "id_bilibili": null,
+                "id_tiktok": null,
+                "id_twitcasting": null,
+                "id_facebook": null,
+                "id_pixiv": null,
+                "image_url_profile_icon_source_url": null,
+                "image_url_profile_header_source_url": null,
+                "image_front_type_icon": null,
+                "image_front_type_header": null,
+                "youtube_channel_is_user": false,
+                "recommends": [],
+                "children": [],
+                "parents": [],
+                "composer_music": [
+                    {
+                        "id": "marinasu_wonderland",
+                        "__typename": "Music"
+                    }
+                ],
+                "lyricist_music": [
+                    {
+                        "id": "border_reign",
+                        "__typename": "Music"
+                    },
+                    {
+                        "id": "marinasu_polyfull",
+                        "__typename": "Music"
+                    },
+                    {
+                        "id": "marinasu_spark_spark",
+                        "__typename": "Music"
+                    },
+                    {
+                        "id": "marinasu_wonderland",
+                        "__typename": "Music"
+                    }
+                ],
+                "arranger_music": [],
+                "mixer_videos": [],
+                "off_vocal_videos": [],
+                "arranger_videos": [],
+                "singer_videos": [],
+                "created_at": "2021-01-04 00:00:00",
+                "updated_at": "2021-01-04 00:00:00",
+                "__typename": "Artist"
+            },
+            {
+                "id": "eurobeat_union_m_o_r",
+                "name": "M.O.R(Eurobeat Union)",
+                "name_ruby": null,
+                "name_original": null,
+                "profile": null,
+                "sex": null,
+                "birthday": null,
+                "id_youtube": "UCxvyMkYO0qNZjYehGopuuKQ",
+                "youtube_registration_date": null,
+                "id_twitter": "null",
+                "id_instagram": null,
+                "url_niconico": null,
+                "url_homepage": null,
+                "id_spotify": null,
+                "id_apple_music": null,
+                "id_showroom": null,
+                "id_openrec": null,
+                "id_bilibili": null,
+                "id_tiktok": null,
+                "id_twitcasting": null,
+                "id_facebook": null,
+                "id_pixiv": null,
+                "image_url_profile_icon_source_url": null,
+                "image_url_profile_header_source_url": null,
+                "image_front_type_icon": null,
+                "image_front_type_header": null,
+                "youtube_channel_is_user": false,
+                "recommends": [],
+                "children": [],
+                "parents": [],
+                "composer_music": [
+                    {
+                        "id": "shooting_my_shot",
+                        "__typename": "Music"
+                    }
+                ],
+                "lyricist_music": [],
+                "arranger_music": [],
+                "mixer_videos": [],
+                "off_vocal_videos": [],
+                "arranger_videos": [],
+                "singer_videos": [],
+                "created_at": "2021-01-04 00:00:00",
+                "updated_at": "2021-01-04 00:00:00",
                 "__typename": "Artist"
             },
             {
@@ -14309,6 +14535,53 @@
                 "__typename": "Artist"
             },
             {
+                "id": "kaname_mahiro",
+                "name": "奏天まひろ",
+                "name_ruby": "かなめまひろ",
+                "name_original": null,
+                "profile": "avexのバーチャルアーティストまりなすの「ま」担当！奏天(かなめ)まひろです🙌",
+                "sex": null,
+                "birthday": "9999-04-27",
+                "id_youtube": "UCDgH-CfHO85D0rxtXnXeN2w",
+                "youtube_registration_date": null,
+                "id_twitter": "KanameMahiro",
+                "id_instagram": null,
+                "url_niconico": null,
+                "url_homepage": null,
+                "id_spotify": null,
+                "id_apple_music": null,
+                "id_showroom": null,
+                "id_openrec": null,
+                "id_bilibili": null,
+                "id_tiktok": null,
+                "id_twitcasting": null,
+                "id_facebook": null,
+                "id_pixiv": null,
+                "image_url_profile_icon_source_url": null,
+                "image_url_profile_header_source_url": null,
+                "image_front_type_icon": null,
+                "image_front_type_header": null,
+                "youtube_channel_is_user": false,
+                "recommends": [],
+                "children": [],
+                "parents": [
+                    {
+                        "id": "marinasu",
+                        "__typename": "Artist"
+                    }
+                ],
+                "composer_music": [],
+                "lyricist_music": [],
+                "arranger_music": [],
+                "mixer_videos": [],
+                "off_vocal_videos": [],
+                "arranger_videos": [],
+                "singer_videos": [],
+                "created_at": "2021-01-05 00:00:00",
+                "updated_at": "2021-01-05 00:00:00",
+                "__typename": "Artist"
+            },
+            {
                 "id": "kanaria",
                 "name": "Kanaria",
                 "name_ruby": "かなりあ",
@@ -19295,6 +19568,90 @@
                 "__typename": "Artist"
             },
             {
+                "id": "marinasu",
+                "name": "まりなす(仮)",
+                "name_ruby": null,
+                "name_original": null,
+                "profile": "エイベックスプロデュースのバーチャルアーティストユニット！\nまりなす(仮)の公式チャンネルです！宇宙一を目指す、個性バラバラなメンバーが魅せる息ぴったりの歌とダンスをぜひご覧ください！",
+                "sex": null,
+                "birthday": null,
+                "id_youtube": "UCDgH-CfHO85D0rxtXnXeN2w",
+                "youtube_registration_date": null,
+                "id_twitter": null,
+                "id_instagram": null,
+                "url_niconico": null,
+                "url_homepage": null,
+                "id_spotify": null,
+                "id_apple_music": null,
+                "id_showroom": null,
+                "id_openrec": null,
+                "id_bilibili": null,
+                "id_tiktok": null,
+                "id_twitcasting": null,
+                "id_facebook": null,
+                "id_pixiv": null,
+                "image_url_profile_icon_source_url": null,
+                "image_url_profile_header_source_url": null,
+                "image_front_type_icon": null,
+                "image_front_type_header": null,
+                "youtube_channel_is_user": false,
+                "recommends": [],
+                "children": [
+                    {
+                        "id": "kaname_mahiro",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "otonoha_naho",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "suzuna_subaru",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "toma_rin",
+                        "__typename": "Artist"
+                    }
+                ],
+                "parents": [],
+                "composer_music": [],
+                "lyricist_music": [],
+                "arranger_music": [],
+                "mixer_videos": [],
+                "off_vocal_videos": [],
+                "arranger_videos": [],
+                "singer_videos": [
+                    {
+                        "id": "ichWYcFW6n0",
+                        "__typename": "Video"
+                    },
+                    {
+                        "id": "K07zhtDu6TQ",
+                        "__typename": "Video"
+                    },
+                    {
+                        "id": "N8qJ08SXXq8",
+                        "__typename": "Video"
+                    },
+                    {
+                        "id": "pjeyGXBnaFs",
+                        "__typename": "Video"
+                    },
+                    {
+                        "id": "VZDBVaCG0JY",
+                        "__typename": "Video"
+                    },
+                    {
+                        "id": "Y1bPmikWPPM",
+                        "__typename": "Video"
+                    }
+                ],
+                "created_at": "2021-01-05 00:00:00",
+                "updated_at": "2021-01-05 00:00:00",
+                "__typename": "Artist"
+            },
+            {
                 "id": "marugurit",
                 "name": "まるぐり",
                 "name_ruby": null,
@@ -20614,9 +20971,18 @@
                     {
                         "id": "awakening",
                         "__typename": "Music"
+                    },
+                    {
+                        "id": "sense_of_wonder",
+                        "__typename": "Music"
                     }
                 ],
-                "lyricist_music": [],
+                "lyricist_music": [
+                    {
+                        "id": "sense_of_wonder",
+                        "__typename": "Music"
+                    }
+                ],
                 "arranger_music": [
                     {
                         "id": "awakening",
@@ -23134,6 +23500,57 @@
                 ],
                 "created_at": "2020-12-29 00:00:00",
                 "updated_at": "2020-12-29 00:00:00",
+                "__typename": "Artist"
+            },
+            {
+                "id": "nagao_chiemi",
+                "name": "長尾ちえみ",
+                "name_ruby": null,
+                "name_original": null,
+                "profile": null,
+                "sex": null,
+                "birthday": null,
+                "id_youtube": "UCREZFckOZbRSGU04oL09WFw",
+                "youtube_registration_date": null,
+                "id_twitter": "chiemixvoice",
+                "id_instagram": null,
+                "url_niconico": null,
+                "url_homepage": null,
+                "id_spotify": null,
+                "id_apple_music": null,
+                "id_showroom": null,
+                "id_openrec": null,
+                "id_bilibili": null,
+                "id_tiktok": null,
+                "id_twitcasting": null,
+                "id_facebook": null,
+                "id_pixiv": null,
+                "image_url_profile_icon_source_url": null,
+                "image_url_profile_header_source_url": null,
+                "image_front_type_icon": null,
+                "image_front_type_header": null,
+                "youtube_channel_is_user": false,
+                "recommends": [],
+                "children": [],
+                "parents": [],
+                "composer_music": [],
+                "lyricist_music": [
+                    {
+                        "id": "just_in_my_heart",
+                        "__typename": "Music"
+                    },
+                    {
+                        "id": "shooting_my_shot",
+                        "__typename": "Music"
+                    }
+                ],
+                "arranger_music": [],
+                "mixer_videos": [],
+                "off_vocal_videos": [],
+                "arranger_videos": [],
+                "singer_videos": [],
+                "created_at": "2021-01-04 00:00:00",
+                "updated_at": "2021-01-04 00:00:00",
                 "__typename": "Artist"
             },
             {
@@ -28416,6 +28833,58 @@
                 ],
                 "created_at": "2021-01-03 00:00:00",
                 "updated_at": "2021-01-03 00:00:00",
+                "__typename": "Artist"
+            },
+            {
+                "id": "otonoha_naho",
+                "name": "音葉なほ",
+                "name_ruby": "おとのはなほ",
+                "name_original": null,
+                "profile": "avexプロデュースのバーチャルアーティストユニット 🤢まりなす(仮)の\"な\"を担当しています🤢",
+                "sex": null,
+                "birthday": "9999-12-03",
+                "id_youtube": "UCQT1XYFNOu4Lypzth-u8B4g",
+                "youtube_registration_date": null,
+                "id_twitter": "OtonohaNaho",
+                "id_instagram": null,
+                "url_niconico": null,
+                "url_homepage": null,
+                "id_spotify": null,
+                "id_apple_music": null,
+                "id_showroom": null,
+                "id_openrec": null,
+                "id_bilibili": null,
+                "id_tiktok": null,
+                "id_twitcasting": null,
+                "id_facebook": null,
+                "id_pixiv": null,
+                "image_url_profile_icon_source_url": null,
+                "image_url_profile_header_source_url": null,
+                "image_front_type_icon": null,
+                "image_front_type_header": null,
+                "youtube_channel_is_user": false,
+                "recommends": [],
+                "children": [],
+                "parents": [
+                    {
+                        "id": "marinasu",
+                        "__typename": "Artist"
+                    }
+                ],
+                "composer_music": [],
+                "lyricist_music": [],
+                "arranger_music": [],
+                "mixer_videos": [],
+                "off_vocal_videos": [],
+                "arranger_videos": [],
+                "singer_videos": [
+                    {
+                        "id": "LyYOwHhiuxM",
+                        "__typename": "Video"
+                    }
+                ],
+                "created_at": "2021-01-05 00:00:00",
+                "updated_at": "2021-01-05 00:00:00",
                 "__typename": "Artist"
             },
             {
@@ -34104,6 +34573,58 @@
                 "__typename": "Artist"
             },
             {
+                "id": "suzuna_subaru",
+                "name": "鈴鳴すばる",
+                "name_ruby": "すずなすばる",
+                "name_original": null,
+                "profile": "avex produce virtual artist unit.まりなす(仮)の⚡️鈴鳴すばる⚠️⚡️すばる様のワンコmark→🐶⚠️",
+                "sex": null,
+                "birthday": "9999-09-17",
+                "id_youtube": "UCDgH-CfHO85D0rxtXnXeN2w",
+                "youtube_registration_date": null,
+                "id_twitter": "SuzunaSubaru",
+                "id_instagram": null,
+                "url_niconico": null,
+                "url_homepage": null,
+                "id_spotify": null,
+                "id_apple_music": null,
+                "id_showroom": null,
+                "id_openrec": null,
+                "id_bilibili": null,
+                "id_tiktok": null,
+                "id_twitcasting": null,
+                "id_facebook": null,
+                "id_pixiv": null,
+                "image_url_profile_icon_source_url": null,
+                "image_url_profile_header_source_url": null,
+                "image_front_type_icon": null,
+                "image_front_type_header": null,
+                "youtube_channel_is_user": false,
+                "recommends": [],
+                "children": [],
+                "parents": [
+                    {
+                        "id": "marinasu",
+                        "__typename": "Artist"
+                    }
+                ],
+                "composer_music": [],
+                "lyricist_music": [],
+                "arranger_music": [],
+                "mixer_videos": [],
+                "off_vocal_videos": [],
+                "arranger_videos": [],
+                "singer_videos": [
+                    {
+                        "id": "LyYOwHhiuxM",
+                        "__typename": "Video"
+                    }
+                ],
+                "created_at": "2021-01-05 00:00:00",
+                "updated_at": "2021-01-05 00:00:00",
+                "__typename": "Artist"
+            },
+            {
                 "id": "suzushiro_cocone",
                 "name": "鈴代ここね",
                 "name_ruby": "すずしろここね",
@@ -35851,6 +36372,53 @@
                 "singer_videos": [],
                 "created_at": "-0001-11-30 00:00:00",
                 "updated_at": "2020-03-01 00:00:00",
+                "__typename": "Artist"
+            },
+            {
+                "id": "toma_rin",
+                "name": "燈舞りん",
+                "name_ruby": "とうまりん",
+                "name_original": null,
+                "profile": "avexプロデュースのバーチャルアーティストユニット 、まりなす(仮)の\"り\"を担当しております、燈舞（とうま）りんです。奏天まひろ、鈴鳴すばる、音葉なほと共に、バーチャルアーティストとして活動します。何卒宜しくお願い致します。",
+                "sex": null,
+                "birthday": "9999-07-31",
+                "id_youtube": "UCNex1zlO3-TIHgqeSGVFOsw",
+                "youtube_registration_date": null,
+                "id_twitter": "TomaRindesu",
+                "id_instagram": null,
+                "url_niconico": null,
+                "url_homepage": null,
+                "id_spotify": null,
+                "id_apple_music": null,
+                "id_showroom": null,
+                "id_openrec": null,
+                "id_bilibili": null,
+                "id_tiktok": null,
+                "id_twitcasting": null,
+                "id_facebook": null,
+                "id_pixiv": null,
+                "image_url_profile_icon_source_url": null,
+                "image_url_profile_header_source_url": null,
+                "image_front_type_icon": null,
+                "image_front_type_header": null,
+                "youtube_channel_is_user": false,
+                "recommends": [],
+                "children": [],
+                "parents": [
+                    {
+                        "id": "marinasu",
+                        "__typename": "Artist"
+                    }
+                ],
+                "composer_music": [],
+                "lyricist_music": [],
+                "arranger_music": [],
+                "mixer_videos": [],
+                "off_vocal_videos": [],
+                "arranger_videos": [],
+                "singer_videos": [],
+                "created_at": "2021-01-05 00:00:00",
+                "updated_at": "2021-01-05 00:00:00",
                 "__typename": "Artist"
             },
             {
@@ -40410,5 +40978,5 @@
     "loading": false,
     "networkStatus": 7,
     "stale": false,
-    "fetched_at": "2021-01-04T09:43:09.699Z"
+    "fetched_at": "2021-01-04T17:22:01.156Z"
 }

@@ -1199,6 +1199,42 @@
                 "__typename": "Music"
             },
             {
+                "id": "border_reign",
+                "title": "ボーダーレイン",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "ichWYcFW6n0",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "eurobeat_union_dj_command",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "eurobeat_union_lan_na",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [
+                    {
+                        "id": "eurobeat_union_dj_command",
+                        "__typename": "Artist"
+                    }
+                ],
+                "created_at": "2021-01-04 17:17:27",
+                "updated_at": "2021-01-04 17:17:27",
+                "__typename": "Music"
+            },
+            {
                 "id": "byoshin_wo_kamu",
                 "title": "秒針を噛む",
                 "title_ruby": null,
@@ -4275,6 +4311,37 @@
                 "__typename": "Music"
             },
             {
+                "id": "just_in_my_heart",
+                "title": "JUST IN MY HEART",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "Y1bPmikWPPM",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "eurobeat_union_dj_command",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "nagao_chiemi",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-04 17:14:59",
+                "updated_at": "2021-01-04 17:14:59",
+                "__typename": "Music"
+            },
+            {
                 "id": "kaen",
                 "title": "火炎",
                 "title_ruby": null,
@@ -5763,6 +5830,103 @@
                 "arrangers": [],
                 "created_at": "2020-12-12 04:11:57",
                 "updated_at": "2020-12-12 04:11:57",
+                "__typename": "Music"
+            },
+            {
+                "id": "marinasu_polyfull",
+                "title": "POLYFULL!",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "N8qJ08SXXq8",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "eurobeat_union_dj_command",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "eurobeat_union_lan_na",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-04 17:03:09",
+                "updated_at": "2021-01-04 17:03:09",
+                "__typename": "Music"
+            },
+            {
+                "id": "marinasu_spark_spark",
+                "title": "SPARK×SPARK",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "LyYOwHhiuxM",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "eurobeat_union_dj_command",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "eurobeat_union_lan_na",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-04 17:00:50",
+                "updated_at": "2021-01-04 17:00:50",
+                "__typename": "Music"
+            },
+            {
+                "id": "marinasu_wonderland",
+                "title": "WONDERLAND",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "pjeyGXBnaFs",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "eurobeat_union_dj_command",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "eurobeat_union_lan_na",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "eurobeat_union_lan_na",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-04 17:05:02",
+                "updated_at": "2021-01-04 17:05:02",
                 "__typename": "Music"
             },
             {
@@ -8364,6 +8528,42 @@
                 "__typename": "Music"
             },
             {
+                "id": "sense_of_wonder",
+                "title": "Sense of Wonder",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "K07zhtDu6TQ",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "misumi",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "misumi",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [
+                    {
+                        "id": "carpainter",
+                        "__typename": "Artist"
+                    }
+                ],
+                "created_at": "2021-01-04 17:13:22",
+                "updated_at": "2021-01-04 17:13:22",
+                "__typename": "Music"
+            },
+            {
                 "id": "shinde_shimau_toha_nasakenai",
                 "title": "しんでしまうとはなさけない！",
                 "title_ruby": null,
@@ -8560,6 +8760,37 @@
                 "arrangers": [],
                 "created_at": "2020-12-24 04:42:54",
                 "updated_at": "2020-12-24 04:42:54",
+                "__typename": "Music"
+            },
+            {
+                "id": "shooting_my_shot",
+                "title": "Shooting my shot!",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "VZDBVaCG0JY",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "eurobeat_union_m_o_r",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "nagao_chiemi",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-04 16:55:23",
+                "updated_at": "2021-01-04 16:55:23",
                 "__typename": "Music"
             },
             {
@@ -10594,5 +10825,5 @@
     "loading": false,
     "networkStatus": 7,
     "stale": false,
-    "fetched_at": "2021-01-04T09:43:07.310Z"
+    "fetched_at": "2021-01-04T17:21:58.618Z"
 }
