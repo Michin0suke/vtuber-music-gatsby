@@ -6,6 +6,7 @@ import Profile from './svg/profile2'
 import Ellipsis from './svg/ellipsis'
 import ThumbsUp from './svg/thumbsUp'
 import Search from './svg/search'
+import Plus from './svg/plus'
 
 const Row = ({ currentPage, href, text, Img, imgClassName }) => (
     <li className='sm:hover:bg-gray-100 h-10'>
@@ -26,6 +27,7 @@ export default ({ currentPage }) => (
             {/* <Row currentPage={currentPage} href='/hots' text='人気' Img={Fire} imgClassName='w-4'/> */}
             <Row currentPage={currentPage} href='/artists' text='アーティスト' Img={Profile} imgClassName='w-3'/>
             <Row currentPage={currentPage} href='/videos' text='検索' Img={Search} imgClassName='w-5'/>
+            <Row currentPage={currentPage} href='/request_add_video' text='追加' Img={Plus} imgClassName='w-5'/>
             {/* <Row currentPage={currentPage} href='/others' text='その他' Img={Ellipsis} imgClassName='w-5'/> */}
         </ul>
     </nav>

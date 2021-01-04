@@ -6,6 +6,7 @@ import Profile from './svg/profile2'
 import Ellipsis from './svg/ellipsis'
 import Home from './svg/home'
 import Search from './svg/search'
+import Plus from './svg/plus'
 
 const Col = ({currentPage, href, text, Img, imgClassName}) => (
     <li className='w-1/3'>
@@ -23,6 +24,7 @@ export default ({ currentPage }) => (
         {/* <Col currentPage={currentPage} href='/recommends' text='おすすめ' Img={ThumbsUp} imgClassName='block mt-0.5 h-5 mx-auto'/> */}
         {/* <Col currentPage={currentPage} href='/hots' text='人気' Img={Fire} imgClassName='block h-6 mx-auto'/> */}
         <Col currentPage={currentPage} href='/videos' text='検索' Img={Search} imgClassName='block h-6 mx-auto'/>
+        <Col currentPage={currentPage} href='/request_add_video' text='追加' Img={Plus} imgClassName='block mt-0.5 h-6 mx-auto'/>
         <Col currentPage={currentPage} href='/artists' text='アーティスト' Img={Profile} imgClassName='block mt-0.5 h-6 mx-auto'/>
         {/* <Col currentPage={currentPage} href='/others' text='その他' Img={Ellipsis} imgClassName='block w-8 py-2.5 mx-auto vertical-middle'/> */}
       </ul>
