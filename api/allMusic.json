@@ -69,6 +69,37 @@
                 "__typename": "Music"
             },
             {
+                "id": "45_seconds",
+                "title": "45秒",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "nY0XHWvHLx0",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "respon",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "respon",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-05 13:53:24",
+                "updated_at": "2021-01-05 13:53:24",
+                "__typename": "Music"
+            },
+            {
                 "id": "a_e_i_u_e_o_ao",
                 "title": "あ・え・い・う・え・お・あお!!",
                 "title_ruby": null,
@@ -456,6 +487,10 @@
                 "original_video_youtube_id": null,
                 "videos": [
                     {
+                        "id": "d9hg2sS2euw",
+                        "__typename": "Video"
+                    },
+                    {
                         "id": "qcQ9k7A5TDM",
                         "__typename": "Video"
                     }
@@ -573,6 +608,37 @@
                 "arrangers": [],
                 "created_at": "-0001-11-30 00:00:00",
                 "updated_at": "2020-03-03 22:30:45",
+                "__typename": "Music"
+            },
+            {
+                "id": "anata_kranken",
+                "title": "あなたクランケン",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "5_d4kY6zvP8",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "tamon",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "tamon",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-05 05:54:07",
+                "updated_at": "2021-01-05 05:54:07",
                 "__typename": "Music"
             },
             {
@@ -795,6 +861,37 @@
                 ],
                 "created_at": "2020-12-10 00:08:23",
                 "updated_at": "2020-12-10 00:08:23",
+                "__typename": "Music"
+            },
+            {
+                "id": "asca_hibari",
+                "title": "雲雀",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "fcpiG58RBlA",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "kajiura_yuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "kajiura_yuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-05 13:39:19",
+                "updated_at": "2021-01-05 13:39:19",
                 "__typename": "Music"
             },
             {
@@ -2093,6 +2190,42 @@
                 "__typename": "Music"
             },
             {
+                "id": "drop_pop_candy",
+                "title": "drop pop candy",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "RcQc26F4I2Q",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "giga_p",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "reol",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [
+                    {
+                        "id": "giga_p",
+                        "__typename": "Artist"
+                    }
+                ],
+                "created_at": "2021-01-05 14:10:12",
+                "updated_at": "2021-01-05 14:10:12",
+                "__typename": "Music"
+            },
+            {
                 "id": "eba",
                 "title": "エバ",
                 "title_ruby": "えば",
@@ -3162,6 +3295,10 @@
                 "original_video_youtube_id": null,
                 "videos": [
                     {
+                        "id": "Eew3ImVnRR4",
+                        "__typename": "Video"
+                    },
+                    {
                         "id": "n9x8N8nO57M",
                         "__typename": "Video"
                     }
@@ -3507,6 +3644,37 @@
                 "__typename": "Music"
             },
             {
+                "id": "hello_how_are_you",
+                "title": "ハロ／ハワユ",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "qoxOOFz402k",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "nanou",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "nanou",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-05 07:10:18",
+                "updated_at": "2021-01-05 07:10:18",
+                "__typename": "Music"
+            },
+            {
                 "id": "hello_morning",
                 "title": "Hello, Morning",
                 "title_ruby": null,
@@ -3701,6 +3869,41 @@
                 "arrangers": [],
                 "created_at": "-0001-11-30 00:00:00",
                 "updated_at": "2020-02-25 05:28:11",
+                "__typename": "Music"
+            },
+            {
+                "id": "honeyworks_kawaiku_naritai",
+                "title": "可愛くなりたい",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "yYUNdh1VuXE",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "honeyworks_gom",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "honeyworks_gom",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "honeyworks_shito",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-05 13:34:25",
+                "updated_at": "2021-01-05 13:34:25",
                 "__typename": "Music"
             },
             {
@@ -5507,6 +5710,37 @@
                 "__typename": "Music"
             },
             {
+                "id": "la_la_la_love_song",
+                "title": "LA・LA・LA LOVE SONG",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "DFcqpjT0yVc",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "kubota_toshinobu",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "kubota_toshinobu",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-05 08:41:16",
+                "updated_at": "2021-01-05 08:41:16",
+                "__typename": "Music"
+            },
+            {
                 "id": "lab_01",
                 "title": "LAB=01",
                 "title_ruby": null,
@@ -5799,6 +6033,46 @@
                 "arrangers": [],
                 "created_at": "2020-12-29 08:35:48",
                 "updated_at": "2020-12-29 08:35:48",
+                "__typename": "Music"
+            },
+            {
+                "id": "love_new_york_from_tokyo",
+                "title": "Love New York〜From Tokyo〜",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "b3g07nCyebc",
+                        "__typename": "Video"
+                    },
+                    {
+                        "id": "IYP3FPLuRQk",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "tim_brain",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "kosaka_kogoro",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [
+                    {
+                        "id": "o_01",
+                        "__typename": "Artist"
+                    }
+                ],
+                "created_at": "2021-01-05 12:55:58",
+                "updated_at": "2021-01-05 12:55:58",
                 "__typename": "Music"
             },
             {
@@ -7375,6 +7649,46 @@
                 "__typename": "Music"
             },
             {
+                "id": "oh_young_heart",
+                "title": "OH! Young Heart",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "mJ3QNghPuGU",
+                        "__typename": "Video"
+                    },
+                    {
+                        "id": "wszSv502tEg",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "tsunku",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "tsunku",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [
+                    {
+                        "id": "okubo_kaoru",
+                        "__typename": "Artist"
+                    }
+                ],
+                "created_at": "2021-01-05 13:06:46",
+                "updated_at": "2021-01-05 13:06:46",
+                "__typename": "Music"
+            },
+            {
                 "id": "one_room_sugar_life",
                 "title": "ワンルームシュガーライフ",
                 "title_ruby": null,
@@ -8298,6 +8612,45 @@
                 "__typename": "Music"
             },
             {
+                "id": "run_aways",
+                "title": "RUN AWAYS",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "DneI29_Qo04",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "chelmico",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "m_flo",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "chelmico",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "m_flo",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-05 13:51:05",
+                "updated_at": "2021-01-05 13:51:05",
+                "__typename": "Music"
+            },
+            {
                 "id": "runway_fantasista",
                 "title": "ランウェイのファンタジスタ",
                 "title_ruby": null,
@@ -8326,6 +8679,37 @@
                 "arrangers": [],
                 "created_at": "2020-12-28 13:56:19",
                 "updated_at": "2020-12-28 13:56:19",
+                "__typename": "Music"
+            },
+            {
+                "id": "sacrifice",
+                "title": "サクリファイス",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "zkrdXyRuux8",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "mafumafu",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "mafumafu",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-05 13:11:55",
+                "updated_at": "2021-01-05 13:11:55",
                 "__typename": "Music"
             },
             {
@@ -8388,6 +8772,37 @@
                 "arrangers": [],
                 "created_at": "-0001-11-30 00:00:00",
                 "updated_at": "2020-02-22 15:00:00",
+                "__typename": "Music"
+            },
+            {
+                "id": "sayonara_tender",
+                "title": "さよならテンダー",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "J3I9VLQealU",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "koyori",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "koyori",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-05 13:32:07",
+                "updated_at": "2021-01-05 13:32:07",
                 "__typename": "Music"
             },
             {
@@ -8853,6 +9268,37 @@
                 "arrangers": [],
                 "created_at": "2020-12-07 08:24:17",
                 "updated_at": "2020-12-07 08:24:17",
+                "__typename": "Music"
+            },
+            {
+                "id": "sibyl",
+                "title": "Sibyl",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "lTwXYjO9Z0g",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "wotaku",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "wotaku",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-05 05:51:45",
+                "updated_at": "2021-01-05 05:51:45",
                 "__typename": "Music"
             },
             {
@@ -10242,6 +10688,37 @@
                 "__typename": "Music"
             },
             {
+                "id": "violet_snow",
+                "title": "Violet Snow",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "aDm1OOVOsvk",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "kawasaki_satomi",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "nishida_emi",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-05 13:22:22",
+                "updated_at": "2021-01-05 13:22:22",
+                "__typename": "Music"
+            },
+            {
                 "id": "virtual_to_live",
                 "title": "Virtual to LIVE",
                 "title_ruby": "ばーちゃるとぅーらいぶ",
@@ -10825,5 +11302,5 @@
     "loading": false,
     "networkStatus": 7,
     "stale": false,
-    "fetched_at": "2021-01-04T17:21:58.618Z"
+    "fetched_at": "2021-01-05T14:14:28.255Z"
 }
