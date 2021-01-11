@@ -50,7 +50,12 @@ module.exports = {
         icon: `src/images/vtuber-music-icon.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: ['/request_add_video', '/request_add_video_preview']
+      }
+    },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

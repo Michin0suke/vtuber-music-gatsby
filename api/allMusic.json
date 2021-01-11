@@ -1828,6 +1828,37 @@
                 "__typename": "Music"
             },
             {
+                "id": "cocotsuki_snow_clover",
+                "title": "Snow Clover",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "Pp0UI8f3_TQ",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "sumeshiii",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "gsdgsdgsd",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-06 08:31:57",
+                "updated_at": "2021-01-06 08:31:57",
+                "__typename": "Music"
+            },
+            {
                 "id": "core_meltdown",
                 "title": "炉心融解",
                 "title_ruby": null,
@@ -2159,6 +2190,37 @@
                 "__typename": "Music"
             },
             {
+                "id": "dNOGGLGj",
+                "title": "だれかの心臓になれたなら",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "zRgSpBZePX0",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "yurry_canon",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "yurry_canon",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-11 19:08:32",
+                "updated_at": "2021-01-11 19:08:32",
+                "__typename": "Music"
+            },
+            {
                 "id": "doriko_bouquet",
                 "title": "bouquet",
                 "title_ruby": null,
@@ -2381,6 +2443,42 @@
                 "__typename": "Music"
             },
             {
+                "id": "enma_ruri_hinoko",
+                "title": "ヒノコ",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "mJD_zrxaU9k",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "borotchi",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "borotchi",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [
+                    {
+                        "id": "borotchi",
+                        "__typename": "Artist"
+                    }
+                ],
+                "created_at": "2021-01-05 17:36:38",
+                "updated_at": "2021-01-05 17:36:38",
+                "__typename": "Music"
+            },
+            {
                 "id": "everlasting_flower",
                 "title": "everlasting flower",
                 "title_ruby": null,
@@ -2443,6 +2541,41 @@
                 "__typename": "Music"
             },
             {
+                "id": "femme_fatale",
+                "title": "Femme Fatale",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "0ot7xRP9Q8U",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "giga_p",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "reol",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "reol",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-05 16:22:16",
+                "updated_at": "2021-01-05 16:22:16",
+                "__typename": "Music"
+            },
+            {
                 "id": "fl_ai_yer",
                 "title": "FL-AI-YER",
                 "title_ruby": null,
@@ -2471,6 +2604,37 @@
                 "arrangers": [],
                 "created_at": "2020-12-08 23:15:55",
                 "updated_at": "2020-12-08 23:15:55",
+                "__typename": "Music"
+            },
+            {
+                "id": "flos",
+                "title": "flos",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "a26tSOLORKI",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "r_sound_design",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "r_sound_design",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-05 16:36:31",
+                "updated_at": "2021-01-05 16:36:31",
                 "__typename": "Music"
             },
             {
@@ -3775,6 +3939,37 @@
                 "__typename": "Music"
             },
             {
+                "id": "highlighter",
+                "title": "Highlighter",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "t2uyHHjmYvw",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "23_exe",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "23_exe",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-05 16:23:33",
+                "updated_at": "2021-01-05 16:23:33",
+                "__typename": "Music"
+            },
+            {
                 "id": "higurashi_you",
                 "title": "you",
                 "title_ruby": null,
@@ -4254,6 +4449,10 @@
                         "__typename": "Video"
                     },
                     {
+                        "id": "RyqZvmHhOHU",
+                        "__typename": "Video"
+                    },
+                    {
                         "id": "S_KgJ9i2vTE",
                         "__typename": "Video"
                     },
@@ -4449,6 +4648,42 @@
                 "arrangers": [],
                 "created_at": "2020-12-31 08:06:35",
                 "updated_at": "2020-12-31 08:06:35",
+                "__typename": "Music"
+            },
+            {
+                "id": "je2BZCNa",
+                "title": "亜空の先へ",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "ZZIn6sLAHgI",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "misumi",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "misumi",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [
+                    {
+                        "id": "carpainter",
+                        "__typename": "Artist"
+                    }
+                ],
+                "created_at": "2021-01-11 18:53:22",
+                "updated_at": "2021-01-11 18:53:22",
                 "__typename": "Music"
             },
             {
@@ -4834,6 +5069,41 @@
                 "__typename": "Music"
             },
             {
+                "id": "kara_euaru",
+                "title": "euaru",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "g7lLGyM1BAg",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "project_little_lindo_lisa",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "kazuki_komari",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "project_little_lindo_lisa",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-05 17:22:19",
+                "updated_at": "2021-01-05 17:22:19",
+                "__typename": "Music"
+            },
+            {
                 "id": "karashina",
                 "title": "karashina",
                 "title_ruby": "からしな",
@@ -4862,6 +5132,37 @@
                 "arrangers": [],
                 "created_at": "-0001-11-30 00:00:00",
                 "updated_at": "2020-02-28 18:00:30",
+                "__typename": "Music"
+            },
+            {
+                "id": "kDfya_FV",
+                "title": "ミルキーウェイ",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "C1xUlV_eDqc",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "ke_qFxpG",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "ke_qFxpG",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-11 18:40:00",
+                "updated_at": "2021-01-11 18:40:00",
                 "__typename": "Music"
             },
             {
@@ -5229,6 +5530,10 @@
                 "original_video_youtube_id": null,
                 "videos": [
                     {
+                        "id": "J_hOzA424-Y",
+                        "__typename": "Video"
+                    },
+                    {
                         "id": "jKLf7ouN3yM",
                         "__typename": "Video"
                     },
@@ -5241,8 +5546,18 @@
                         "__typename": "Video"
                     }
                 ],
-                "composers": [],
-                "lyricists": [],
+                "composers": [
+                    {
+                        "id": "zyPw3rFK",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "zyPw3rFK",
+                        "__typename": "Artist"
+                    }
+                ],
                 "arrangers": [],
                 "created_at": "2020-12-10 18:40:39",
                 "updated_at": "2020-12-10 18:40:39",
@@ -5596,6 +5911,10 @@
                     },
                     {
                         "id": "JQ9TSfQHu7s",
+                        "__typename": "Video"
+                    },
+                    {
+                        "id": "lk_ZUKT7Txc",
                         "__typename": "Video"
                     }
                 ],
@@ -6104,6 +6423,37 @@
                 "arrangers": [],
                 "created_at": "2020-12-12 04:11:57",
                 "updated_at": "2020-12-12 04:11:57",
+                "__typename": "Music"
+            },
+            {
+                "id": "mao_freude",
+                "title": "フロイデ",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "nJ0kNZA0lA8",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "sasagawa_mao",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "sasagawa_mao",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-05 17:33:01",
+                "updated_at": "2021-01-05 17:33:01",
                 "__typename": "Music"
             },
             {
@@ -6928,6 +7278,37 @@
                 ],
                 "created_at": "2021-01-02 07:29:54",
                 "updated_at": "2021-01-02 07:29:54",
+                "__typename": "Music"
+            },
+            {
+                "id": "my_last_gravity",
+                "title": "マイラストグラヴィティ",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "SHVaOTX9kFs",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "yuni_p",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "yuni_p",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-05 15:53:55",
+                "updated_at": "2021-01-05 15:53:55",
                 "__typename": "Music"
             },
             {
@@ -8222,6 +8603,22 @@
                 "arrangers": [],
                 "created_at": "2020-12-24 04:20:54",
                 "updated_at": "2020-12-24 04:20:54",
+                "__typename": "Music"
+            },
+            {
+                "id": "PwjmzFDt",
+                "title": "Wishing",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [],
+                "composers": [],
+                "lyricists": [],
+                "arrangers": [],
+                "created_at": "2021-01-11 22:16:07",
+                "updated_at": "2021-01-11 22:16:07",
                 "__typename": "Music"
             },
             {
@@ -9686,6 +10083,37 @@
                 "__typename": "Music"
             },
             {
+                "id": "suki_yuki_maji_magic",
+                "title": "好き！雪！本気マジック",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "UHrUFr_0hxg",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "mitchie_m",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "mitchie_m",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-05 16:16:01",
+                "updated_at": "2021-01-05 16:16:01",
+                "__typename": "Music"
+            },
+            {
                 "id": "sukikirai",
                 "title": "スキキライ",
                 "title_ruby": null,
@@ -10835,6 +11263,42 @@
                 "__typename": "Music"
             },
             {
+                "id": "VqUS8SjJ",
+                "title": "絶対唯一☆お嬢様宣言っ！！！～しもべたちを添えて～",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "pl_LN1N7uoo",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "c5Qifq6k",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "c5Qifq6k",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [
+                    {
+                        "id": "c5Qifq6k",
+                        "__typename": "Artist"
+                    }
+                ],
+                "created_at": "2021-01-11 16:57:49",
+                "updated_at": "2021-01-11 16:57:49",
+                "__typename": "Music"
+            },
+            {
                 "id": "wonderful_rush",
                 "title": "Wonderful Rush",
                 "title_ruby": null,
@@ -10933,6 +11397,37 @@
                 "__typename": "Music"
             },
             {
+                "id": "Xa4QB6My",
+                "title": "TriX",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "WIRukJLdWCc",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "Es1lEhbB",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "Es1lEhbB",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-11 17:31:00",
+                "updated_at": "2021-01-11 17:31:00",
+                "__typename": "Music"
+            },
+            {
                 "id": "xxxxx_prismatic",
                 "title": "Xxxxx prismatic",
                 "title_ruby": null,
@@ -11023,6 +11518,22 @@
                 "arrangers": [],
                 "created_at": "2020-12-24 21:03:53",
                 "updated_at": "2020-12-24 21:03:53",
+                "__typename": "Music"
+            },
+            {
+                "id": "yEmijVd-",
+                "title": "絶対唯一☆お嬢様宣言っ！！！～しもべたちを添えて～",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [],
+                "composers": [],
+                "lyricists": [],
+                "arrangers": [],
+                "created_at": "2021-01-11 06:24:04",
+                "updated_at": "2021-01-11 06:24:04",
                 "__typename": "Music"
             },
             {
@@ -11302,5 +11813,5 @@
     "loading": false,
     "networkStatus": 7,
     "stale": false,
-    "fetched_at": "2021-01-05T14:14:28.255Z"
+    "fetched_at": "2021-01-11T13:31:05.853Z"
 }

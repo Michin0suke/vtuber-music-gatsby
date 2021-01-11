@@ -1,0 +1,13 @@
+.form  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: #777;
+    color: white;
+    border: solid 1px #777;
+}
+
+.form  ul > li {
+    cursor: pointer;
+    padding: 3px 10px 0;
+}

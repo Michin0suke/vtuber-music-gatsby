@@ -79,7 +79,7 @@ const dateFormatter = (string) => {
     // 引数がnullの場合
     if (date.getFullYear() === 1970) {
         return null
-    } else if (date.getFullYear() === 9999) {
+    } else if (date.getFullYear() === 9999 || date.getFullYear() === 8888) {
         return format(date, 'M月 d日')
     } else {
         return `${format(date, 'y年 M月 d日')}（${differenceInYears(new Date(), date)}歳）`
