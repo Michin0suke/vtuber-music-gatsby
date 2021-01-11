@@ -26,6 +26,8 @@ const setContributorTwitterId = twitterId => {
 
 const steps = {
     INIT: 'init',
+    TWITTER_ASK_FIRST: 'twitter_ask_first',
+    TWITTER_INPUT_FIRST: 'twitter_input_first',
     ORIGINAL_MUSIC_ASK: 'original_music_ask',
     ARTIST_ASK: 'artist_ask',
     ARTIST_INPUT: 'artist_input',
@@ -35,8 +37,8 @@ const steps = {
     MUSIC_ARTIST_INPUT: 'music_artist_input',
     VIDEO_ARTIST_ASK: 'video_artist_ask',
     VIDEO_ARTIST_INPUT: 'video_artist_input',
-    TWITTER_ASK: 'twitter_ask',
-    TWITTER_INPUT: 'twitter_input',
+    TWITTER_ASK_LAST: 'twitter_ask_last',
+    TWITTER_INPUT_LAST: 'twitter_input_last',
     FIN: 'fin'
 }
 
@@ -54,12 +56,12 @@ const stepToStage = step => {
 
 const stageToStep = stage => {
     switch(stage) {
-        case 0: return steps.ORIGINAL_MUSIC_ASK
+        case 0: return steps.TWITTER_ASK_FIRST
         case 1: return steps.ARTIST_ASK
         case 2: return steps.MUSIC_ASK
         case 3: return steps.MUSIC_ARTIST_ASK
         case 4: return steps.VIDEO_ARTIST_ASK
-        case 5: return steps.TWITTER_ASK
+        case 5: return steps.TWITTER_ASK_LAST
         default: return null
     }
 }
@@ -106,7 +108,7 @@ const initStateArtist = {
 
 const initRequestVideo = {
     id: null,
-    custom_title: '',
+    custom_music_name: '',
     is_original_music: false,
     music: {
         id: '',
@@ -182,13 +184,14 @@ export default ({ data: { allVideo }}) => {
         return newRequestVideo
     }
 
-    if (step === steps.TWITTER_ASK && requestVideo.contributor_twitter_id === null) {
+    if (step === steps.TWITTER_ASK_LAST && requestVideo.contributor_twitter_id === null) {
         updateRequestVideo(v => {
             v.contributor_twitter_id = getContributorTwitterId('twitter_id') || ''; return v
         })
     }
-    if (step === steps.TWITTER_ASK && requestVideo.contributor_twitter_id !== null && requestVideo.contributor_twitter_id !== '') {
-        setStep(steps.FIN)
+    if (requestVideo.contributor_twitter_id !== null && requestVideo.contributor_twitter_id !== '') {
+        if (step === steps.TWITTER_ASK_FIRST) setStep(steps.ORIGINAL_MUSIC_ASK)
+        if (step === steps.TWITTER_ASK_LAST) setStep(steps.FIN)
     }
     if (step === steps.FIN && requestVideo.contributor_twitter_id !== '' && requestVideo.contributor_twitter_id !== null) {
         setContributorTwitterId(requestVideo.contributor_twitter_id)
@@ -206,10 +209,10 @@ export default ({ data: { allVideo }}) => {
             message: '動画のURLをコピペしよう',
             children: 
                 <div>
-                    {remoteRequestVideos.length > 0
+                    {(remoteRequestVideos.length > 0
                     && remoteAllArtist.length > 0
-                    && remoteAllMusic.length > 0
-                    &&
+                    && remoteAllMusic.length > 0)
+                    ?
                         <FormYoutubeUrl
                             remoteRequestVideos={remoteRequestVideos}
                             requestVideo={requestVideo}
@@ -221,6 +224,8 @@ export default ({ data: { allVideo }}) => {
                             setStep={setStep}
                             step={step}
                         />
+                    :
+                        <p className='text-center text-xl'>読み込み中...🤔</p>
                     }
                 </div>
                 ,
@@ -272,6 +277,33 @@ export default ({ data: { allVideo }}) => {
                 }
             ]
         },
+        twitter_ask_first: {
+            message: 'あなたのTwitterアカウントを教えてくれる？',
+            children: <Choose yes={steps.TWITTER_INPUT_FIRST} no={steps.ORIGINAL_MUSIC_ASK}/>,
+            qa: [
+                {
+                    q: 'なんで教えないといけないの？',
+                    a: <div>
+                        <p>動画追加したときとかに連絡させてもらったりするかも！</p>
+                        <p>リクエストした動画数ランキングとかいつか作るかも！</p>
+                        <p>なるべく入力してほしいよ！</p>
+                    </div>
+
+                }
+            ]
+        },
+        twitter_input_first: {
+            message: 'あなたのTwitterアカウントを入力してね！',
+            children: 
+                <FormTwitter
+                    requestVideo={requestVideo}
+                    updateRequestVideo={updateRequestVideo}
+                    upsertRequestVideo={upsertRequestVideo}
+                    setStep={setStep}
+                    steps={steps}
+                    isFirst
+                />
+        },
         original_music_ask: {
             message: 'オリジナル楽曲ですか？',
             children: 
@@ -314,7 +346,7 @@ export default ({ data: { allVideo }}) => {
         },
         artist_ask: {
             message: '歌っているVtuberの情報を教えてくれる？',
-            children: <Choose yes={steps.ARTIST_INPUT} no={steps.TWITTER_ASK}/>,
+            children: <Choose yes={steps.ARTIST_INPUT} no={steps.TWITTER_ASK_LAST}/>,
             qa: [
                 {
                     q: 'なんで必要なの？',
@@ -375,7 +407,7 @@ export default ({ data: { allVideo }}) => {
         },
         music_ask: {
             message: '曲の名前を教えてくれる？',
-            children: <Choose yes={steps.MUSIC_INPUT} no={steps.TWITTER_ASK}/>,
+            children: <Choose yes={steps.MUSIC_INPUT} no={steps.TWITTER_ASK_LAST}/>,
             qa: [
                 {
                     q: 'なんで必要なの？',
@@ -421,7 +453,7 @@ export default ({ data: { allVideo }}) => {
         },
         music_artist_ask: {
             message: '作曲者と作詞者を教えてくれる？',
-            children: <Choose yes={steps.MUSIC_ARTIST_INPUT} no={steps.TWITTER_ASK}/>,
+            children: <Choose yes={steps.MUSIC_ARTIST_INPUT} no={steps.TWITTER_ASK_LAST}/>,
             qa: [
                 {
                     q: 'なんで必要なの？',
@@ -475,7 +507,7 @@ export default ({ data: { allVideo }}) => {
         },
         video_artist_ask: {
             message: 'MIXとかしてる人を教えてくれる？',
-            children: <Choose yes={steps.VIDEO_ARTIST_INPUT} no={steps.TWITTER_ASK}/>,
+            children: <Choose yes={steps.VIDEO_ARTIST_INPUT} no={steps.TWITTER_ASK_LAST}/>,
             qa: [
                 {
                     q: 'なんで必要なの？',
@@ -536,9 +568,9 @@ export default ({ data: { allVideo }}) => {
                     },
                 ]
         },
-        twitter_ask: {
+        twitter_ask_last: {
             message: 'あなたのTwitterアカウントを教えてくれる？',
-            children: <Choose yes={steps.TWITTER_INPUT} no={steps.FIN}/>,
+            children: <Choose yes={steps.TWITTER_INPUT_LAST} no={steps.FIN}/>,
             qa: [
                 {
                     q: 'なんで教えないといけないの？',
@@ -551,19 +583,25 @@ export default ({ data: { allVideo }}) => {
                 }
             ]
         },
-        twitter_input: {
+        twitter_input_last: {
             message: 'あなたのTwitterアカウントを入力してね！',
             children: 
                 <FormTwitter
                     requestVideo={requestVideo}
                     updateRequestVideo={updateRequestVideo}
+                    upsertRequestVideo={upsertRequestVideo}
                     setStep={setStep}
                     steps={steps}
                 />
         },
         fin: {
             message: `${requestVideo.contributor_twitter_id && `@${requestVideo.contributor_twitter_id}さん`}リクエストありがとうございました！\n`
-                        +`${requestVideo.contributor_twitter_id && remoteRequestVideos.filter(v => v.contributor_twitter_id === requestVideo.contributor_twitter_id).length > 1 && `これで${remoteRequestVideos.filter(v => v.contributor_twitter_id === requestVideo.contributor_twitter_id).length + 1}本目のリクエストですね！！\nいつもありがとうございます！！！\n`}`
+                        +`${
+                            requestVideo.contributor_twitter_id
+                            && remoteRequestVideos.filter(v => v.contributor_twitter_id === requestVideo.contributor_twitter_id).length > 0
+                                ? `これで${remoteRequestVideos.filter(v => v.contributor_twitter_id === requestVideo.contributor_twitter_id).length + 1}本目のリクエストですね！！\nいつもありがとうございます！！！\n`
+                                : ''
+                        }`
                         +`あなたのおかげでより良いサイトになります！！`,
             children: 
                 <div>

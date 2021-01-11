@@ -47,14 +47,15 @@ export default ({ data: { allVideo } }) => {
                     onChange={(e) => searchVideo(e)}
                 />
             </div>
+            
             <InfiniteScroll
                 dataLength={showVideoIndex} //This is important field to render the next data
                 next={() => setShowVideoIndex(showVideoIndex + 12)}
                 hasMore={videos.length > showVideoIndex}
-                className='sm:flex flex-wrap justify-start'
+                className='sm:px-2 flex flex-wrap justify-start'
             >
                 {videos.slice(0, showVideoIndex).map((video, key) => (
-                    <VideoCard video={video} className='mb-16 sm:px-3 w-full sm:w-1/2 md:w-1/3 xl:w-1/4 transition-all' key={key}/>
+                    <VideoCard video={video} className='mb-5 sm:px-1 w-full sm:w-1/2 md:w-1/3 xl:w-1/4' key={key} withPublishDate/>
                 ))}
             </InfiniteScroll>
         </Layout>

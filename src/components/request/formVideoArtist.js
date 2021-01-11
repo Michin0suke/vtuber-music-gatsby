@@ -46,7 +46,7 @@ export default ({
                         className='mx-auto block px-4 py-2 bg-white sm:hover:bg-gray-50 text-red-600 border border-red-600 shadow rounded-full'
                         onClick={() => {
                             updateRequestVideo(v => {
-                                setStep(steps.TWITTER_ASK)
+                                setStep(steps.TWITTER_ASK_LAST)
                                 v.stage = 5
                                 syncArtist(v)
                                 upsertRequestVideo(v)
@@ -67,7 +67,7 @@ export default ({
                         className='mx-auto block px-4 py-2 bg-red-600 sm:hover:bg-red-500 text-white shadow rounded-full'
                         onClick={() => {
                             updateRequestVideo(v => {
-                                setStep(steps.TWITTER_ASK)
+                                setStep(steps.TWITTER_ASK_LAST)
                                 v.stage = 5
                                 syncArtist(v)
                                 upsertRequestVideo(v)

@@ -58,7 +58,7 @@ export default ({
                 }
             }
             setErrorMessage('')
-            setStep(steps.ORIGINAL_MUSIC_ASK)
+            setStep(steps.TWITTER_ASK_FIRST)
             // stage 0 としてmigrate
             upsertRequestVideo(v)
             return v

@@ -20,14 +20,22 @@ const Row = ({ currentPage, href, text, Img, imgClassName }) => (
 )
 
 export default ({ currentPage }) => (
-    <nav className={`hidden sm:block w-48 bg-white`} style={{minHeight: '100vh'}}>
-        <ul className='fixed mt-10 w-48'>
+    <nav className={`hidden sm:block w-44 bg-white`} style={{minHeight: '100vh'}}>
+        <ul className='fixed mt-10 w-44'>
             <Row currentPage={currentPage} href='/' text='ホーム' Img={Home} imgClassName='w-5'/>
             {/* <Row currentPage={currentPage} href='/recommends' text='おすすめ' Img={ThumbsUp} imgClassName='w-5'/> */}
             {/* <Row currentPage={currentPage} href='/hots' text='人気' Img={Fire} imgClassName='w-4'/> */}
             <Row currentPage={currentPage} href='/artists' text='アーティスト' Img={Profile} imgClassName='w-3'/>
             <Row currentPage={currentPage} href='/videos' text='検索' Img={Search} imgClassName='w-5'/>
-            <Row currentPage={currentPage} href='/request_add_video' text='動画の追加' Img={Plus} imgClassName='w-5'/>
+            <li className='sm:hover:bg-gray-100 h-10'>
+                <a href='/request_add_video' className='h-full py-3 flex items-center'>
+                    <div className='w-12'>
+                        <Plus color={currentPage === '/request_add_video' ? 'red' : '#333'} className='mx-auto w-5'/>
+                    </div>
+                    <span className={`text-sm ${currentPage === '/request_add_video' ? 'text-red-500' : 'text-gray-800'}`}>動画の追加</span>
+                </a>
+            </li>
+            {/* <Row currentPage={currentPage} href='/request_add_video' text='動画の追加' Img={Plus} imgClassName='w-5'/> */}
             {/* <Row currentPage={currentPage} href='/others' text='その他' Img={Ellipsis} imgClassName='w-5'/> */}
         </ul>
     </nav>

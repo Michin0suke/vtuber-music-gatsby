@@ -157,6 +157,7 @@ export const query = graphql`
             id
             release_date
             is_original_music
+            custom_music_name
             thumbnail_image {
                 childImageSharp {
                     fluid(maxWidth: 300) {
@@ -186,6 +187,7 @@ export const query = graphql`
             id
             release_date
             is_original_music
+            custom_music_name
             thumbnail_image {
                 childImageSharp {
                     fluid(maxWidth: 300) {

@@ -82,11 +82,12 @@ const MusicArtistRole = ({
             ))}
             <div className='w-full'>
                 <button
-                    className='block mx-auto h-7 w-7 bg-red-500 sm:hover:bg-red-400 text-xl font-bold text-white rounded-full'
+                    className='h-7 w-7 mr-3 bg-red-500 sm:hover:bg-red-400 text-xl font-bold text-white rounded-full'
                     onClick={_=> updateRequestVideo(v => {
                         v.music[role.en].push(initStateArtist); return v
                     })}
                 >+</button>
+                <span className='text-sm text-gray-500'>👈複数人の{role.ja}がいる場合は全員追加してね！</span>
             </div>
         </div>
     )

@@ -3,9 +3,9 @@ import Img from 'gatsby-image'
 import ProfileImg from './svg/profile'
 
 export default ({ artist, href, className, hoverEffect }) => {
-    if (!artist.name) {
-        console.log('alt属性が設定されていません。', artist)
-    }
+    // if (!artist.name) {
+    //     console.log('alt属性が設定されていません。', artist)
+    // }
     return (
         <div className={`relative bg-white rounded-full shadow overflow-hidden ${className}`}>
             <ProfileImg color='#999' className='absolute top-0 left-0 right-0 bottom-0 m-auto w-3/5'/>

@@ -42,10 +42,10 @@ export default ({
                 <span className='block text-xs text-gray-600 mt-5'>カスタム楽曲名 (必要なら)</span>
                 <input
                     className='w-full px-3 py-1 mb-5 bg-gray-50 border rounded'
-                    value={requestVideo.custom_title}
+                    value={requestVideo.custom_music_name}
                     placeholder='例）チョコミントは嫌われている'
                     onChange={e => updateRequestVideo(v => {
-                        v.custom_title = e.target.value; return v
+                        v.custom_music_name = e.target.value; return v
                     })}
                 />
             </div>

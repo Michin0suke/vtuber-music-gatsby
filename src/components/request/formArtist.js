@@ -39,12 +39,15 @@ export default ({
                     updateRequestVideoBirthday={updateRequestVideoBirthday}
                 />
             ))}
-            <button
-                className='h-7 w-7 mr-3 bg-red-500 sm:hover:bg-red-400 text-xl font-bold text-white rounded-full'
-                onClick={_=> updateRequestVideo(v => {
-                    v.singers.push(initStateSinger); return v
-                })}
-            >+</button>
+            <div class='mb-3'>
+                <button
+                    className='h-7 w-7 mr-3 bg-red-500 sm:hover:bg-red-400 text-xl font-bold text-white rounded-full'
+                    onClick={_=> updateRequestVideo(v => {
+                        v.singers.push(initStateSinger); return v
+                    })}
+                >+</button>👈
+                <span className='text-sm text-gray-500'>複数人で歌っている場合は、全員追加してね！</span>
+            </div>
             {requestVideo.singers.filter(singer => singer.name === '').length === 0
                 && !requestVideo.singers.find(singer => singer.id_youtube === false)
                 && !requestVideo.singers.map(singer => singer.birthday).includes(false)
@@ -188,6 +191,12 @@ const Form = ({
                                     />
                                 </div>
                                 {requestVideo.singers[singerIndex].birthday === false && <p className='text-xs text-red-500'>誕生日が有効ではありません！</p>}
+                                {requestVideo.singers[singerIndex].id_twitter &&
+                                    requestVideo.singers[singerIndex].id_twitter !== '' &&
+                                    <a href={`https://twitter.com/search?q=to%3A${requestVideo.singers[singerIndex].id_twitter}%20%E8%AA%95%E7%94%9F%E6%97%A5&src=typed_query`} target='_blank' className='mx-auto'>
+                                        <button className='px-2 py-1 my-2 bg-yellow-500 sm:hover:bg-yellow-400 text-white text-sm rounded'>TwitterでこのVtuberへの誕生日リプを検索</button>
+                                    </a>
+                                }
                             </div>
                         }
                         {i.inputType === 'id_twitter' &&

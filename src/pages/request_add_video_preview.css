@@ -1,0 +1,22 @@
+@keyframes show {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.card-container {
+    /* display: none; */
+    transition: max-height 0.2s ease-out;
+    overflow: hidden;
+    max-height: 0;
+}
+
+.card-container.show {
+    /* display:block; */
+    transition: max-height 0.3s ease-in;
+    /* animation: show 1s linear 0s; */
+    max-height: 9999px;
+}
