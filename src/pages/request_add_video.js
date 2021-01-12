@@ -17,10 +17,14 @@ import { allMusic } from '../queries/music'
 import { upsertRequestVideo } from '../queries/requestVideo'
 
 const getContributorTwitterId = () => {
+    if (typeof window === 'undefined') return null
+
     return window.localStorage.getItem('twitter_id')
 }
 
 const setContributorTwitterId = twitterId => {
+    if (typeof window === 'undefined') return null
+
     window.localStorage.setItem('twitter_id', twitterId)
 }
 
