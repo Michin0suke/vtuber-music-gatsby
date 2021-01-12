@@ -3302,10 +3302,38 @@
                 "lyrics_url": null,
                 "genre": null,
                 "original_video_youtube_id": null,
-                "videos": [],
-                "composers": [],
-                "lyricists": [],
-                "arrangers": [],
+                "videos": [
+                    {
+                        "id": "vmoRsVtCy_I",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "aca_ne",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "aca_ne",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [
+                    {
+                        "id": "eWp6P0hh",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "F2bV73nC",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "nZb9ZndB",
+                        "__typename": "Artist"
+                    }
+                ],
                 "created_at": "2021-01-13 00:33:36",
                 "updated_at": "2021-01-13 00:33:36",
                 "__typename": "Music"
@@ -14165,5 +14193,5 @@
     "loading": false,
     "networkStatus": 7,
     "stale": false,
-    "fetched_at": "2021-01-12T16:01:57.776Z"
+    "fetched_at": "2021-01-12T16:11:26.528Z"
 }
