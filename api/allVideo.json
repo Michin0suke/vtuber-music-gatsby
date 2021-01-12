@@ -440,7 +440,7 @@
             {
                 "id": "-DS2Olqz8xo",
                 "music": {
-                    "id": "-3qW-fDK",
+                    "id": "suki_yuki_maji_magic",
                     "__typename": "Music"
                 },
                 "release_date": "2019-12-25",
@@ -2871,7 +2871,7 @@
             {
                 "id": "7DMH-ADK5iI",
                 "music": {
-                    "id": "T-RV3B7G",
+                    "id": "king",
                     "__typename": "Music"
                 },
                 "release_date": "2021-01-11",
@@ -5157,6 +5157,31 @@
                 "__typename": "Video"
             },
             {
+                "id": "di8QdzeZtys",
+                "music": {
+                    "id": "hxpbWsC3",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-12-31",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "XpfyoVOe",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-13 00:00:00",
+                "updated_at": "2021-01-13 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "dlVWaAQZPag",
                 "music": {
                     "id": "viviparity",
@@ -6814,7 +6839,7 @@
             {
                 "id": "GFAWgVTRztk",
                 "music": {
-                    "id": "zS_lyJ_A",
+                    "id": "L_1_hgQ6",
                     "__typename": "Music"
                 },
                 "release_date": "2020-12-05",
@@ -7436,7 +7461,7 @@
             {
                 "id": "HOFGtSKcKJ4",
                 "music": {
-                    "id": "vwGqfMgA",
+                    "id": "bocca_de_la_verita",
                     "__typename": "Music"
                 },
                 "release_date": "2020-11-20",
@@ -7824,7 +7849,7 @@
             {
                 "id": "igDQ0eQ2PxQ",
                 "music": {
-                    "id": "cXxEw_po",
+                    "id": "frw8hfbI",
                     "__typename": "Music"
                 },
                 "release_date": "2021-01-01",
@@ -9229,7 +9254,12 @@
                 "is_original_music": false,
                 "original_video_id": null,
                 "custom_music_name": null,
-                "singers": [],
+                "singers": [
+                    {
+                        "id": "JDLF91y0",
+                        "__typename": "Artist"
+                    }
+                ],
                 "mixers": [
                     {
                         "id": "6-j3ZdbC",
@@ -9481,7 +9511,7 @@
             {
                 "id": "LoW2EwYYboQ",
                 "music": {
-                    "id": "rSrIbP9R",
+                    "id": "kami_no_manimani",
                     "__typename": "Music"
                 },
                 "release_date": "2020-05-09",
@@ -9969,6 +9999,36 @@
                 "__typename": "Video"
             },
             {
+                "id": "MEXOkAs1j8U",
+                "music": {
+                    "id": "VBH1qDjs",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-11-15",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "WybgtsUJ",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "8L7SL_56",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-13 00:00:00",
+                "updated_at": "2021-01-13 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "mFLCDDjPCGM",
                 "music": {
                     "id": "inochi_ni_kirawareteiru",
@@ -10094,7 +10154,12 @@
                 "is_original_music": true,
                 "original_video_id": null,
                 "custom_music_name": null,
-                "singers": [],
+                "singers": [
+                    {
+                        "id": "bBe5IBpZ",
+                        "__typename": "Artist"
+                    }
+                ],
                 "mixers": [
                     {
                         "id": "tomobop",
@@ -10431,7 +10496,12 @@
                 "is_original_music": false,
                 "original_video_id": null,
                 "custom_music_name": null,
-                "singers": [],
+                "singers": [
+                    {
+                        "id": "JzgoIqD6",
+                        "__typename": "Artist"
+                    }
+                ],
                 "mixers": [
                     {
                         "id": "pd_46",
@@ -11338,6 +11408,31 @@
                 "__typename": "Video"
             },
             {
+                "id": "p7sUv8R-XzE",
+                "music": {
+                    "id": "JJEhB1IF",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-09-28",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "XpfyoVOe",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-13 00:00:00",
+                "updated_at": "2021-01-13 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "p8wF78nKRpo",
                 "music": {
                     "id": "yoake_to_hotaru",
@@ -11440,6 +11535,36 @@
                 "recommends": [],
                 "created_at": "2020-12-09 00:00:00",
                 "updated_at": "2020-12-09 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "Ph-jQFNvaQY",
+                "music": {
+                    "id": "9VkxyM96",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-12-20",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "w8irxYzy",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "EiSQOQSk",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-13 00:00:00",
+                "updated_at": "2021-01-13 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -11997,7 +12122,7 @@
             {
                 "id": "QI4OVs5Do1k",
                 "music": {
-                    "id": "4oMbF3gM",
+                    "id": "DIZDKWud",
                     "__typename": "Music"
                 },
                 "release_date": "2020-11-08",
@@ -12239,6 +12364,36 @@
                 "recommends": [],
                 "created_at": "2020-11-30 00:00:00",
                 "updated_at": "2020-02-26 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "R3EfYTnCysw",
+                "music": {
+                    "id": "KQ9WUHxh",
+                    "__typename": "Music"
+                },
+                "release_date": "2021-01-11",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "xGF47DWT",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "g9KHwjaS",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-13 00:00:00",
+                "updated_at": "2021-01-13 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -13116,7 +13271,7 @@
             {
                 "id": "shrCMpoLhYE",
                 "music": {
-                    "id": "_k-MCJev",
+                    "id": "lisa_homura",
                     "__typename": "Music"
                 },
                 "release_date": "2021-01-01",
@@ -14036,7 +14191,7 @@
             {
                 "id": "Tz6tc4acGMU",
                 "music": {
-                    "id": "97M487bc",
+                    "id": "cynical_night_plan",
                     "__typename": "Music"
                 },
                 "release_date": "2020-08-03",
@@ -14479,7 +14634,7 @@
             {
                 "id": "UnHXas_9ZeY",
                 "music": {
-                    "id": "Hg-eoGvx",
+                    "id": "ikasama_casino",
                     "__typename": "Music"
                 },
                 "release_date": "2020-09-29",
@@ -14799,6 +14954,36 @@
                 "recommends": [],
                 "created_at": "2020-12-13 00:00:00",
                 "updated_at": "2020-12-13 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "UYwY30kd8LA",
+                "music": {
+                    "id": "PcmSHc7s",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-12-12",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "BAVbdNFU",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "02",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-13 00:00:00",
+                "updated_at": "2021-01-13 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -15874,7 +16059,7 @@
             {
                 "id": "wgghPw5KxXk",
                 "music": {
-                    "id": "ggbqGYcf",
+                    "id": "hello_how_are_you",
                     "__typename": "Music"
                 },
                 "release_date": "2019-11-12",
@@ -16239,7 +16424,7 @@
             {
                 "id": "wx66NNWufL8",
                 "music": {
-                    "id": "7r0wMyNm",
+                    "id": "love_cino",
                     "__typename": "Music"
                 },
                 "release_date": "2020-02-14",
@@ -16446,6 +16631,31 @@
                 "__typename": "Video"
             },
             {
+                "id": "xHj41VSEEhs",
+                "music": {
+                    "id": "KZiEUC8O",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-12-04",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "XpfyoVOe",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-13 00:00:00",
+                "updated_at": "2021-01-13 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "xMpTFCca9qo",
                 "music": {
                     "id": "booo",
@@ -16516,7 +16726,12 @@
                 "is_original_music": false,
                 "original_video_id": null,
                 "custom_music_name": null,
-                "singers": [],
+                "singers": [
+                    {
+                        "id": "Fip9jGLP",
+                        "__typename": "Artist"
+                    }
+                ],
                 "mixers": [
                     {
                         "id": "Fip9jGLP",
@@ -17040,6 +17255,31 @@
                 "__typename": "Video"
             },
             {
+                "id": "yI9YGHOQa_4",
+                "music": {
+                    "id": "night_sky_patrol_of_tomorrow",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-11-28",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "Cw1oqKFU",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-13 00:00:00",
+                "updated_at": "2021-01-13 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "yINNjzEyklo",
                 "music": {
                     "id": "gurenge",
@@ -17512,7 +17752,7 @@
             {
                 "id": "zhLk6QQbCxM",
                 "music": {
-                    "id": "3vM_tNv2",
+                    "id": "8qmBZW79",
                     "__typename": "Music"
                 },
                 "release_date": "2020-10-01",
@@ -17520,7 +17760,12 @@
                 "is_original_music": true,
                 "original_video_id": null,
                 "custom_music_name": null,
-                "singers": [],
+                "singers": [
+                    {
+                        "id": "Qg0kunOt",
+                        "__typename": "Artist"
+                    }
+                ],
                 "mixers": [
                     {
                         "id": "a0tJFoq-",
@@ -18022,6 +18267,31 @@
                 "__typename": "Video"
             },
             {
+                "id": "ZrZZWlIoXjo",
+                "music": {
+                    "id": "HTkwusvM",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-12-24",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "GXndQzJ8",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-13 00:00:00",
+                "updated_at": "2021-01-13 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "zVfrNhGzbQY",
                 "music": {
                     "id": "king",
@@ -18131,5 +18401,5 @@
     "loading": false,
     "networkStatus": 7,
     "stale": false,
-    "fetched_at": "2021-01-12T16:11:27.129Z"
+    "fetched_at": "2021-01-12T21:07:30.798Z"
 }

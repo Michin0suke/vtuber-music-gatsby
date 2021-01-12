@@ -108,46 +108,6 @@
                 "__typename": "Music"
             },
             {
-                "id": "_k-MCJev",
-                "title": "炎",
-                "title_ruby": null,
-                "lyrics": null,
-                "lyrics_url": null,
-                "genre": null,
-                "original_video_youtube_id": null,
-                "videos": [
-                    {
-                        "id": "shrCMpoLhYE",
-                        "__typename": "Video"
-                    }
-                ],
-                "composers": [
-                    {
-                        "id": "kajiura_yuki",
-                        "__typename": "Artist"
-                    }
-                ],
-                "lyricists": [
-                    {
-                        "id": "kajiura_yuki",
-                        "__typename": "Artist"
-                    },
-                    {
-                        "id": "lisa",
-                        "__typename": "Artist"
-                    }
-                ],
-                "arrangers": [
-                    {
-                        "id": "kajiura_yuki",
-                        "__typename": "Artist"
-                    }
-                ],
-                "created_at": "2021-01-12 22:50:52",
-                "updated_at": "2021-01-12 22:50:52",
-                "__typename": "Music"
-            },
-            {
                 "id": "_oR-GhBB",
                 "title": "Little Flower",
                 "title_ruby": null,
@@ -176,32 +136,6 @@
                 "arrangers": [],
                 "created_at": "2021-01-12 19:24:45",
                 "updated_at": "2021-01-12 19:24:45",
-                "__typename": "Music"
-            },
-            {
-                "id": "-3qW-fDK",
-                "title": "好き！雪！本気マジック",
-                "title_ruby": null,
-                "lyrics": null,
-                "lyrics_url": null,
-                "genre": null,
-                "original_video_youtube_id": null,
-                "videos": [
-                    {
-                        "id": "-DS2Olqz8xo",
-                        "__typename": "Video"
-                    }
-                ],
-                "composers": [
-                    {
-                        "id": "mitchie_m",
-                        "__typename": "Artist"
-                    }
-                ],
-                "lyricists": [],
-                "arrangers": [],
-                "created_at": "2021-01-12 22:19:53",
-                "updated_at": "2021-01-12 22:19:53",
                 "__typename": "Music"
             },
             {
@@ -267,37 +201,6 @@
                 "__typename": "Music"
             },
             {
-                "id": "3vM_tNv2",
-                "title": "耀く月と天文台",
-                "title_ruby": null,
-                "lyrics": null,
-                "lyrics_url": null,
-                "genre": null,
-                "original_video_youtube_id": null,
-                "videos": [
-                    {
-                        "id": "zhLk6QQbCxM",
-                        "__typename": "Video"
-                    }
-                ],
-                "composers": [
-                    {
-                        "id": "a0tJFoq-",
-                        "__typename": "Artist"
-                    }
-                ],
-                "lyricists": [
-                    {
-                        "id": "a0tJFoq-",
-                        "__typename": "Artist"
-                    }
-                ],
-                "arrangers": [],
-                "created_at": "2021-01-12 11:17:21",
-                "updated_at": "2021-01-12 11:17:21",
-                "__typename": "Music"
-            },
-            {
                 "id": "45_seconds",
                 "title": "45秒",
                 "title_ruby": null,
@@ -360,63 +263,6 @@
                 "__typename": "Music"
             },
             {
-                "id": "4oMbF3gM",
-                "title": "テレキャスタービーボーイ",
-                "title_ruby": null,
-                "lyrics": null,
-                "lyrics_url": null,
-                "genre": null,
-                "original_video_youtube_id": null,
-                "videos": [
-                    {
-                        "id": "QI4OVs5Do1k",
-                        "__typename": "Video"
-                    }
-                ],
-                "composers": [
-                    {
-                        "id": "iii333",
-                        "__typename": "Artist"
-                    }
-                ],
-                "lyricists": [
-                    {
-                        "id": "iii333",
-                        "__typename": "Artist"
-                    }
-                ],
-                "arrangers": [],
-                "created_at": "2021-01-12 12:01:33",
-                "updated_at": "2021-01-12 12:01:33",
-                "__typename": "Music"
-            },
-            {
-                "id": "7r0wMyNm",
-                "title": "ラブチーノ",
-                "title_ruby": null,
-                "lyrics": null,
-                "lyrics_url": null,
-                "genre": null,
-                "original_video_youtube_id": null,
-                "videos": [
-                    {
-                        "id": "wx66NNWufL8",
-                        "__typename": "Video"
-                    }
-                ],
-                "composers": [
-                    {
-                        "id": "junky",
-                        "__typename": "Artist"
-                    }
-                ],
-                "lyricists": [],
-                "arrangers": [],
-                "created_at": "2021-01-12 22:22:39",
-                "updated_at": "2021-01-12 22:22:39",
-                "__typename": "Music"
-            },
-            {
                 "id": "8d9ykn9q",
                 "title": "中指立てて世にディスを",
                 "title_ruby": null,
@@ -455,9 +301,24 @@
                 "lyrics_url": null,
                 "genre": null,
                 "original_video_youtube_id": null,
-                "videos": [],
-                "composers": [],
-                "lyricists": [],
+                "videos": [
+                    {
+                        "id": "zhLk6QQbCxM",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "a0tJFoq-",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "a0tJFoq-",
+                        "__typename": "Artist"
+                    }
+                ],
                 "arrangers": [],
                 "created_at": "2021-01-12 11:20:55",
                 "updated_at": "2021-01-12 11:20:55",
@@ -500,8 +361,8 @@
                 "__typename": "Music"
             },
             {
-                "id": "97M487bc",
-                "title": "シニカルナイトプラン",
+                "id": "9VkxyM96",
+                "title": "TRUST",
                 "title_ruby": null,
                 "lyrics": null,
                 "lyrics_url": null,
@@ -509,20 +370,25 @@
                 "original_video_youtube_id": null,
                 "videos": [
                     {
-                        "id": "Tz6tc4acGMU",
+                        "id": "Ph-jQFNvaQY",
                         "__typename": "Video"
                     }
                 ],
                 "composers": [
                     {
-                        "id": "ayase",
+                        "id": "nscAy5ER",
                         "__typename": "Artist"
                     }
                 ],
-                "lyricists": [],
+                "lyricists": [
+                    {
+                        "id": "w8irxYzy",
+                        "__typename": "Artist"
+                    }
+                ],
                 "arrangers": [],
-                "created_at": "2021-01-12 22:15:38",
-                "updated_at": "2021-01-12 22:15:38",
+                "created_at": "2021-01-13 02:37:01",
+                "updated_at": "2021-01-13 02:37:01",
                 "__typename": "Music"
             },
             {
@@ -1727,6 +1593,10 @@
                         "__typename": "Video"
                     },
                     {
+                        "id": "HOFGtSKcKJ4",
+                        "__typename": "Video"
+                    },
+                    {
                         "id": "y5oMGon8O5A",
                         "__typename": "Video"
                     }
@@ -2613,37 +2483,6 @@
                 "__typename": "Music"
             },
             {
-                "id": "cXxEw_po",
-                "title": "シャルル",
-                "title_ruby": null,
-                "lyrics": null,
-                "lyrics_url": null,
-                "genre": null,
-                "original_video_youtube_id": null,
-                "videos": [
-                    {
-                        "id": "igDQ0eQ2PxQ",
-                        "__typename": "Video"
-                    }
-                ],
-                "composers": [
-                    {
-                        "id": "pqgN00ry",
-                        "__typename": "Artist"
-                    }
-                ],
-                "lyricists": [
-                    {
-                        "id": "pqgN00ry",
-                        "__typename": "Artist"
-                    }
-                ],
-                "arrangers": [],
-                "created_at": "2021-01-12 06:06:53",
-                "updated_at": "2021-01-12 06:06:53",
-                "__typename": "Music"
-            },
-            {
                 "id": "cynical_night_plan",
                 "title": "シニカルナイトプラン",
                 "title_ruby": "しにかるないとぷらん",
@@ -2658,6 +2497,10 @@
                     },
                     {
                         "id": "J5SxAXyoQyg",
+                        "__typename": "Video"
+                    },
+                    {
+                        "id": "Tz6tc4acGMU",
                         "__typename": "Video"
                     }
                 ],
@@ -2879,13 +2722,17 @@
             },
             {
                 "id": "DIZDKWud",
-                "title": "テレキャスタービーボーイ(long ver.)(Cover)すりぃ 親不孝テキラ",
+                "title": "テレキャスタービーボーイ",
                 "title_ruby": null,
                 "lyrics": null,
                 "lyrics_url": null,
                 "genre": null,
                 "original_video_youtube_id": null,
                 "videos": [
+                    {
+                        "id": "QI4OVs5Do1k",
+                        "__typename": "Video"
+                    },
                     {
                         "id": "RqaTV2_alPM",
                         "__typename": "Video"
@@ -2897,7 +2744,12 @@
                         "__typename": "Artist"
                     }
                 ],
-                "lyricists": [],
+                "lyricists": [
+                    {
+                        "id": "iii333",
+                        "__typename": "Artist"
+                    }
+                ],
                 "arrangers": [],
                 "created_at": "2021-01-12 22:07:56",
                 "updated_at": "2021-01-12 22:07:56",
@@ -3671,6 +3523,10 @@
                 "original_video_youtube_id": null,
                 "videos": [
                     {
+                        "id": "igDQ0eQ2PxQ",
+                        "__typename": "Video"
+                    },
+                    {
                         "id": "nWj5htdzBu0",
                         "__typename": "Video"
                     }
@@ -3678,6 +3534,10 @@
                 "composers": [
                     {
                         "id": "fNjXnFn3",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "pqgN00ry",
                         "__typename": "Artist"
                     }
                 ],
@@ -4086,32 +3946,6 @@
                 "arrangers": [],
                 "created_at": "2021-01-12 23:33:32",
                 "updated_at": "2021-01-12 23:33:32",
-                "__typename": "Music"
-            },
-            {
-                "id": "ggbqGYcf",
-                "title": "ハロ／ハワユ",
-                "title_ruby": null,
-                "lyrics": null,
-                "lyrics_url": null,
-                "genre": null,
-                "original_video_youtube_id": null,
-                "videos": [
-                    {
-                        "id": "wgghPw5KxXk",
-                        "__typename": "Video"
-                    }
-                ],
-                "composers": [
-                    {
-                        "id": "nanou",
-                        "__typename": "Artist"
-                    }
-                ],
-                "lyricists": [],
-                "arrangers": [],
-                "created_at": "2021-01-12 22:18:29",
-                "updated_at": "2021-01-12 22:18:29",
                 "__typename": "Music"
             },
             {
@@ -4866,6 +4700,10 @@
                     {
                         "id": "qoxOOFz402k",
                         "__typename": "Video"
+                    },
+                    {
+                        "id": "wgghPw5KxXk",
+                        "__typename": "Video"
                     }
                 ],
                 "composers": [
@@ -4952,46 +4790,6 @@
                 "arrangers": [],
                 "created_at": "2020-12-28 13:50:51",
                 "updated_at": "2020-12-28 13:50:51",
-                "__typename": "Music"
-            },
-            {
-                "id": "Hg-eoGvx",
-                "title": "イカサマ⇔カジノ",
-                "title_ruby": null,
-                "lyrics": null,
-                "lyrics_url": null,
-                "genre": null,
-                "original_video_youtube_id": null,
-                "videos": [
-                    {
-                        "id": "UnHXas_9ZeY",
-                        "__typename": "Video"
-                    }
-                ],
-                "composers": [
-                    {
-                        "id": "hitoshizuku_p",
-                        "__typename": "Artist"
-                    },
-                    {
-                        "id": "yama_triangle",
-                        "__typename": "Artist"
-                    }
-                ],
-                "lyricists": [
-                    {
-                        "id": "hitoshizuku_p",
-                        "__typename": "Artist"
-                    }
-                ],
-                "arrangers": [
-                    {
-                        "id": "yama_triangle",
-                        "__typename": "Artist"
-                    }
-                ],
-                "created_at": "2021-01-12 23:03:21",
-                "updated_at": "2021-01-12 23:03:21",
                 "__typename": "Music"
             },
             {
@@ -5255,6 +5053,73 @@
                 "__typename": "Music"
             },
             {
+                "id": "HTkwusvM",
+                "title": "不死鳥",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "ZrZZWlIoXjo",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "YJIqyyR6",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "GXndQzJ8",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-13 02:43:36",
+                "updated_at": "2021-01-13 02:43:36",
+                "__typename": "Music"
+            },
+            {
+                "id": "hxpbWsC3",
+                "title": "Continue",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "di8QdzeZtys",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "o7kFszgZ",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "mI2tVy0n",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [
+                    {
+                        "id": "o7kFszgZ",
+                        "__typename": "Artist"
+                    }
+                ],
+                "created_at": "2021-01-13 03:19:44",
+                "updated_at": "2021-01-13 03:19:44",
+                "__typename": "Music"
+            },
+            {
                 "id": "hyakkisai",
                 "title": "百鬼祭",
                 "title_ruby": null,
@@ -5420,6 +5285,10 @@
                 "videos": [
                     {
                         "id": "UKxPrckG8JI",
+                        "__typename": "Video"
+                    },
+                    {
+                        "id": "UnHXas_9ZeY",
                         "__typename": "Video"
                     }
                 ],
@@ -5840,6 +5709,42 @@
                 "__typename": "Music"
             },
             {
+                "id": "JJEhB1IF",
+                "title": "signal",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "p7sUv8R-XzE",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "o7kFszgZ",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "mI2tVy0n",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [
+                    {
+                        "id": "o7kFszgZ",
+                        "__typename": "Artist"
+                    }
+                ],
+                "created_at": "2021-01-13 03:17:42",
+                "updated_at": "2021-01-13 03:17:42",
+                "__typename": "Music"
+            },
+            {
                 "id": "junky_i_love",
                 "title": "I ♥",
                 "title_ruby": null,
@@ -6156,6 +6061,10 @@
                 "videos": [
                     {
                         "id": "bE2oZdUH_ps",
+                        "__typename": "Video"
+                    },
+                    {
+                        "id": "LoW2EwYYboQ",
                         "__typename": "Video"
                     }
                 ],
@@ -6515,6 +6424,10 @@
                     },
                     {
                         "id": "5UDdgzUX4Ug",
+                        "__typename": "Video"
+                    },
+                    {
+                        "id": "7DMH-ADK5iI",
                         "__typename": "Video"
                     },
                     {
@@ -7052,6 +6965,46 @@
                 "__typename": "Music"
             },
             {
+                "id": "KQ9WUHxh",
+                "title": "マリーゴールド/あいみょん",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "R3EfYTnCysw",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "PQIg2RCl",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "PQIg2RCl",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [
+                    {
+                        "id": "aVHrcPcW",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "AvRtq88x",
+                        "__typename": "Artist"
+                    }
+                ],
+                "created_at": "2021-01-13 01:52:37",
+                "updated_at": "2021-01-13 01:52:37",
+                "__typename": "Music"
+            },
+            {
                 "id": "kuhaku",
                 "title": "空白",
                 "title_ruby": "くうはく",
@@ -7251,6 +7204,42 @@
                 "__typename": "Music"
             },
             {
+                "id": "KZiEUC8O",
+                "title": "POP☆MUTENKA☆GUM",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "xHj41VSEEhs",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "o7kFszgZ",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "mI2tVy0n",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [
+                    {
+                        "id": "o7kFszgZ",
+                        "__typename": "Artist"
+                    }
+                ],
+                "created_at": "2021-01-13 03:13:44",
+                "updated_at": "2021-01-13 03:13:44",
+                "__typename": "Music"
+            },
+            {
                 "id": "L_1_hgQ6",
                 "title": "Here",
                 "title_ruby": null,
@@ -7258,9 +7247,24 @@
                 "lyrics_url": null,
                 "genre": null,
                 "original_video_youtube_id": null,
-                "videos": [],
-                "composers": [],
-                "lyricists": [],
+                "videos": [
+                    {
+                        "id": "GFAWgVTRztk",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "X6-pc4a8",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "M4bM7_CY",
+                        "__typename": "Artist"
+                    }
+                ],
                 "arrangers": [],
                 "created_at": "2021-01-12 11:04:12",
                 "updated_at": "2021-01-12 11:04:12",
@@ -7476,6 +7480,10 @@
                     {
                         "id": "a4thI28v_SM",
                         "__typename": "Video"
+                    },
+                    {
+                        "id": "shrCMpoLhYE",
+                        "__typename": "Video"
                     }
                 ],
                 "composers": [
@@ -7494,7 +7502,12 @@
                         "__typename": "Artist"
                     }
                 ],
-                "arrangers": [],
+                "arrangers": [
+                    {
+                        "id": "kajiura_yuki",
+                        "__typename": "Artist"
+                    }
+                ],
                 "created_at": "2021-01-03 10:38:13",
                 "updated_at": "2021-01-03 10:38:13",
                 "__typename": "Music"
@@ -7598,6 +7611,10 @@
                 "videos": [
                     {
                         "id": "s3LaciXfns8",
+                        "__typename": "Video"
+                    },
+                    {
+                        "id": "wx66NNWufL8",
                         "__typename": "Video"
                     }
                 ],
@@ -8251,7 +8268,7 @@
             },
             {
                 "id": "mih-PIl5",
-                "title": "ジャンキーナイトタウンオーケストラ(Cover)すりぃ 親不孝テキラ",
+                "title": "ジャンキーナイトタウンオーケストラ",
                 "title_ruby": null,
                 "lyrics": null,
                 "lyrics_url": null,
@@ -8925,6 +8942,10 @@
                 "videos": [
                     {
                         "id": "kO7ngyZUn7c",
+                        "__typename": "Video"
+                    },
+                    {
+                        "id": "yI9YGHOQa_4",
                         "__typename": "Video"
                     }
                 ],
@@ -9959,6 +9980,32 @@
                 "__typename": "Music"
             },
             {
+                "id": "PcmSHc7s",
+                "title": "ライカ",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "UYwY30kd8LA",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "Li2SsFKH",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [],
+                "arrangers": [],
+                "created_at": "2021-01-13 01:34:55",
+                "updated_at": "2021-01-13 01:34:55",
+                "__typename": "Music"
+            },
+            {
                 "id": "phantom_destination",
                 "title": "Phantom Destination",
                 "title_ruby": null,
@@ -10740,32 +10787,6 @@
                 "arrangers": [],
                 "created_at": "2020-12-30 13:51:30",
                 "updated_at": "2020-12-30 13:51:30",
-                "__typename": "Music"
-            },
-            {
-                "id": "rSrIbP9R",
-                "title": "神のまにまに",
-                "title_ruby": null,
-                "lyrics": null,
-                "lyrics_url": null,
-                "genre": null,
-                "original_video_youtube_id": null,
-                "videos": [
-                    {
-                        "id": "LoW2EwYYboQ",
-                        "__typename": "Video"
-                    }
-                ],
-                "composers": [
-                    {
-                        "id": "rerulili",
-                        "__typename": "Artist"
-                    }
-                ],
-                "lyricists": [],
-                "arrangers": [],
-                "created_at": "2021-01-12 22:29:27",
-                "updated_at": "2021-01-12 22:29:27",
                 "__typename": "Music"
             },
             {
@@ -11945,6 +11966,10 @@
                 "original_video_youtube_id": null,
                 "videos": [
                     {
+                        "id": "-DS2Olqz8xo",
+                        "__typename": "Video"
+                    },
+                    {
                         "id": "UHrUFr_0hxg",
                         "__typename": "Video"
                     }
@@ -12093,32 +12118,6 @@
                 "arrangers": [],
                 "created_at": "2020-12-12 04:17:36",
                 "updated_at": "2020-12-12 04:17:36",
-                "__typename": "Music"
-            },
-            {
-                "id": "T-RV3B7G",
-                "title": "KING(Cover)Kanaria 親不孝テキラ",
-                "title_ruby": null,
-                "lyrics": null,
-                "lyrics_url": null,
-                "genre": null,
-                "original_video_youtube_id": null,
-                "videos": [
-                    {
-                        "id": "7DMH-ADK5iI",
-                        "__typename": "Video"
-                    }
-                ],
-                "composers": [
-                    {
-                        "id": "kanaria",
-                        "__typename": "Artist"
-                    }
-                ],
-                "lyricists": [],
-                "arrangers": [],
-                "created_at": "2021-01-12 22:05:37",
-                "updated_at": "2021-01-12 22:05:37",
                 "__typename": "Music"
             },
             {
@@ -13155,6 +13154,37 @@
                 "__typename": "Music"
             },
             {
+                "id": "VBH1qDjs",
+                "title": "ネモフィリア",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "MEXOkAs1j8U",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "8L7SL_56",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "8L7SL_56",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "created_at": "2021-01-13 03:03:45",
+                "updated_at": "2021-01-13 03:03:45",
+                "__typename": "Music"
+            },
+            {
                 "id": "violet_snow",
                 "title": "Violet Snow",
                 "title_ruby": null,
@@ -13361,32 +13391,6 @@
                 ],
                 "created_at": "2021-01-11 16:57:49",
                 "updated_at": "2021-01-11 16:57:49",
-                "__typename": "Music"
-            },
-            {
-                "id": "vwGqfMgA",
-                "title": "ボッカデラベリタ(Cover)柊キライ 親不孝テキラ",
-                "title_ruby": null,
-                "lyrics": null,
-                "lyrics_url": null,
-                "genre": null,
-                "original_video_youtube_id": null,
-                "videos": [
-                    {
-                        "id": "HOFGtSKcKJ4",
-                        "__typename": "Video"
-                    }
-                ],
-                "composers": [
-                    {
-                        "id": "hiiragi_kirai",
-                        "__typename": "Artist"
-                    }
-                ],
-                "lyricists": [],
-                "arrangers": [],
-                "created_at": "2021-01-12 22:10:18",
-                "updated_at": "2021-01-12 22:10:18",
                 "__typename": "Music"
             },
             {
@@ -13777,22 +13781,6 @@
                 "__typename": "Music"
             },
             {
-                "id": "yEmijVd-",
-                "title": "絶対唯一☆お嬢様宣言っ！！！～しもべたちを添えて～",
-                "title_ruby": null,
-                "lyrics": null,
-                "lyrics_url": null,
-                "genre": null,
-                "original_video_youtube_id": null,
-                "videos": [],
-                "composers": [],
-                "lyricists": [],
-                "arrangers": [],
-                "created_at": "2021-01-11 06:24:04",
-                "updated_at": "2021-01-11 06:24:04",
-                "__typename": "Music"
-            },
-            {
                 "id": "YfDQzwk2",
                 "title": "LOVE SICK DRIVE",
                 "title_ruby": null,
@@ -14127,37 +14115,6 @@
                 "__typename": "Music"
             },
             {
-                "id": "zS_lyJ_A",
-                "title": "Here",
-                "title_ruby": null,
-                "lyrics": null,
-                "lyrics_url": null,
-                "genre": null,
-                "original_video_youtube_id": null,
-                "videos": [
-                    {
-                        "id": "GFAWgVTRztk",
-                        "__typename": "Video"
-                    }
-                ],
-                "composers": [
-                    {
-                        "id": "X6-pc4a8",
-                        "__typename": "Artist"
-                    }
-                ],
-                "lyricists": [
-                    {
-                        "id": "M4bM7_CY",
-                        "__typename": "Artist"
-                    }
-                ],
-                "arrangers": [],
-                "created_at": "2021-01-12 11:04:29",
-                "updated_at": "2021-01-12 11:04:29",
-                "__typename": "Music"
-            },
-            {
                 "id": "zzz",
                 "title": "Zzz",
                 "title_ruby": null,
@@ -14193,5 +14150,5 @@
     "loading": false,
     "networkStatus": 7,
     "stale": false,
-    "fetched_at": "2021-01-12T16:11:26.528Z"
+    "fetched_at": "2021-01-12T21:07:29.756Z"
 }
