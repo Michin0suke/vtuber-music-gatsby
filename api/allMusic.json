@@ -4406,9 +4406,24 @@
                 "lyrics_url": null,
                 "genre": null,
                 "original_video_youtube_id": null,
-                "videos": [],
-                "composers": [],
-                "lyricists": [],
+                "videos": [
+                    {
+                        "id": "EaANzSYli5A",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "s2kXwGNo",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "s2kXwGNo",
+                        "__typename": "Artist"
+                    }
+                ],
                 "arrangers": [],
                 "created_at": "2021-01-13 00:38:28",
                 "updated_at": "2021-01-13 00:38:28",
@@ -13076,6 +13091,42 @@
                 "__typename": "Music"
             },
             {
+                "id": "vB0t5T1b",
+                "title": "Dis-topia",
+                "title_ruby": null,
+                "lyrics": null,
+                "lyrics_url": null,
+                "genre": null,
+                "original_video_youtube_id": null,
+                "videos": [
+                    {
+                        "id": "dQBjnDp2Fnc",
+                        "__typename": "Video"
+                    }
+                ],
+                "composers": [
+                    {
+                        "id": "zezpDolO",
+                        "__typename": "Artist"
+                    }
+                ],
+                "lyricists": [
+                    {
+                        "id": "zezpDolO",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [
+                    {
+                        "id": "zezpDolO",
+                        "__typename": "Artist"
+                    }
+                ],
+                "created_at": "2021-01-13 00:45:30",
+                "updated_at": "2021-01-13 00:45:30",
+                "__typename": "Music"
+            },
+            {
                 "id": "violet_snow",
                 "title": "Violet Snow",
                 "title_ruby": null,
@@ -14114,5 +14165,5 @@
     "loading": false,
     "networkStatus": 7,
     "stale": false,
-    "fetched_at": "2021-01-12T15:42:42.760Z"
+    "fetched_at": "2021-01-12T16:01:57.776Z"
 }

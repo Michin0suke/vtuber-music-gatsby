@@ -4178,7 +4178,12 @@
                 "composer_music": [],
                 "lyricist_music": [],
                 "arranger_music": [],
-                "mixer_videos": [],
+                "mixer_videos": [
+                    {
+                        "id": "EaANzSYli5A",
+                        "__typename": "Music"
+                    }
+                ],
                 "off_vocal_videos": [],
                 "arranger_videos": [],
                 "singer_videos": [],
@@ -9681,6 +9686,10 @@
                 "off_vocal_videos": [],
                 "arranger_videos": [],
                 "singer_videos": [
+                    {
+                        "id": "67nPzHfkmRw",
+                        "__typename": "Video"
+                    },
                     {
                         "id": "UxikM3tLE_s",
                         "__typename": "Video"
@@ -38013,15 +38022,25 @@
                 "recommends": [],
                 "children": [],
                 "parents": [],
-                "composer_music": [],
-                "lyricist_music": [],
+                "composer_music": [
+                    {
+                        "id": "Gyw42RDS",
+                        "__typename": "Music"
+                    }
+                ],
+                "lyricist_music": [
+                    {
+                        "id": "Gyw42RDS",
+                        "__typename": "Music"
+                    }
+                ],
                 "arranger_music": [],
                 "mixer_videos": [],
                 "off_vocal_videos": [],
                 "arranger_videos": [],
                 "singer_videos": [],
-                "created_at": "2021-01-13 00:40:10",
-                "updated_at": "2021-01-13 00:40:10",
+                "created_at": "2021-01-13 00:00:00",
+                "updated_at": "2021-01-13 00:00:00",
                 "__typename": "Artist"
             },
             {
@@ -42415,7 +42434,12 @@
                 "arranger_music": [],
                 "mixer_videos": [],
                 "off_vocal_videos": [],
-                "arranger_videos": [],
+                "arranger_videos": [
+                    {
+                        "id": "EaANzSYli5A",
+                        "__typename": "Music"
+                    }
+                ],
                 "singer_videos": [],
                 "created_at": "2021-01-13 00:42:05",
                 "updated_at": "2021-01-13 00:42:05",
@@ -49293,7 +49317,16 @@
                 "mixer_videos": [],
                 "off_vocal_videos": [],
                 "arranger_videos": [],
-                "singer_videos": [],
+                "singer_videos": [
+                    {
+                        "id": "dQBjnDp2Fnc",
+                        "__typename": "Video"
+                    },
+                    {
+                        "id": "EaANzSYli5A",
+                        "__typename": "Video"
+                    }
+                ],
                 "created_at": "2021-01-13 00:00:00",
                 "updated_at": "2021-01-13 00:00:00",
                 "__typename": "Artist"
@@ -49894,6 +49927,68 @@
                 "__typename": "Artist"
             },
             {
+                "id": "zezpDolO",
+                "name": "KAN TAKAHIKO",
+                "name_ruby": null,
+                "name_original": null,
+                "profile": null,
+                "sex": null,
+                "birthday": null,
+                "id_youtube": null,
+                "youtube_registration_date": null,
+                "id_twitter": "kan_takahiko",
+                "id_instagram": null,
+                "url_niconico": null,
+                "url_homepage": null,
+                "id_spotify": null,
+                "id_apple_music": null,
+                "id_showroom": null,
+                "id_openrec": null,
+                "id_bilibili": null,
+                "id_tiktok": null,
+                "id_twitcasting": null,
+                "id_facebook": null,
+                "id_pixiv": null,
+                "image_url_profile_icon_source_url": null,
+                "image_url_profile_header_source_url": null,
+                "image_front_type_icon": null,
+                "image_front_type_header": null,
+                "youtube_channel_is_user": false,
+                "recommends": [],
+                "children": [],
+                "parents": [],
+                "composer_music": [
+                    {
+                        "id": "vB0t5T1b",
+                        "__typename": "Music"
+                    }
+                ],
+                "lyricist_music": [
+                    {
+                        "id": "vB0t5T1b",
+                        "__typename": "Music"
+                    }
+                ],
+                "arranger_music": [
+                    {
+                        "id": "vB0t5T1b",
+                        "__typename": "Music"
+                    }
+                ],
+                "mixer_videos": [],
+                "off_vocal_videos": [],
+                "arranger_videos": [
+                    {
+                        "id": "dQBjnDp2Fnc",
+                        "__typename": "Music"
+                    }
+                ],
+                "singer_videos": [],
+                "created_at": "2021-01-13 00:00:00",
+                "updated_at": "2021-01-13 00:00:00",
+                "__typename": "Artist"
+            },
+            {
                 "id": "zipsies",
                 "name": "ZIPSIES",
                 "name_ruby": "じぷしーず",
@@ -50194,5 +50289,5 @@
     "loading": false,
     "networkStatus": 7,
     "stale": false,
-    "fetched_at": "2021-01-12T15:42:45.805Z"
+    "fetched_at": "2021-01-12T16:02:00.759Z"
 }

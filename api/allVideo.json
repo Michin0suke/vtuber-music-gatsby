@@ -2679,7 +2679,12 @@
                 "is_original_music": true,
                 "original_video_id": null,
                 "custom_music_name": null,
-                "singers": [],
+                "singers": [
+                    {
+                        "id": "FvMMpd-Y",
+                        "__typename": "Artist"
+                    }
+                ],
                 "mixers": [],
                 "off_vocals": [],
                 "arrangers": [],
@@ -5272,6 +5277,36 @@
                 "__typename": "Video"
             },
             {
+                "id": "dQBjnDp2Fnc",
+                "music": {
+                    "id": "vB0t5T1b",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-11-25",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "YUPkjHjy",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [
+                    {
+                        "id": "zezpDolO",
+                        "__typename": "Artist"
+                    }
+                ],
+                "recommends": [],
+                "created_at": "2021-01-13 00:00:00",
+                "updated_at": "2021-01-13 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "DT25KdWukBc",
                 "music": {
                     "id": "rtrt",
@@ -5566,6 +5601,41 @@
                 ],
                 "off_vocals": [],
                 "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-13 00:00:00",
+                "updated_at": "2021-01-13 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "EaANzSYli5A",
+                "music": {
+                    "id": "Gyw42RDS",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-10-07",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "YUPkjHjy",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "aYkFnm7N",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [
+                    {
+                        "id": "Sz3ad3uo",
+                        "__typename": "Artist"
+                    }
+                ],
                 "recommends": [],
                 "created_at": "2021-01-13 00:00:00",
                 "updated_at": "2021-01-13 00:00:00",
@@ -18031,5 +18101,5 @@
     "loading": false,
     "networkStatus": 7,
     "stale": false,
-    "fetched_at": "2021-01-12T15:42:43.569Z"
+    "fetched_at": "2021-01-12T16:01:58.842Z"
 }
