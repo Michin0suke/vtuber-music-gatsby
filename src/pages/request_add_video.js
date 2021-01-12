@@ -131,10 +131,15 @@ export default ({ data: { allVideo }}) => {
     const [remoteRequestVideos, setRemoteRequestVideos] = useState([])
     const [requestVideo, setRequestVideo] = useState(initRequestVideo)
     const [videoIdFormText, setVideoIdFormText] = useState('')
-    const [step, setStep] = useState(steps.INIT)
+    const [step, setStepRaw] = useState(steps.INIT)
     const [errorMessage, setErrorMessage] = useState('')
     const [remoteAllArtist, setRemoteAllArtist] = useState([])
     const [remoteAllMusic, setRemoteAllMusic] = useState([])
+
+    const setStep = (step) => {
+        window.scrollTo(0, 0)
+        setStepRaw(step)
+    }
 
     const fetchRemoteData = {
         artist: () => {
@@ -184,18 +189,18 @@ export default ({ data: { allVideo }}) => {
         return newRequestVideo
     }
 
-    if (step === steps.TWITTER_ASK_LAST && requestVideo.contributor_twitter_id === null) {
+    if (requestVideo.contributor_twitter_id === null && getContributorTwitterId('twitter_id')) {
         updateRequestVideo(v => {
-            v.contributor_twitter_id = getContributorTwitterId('twitter_id') || ''; return v
+            v.contributor_twitter_id = getContributorTwitterId('twitter_id'); return v
         })
     }
     if (requestVideo.contributor_twitter_id !== null && requestVideo.contributor_twitter_id !== '') {
         if (step === steps.TWITTER_ASK_FIRST) setStep(steps.ORIGINAL_MUSIC_ASK)
         if (step === steps.TWITTER_ASK_LAST) setStep(steps.FIN)
     }
-    if (step === steps.FIN && requestVideo.contributor_twitter_id !== '' && requestVideo.contributor_twitter_id !== null) {
-        setContributorTwitterId(requestVideo.contributor_twitter_id)
-    }
+    // if (step === steps.FIN && requestVideo.contributor_twitter_id !== '' && requestVideo.contributor_twitter_id !== null) {
+    //     setContributorTwitterId(requestVideo.contributor_twitter_id)
+    // }
 
     const Choose = ({yes, no}) => (
         <ul className='flex justify-around'>
@@ -299,6 +304,7 @@ export default ({ data: { allVideo }}) => {
                     requestVideo={requestVideo}
                     updateRequestVideo={updateRequestVideo}
                     upsertRequestVideo={upsertRequestVideo}
+                    setContributorTwitterId={setContributorTwitterId}
                     setStep={setStep}
                     steps={steps}
                     isFirst
@@ -313,7 +319,7 @@ export default ({ data: { allVideo }}) => {
                         onClick={_=>{
                             updateRequestVideo(v => {
                                 setStep(steps.ARTIST_ASK)
-                                v.stage = 1
+                                if (v.stage < 1) v.stage = 1
                                 upsertRequestVideo(v)
                                 return v
                             })
@@ -590,6 +596,7 @@ export default ({ data: { allVideo }}) => {
                     requestVideo={requestVideo}
                     updateRequestVideo={updateRequestVideo}
                     upsertRequestVideo={upsertRequestVideo}
+                    setContributorTwitterId={setContributorTwitterId}
                     setStep={setStep}
                     steps={steps}
                 />

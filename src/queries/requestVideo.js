@@ -3,7 +3,7 @@ import { client } from './client';
 
 const REQUEST_VIDEOS = gql`
 {
-  requestVideos(orderBy: {field: STAGE, order: ASC}) {
+  requestVideos(orderBy: [{field: STAGE, order: ASC}, {field: UPDATED_AT, order: DESC}]) {
     id
     stage
     content

@@ -47,7 +47,7 @@ export default ({
                         onClick={() => {
                             updateRequestVideo(v => {
                                 setStep(steps.TWITTER_ASK_LAST)
-                                v.stage = 5
+                                if (v.stage < 5) v.stage = 5
                                 syncArtist(v)
                                 upsertRequestVideo(v)
                                 return v

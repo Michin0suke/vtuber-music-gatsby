@@ -56,7 +56,7 @@ export default ({
                         onClick={() => {
                             updateRequestVideo(v => {
                                 setStep(steps.MUSIC_ARTIST_ASK)
-                                v.stage = 3
+                                if (v.stage < 3) v.stage = 3
                                 syncMusic(v)
                                 upsertRequestVideo(v)
                                 return v

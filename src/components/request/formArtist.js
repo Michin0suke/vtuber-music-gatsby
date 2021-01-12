@@ -59,7 +59,7 @@ export default ({
                                 updateRequestVideo(v => {
                                     setErrorMessage('')
                                     setStep(steps.MUSIC_ASK)
-                                    v.stage = 2
+                                    if (v.stage < 2) v.stage = 2
                                     upsertArtist(v)
                                     upsertRequestVideo(v)
                                     return v

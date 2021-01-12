@@ -4,6 +4,7 @@ export default ({
     requestVideo,
     updateRequestVideo,
     upsertRequestVideo,
+    setContributorTwitterId,
     setStep,
     steps,
     isFirst,
@@ -25,6 +26,7 @@ export default ({
                     <button
                         className='mx-auto block px-4 py-2 bg-red-600 sm:hover:bg-red-500 text-white shadow rounded-full'
                         onClick={() => {
+                            setContributorTwitterId(requestVideo.contributor_twitter_id)
                             setStep(isFirst ? steps.ORIGINAL_MUSIC_ASK : steps.FIN)
                             upsertRequestVideo(requestVideo)
                         }}
