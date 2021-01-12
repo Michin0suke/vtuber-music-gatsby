@@ -42,15 +42,19 @@ export default ({
                     setErrorMessage('その動画はすでにリクエスト&登録されているよ！')
                     return v
                 }
-                if (remoteRequestVideo.stage >= 5) {
-                    setErrorMessage('その動画はすでにリクエストされているよ！')
-                    return v
-                }
+                // if (remoteRequestVideo.stage >= 5) {
+                //     setErrorMessage('その動画はすでにリクエストされているよ！')
+                //     return v
+                // }
                 try {
                     const newState = JSON.parse(remoteRequestVideo.content)
-                    console.log(`${stageToStep(remoteRequestVideo.stage)}に行こう`)
                     setErrorMessage('')
-                    setStep(stageToStep(remoteRequestVideo.stage))
+                    if (remoteRequestVideo.stage === 5) {
+                        alert('編集モード！')
+                        setStep(steps.ARTIST_INPUT)
+                    } else {
+                        setStep(stageToStep(remoteRequestVideo.stage))
+                    }
                     return newState
                 } catch(e) {
                     console.error(e)

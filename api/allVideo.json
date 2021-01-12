@@ -438,6 +438,36 @@
                 "__typename": "Video"
             },
             {
+                "id": "-DS2Olqz8xo",
+                "music": {
+                    "id": "-3qW-fDK",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-12-25",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "hinano_ui",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "suzuki_shota",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "-H03rIM4AbQ",
                 "music": {
                     "id": "turing_love",
@@ -678,6 +708,36 @@
                 "recommends": [],
                 "created_at": "2020-12-12 00:00:00",
                 "updated_at": "2020-12-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "07p-WAkWgDM",
+                "music": {
+                    "id": "HZHKqodt",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-07-06",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "vaxr99ZN",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "kisaragi_yunna",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -978,6 +1038,101 @@
                 "recommends": [],
                 "created_at": "2020-12-24 00:00:00",
                 "updated_at": "2020-12-24 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "0yeg4XkzrMI",
+                "music": {
+                    "id": "m5X2VeqC",
+                    "__typename": "Music"
+                },
+                "release_date": "2018-12-25",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "4n15U-qE",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "akumano_goat",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "asaka_shio",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "Dp9sFOA4",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "Fip9jGLP",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "gptxsXSe",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "kuroi_shiba",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "KWFIOXOa",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "leFOm6MG",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "machita_chima",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "NC6cnxxC",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "shirakami_fubuki",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "uhLCj5bt",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "VUOh1ouC",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "yumeoi_kakeru",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "zDnnCk5p",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "Fip9jGLP",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [
+                    {
+                        "id": "-oCvq8j7",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-13 00:00:00",
+                "updated_at": "2021-01-13 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -2138,6 +2293,36 @@
                 "__typename": "Video"
             },
             {
+                "id": "50S2ePAqOgw",
+                "music": {
+                    "id": "YfDQzwk2",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-04-20",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "misya",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "RjuWr7g3",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "51GHZv8wjcg",
                 "music": {
                     "id": "hibana",
@@ -2484,6 +2669,26 @@
                 "__typename": "Video"
             },
             {
+                "id": "67nPzHfkmRw",
+                "music": {
+                    "id": "GG5SLdX9",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-11-23",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-13 00:00:00",
+                "updated_at": "2021-01-13 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "6bnaBnd4kyU",
                 "music": {
                     "id": "aqua_color_palette",
@@ -2656,6 +2861,36 @@
                 "recommends": [],
                 "created_at": "2020-11-30 00:00:00",
                 "updated_at": "2020-03-02 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "7DMH-ADK5iI",
+                "music": {
+                    "id": "T-RV3B7G",
+                    "__typename": "Music"
+                },
+                "release_date": "2021-01-11",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "FWR4-kNr",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "Oosjq46K",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -3182,6 +3417,31 @@
                 "recommends": [],
                 "created_at": "2020-12-10 00:00:00",
                 "updated_at": "2020-12-10 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "9X9Nw0R4Yzw",
+                "music": {
+                    "id": "T273zeB1",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-07-26",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "DXm-C3x3",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -3974,6 +4234,31 @@
                 "__typename": "Video"
             },
             {
+                "id": "BEa23Z5uQt4",
+                "music": {
+                    "id": "D6BFDxCw",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-02-05",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "suzuna_subaru",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "beKe86q6fpk",
                 "music": {
                     "id": "hoshiai",
@@ -4056,6 +4341,31 @@
                 "recommends": [],
                 "created_at": "2020-12-04 00:00:00",
                 "updated_at": "2020-12-04 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "BilOBE0NX2o",
+                "music": {
+                    "id": "qzphyfZr",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-09-01",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "sRzrKuou",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -4373,6 +4683,31 @@
                 "__typename": "Video"
             },
             {
+                "id": "Cj5Qh1NrI-Y",
+                "music": {
+                    "id": "_oR-GhBB",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-02-14",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "XHXjhZGR",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-13 00:00:00",
+                "updated_at": "2021-01-13 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "cpgiFqDGxbE",
                 "music": {
                     "id": "happy_halloween",
@@ -4547,6 +4882,66 @@
                 "__typename": "Video"
             },
             {
+                "id": "CxnU6ZrZLvA",
+                "music": {
+                    "id": "N2n6YntY",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-03-03",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "hinano_ui",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "suzuki_shota",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "CYWnMNWH_FA",
+                "music": {
+                    "id": "gtmQ0dUv",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-02-22",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "7DNQNLmA",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "7DNQNLmA",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "d51Dl135-V4",
                 "music": {
                     "id": "king",
@@ -4632,6 +5027,36 @@
                 "__typename": "Video"
             },
             {
+                "id": "dbocDlOWFs4",
+                "music": {
+                    "id": "KcZKSSk7",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-07-11",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "hinano_ui",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "suzuki_shota",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "DFcqpjT0yVc",
                 "music": {
                     "id": "la_la_la_love_song",
@@ -4697,6 +5122,36 @@
                 "__typename": "Video"
             },
             {
+                "id": "DHirTqvmpM4",
+                "music": {
+                    "id": "REOBwBn3",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-03-30",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "1FVlR-06",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "NssdcAiT",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "dlVWaAQZPag",
                 "music": {
                     "id": "viviparity",
@@ -4754,6 +5209,31 @@
                 "recommends": [],
                 "created_at": "2021-01-05 00:00:00",
                 "updated_at": "2021-01-05 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "DouTe1KRi_Q",
+                "music": {
+                    "id": "alien_alien",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-01-20",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "XGTcs79O",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -4912,6 +5392,36 @@
                 "__typename": "Video"
             },
             {
+                "id": "DYAAdgnQ6lo",
+                "music": {
+                    "id": "tecNiiGJ",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-01-28",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "hinano_ui",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "suzuki_shota",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "dyeKOgPryPc",
                 "music": {
                     "id": "transient_raison_detre",
@@ -5029,6 +5539,36 @@
                 "recommends": [],
                 "created_at": "2020-11-30 00:00:00",
                 "updated_at": "2020-02-26 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "E7PcEuk6-dc",
+                "music": {
+                    "id": "Tqfzv_NF",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-09-02",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "MANxgpRX",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "8eUntBNH",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-13 00:00:00",
+                "updated_at": "2021-01-13 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -5258,6 +5798,49 @@
                 "recommends": [],
                 "created_at": "2020-11-30 00:00:00",
                 "updated_at": "2020-02-26 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "ESq7N-JZZUA",
+                "music": {
+                    "id": "WnM3EZ0C",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-11-20",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "kagura_mea",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "Mh1J1gQi",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [
+                    {
+                        "id": "8kZi_nCi",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "kRdpu5q6",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "vd_sOgnz",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -5514,6 +6097,36 @@
                 "__typename": "Video"
             },
             {
+                "id": "FBnhV9aMCz8",
+                "music": {
+                    "id": "s7RgXcAm",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-11-23",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "uT7_k-Mn",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "L8wjbWXw",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-13 00:00:00",
+                "updated_at": "2021-01-13 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "fcpiG58RBlA",
                 "music": {
                     "id": "asca_hibari",
@@ -5671,6 +6284,31 @@
                 "recommends": [],
                 "created_at": "2021-01-03 00:00:00",
                 "updated_at": "2021-01-03 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "fpbFnLV9MRQ",
+                "music": {
+                    "id": "HdSbOIEv",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-03-17",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": "みぼねこころころ",
+                "singers": [
+                    {
+                        "id": "XGTcs79O",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -6004,6 +6642,36 @@
                 "__typename": "Video"
             },
             {
+                "id": "Gcb9ytSJqyQ",
+                "music": {
+                    "id": "YZ1Dzlj6",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-04-01",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "EBzJwqmQ",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "hdtv02jM",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "GDOQTShjTQs",
                 "music": {
                     "id": "gurenge",
@@ -6071,6 +6739,46 @@
                 "recommends": [],
                 "created_at": "2020-12-29 00:00:00",
                 "updated_at": "2020-12-29 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "GFAWgVTRztk",
+                "music": {
+                    "id": "zS_lyJ_A",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-12-05",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "Qg0kunOt",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "3_6YQ3S9",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [
+                    {
+                        "id": "3_6YQ3S9",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [
+                    {
+                        "id": "Qg0kunOt",
+                        "__typename": "Artist"
+                    }
+                ],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -6164,6 +6872,56 @@
                 "__typename": "Video"
             },
             {
+                "id": "gOfBxrbjlxA",
+                "music": {
+                    "id": "fridays_good_morning",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-04-06",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "kaname_mahiro",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "gtOb5CNh5Zo",
+                "music": {
+                    "id": "A95WT4aV",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-12-24",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "toma_rin",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "gtYGifyReQs",
                 "music": {
                     "id": "elect",
@@ -6220,6 +6978,86 @@
                 "recommends": [],
                 "created_at": "2020-12-13 00:00:00",
                 "updated_at": "2020-12-13 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "Gv2KQpr0HXg",
+                "music": {
+                    "id": "PwjmzFDt",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-03-27",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "gVfwky8R4l0",
+                "music": {
+                    "id": "OywW-8IP",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-07-20",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "FiG9m1cE",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "qUJZNEV4",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "h2bERDb86js",
+                "music": {
+                    "id": "KZh7XiXQ",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-06-11",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "otonoha_naho",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -6358,6 +7196,44 @@
                 "__typename": "Video"
             },
             {
+                "id": "Hg5VhCylTG8",
+                "music": {
+                    "id": "IK1wRwwu",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-10-03",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "4J8lEiTf",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "L7dAhcTN",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "SJmT6_Sj",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "4J8lEiTf",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "hhXeNNxovSE",
                 "music": {
                     "id": "melissa_haze",
@@ -6485,6 +7361,36 @@
                 "recommends": [],
                 "created_at": "2020-12-29 00:00:00",
                 "updated_at": "2020-12-29 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "HOFGtSKcKJ4",
+                "music": {
+                    "id": "vwGqfMgA",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-11-20",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "FWR4-kNr",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "M6QKxBzd",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -6846,6 +7752,31 @@
                 "__typename": "Video"
             },
             {
+                "id": "igDQ0eQ2PxQ",
+                "music": {
+                    "id": "cXxEw_po",
+                    "__typename": "Music"
+                },
+                "release_date": "2021-01-01",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "toma_rin",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "ijc_jnRGB8U",
                 "music": {
                     "id": "happy_halloween",
@@ -6868,6 +7799,31 @@
                 "recommends": [],
                 "created_at": "2021-01-02 00:00:00",
                 "updated_at": "2021-01-02 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "iPkh8uKUuQs",
+                "music": {
+                    "id": "a9jypZxT",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-09-11",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "N1Vnat6b",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -7340,6 +8296,31 @@
                 "__typename": "Video"
             },
             {
+                "id": "jJh7LYwFk8k",
+                "music": {
+                    "id": "Liu9GI1H",
+                    "__typename": "Music"
+                },
+                "release_date": "2018-06-10",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "XGTcs79O",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "jKLf7ouN3yM",
                 "music": {
                     "id": "king_gnu_hakujitsu",
@@ -7657,7 +8638,7 @@
                 ],
                 "mixers": [
                     {
-                        "id": "piroparu",
+                        "id": "Fip9jGLP",
                         "__typename": "Artist"
                     }
                 ],
@@ -7840,6 +8821,36 @@
                 "recommends": [],
                 "created_at": "2020-12-13 00:00:00",
                 "updated_at": "2020-12-13 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "kHEQrMUPFEc",
+                "music": {
+                    "id": "W87N-cRA",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-12-16",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "EBzJwqmQ",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "hdtv02jM",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -8138,6 +9149,116 @@
                 "__typename": "Video"
             },
             {
+                "id": "KzavKJ2Tcu4",
+                "music": {
+                    "id": "cRdNyaub",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-08-21",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [],
+                "mixers": [
+                    {
+                        "id": "6-j3ZdbC",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "L024ampwLxI",
+                "music": {
+                    "id": "OqTWcU8_",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-06-22",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "_a1DG-oB",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-13 00:00:00",
+                "updated_at": "2021-01-13 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "L2L8EcaZTGk",
+                "music": {
+                    "id": "king",
+                    "__typename": "Music"
+                },
+                "release_date": "2021-01-09",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "zwTPkeXe",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "R6AnIkkM",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "lcAgWJDNH7c",
+                "music": {
+                    "id": "mih-PIl5",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-11-21",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "FWR4-kNr",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "M6QKxBzd",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "lchOdujGToU",
                 "music": {
                     "id": "taisetsu_na_hito_tachihe",
@@ -8165,6 +9286,31 @@
                 "recommends": [],
                 "created_at": "2020-12-24 00:00:00",
                 "updated_at": "2020-12-24 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "lDHosio6Ci0",
+                "music": {
+                    "id": "rZNmcrrt",
+                    "__typename": "Music"
+                },
+                "release_date": "2018-12-31",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "7DNQNLmA",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -8260,6 +9406,40 @@
                 "recommends": [],
                 "created_at": "2020-12-30 00:00:00",
                 "updated_at": "2020-12-30 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "LoW2EwYYboQ",
+                "music": {
+                    "id": "rSrIbP9R",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-05-09",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "chigusa_hana",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "hinano_ui",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "suzuki_shota",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -8844,12 +10024,7 @@
                 "is_original_music": true,
                 "original_video_id": null,
                 "custom_music_name": null,
-                "singers": [
-                    {
-                        "id": "enma_ruri",
-                        "__typename": "Artist"
-                    }
-                ],
+                "singers": [],
                 "mixers": [
                     {
                         "id": "tomobop",
@@ -8873,7 +10048,7 @@
                 "is_mv": true,
                 "is_original_music": false,
                 "original_video_id": null,
-                "custom_music_name": null,
+                "custom_music_name": "GURENGE",
                 "singers": [
                     {
                         "id": "quon_tama",
@@ -9056,6 +10231,31 @@
                 "__typename": "Video"
             },
             {
+                "id": "MucqcvVBBBM",
+                "music": {
+                    "id": "Wu9X_HLX",
+                    "__typename": "Music"
+                },
+                "release_date": "2018-12-12",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "kaname_mahiro",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "n_e6qqE_VuA",
                 "music": {
                     "id": "autophagy",
@@ -9161,12 +10361,7 @@
                 "is_original_music": false,
                 "original_video_id": null,
                 "custom_music_name": null,
-                "singers": [
-                    {
-                        "id": "kagura_nana",
-                        "__typename": "Artist"
-                    }
-                ],
+                "singers": [],
                 "mixers": [
                     {
                         "id": "pd_46",
@@ -9484,6 +10679,31 @@
                 "__typename": "Video"
             },
             {
+                "id": "nSLxUJbKKPQ",
+                "music": {
+                    "id": "marinasu_wonderland",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-05-02",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "marinasu",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "NWG_lwQgTK8",
                 "music": {
                     "id": "inochi_ni_kirawareteiru",
@@ -9511,6 +10731,36 @@
                 "recommends": [],
                 "created_at": "2020-11-30 00:00:00",
                 "updated_at": "2020-03-03 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "nWj5htdzBu0",
+                "music": {
+                    "id": "frw8hfbI",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-12-21",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "9jBqp5c1",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "youk",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-13 00:00:00",
+                "updated_at": "2021-01-13 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -9669,6 +10919,36 @@
                 "__typename": "Video"
             },
             {
+                "id": "OFUp2_quDYA",
+                "music": {
+                    "id": "ye-MolNB",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-08-30",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "BnIxmWvz",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "suzuki_shota",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "OGYu6Kj3bL0",
                 "music": {
                     "id": "sweet_magic",
@@ -9776,6 +11056,36 @@
                 "recommends": [],
                 "created_at": "2020-11-30 00:00:00",
                 "updated_at": "2020-03-01 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "Ok9xXJtDksk",
+                "music": {
+                    "id": "cNEcTHWX",
+                    "__typename": "Music"
+                },
+                "release_date": "2021-01-09",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "XXfe07en",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "XXfe07en",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -9928,6 +11238,36 @@
                 "__typename": "Video"
             },
             {
+                "id": "Oz35npBEcx0",
+                "music": {
+                    "id": "V-vcAlRw",
+                    "__typename": "Music"
+                },
+                "release_date": "2021-01-04",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "7Cy0Dkh9",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "E7QAgD0k",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "p8wF78nKRpo",
                 "music": {
                     "id": "yoake_to_hotaru",
@@ -9950,6 +11290,31 @@
                 "recommends": [],
                 "created_at": "2020-11-30 00:00:00",
                 "updated_at": "2020-02-26 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "pD9sVwKh1Gc",
+                "music": {
+                    "id": "miracle_step",
+                    "__typename": "Music"
+                },
+                "release_date": "2018-12-28",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "kaname_mahiro",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -10068,6 +11433,31 @@
                 "__typename": "Video"
             },
             {
+                "id": "pL0biFVHKWk",
+                "music": {
+                    "id": "E7d-krzg",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-05-11",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "JzgoIqD6",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "pMwO-ACQ2d0",
                 "music": {
                     "id": "narratage",
@@ -10090,6 +11480,36 @@
                 "recommends": [],
                 "created_at": "2020-12-24 00:00:00",
                 "updated_at": "2020-12-24 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "Pn5VYIfStEE",
+                "music": {
+                    "id": "fUxq01GL",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-12-07",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "hinano_ui",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "kisaragi_yunna",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -10175,6 +11595,36 @@
                 "recommends": [],
                 "created_at": "2020-12-16 00:00:00",
                 "updated_at": "2020-12-16 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "puDLucsK1lw",
+                "music": {
+                    "id": "NJ5WiMIi",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-05-11",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "otonoha_naho",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [
+                    {
+                        "id": "st8ox5ij",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -10285,6 +11735,70 @@
                 "recommends": [],
                 "created_at": "2020-12-09 00:00:00",
                 "updated_at": "2020-12-09 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "q11Ml-XSPoA",
+                "music": {
+                    "id": "R1sYBraI",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-11-20",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "p2O5khea",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "i-aAA19W",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "q4Sm7yRCNf0",
+                "music": {
+                    "id": "king_gnu_hakujitsu",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-09-28",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "chigusa_hana",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "vaxr99ZN",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "suzuki_shota",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -10408,6 +11922,36 @@
                 "recommends": [],
                 "created_at": "2021-01-01 00:00:00",
                 "updated_at": "2021-01-01 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "QI4OVs5Do1k",
+                "music": {
+                    "id": "4oMbF3gM",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-11-08",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "bBe5IBpZ",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "rVQMlQlr",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -10848,6 +12392,36 @@
                 "__typename": "Video"
             },
             {
+                "id": "RqaTV2_alPM",
+                "music": {
+                    "id": "DIZDKWud",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-12-01",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "FWR4-kNr",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "M6QKxBzd",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "RsOBIlmCHqI",
                 "music": {
                     "id": "cutie_panther",
@@ -10968,6 +12542,50 @@
                 "__typename": "Video"
             },
             {
+                "id": "rwQdp6zbZSA",
+                "music": {
+                    "id": "viRtK2yp",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-06-06",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "hinano_ui",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "suzuki_shota",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [
+                    {
+                        "id": "iRocEP2B",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "jOOqOc1i",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [
+                    {
+                        "id": "iRocEP2B",
+                        "__typename": "Artist"
+                    }
+                ],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "rWwcLcUPweY",
                 "music": {
                     "id": "backnumber_christmas_song",
@@ -10995,6 +12613,44 @@
                 "recommends": [],
                 "created_at": "2020-12-16 00:00:00",
                 "updated_at": "2020-12-16 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "rydF6uETNmk",
+                "music": {
+                    "id": "happy_halloween",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-10-31",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "BnIxmWvz",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "hinano_ui",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "mazika_tsuno",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "suzuki_shota",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -11110,6 +12766,36 @@
                 "recommends": [],
                 "created_at": "2020-12-29 00:00:00",
                 "updated_at": "2020-12-29 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "S4zTAof73Qo",
+                "music": {
+                    "id": "fRl_xPqv",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-09-22",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "Gsr11HnF",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "Vu7Whr1l",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-13 00:00:00",
+                "updated_at": "2021-01-13 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -11355,6 +13041,36 @@
                 "recommends": [],
                 "created_at": "2020-11-30 00:00:00",
                 "updated_at": "2020-02-26 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "shrCMpoLhYE",
+                "music": {
+                    "id": "_k-MCJev",
+                    "__typename": "Music"
+                },
+                "release_date": "2021-01-01",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "BnIxmWvz",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "suzuki_shota",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -11635,6 +13351,35 @@
                 "__typename": "Video"
             },
             {
+                "id": "svh5hufPh0Q",
+                "music": {
+                    "id": "-elFAA7W",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-03-10",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "suzuna_subaru",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "toma_rin",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "Svh7zl8PTTo",
                 "music": {
                     "id": "kokoronashi",
@@ -11712,6 +13457,36 @@
                 "recommends": [],
                 "created_at": "2020-12-13 00:00:00",
                 "updated_at": "2020-12-13 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "SWOz_Q-cWUU",
+                "music": {
+                    "id": "mfV7zAK6",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-05-05",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "mazika_tsuno",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "kisaragi_yunna",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -11835,6 +13610,86 @@
                 "__typename": "Video"
             },
             {
+                "id": "T3Zc9e5bvag",
+                "music": {
+                    "id": "inochi_ni_kirawareteiru",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-07-12",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "toma_rin",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "t9g1Sg9tW7Q",
+                "music": {
+                    "id": "happy_halloween",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-10-31",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "7Cy0Dkh9",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "kisaragi_yunna",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "TaTPj3S3AtY",
+                "music": {
+                    "id": "P_PGV6EE",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-10-11",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "suzuna_subaru",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "TGJQpmz7F60",
                 "music": {
                     "id": "fubuki_good_night_friends",
@@ -11857,6 +13712,31 @@
                 "recommends": [],
                 "created_at": "2020-12-09 00:00:00",
                 "updated_at": "2020-12-09 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "TGQkhOXyJYM",
+                "music": {
+                    "id": "o5pSmvDk",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-04-19",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "kaname_mahiro",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -12084,6 +13964,36 @@
                 "__typename": "Video"
             },
             {
+                "id": "Tz6tc4acGMU",
+                "music": {
+                    "id": "97M487bc",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-08-03",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "mazika_tsuno",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "kisaragi_yunna",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "TzVPSPRa8Vc",
                 "music": {
                     "id": "dadadada_tenshi",
@@ -12116,6 +14026,36 @@
                 "recommends": [],
                 "created_at": "2020-12-21 00:00:00",
                 "updated_at": "2020-12-21 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "U-GRiSeCrwU",
+                "music": {
+                    "id": "_2SSOOhG",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-08-06",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "KQQ1lXq_",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "jakULzx0",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -12316,7 +14256,7 @@
                 ],
                 "mixers": [
                     {
-                        "id": "piroparu",
+                        "id": "Fip9jGLP",
                         "__typename": "Artist"
                     }
                 ],
@@ -12464,6 +14404,40 @@
                 "recommends": [],
                 "created_at": "2020-11-30 00:00:00",
                 "updated_at": "2020-03-03 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "UnHXas_9ZeY",
+                "music": {
+                    "id": "Hg-eoGvx",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-09-29",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "chigusa_hana",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "vaxr99ZN",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "Fd43FqGE",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -12630,6 +14604,36 @@
                 "recommends": [],
                 "created_at": "2020-12-30 00:00:00",
                 "updated_at": "2020-12-30 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "UxikM3tLE_s",
+                "music": {
+                    "id": "4GEKahin",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-07-31",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "FvMMpd-Y",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [
+                    {
+                        "id": "DQoy1xDO",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-13 00:00:00",
+                "updated_at": "2021-01-13 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -13135,10 +15139,6 @@
                         "__typename": "Artist"
                     },
                     {
-                        "id": "enma_ruri",
-                        "__typename": "Artist"
-                    },
-                    {
                         "id": "sirosaki_bell",
                         "__typename": "Artist"
                     },
@@ -13286,6 +15286,61 @@
                 "recommends": [],
                 "created_at": "2020-11-30 00:00:00",
                 "updated_at": "2020-03-02 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "vQHVGXdcqEQ",
+                "music": {
+                    "id": "WaL5bfqs",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-03-22",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "hoshimachi_suisei",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "Mh1J1gQi",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [
+                    {
+                        "id": "8kZi_nCi",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "a6pAgYw0",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "nqumOukR",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "ORS6o2ov",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "scY46bx5",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "UePp6puq",
+                        "__typename": "Artist"
+                    }
+                ],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -13463,6 +15518,31 @@
                 "__typename": "Video"
             },
             {
+                "id": "w2SgNE38EPw",
+                "music": {
+                    "id": "Ap62y9BU",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-02-09",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "kaname_mahiro",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "w3nSFJ4MQ7M",
                 "music": {
                     "id": "ai_meet_you",
@@ -13485,6 +15565,61 @@
                 "recommends": [],
                 "created_at": "2020-12-09 00:00:00",
                 "updated_at": "2020-12-09 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "W6w2iJW8ZUg",
+                "music": {
+                    "id": "king",
+                    "__typename": "Music"
+                },
+                "release_date": "2021-01-11",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "CSd-Atiu",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "I3rR10En",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "w7bn3oQg_ic",
+                "music": {
+                    "id": "pKWd-i7w",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-11-17",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": "まいごのみぼねこにゃ",
+                "singers": [
+                    {
+                        "id": "sRzrKuou",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -13548,6 +15683,40 @@
                 "__typename": "Video"
             },
             {
+                "id": "W9AHyH9D44s",
+                "music": {
+                    "id": "qVPAopK_",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-11-17",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "EBzJwqmQ",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "tsumugine_rei",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "yab",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "WBokwu1rdTw",
                 "music": {
                     "id": "stigma",
@@ -13600,6 +15769,36 @@
                 "recommends": [],
                 "created_at": "2021-01-02 00:00:00",
                 "updated_at": "2021-01-02 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "wgghPw5KxXk",
+                "music": {
+                    "id": "ggbqGYcf",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-11-12",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "hinano_ui",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "suzuki_shota",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -13938,6 +16137,36 @@
                 "__typename": "Video"
             },
             {
+                "id": "wx66NNWufL8",
+                "music": {
+                    "id": "7r0wMyNm",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-02-14",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "hinano_ui",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "suzuki_shota",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "wzcrlBSW-v4",
                 "music": {
                     "id": "getcha",
@@ -14187,15 +16416,10 @@
                 "is_original_music": false,
                 "original_video_id": null,
                 "custom_music_name": null,
-                "singers": [
-                    {
-                        "id": "piroparu",
-                        "__typename": "Artist"
-                    }
-                ],
+                "singers": [],
                 "mixers": [
                     {
-                        "id": "piroparu",
+                        "id": "Fip9jGLP",
                         "__typename": "Artist"
                     }
                 ],
@@ -14521,6 +16745,36 @@
                 "__typename": "Video"
             },
             {
+                "id": "Y470TMQBDyM",
+                "music": {
+                    "id": "8uQ80Gjp",
+                    "__typename": "Music"
+                },
+                "release_date": "2021-01-10",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "KQQ1lXq_",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "jakULzx0",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "y4sHBySTCzk",
                 "music": {
                     "id": "sayonara_midnight",
@@ -14683,6 +16937,31 @@
                 "recommends": [],
                 "created_at": "2021-01-02 00:00:00",
                 "updated_at": "2021-01-02 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "yINNjzEyklo",
+                "music": {
+                    "id": "gurenge",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-03-10",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "toma_rin",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -14961,6 +17240,31 @@
                 "__typename": "Video"
             },
             {
+                "id": "Z_6Xs_u6ISU",
+                "music": {
+                    "id": "_9km4zs0",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-04-26",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "kyCBapgk",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "Z-UJbyLqioM",
                 "music": {
                     "id": "yoasobi_ultramarine",
@@ -15106,6 +17410,31 @@
                 "__typename": "Video"
             },
             {
+                "id": "zhLk6QQbCxM",
+                "music": {
+                    "id": "3vM_tNv2",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-10-01",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [],
+                "mixers": [
+                    {
+                        "id": "a0tJFoq-",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "ZhMf74ozqG0",
                 "music": {
                     "id": "music_music",
@@ -15217,6 +17546,65 @@
                 "recommends": [],
                 "created_at": "2020-12-24 00:00:00",
                 "updated_at": "2020-12-24 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "ZMbvzRbMFCk",
+                "music": {
+                    "id": "YOK-CW7Y",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-04-22",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "hinano_ui",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "suzuki_shota",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "znrhoQ7AAho",
+                "music": {
+                    "id": "cv-WDuph",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-02-15",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "sRzrKuou",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "XGTcs79O",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -15433,6 +17821,36 @@
                 "__typename": "Video"
             },
             {
+                "id": "zqt8Iyl8UJ4",
+                "music": {
+                    "id": "qT060ZCl",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-08-28",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "JDLF91y0",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "6-j3ZdbC",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "zRgSpBZePX0",
                 "music": {
                     "id": "dNOGGLGj",
@@ -15559,6 +17977,31 @@
                 "__typename": "Video"
             },
             {
+                "id": "ZyiJ5ZalG_U",
+                "music": {
+                    "id": "8d9ykn9q",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-09-24",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "j68YI4hy",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-12 00:00:00",
+                "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "ZZIn6sLAHgI",
                 "music": {
                     "id": "je2BZCNa",
@@ -15588,5 +18031,5 @@
     "loading": false,
     "networkStatus": 7,
     "stale": false,
-    "fetched_at": "2021-01-11T13:31:06.552Z"
+    "fetched_at": "2021-01-12T15:42:43.569Z"
 }

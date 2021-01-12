@@ -95,6 +95,10 @@ const Card = ({
                     <Link to={`/request_add_video?id=${request.id}`}>
                         <button className='mx-auto mt-3 block px-4 py-2 bg-red-600 sm:hover:bg-red-500 text-white shadow rounded-full'>データを追加！</button>
                     </Link>}
+                {request.stage === 5 && 
+                    <Link to={`/request_add_video?id=${request.id}`}>
+                        <button className='mx-auto mt-3 block px-4 py-2 bg-red-600 sm:hover:bg-red-500 text-white shadow rounded-full'>編集！</button>
+                    </Link>}
                 {request.is_issue && <button className='mx-auto mt-3 block px-4 py-2 bg-yellow-500 text-white shadow'>確認中</button>}
                 {request.stage === 5 &&
                     <div className='flex justify-around'>

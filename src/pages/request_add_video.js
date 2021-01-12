@@ -630,10 +630,12 @@ export default ({ data: { allVideo }}) => {
         <Layout currentPage='/request_add_video'>
             <div className='max-w-2xl mx-auto bg-white h-full py-5'>
                 <StepButtons
+                    requestVideo={requestVideo}
                     steps={steps}
                     step={step}
                     setStep={setStep}
                     stepToStage={stepToStage}
+                    stageToStep={stageToStep}
                 />
                 {/* <p className='mb-5'>stage: {stage} step: {step}</p> */}
                 <Heading className='mb-3 mx-3' text='動画を追加してみよう！'/>
