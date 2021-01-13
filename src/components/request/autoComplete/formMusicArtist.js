@@ -18,6 +18,12 @@ const createAutoComplete = (requestVideo, remoteAllArtist, roleIndex, artistInde
         .concat(requestVideo.music.composers)
         .concat(requestVideo.music.lyricists)
         .concat(requestVideo.music.arrangers)
+        .reduce((acc, cur) => {
+          if (acc.map(i=>i.id).includes(cur.id)) return acc
+          if (acc.find(i => i.name === cur.name && i.id_twitter === cur.id_twitter)) return acc
+          // if (acc.map(i=>i.id_twitter).includes(cur.id_twitter)) return acc
+          return acc.concat(cur)
+        }, [])
         .map(artist => {
           const artistCopy = JSON.parse(JSON.stringify(artist))
           if (!artistCopy.name) artistCopy.name = ''
@@ -60,7 +66,7 @@ const createAutoComplete = (requestVideo, remoteAllArtist, roleIndex, artistInde
       // 結果表示の加工
     resultItem: {
       content: (data, source) => {
-        source.innerHTML = data.match;
+        source.innerHTML = `<span class='pre-text'>もしかして：</span>${data.value.name} ${data.value.id_twitter && `<span class='twitter-id'>(@${data.value.id_twitter})</span>`}`;
       },
       element: 'li'
     },

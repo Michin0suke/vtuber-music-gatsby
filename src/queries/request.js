@@ -8,6 +8,8 @@ query {
       stage
       content
       contributor_twitter_id
+      is_done
+      is_issue
       updated_at
       created_at
     }

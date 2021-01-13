@@ -15,6 +15,8 @@ import FormTwitter from '../components/request/formTwitter'
 import { allArtist } from '../queries/artist'
 import { allMusic } from '../queries/music'
 import { upsertRequestVideo } from '../queries/requestVideo'
+import Youtube from 'react-youtube'
+import './request_add_video.css'
 
 const getContributorTwitterId = () => {
     if (typeof window === 'undefined') return null
@@ -208,7 +210,7 @@ export default ({ data: { allVideo }}) => {
 
     const Choose = ({yes, no}) => (
         <ul className='flex justify-around'>
-            <li className='px-5 py-3 bg-blue-400 sm:hover:bg-blue-300 text-white rounded-lg cursor-pointer transform scale-90 shadow-lg' onClick={_=> setStep(no)}>やだ！</li>
+            <li className='px-5 py-3 bg-blue-400 sm:hover:bg-blue-300 text-white rounded-lg cursor-pointer transform scale-90 shadow-lg' onClick={_=> setStep(no)}>あとで！</li>
             <li className='px-5 py-3 bg-red-500 sm:hover:bg-red-400 text-white rounded-lg cursor-pointer shadow-lg' onClick={_=>setStep(yes)}>いいよ！</li>
         </ul>
     )
@@ -520,6 +522,13 @@ export default ({ data: { allVideo }}) => {
             children: <Choose yes={steps.VIDEO_ARTIST_INPUT} no={steps.TWITTER_ASK_LAST}/>,
             qa: [
                 {
+                    q: 'MIXとか良くわからない...',
+                    a: <div>
+                            <p>動画の概要欄を見て、「MIX」とか「カラオケ」とかやってる人を入力してくれるだけでいいよ！</p>
+                            <p>ぱっと見て、そういう人がいなかったら、「いいよ！」に進んでから「MIXとかしてる人いない」をクリックしてね！</p>
+                        </div>
+                },
+                {
                     q: 'なんで必要なの？',
                     a: <div>
                             <p>MIXした人ごとに検索できたりして便利だよ！</p>
@@ -641,12 +650,35 @@ export default ({ data: { allVideo }}) => {
                     stepToStage={stepToStage}
                     stageToStep={stageToStep}
                 />
-                {/* <p className='mb-5'>stage: {stage} step: {step}</p> */}
                 <Heading className='mb-3 mx-3' text='動画を追加してみよう！'/>
-                <div className='px-4 mb-20'>
+
+                {step !== steps.INIT &&
+                    <Youtube
+                        videoId={requestVideo.id}
+                        opts={{}}
+                        containerClassName={"youtubeContainer"}
+                    />
+                    // <div>
+                    //     <p className='text-xs text-gray-400'>サムネイルが正しく表示されない場合でも、クリックして動画に飛べたら、正しく登録できてるよ！</p>
+                    //     <a href={`https://www.youtube.com/watch?v=${requestVideo.id}`} target='_blank' className='block mb-5'>
+                    //         <img className='w-full' src={`https://i.ytimg.com/vi/${requestVideo.id}/maxresdefault.jpg`}/>
+                    //     </a>
+                    // </div>
+                }
+
+                <div className='px-4 mb-14'>
                     <h2 className='mx-auto px-2 py-3 mb-5 leading-7 text-center border whitespace-pre-wrap'>{step_elements[step].message}<p className='text-red-600'>{errorMessage}</p></h2>
                     {step_elements[step].children}
                 </div>
+
+                {(step === steps.INIT || step === steps.FIN) &&
+                    <Link to={'/request_add_video_preview'}>
+                        <button
+                            className='mx-auto block px-4 py-2 mb-10 bg-red-600 sm:hover:bg-red-500 text-white shadow rounded-full'
+                        >リクエスト一覧</button>
+                    </Link>
+                }
+
                 <ul className='mx-5'>
                     {
                         step_elements[step].qa?.map((qa, key) => (
@@ -660,7 +692,7 @@ export default ({ data: { allVideo }}) => {
 
                 {step !== steps.INIT && step !== steps.FIN &&
                     <div>
-                        <a href={`https://www.youtube.com/watch?v=${requestVideo.id}`} className='block mb-5' target='_blank'>
+                        <a href={`https://www.youtube.com/watch?v=${requestVideo.id}`} target='_blank' className='block mb-5'>
                             <button
                                 className='mx-auto block px-4 py-2 bg-red-600 sm:hover:bg-red-500 text-white shadow rounded-full'
                             >動画を確認する</button>
@@ -671,21 +703,10 @@ export default ({ data: { allVideo }}) => {
                         onClick={() => {
                             window.location.href = '/request_add_video'
                         }}
-                        >リセット</button>
+                        >この動画の登録を中断する</button>
+                        <p className='text-xs text-gray-400 text-center'>登録を中断しても、データは保存されるよ!</p>
                     </div>
                 }
-
-                {(step === steps.INIT || step === steps.FIN) &&
-                    <Link to={'/request_add_video_preview'}>
-                        <button
-                            className='mx-auto block px-4 py-2 bg-red-600 sm:hover:bg-red-500 text-white shadow rounded-full'
-                        >リクエスト一覧</button>
-                    </Link>
-                }
-                {/* <button onClick={() => {
-                    console.log(remoteAllArtist)
-                    console.log(remoteAllMusic)
-                }}>ぼたん</button> */}
             </div>
         </Layout>
     )

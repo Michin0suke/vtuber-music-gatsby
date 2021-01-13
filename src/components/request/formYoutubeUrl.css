@@ -1,0 +1,14 @@
+@keyframes border-animation {
+    from {
+        border: solid 2px rgb(255, 169, 169);
+        /* border: solid 2px #888; */
+    }
+    to {
+        border: solid 2px rgb(255, 51, 51);
+        /* border: solid 2px #222; */
+    }
+}
+
+input.form-youtube-url {
+    animation: border-animation 0.5s linear alternate infinite 0s;
+}

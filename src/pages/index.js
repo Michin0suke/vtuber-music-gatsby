@@ -56,7 +56,7 @@ const IndexPage = ({ data: { allVideoSortByCreatedAt, allVideoSortByReleaseDate,
     return (
     <Layout currentPage='/'>
         <SEO isTop imgUrl={`https://vtuber-music.com${vtuberMusicIcon.childImageSharp.fixed.src}`}/>
-        <p className='px-2 py-1 text-gray-500 text-xs'>Vtuberの歌ってみた動画をまとめたサイトです。</p>
+        <p className='px-2 py-1 text-gray-500 text-xs'>Vtuberの歌ってみた動画をまとめたサイトです。{allVideoSortByReleaseDate.nodes.length}本の動画が登録されています。</p>
 
         <div className='max-w-lg mx-auto py-2 pb-5 px-5'>
             <ul className='flex justify-around w-full border bg-white text-gray-700 rounded cursor-pointer'>

@@ -3,6 +3,7 @@ import { validateVideoUrl } from '../../utils/validateUrl'
 import Plus from '../svg/plus'
 import VideoCard from '../videoCard'
 import { upsertRequestVideo } from '../../queries/requestVideo'
+import './formYoutubeUrl.css'
 
 export default ({
     remoteRequestVideos,
@@ -47,6 +48,7 @@ export default ({
                 //     return v
                 // }
                 try {
+                    console.log(remoteRequestVideo)
                     const newState = JSON.parse(remoteRequestVideo.content)
                     setErrorMessage('')
                     if (remoteRequestVideo.stage === 5) {
@@ -74,7 +76,7 @@ export default ({
             <div className='flex items-center mb-16 w-full'>
                 <input
                     placeholder='動画のURLを入力してね！'
-                    className='block border w-full py-1 px-2 rounded'
+                    className='block border w-full py-1 px-2 rounded form-youtube-url'
                     value={formText}
                     onChange={e => {
                         setFormText(e.target.value)

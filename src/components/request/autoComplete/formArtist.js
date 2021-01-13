@@ -21,13 +21,20 @@ const createAutoComplete = (requestVideo, remoteAllArtist, singerIndex, singerEl
   const autoCompletejs = new AutoComplete({
       // データ
     data: {
-      src: remoteAllArtist.concat(requestVideo.singers).map(singer => {
-        const singerCopy = JSON.parse(JSON.stringify(singer))
-        if (!singerCopy.name_ruby) singerCopy.name_ruby = ''
-        if (!singerCopy.id_twitter) singerCopy.id_twitter = ''
-        if (!singerCopy.id_youtube) singerCopy.id_youtube = ''
-        return singerCopy
-      }),
+      src: remoteAllArtist
+        .concat(requestVideo.singers)
+        .reduce((acc, cur) => {
+          if (acc.map(i=>i.id).includes(cur.id)) return acc
+          if (acc.find(i => i.name === cur.name && i.id_twitter === cur.id_twitter)) return acc
+          return acc.concat(cur)
+        }, [])
+        .map(singer => {
+          const singerCopy = JSON.parse(JSON.stringify(singer))
+          if (!singerCopy.name_ruby) singerCopy.name_ruby = ''
+          if (!singerCopy.id_twitter) singerCopy.id_twitter = ''
+          if (!singerCopy.id_youtube) singerCopy.id_youtube = ''
+          return singerCopy
+        }),
       cache: true,
       key: [singerElement]
     },
@@ -64,7 +71,7 @@ const createAutoComplete = (requestVideo, remoteAllArtist, singerIndex, singerEl
       // 結果表示の加工
     resultItem: {
       content: (data, source) => {
-        source.innerHTML = data.match;
+        source.innerHTML = `<span class='pre-text'>もしかして：</span>${data.value.name} ${data.value.id_twitter && `<span class='twitter-id'>(@${data.value.id_twitter})</span>`}`;
       },
       element: 'li'
     },

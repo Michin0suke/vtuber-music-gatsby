@@ -1,13 +1,41 @@
 .form  ul {
-    margin: 0;
+    margin: 0 0 5px;
     padding: 0;
     list-style: none;
-    background-color: #777;
-    color: white;
-    border: solid 1px #777;
+}
+
+.form  ul::after {
+    content: '👆当てはまったら必ずクリックしてね！👆'
 }
 
 .form  ul > li {
+    display: block;
+    margin: 3px auto;
+    font-size: 18px;
     cursor: pointer;
-    padding: 3px 10px 0;
+    padding: 3px 10px;
+    border-radius: 9999px;
+    color: white;
+    background-color: #e33;
+}
+
+.form  ul > li:hover {
+    background-color: rgb(255, 108, 108);
+}
+
+.form  ul > li > .pre-text {
+    font-size: 14px;
+    color: rgb(255, 221, 221)
+}
+
+.form  ul > li > .music-artists {
+    font-size: 14px;
+    padding-left: 5px;
+    color: rgb(255, 221, 221)
+}
+
+.form  ul > li > .twitter-id {
+    font-size: 14px;
+    padding-left: 5px;
+    color: rgb(255, 221, 221)
 }

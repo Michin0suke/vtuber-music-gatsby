@@ -53,7 +53,7 @@ export default ({
                                 return v
                             })
                         }}
-                    >MIXとかしてる人いないよ！</button>
+                    >MIXとかしてる人いないっぽい！</button>
                 </div>
                 :
                 <div>

@@ -7,12 +7,21 @@ const removeChildAll = (e) => {
   }
 };
 
-const createAutoComplete = (requestVideo, remoteAllMusic, updateRequestVideo) => {
+const createAutoComplete = (requestVideo, remoteAllMusic, updateRequestVideo, steps, setStep, syncMusic, upsertRequestVideo) => {
   // eslint-disable-next-line no-unused-vars
   const autoCompletejs = new AutoComplete({
       // データ
     data: {
-      src: remoteAllMusic.concat(requestVideo.music),
+      src: remoteAllMusic
+      .concat(requestVideo.music)
+      .reduce((acc, cur) => {
+        if (acc.find(i=>i.title === cur.title && i.composers[0]?.name === cur.composers[0]?.name && i.lyricists[0]?.name === cur.lyricists[0]?.name)) {
+          return acc
+        }
+        // if (acc.map(i=>i.composers[0]?.name).includes(cur.composers[0]?.name)) return acc
+        // if (acc.map(i=>i.lyricists[0]?.name).includes(cur.lyricists[0]?.name)) return acc
+        return acc.concat(cur)
+      },[]),
       cache: true,
       key: ['title']
     },
@@ -49,18 +58,26 @@ const createAutoComplete = (requestVideo, remoteAllMusic, updateRequestVideo) =>
       // 結果表示の加工
     resultItem: {
       content: (data, source) => {
-        source.innerHTML = data.match;
+        console.log(data)
+        source.innerHTML = `<span class='pre-text'>もしかして：</span>${data.match}<span class='music-artists'>(作曲: ${data.value.composers.map(i=>i.name).join('&')} / 作詞: ${data.value.lyricists.map(i=>i.name).join('&')})</span>`;
       },
       element: 'li'
     },
     onSelection: (feedback) => {
+      // 飛ばしてstage4まで
+
       const selection = feedback.selection.value;
-      console.log(selection)
       document.querySelector(`#autoComplete-music-title`).value = selection.title;
       removeChildAll(document.querySelector(`#autoComplete-music-title`));
+
       updateRequestVideo(v => {
-        v.music = selection; return v
+        if (v.stage < 4) v.stage = 4
+        v.music = selection
+        syncMusic(v)
+        upsertRequestVideo(v)
+        return v
       })
+      setStep(steps.VIDEO_ARTIST_ASK)
     }
   });
 }

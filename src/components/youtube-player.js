@@ -38,7 +38,9 @@ const YouTubePlayer = ({ nextVideoId, video, className }) => {
                 onReady={() => setIsReadyPlayer(true)}
                 // onPlay={() => setIsReadyPlayer(true)}
                 opts={opts}
-                onEnd={() => navigate(`/video/${nextVideoId}`)}
+                onEnd={() => {
+                    if (nextVideoId) navigate(`/video/${nextVideoId}`)
+                }}
                 containerClassName={"youtubeContainer"}
             />
 

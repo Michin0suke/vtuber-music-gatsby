@@ -14,7 +14,7 @@ const initialShowCount = 42
 
 const today = new Date()
 
-export default ({ data: {allArtist} }) => {
+export default ({ data: { allArtist, vtuberMusicIcon } }) => {
     const [birthdayArtists, setBirthdayArtists] = useState(allArtist.nodes.filter(artist => {
         if (!artist.birthday) return false
         try{
@@ -63,8 +63,9 @@ export default ({ data: {allArtist} }) => {
 
     return (
         <Layout currentPage='/artists'>
-            <SEO title='アーティスト一覧' description='アーティスト一覧のページです。'/>
+            <SEO title='アーティスト一覧' description='アーティスト一覧のページです。' imgUrl={`https://vtuber-music.com${vtuberMusicIcon.childImageSharp.fixed.src}`}/>
             <Breadcrumb type='artist'/>
+            <p className='px-2 py-1 text-gray-500 text-xs'>{allArtist.nodes.filter(artist => artist.singer_videos.length !== 0).length}人のアーティストが登録されています。</p>
             <div className='flex mx-auto px-2 mt-4 mb-7 w-full max-w-xl h-10'>
                 <SearchIcon color='#555' className='w-10 p-2'/>
                 <input
@@ -77,7 +78,7 @@ export default ({ data: {allArtist} }) => {
             {showBirthdayArtists && birthdayArtists.length > 0 &&
                 <div>
                     <Heading text='今日が誕生日のアーティスト'/>
-                    <div className='sm:flex flex-wrap px-5'>
+                    <div className='sm:flex flex-wrap mx-5 pb-5 border-b-4 border-dotted'>
                         {birthdayArtists.map((artist, key) => <ArtistCard key={key} artist={artist} className='w-full md:w-1/2 lg:w-1/3' cardSize='lg' withParent withVideoCount/>)}
                     </div>
                 </div>
@@ -118,6 +119,13 @@ export const query = graphql`
             }
             parents {
                 name
+            }
+        }
+    }
+    vtuberMusicIcon:file(base: {eq: "vtuber-music-icon-for-ogp.png"}) {
+        childImageSharp {
+            fixed(width: 500) {
+                src
             }
         }
     }

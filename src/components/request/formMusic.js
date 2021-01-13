@@ -23,7 +23,7 @@ export default ({
                 return v
             })
         }
-        createAutoComplete(requestVideo, remoteAllMusic, updateRequestVideo)
+        createAutoComplete(requestVideo, remoteAllMusic, updateRequestVideo, steps, setStep, syncMusic, upsertRequestVideo)
     }, [])
     return (
         <div>
