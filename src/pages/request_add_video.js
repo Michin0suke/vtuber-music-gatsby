@@ -652,24 +652,20 @@ export default ({ data: { allVideo }}) => {
                 />
                 <Heading className='mb-3 mx-3' text='動画を追加してみよう！'/>
 
-                {step !== steps.INIT &&
-                    <Youtube
-                        videoId={requestVideo.id}
-                        opts={{}}
-                        containerClassName={"youtubeContainer"}
-                    />
-                    // <div>
-                    //     <p className='text-xs text-gray-400'>サムネイルが正しく表示されない場合でも、クリックして動画に飛べたら、正しく登録できてるよ！</p>
-                    //     <a href={`https://www.youtube.com/watch?v=${requestVideo.id}`} target='_blank' className='block mb-5'>
-                    //         <img className='w-full' src={`https://i.ytimg.com/vi/${requestVideo.id}/maxresdefault.jpg`}/>
-                    //     </a>
-                    // </div>
-                }
+                {/* <div className={`flex ${Object.values(steps).indexOf(step) <= Object.values(steps).indexOf(steps.ORIGINAL_MUSIC_ASK) ? 'flex-col-reverse' : 'flex-col'}`}> */}
+                    <div className='px-4 mb-14'>
+                        <h2 className='mx-auto px-2 py-3 mb-5 leading-7 text-center border whitespace-pre-wrap'>{step_elements[step].message}<p className='text-red-600'>{errorMessage}</p></h2>
+                        {step_elements[step].children}
+                    </div>
 
-                <div className='px-4 mb-14'>
-                    <h2 className='mx-auto px-2 py-3 mb-5 leading-7 text-center border whitespace-pre-wrap'>{step_elements[step].message}<p className='text-red-600'>{errorMessage}</p></h2>
-                    {step_elements[step].children}
-                </div>
+                    {step !== steps.INIT &&
+                        <Youtube
+                            videoId={requestVideo.id}
+                            opts={{}}
+                            containerClassName={"youtubeContainer"}
+                        />
+                    }
+                {/* </div> */}
 
                 {(step === steps.INIT || step === steps.FIN) &&
                     <Link to={'/request_add_video_preview'}>
