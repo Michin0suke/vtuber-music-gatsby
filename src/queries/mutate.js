@@ -102,17 +102,3 @@ export const upsertArtistFull = (artist) => {
     }
   })
 }
-
-// export const upsertArtistLess = (artist) => 
-//   upsertArtistLessTry(artist)
-//   .then(result => result.data.upsertArtist)
-//   .catch(() => upsertArtistLessTry(artist, true))
-//   .catch(() => upsertArtistLessTry(artist, true))
-//   .catch(e => console.log(e))
-
-// export const upsertArtistFull = (artist) => 
-//   upsertArtistFullTry(artist)
-//   .then(result => result.data.upsertArtist)
-//   .catch(() => upsertArtistFullTry(artist, true))
-//   .catch(() => upsertArtistFullTry(artist, true))
-//   .catch(e => console.log(e))

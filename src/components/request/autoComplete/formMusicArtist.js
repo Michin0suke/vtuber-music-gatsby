@@ -8,16 +8,15 @@ const removeChildAll = (e) => {
 };
 
 const createAutoComplete = (requestVideo, remoteAllArtist, roleIndex, artistIndex, artistElement, updateRequestVideo) => {
-  console.log(`#autoComplete-music-artist-${roleIndex}-${artistIndex}-${artistElement.en}`)
   // eslint-disable-next-line no-unused-vars
   const autoCompletejs = new AutoComplete({
       // データ
     data: {
-      src: remoteAllArtist
-        .concat(requestVideo.singers)
-        .concat(requestVideo.music.composers)
+      src: requestVideo.music.arrangers
         .concat(requestVideo.music.lyricists)
-        .concat(requestVideo.music.arrangers)
+        .concat(requestVideo.music.composers)
+        .concat(requestVideo.singers)
+        .concat(remoteAllArtist)
         .reduce((acc, cur) => {
           if (acc.map(i=>i.id).includes(cur.id)) return acc
           if (acc.find(i => i.name === cur.name && i.id_twitter === cur.id_twitter)) return acc
@@ -59,7 +58,7 @@ const createAutoComplete = (requestVideo, remoteAllArtist, roleIndex, artistInde
       container: (source) => {
         source.setAttribute('id', `autoComplete-list-music-artist-${roleIndex}-${artistIndex}-${artistElement.en}`);
       },
-      destination: () => document.querySelector(`#autoComplete-list-container-music-artist-${roleIndex}-${artistIndex}-${artistElement.en}`),
+      destination: document.querySelector(`#autoComplete-list-container-music-artist-${roleIndex}-${artistIndex}-${artistElement.en}`),
       position: 'afterend',
       element: 'ul'
     },

@@ -36,8 +36,8 @@ export default ({ data: { allVideo } }) => {
     }
 
     return (
-        <Layout currentPage='/videos'>
-            <Breadcrumb type='video'/>
+        <div>
+            {/* <Breadcrumb type='video'/> */}
             <div className='flex mx-auto px-2 mt-4 mb-7 w-full max-w-xl h-10'>
                 <SearchIcon color='#555' className='w-10 p-2'/>
                 <input
@@ -58,7 +58,7 @@ export default ({ data: { allVideo } }) => {
                     <VideoCard video={video} className='mb-5 sm:px-1 w-full sm:w-1/2 md:w-1/3 xl:w-1/4' key={key} withPublishDate/>
                 ))}
             </InfiniteScroll>
-        </Layout>
+        </div>
     )
 }
 

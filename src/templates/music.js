@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import SEO from '../components/seo'
@@ -7,9 +7,20 @@ import Layout from '../components/layout'
 import VideoCard from '../components/videoCard'
 import Breadcrumb from '../components/breadcrumb'
 import Heading, { HeadingH2 } from '../components/heading'
+import PhotoFrame from '../components/svg/photoFrame'
+import Please from 'pleasejs'
+import './music.css'
 
 export default ({ data: { music } }) => {
+    const [frameColor, addFrameColor] = useState(Please.make_color({format: 'rgb-string', saturation: 0.2}))
+    const [isPhotoFrameMoving, setIsPhotoFrameMoving] = useState(false)
+
+    const movePhotoFrame = () => {
+        setIsPhotoFrameMoving(true)
+        setTimeout(() => setIsPhotoFrameMoving(false), 1000)
+    }
     const creators = []
+
     music.composers
         .concat(music.lyricists)
         .forEach(artist => {
@@ -20,20 +31,23 @@ export default ({ data: { music } }) => {
     
 
 return (
-<Layout>
+<div>
     <SEO
         title={music.title}
         description={`楽曲 ${music.title}(${creators.join('&')})のページです。${music.videos.length}本の歌ってみた動画が登録されています。`}
         imgUrl={`https://vtuber-music.com${music.videos?.[Math.floor(Math.random() * music.videos.length)]?.thumbnail_image?.childImageSharp?.fixed?.src}`}
         isLargeCard
     />
-    <Breadcrumb type='music' text={music.title}/>
+    {/* <Breadcrumb type='music' text={music.title}/> */}
 
     <div className='max-w-4xl mx-auto'>
-        <div className='mb-7 pb-3 bg-white lg:shadow'>
-            <div className='relative mb-3 w-full h-0 overflow-hidden' style={{ paddingBottom: '56.25%' }}>
-                <div className='absolute w-full h-full top-0 left-0 bg-blue-100'>
-                    <Img fluid={music.videos?.[Math.floor(Math.random() * music.videos.length)]?.thumbnail_image?.childImageSharp?.fluid}/>
+        <div className={`mb-7 pb-3 bg-white lg:shadow`}>
+            <div className={`w-4/5 max-w-md mx-auto pt-2 photo-frame ${isPhotoFrameMoving && 'moving'}`} onClick={() => isPhotoFrameMoving || movePhotoFrame()}>
+                <div className='relative mb-3 h-0' style={{paddingBottom: '89%'}}>
+                    <div className='absolute left-0 right-0 h-0 mx-auto max-w-xs border' style={{marginBottom: '56.25%', width: '70%', top:'61%'}}>
+                        <Img className='top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2' fluid={music.videos?.[Math.floor(Math.random() * music.videos.length)]?.thumbnail_image?.childImageSharp?.fluid}/>
+                    </div>
+                    <PhotoFrame className='absolute right-0 left-0 w-full' color={frameColor} color2={frameColor}/>
                 </div>
             </div>
             <div className='lg:px-5'>
@@ -71,7 +85,7 @@ return (
             </div>
         }
     </div>
-</Layout>
+</div>
 )
 }
 

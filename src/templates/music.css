@@ -1,0 +1,23 @@
+@keyframes shake {
+    0% {
+        transform: rotate(0deg);
+    }
+    30% {
+        transform: rotate(3deg);
+    }
+    80% {
+        transform: rotate(-2deg);
+    }
+    100% {
+        transform: rotate(0deg)
+    }
+}
+
+.photo-frame {
+    transition: transform;
+    transform-origin: center top;
+}
+
+.photo-frame.moving {
+    animation: shake 1s ease-out;
+}

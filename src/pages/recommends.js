@@ -21,7 +21,7 @@ const FeaturedMusic = ({ music, className }) => (
 export default ({data}) => {
     return (
         <Layout currentPage='/recommends'>
-            <Breadcrumb type='recommends' className='mb-5'/>
+            {/* <Breadcrumb type='recommends' className='mb-5'/> */}
             <FeaturedMusic music={data.musicKing} className='mb-20'/>
             <FeaturedMusic music={data.musicInochi}/>
         </Layout>

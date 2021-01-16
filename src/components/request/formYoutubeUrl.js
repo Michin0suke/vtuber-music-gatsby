@@ -14,6 +14,7 @@ export default ({
     stageToStep,
     steps,
     setStep,
+    setIsEditMode,
 }) => {
     const [formText, setFormText] = useState('')
 
@@ -48,11 +49,10 @@ export default ({
                 //     return v
                 // }
                 try {
-                    console.log(remoteRequestVideo)
                     const newState = JSON.parse(remoteRequestVideo.content)
                     setErrorMessage('')
                     if (remoteRequestVideo.stage === 5) {
-                        alert('編集モード！')
+                        setIsEditMode(true)
                         setStep(steps.ARTIST_INPUT)
                     } else {
                         setStep(stageToStep(remoteRequestVideo.stage))
@@ -92,7 +92,6 @@ export default ({
             </div>
             {allVideo.nodes.map(i=>i.id).includes(requestVideo.id) &&
             <div>
-                {console.log('hey')}
             <VideoCard video={allVideo.nodes.filter(video => video.id === requestVideo.id)[0]} withPublishDate/>
             </div>
             }

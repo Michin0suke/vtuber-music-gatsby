@@ -8,31 +8,24 @@ import Home from './svg/home'
 import Search from './svg/search'
 import Plus from './svg/plus'
 
-const Col = ({currentPage, href, text, Img, imgClassName}) => (
-    <li className='w-1/3'>
-        <Link to={href} className='h-full flex flex-col justify-between items-center'>
-            <Img color={currentPage === href ? 'red' : '#555'} className={imgClassName}/>
-            <span className={`inline-block mx-auto text-xs ${currentPage === href ? 'text-red-500' : 'text-gray-700'}`}>{text}</span>
-        </Link>
+const Col = ({path, match, href, Img, imgStyle}) => (
+    <li className='relative w-1/4 flex justify-center'>
+            <div style={imgStyle}>
+                <Img color={path.split('/')[1] === match ? 'red' : '#555'} className='block h-full'/>
+            </div>
+            {/* <span className={`inline-block mx-auto text-xs ${path.split('/')[1] === match ? 'text-red-500' : 'text-gray-700'}`}>{text}</span> */}
+        
+            <Link to={href} className='absolute top-0 right-0 bottom:0 left-0 h-full w-full'/>
     </li>
 )
 
-export default ({ currentPage }) => (
-    <nav className='fixed sm:hidden bottom-0 pt-1 left-0 w-full h-12 z-50 shadow-sm bg-white'>
-      <ul className='flex max-w-screen-md mx-auto h-full'>
-        <Col currentPage={currentPage} href='/' text='ホーム' Img={Home} imgClassName='block mt-0.5 h-6 mx-auto'/>
-        {/* <Col currentPage={currentPage} href='/recommends' text='おすすめ' Img={ThumbsUp} imgClassName='block mt-0.5 h-5 mx-auto'/> */}
-        {/* <Col currentPage={currentPage} href='/hots' text='人気' Img={Fire} imgClassName='block h-6 mx-auto'/> */}
-        <Col currentPage={currentPage} href='/videos' text='検索' Img={Search} imgClassName='block h-6 mx-auto'/>
-        <li className='w-1/3'>
-            <a href='/request_add_video' className='h-full flex flex-col justify-between items-center'>
-                <Plus color={currentPage === '/request_add_video' ? 'red' : '#555'} className='block mt-0.5 h-6 mx-auto'/>
-                <span className={`inline-block mx-auto text-xs ${currentPage === '/request_add_video' ? 'text-red-500' : 'text-gray-700'}`}>追加</span>
-            </a>
-        </li>
-        {/* <Col currentPage={currentPage} href='/request_add_video' text='追加' Img={Plus} imgClassName='block mt-0.5 h-6 mx-auto'/> */}
-        <Col currentPage={currentPage} href='/artists' text='アーティスト' Img={Profile} imgClassName='block mt-0.5 h-6 mx-auto'/>
-        {/* <Col currentPage={currentPage} href='/others' text='その他' Img={Ellipsis} imgClassName='block w-8 py-2.5 mx-auto vertical-middle'/> */}
+export default ({ path }) => (
+    <nav className='fixed sm:hidden bottom-0 pt-1 left-0 w-full h-10 z-40 shadow-sm bg-white'>
+      <ul className='flex max-w-screen-md mx-auto justify-center h-full px-3'>
+        <Col path={path} match='' href='/' text='ホーム' Img={Home} imgStyle={{marginTop: 3, height: 24}}/>
+        <Col path={path} match='videos' href='/videos' text='検索' Img={Search} imgStyle={{marginTop: 3, height: 24}}/>
+        <Col path={path} match='artists' href='/artists' text='アーティスト' Img={Profile} imgStyle={{marginTop: 3, height: 24}}/>
+        <Col path={path} match='request_add_video' href='/request_add_video' text='追加' Img={Plus} imgStyle={{marginTop: 3, height: 24}}/>
       </ul>
     </nav>
 )

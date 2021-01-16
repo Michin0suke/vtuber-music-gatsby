@@ -8,14 +8,25 @@ import YouTubePlayer from '../components/youtube-player'
 import Heading, { HeadingH2 } from '../components/heading'
 import MusicTitle from '../components/musicTitle'
 import SEO from '../components/seo'
-// import modernizr from 'modernizr'
 
-export default ({ data: { video, allVideo }, location }) => {
+export default ({ data: { video, allVideo }, setVideoPlayer }) => {
     const [nextVideoId, setNextVideoId] = useState(undefined)
     const [nextVideoChoicesId, setNextVideoChoicesId] = useState([])
     const [sameSingerVideos, setSameSingerVideos] = useState([])
 
+    const setVideoPlayerAsync = async () => {
+        const nextVideoId = await decideNextVideoId(video, allVideo)
+        setVideoPlayer(
+            <YouTubePlayer
+                nextVideoId={nextVideoId}
+                video={video}
+            />
+        )
+    }
+
     useEffect(() => {
+        setVideoPlayerAsync()
+
         decideNextVideoId(video, allVideo)
 
         const sameSingerVideos = video.singers
@@ -103,10 +114,11 @@ export default ({ data: { video, allVideo }, location }) => {
 
         setNextVideoChoicesId(nextVideoChoicesId)
         setNextVideoId(nextVideoChoicesId[Math.floor(nextVideoChoicesId.length * Math.random())])
+        return nextVideoChoicesId[Math.floor(nextVideoChoicesId.length * Math.random())]
     }
     
     return (
-        <Layout>
+        <div>
             <SEO
                 title={`${video.music.title}`}
                 description={`${video.music.title}を${video.singers.map(a => a.name).join('さんと')}さんが歌っている動画です。`}
@@ -114,22 +126,14 @@ export default ({ data: { video, allVideo }, location }) => {
                 imgUrl={`https://vtuber-music.com${video.thumbnail_image?.childImageSharp?.fixed?.src}`}
                 isLargeCard
             />
-            <Breadcrumb
+            {/* <Breadcrumb
                 type='video'
                 text={video.music.title}
                 subText={video.singers.map(singer => singer.name).join(' & ')}
-            />
-
-
+            /> */}
             <div className='w-full max-w-4xl mx-auto'>
+                <div className='w-full bg-white' style={{ paddingBottom: '56.25%' }}/>
                 <div className='mb-4 bg-white lg:shadow'>
-                    {video.thumbnail_image?.childImageSharp?.fluid ?
-                        <YouTubePlayer
-                            nextVideoId={nextVideoId}
-                            video={video}
-                            className='w-full mb-2'
-                        /> :
-                        <p>動画を取得できませんでした。</p>}
                     <div className='lg:px-5'>
                         <Link to={`/music/${video.music.id}`}>
                             <Heading text={video.custom_music_name || video.music.title} className='mb-2' hoverEffect isMusicTitle/>
@@ -185,7 +189,7 @@ export default ({ data: { video, allVideo }, location }) => {
                 }
 
             </div>
-        </Layout>
+        </div>
     )
 }
 
@@ -223,6 +227,7 @@ export const pageQuery = graphql`
     video(id: {eq: $id}) {
         id
         custom_music_name
+        is_original_music
         music {
             id
             title
@@ -291,6 +296,7 @@ export const pageQuery = graphql`
                 id
                 custom_music_name
                 release_date
+                is_original_music
                 music {
                     id
                     title

@@ -50,15 +50,15 @@ const createAutoComplete = (requestVideo, remoteAllMusic, updateRequestVideo, st
       render: true,
       container: (source) => {
         source.setAttribute('id', `#autoComplete-list-music-title`);
+        source.classList.add('relative')
       },
-      destination: () => document.querySelector(`#autoComplete-music-title`),
+      destination: document.querySelector(`#autoComplete-music-title`),
       position: 'afterend',
       element: 'ul'
     },
       // 結果表示の加工
     resultItem: {
       content: (data, source) => {
-        console.log(data)
         source.innerHTML = `<span class='pre-text'>もしかして：</span>${data.match}<span class='music-artists'>(作曲: ${data.value.composers.map(i=>i.name).join('&')} / 作詞: ${data.value.lyricists.map(i=>i.name).join('&')})</span>`;
       },
       element: 'li'

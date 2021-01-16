@@ -62,9 +62,9 @@ export default ({ data: { allArtist, vtuberMusicIcon } }) => {
     }
 
     return (
-        <Layout currentPage='/artists'>
+        <div>
             <SEO title='アーティスト一覧' description='アーティスト一覧のページです。' imgUrl={`https://vtuber-music.com${vtuberMusicIcon.childImageSharp.fixed.src}`}/>
-            <Breadcrumb type='artist'/>
+            {/* <Breadcrumb type='artist'/> */}
             <p className='px-2 py-1 text-gray-500 text-xs'>{allArtist.nodes.filter(artist => artist.singer_videos.length !== 0).length}人のアーティストが登録されています。</p>
             <div className='flex mx-auto px-2 mt-4 mb-7 w-full max-w-xl h-10'>
                 <SearchIcon color='#555' className='w-10 p-2'/>
@@ -96,7 +96,7 @@ export default ({ data: { allArtist, vtuberMusicIcon } }) => {
                 })
             }
             </InfiniteScroll>
-        </Layout>
+        </div>
     )
 }
 

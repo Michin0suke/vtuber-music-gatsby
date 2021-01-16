@@ -1,11 +1,17 @@
-import React, { useState } from 'react'
-import { navigate } from 'gatsby'
+import React, { useState, useEffect } from 'react'
+import { navigate, Link } from 'gatsby'
 import Youtube from 'react-youtube'
 import VideoThumbnail from './videoThumbnail'
 import './youtube-player.css'
 
 const YouTubePlayer = ({ nextVideoId, video, className }) => {
     const [isReadyPlayer, setIsReadyPlayer] = useState(false)
+    const [videoId, setVideoId] = useState(video.id)
+
+    useEffect(() => {
+        setVideoId(video.id)
+    }, [video])
+    // const videoId = JSON.parse(JSON.stringify(video.id))
     // const [a, setA] = useState(false)
 
     const opts = {
@@ -31,25 +37,33 @@ const YouTubePlayer = ({ nextVideoId, video, className }) => {
     // )
 
     return (
-        <div className={`relative overflow-hidden ${className}`}>
-            {/* { isReadyPlayer ? <p>isReadyPlayer: true</p> : <p>isReadyPlayer: false</p>} */}
-            <Youtube
-                videoId={video.id}
-                onReady={() => setIsReadyPlayer(true)}
-                // onPlay={() => setIsReadyPlayer(true)}
-                opts={opts}
-                onEnd={() => {
-                    if (nextVideoId) navigate(`/video/${nextVideoId}`)
-                }}
-                containerClassName={"youtubeContainer"}
-            />
+        <div className='youtube-player-wrapper'>
+            <div className={`relative overflow-hidden`}>
+                {/* { isReadyPlayer ? <p>isReadyPlayer: true</p> : <p>isReadyPlayer: false</p>} */}
+                <Youtube
+                    videoId={video.id}
+                    onReady={() => setIsReadyPlayer(true)}
+                    // onPlay={() => setIsReadyPlayer(true)}
+                    opts={opts}
+                    onEnd={() => {
+                        if (nextVideoId) {
+                            navigate(`/video/${nextVideoId}`)
+                        } else {
+                            console.log('is not set nextVideoId')
+                        }
+                    }}
+                    containerClassName={"youtubeContainer"}
+                />
 
-            { isReadyPlayer ||
-                <VideoThumbnail video={video} className='absolute top-0 left-0 w-full h-full'/>
-                // <div className='thumbnail-image absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
-                //     <Img fluid={thumbnailFluid} className='w-full' />
-                // </div>
-            }
+                { isReadyPlayer ||
+                    <VideoThumbnail video={video} className='absolute top-0 left-0 w-full h-full'/>
+                    // <div className='thumbnail-image absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+                    //     <Img fluid={thumbnailFluid} className='w-full' />
+                    // </div>
+                }
+
+                <Link to={`/video/${videoId}`} />
+            </div>
         </div>
     )
 }

@@ -1,0 +1,8 @@
+.header-wrapper {
+    transition: transform;
+    transform: scaleY(1);
+}
+
+.header-wrapper.unpinned {
+    transform: scaleY(0);
+}

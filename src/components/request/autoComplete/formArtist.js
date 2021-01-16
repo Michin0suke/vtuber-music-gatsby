@@ -16,13 +16,12 @@ const elements = [
 ]
 
 const createAutoComplete = (requestVideo, remoteAllArtist, singerIndex, singerElement, updateRequestVideo) => {
-  console.log(`#autoComplete-artist-${singerIndex}-${singerElement}`)
   // eslint-disable-next-line no-unused-vars
   const autoCompletejs = new AutoComplete({
       // データ
     data: {
-      src: remoteAllArtist
-        .concat(requestVideo.singers)
+      src: requestVideo.singers
+        .concat(remoteAllArtist)
         .reduce((acc, cur) => {
           if (acc.map(i=>i.id).includes(cur.id)) return acc
           if (acc.find(i => i.name === cur.name && i.id_twitter === cur.id_twitter)) return acc
@@ -64,7 +63,7 @@ const createAutoComplete = (requestVideo, remoteAllArtist, singerIndex, singerEl
       container: (source) => {
         source.setAttribute('id', `autoComplete-list-artist-${singerIndex}-${singerElement}`);
       },
-      destination: () => document.querySelector(`#autoComplete-artist-${singerIndex}-${singerElement}`),
+      destination: document.querySelector(`#autoComplete-artist-${singerIndex}-${singerElement}`),
       position: 'afterend',
       element: 'ul'
     },

@@ -5,7 +5,7 @@ import Breadcrumb from '../components/breadcrumb'
 export default () => {
     return (
         <Layout currentPage='/others'>
-            <Breadcrumb type='others' className='mb-10'/>
+            {/* <Breadcrumb type='others' className='mb-10'/> */}
             実装予定
         </Layout>
     )

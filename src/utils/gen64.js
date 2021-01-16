@@ -25,8 +25,8 @@ const gen64 = () => {
         return res;
     }
 
-    console.log(encode(range64.min))
-    console.log(encode(range64.max))
+    // console.log(encode(range64.min))
+    // console.log(encode(range64.max))
     
     const decode = (num) => {
         let char2 = {};

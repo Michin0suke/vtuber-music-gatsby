@@ -114,14 +114,14 @@ export default ({ data: { artist }}) => {
     const singerVideoCount = artist.singer_videos.length + artist.childrenArtist.map(child=>child.singer_videos).flat().length
 
     return (
-    <Layout>
+    <div>
         <SEO
             title={`${artist.name}`}
             description={`${artist.name}${honorific}のプロフィールページです。${singerVideoCount > 0 ? `${singerVideoCount}本の歌ってみた動画が登録されています。` : ''}`}
             url={`https://vtuber-music.com/artist/${artist.id}`}
             imgUrl={`https://vtuber-music.com${artist.profile_image?.childImageSharp?.fixed?.src}`}
         />
-        <Breadcrumb type='artist' text={artist.name}/>
+        {/* <Breadcrumb type='artist' text={artist.name}/> */}
 
         <div className='max-w-4xl mx-auto'>
 
@@ -231,7 +231,7 @@ export default ({ data: { artist }}) => {
                 href={`https://ws.formzu.net/dist/S956931/?importv=${artist.id}`}
             >編集リクエスト</a>
         </div>
-    </Layout>
+    </div>
     )
 }
 

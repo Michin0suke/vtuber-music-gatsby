@@ -1,5 +1,5 @@
 module.exports = {
-  flags: { QUERY_ON_DEMAND: true },
+  // flags: { QUERY_ON_DEMAND: true },
   siteMetadata: {
     title: `Vtuber Music`,
     description: `Vtuber Musicは、Vtuberの歌ってみた動画をまとめたサイトです。`,

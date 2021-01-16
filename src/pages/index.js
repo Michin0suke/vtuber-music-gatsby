@@ -48,13 +48,23 @@ const sliderSettingsProfileImages = {
     ]
   };
 
-const IndexPage = ({ data: { allVideoSortByCreatedAt, allVideoSortByReleaseDate, vtuberMusicIcon } }) => {
+// const IndexPage = ({ data: { allVideoSortByCreatedAt, allVideoSortByReleaseDate, vtuberMusicIcon } }) => (
+//     <Layout currentPage='/'>
+//         <Content
+//             allVideoSortByCreatedAt={allVideoSortByCreatedAt}
+//             allVideoSortByReleaseDate={allVideoSortByReleaseDate}
+//             vtuberMusicIcon={vtuberMusicIcon}
+//         />
+//     </Layout>
+// )
+
+const IndexPage = ({ data: { allVideoSortByCreatedAt, allVideoSortByReleaseDate, vtuberMusicIcon }}) => {
     const [showVideoIndex, setShowVideoIndex] = useState(24)
     const [showVideos, setShowVideos] = useState(allVideoSortByReleaseDate.nodes)
     const [sortSelected, setSortSelected] = useState(0)
 
     return (
-    <Layout currentPage='/'>
+    <div>
         <SEO isTop imgUrl={`https://vtuber-music.com${vtuberMusicIcon.childImageSharp.fixed.src}`}/>
         <p className='px-2 py-1 text-gray-500 text-xs'>Vtuberの歌ってみた動画をまとめたサイトです。{allVideoSortByReleaseDate.nodes.length}本の動画が登録されています。</p>
 
@@ -128,7 +138,7 @@ const IndexPage = ({ data: { allVideoSortByCreatedAt, allVideoSortByReleaseDate,
             ))}
         </InfiniteScroll>
 
-    </Layout>
+    </div>
   )
 }
 

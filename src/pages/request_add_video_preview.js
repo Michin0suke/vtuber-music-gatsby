@@ -4,6 +4,8 @@ import Layout from '../components/layout'
 import { requestVideos, upsertRequestVideo } from '../queries/requestVideo'
 import { upsertVideo } from '../queries/video'
 import './request_add_video_preview.css'
+import Youtube from 'react-youtube'
+import InfiniteScroll from 'react-infinite-scroll-component'
 
 const getContributorTwitterId = () => {
     return window.localStorage.getItem('twitter_id')
@@ -18,47 +20,75 @@ const Row = ({l, m, r}) => (
 )
 
 export default () => {
+    const [remoteRequestVideosAll, setRemoteRequestVideosAll] = useState([])
     const [remoteRequestVideos, setRemoteRequestVideos] = useState([])
     const [expandIndex, setExpandIndex] = useState(false)
     const [isLoading, setIsLoading] = useState(true)
+    const [contents, setContents] = useState([])
+    const [contentsCounter, setContentsCounter] = useState(0)
+
+    const addContents = (requestVideos, isFresh) => {
+        const newContents = isFresh ? [] : contents.slice()
+        const range = 50
+        requestVideos
+            .slice(contentsCounter * range, (contentsCounter + 1) * range)
+            .forEach(requestVideo => {
+                try {
+                    const parsedContent = JSON.parse(requestVideo.content)
+                    newContents.push(parsedContent)
+                } catch(e) {
+                    console.log(`failed parse content: ${requestVideo.content}`)
+                    console.log(e)
+                }
+            })
+        setContentsCounter(contentsCounter + 1)
+        setContents(newContents)
+    }
 
     const fetchRemoteRequestVideos = () => {
         requestVideos()
             .then(result => result.data?.requestVideos)
             .then(requestVideos => {
-                setRemoteRequestVideos(requestVideos)
+                setRemoteRequestVideosAll(requestVideos)
+                setRemoteRequestVideos(requestVideos.filter(i=>!i.is_done))
                 setIsLoading(false)
+                addContents(requestVideos.filter(i=>!i.is_done), true)
             })
     }
 
     useEffect(() => {
+        console.log('useEffect')
         fetchRemoteRequestVideos()
-    }, [])
+    }, [isLoading])
 
     return (
-        <Layout>
+        <div>
             <div className='max-w-2xl mx-auto'>
                 {isLoading
                 ? <p className='text-center text-xl'>読み込み中...🤔</p>
-                : <p className='text-sm text-gray-600 leading-6'>{remoteRequestVideos.filter(i=>!i.is_done).length}件の待機中リクエストがあります。<span className='text-gray-400'>総リクエスト数:{remoteRequestVideos.length}件</span></p>}
+                : <p className='text-sm text-gray-600 leading-6'>{remoteRequestVideos.length}件の待機中リクエストがあります。<span className='text-gray-400'>総リクエスト数:{remoteRequestVideosAll.length}件</span></p>}
                 
-                {/* <button className='block mx-auto text-3xl' onClick={() => fetchRemoteRequestVideos()}>🔄</button> */}
-                {remoteRequestVideos.map((request, key) => {
-                    const content = JSON.parse(request.content)
-                    if (request.is_done) return
+                <button className='block mx-auto text-3xl' onClick={() => {
+                    setContentsCounter(0)
+                    setIsLoading(true)
+                }}>🔄</button>
 
-                    return (
+                <InfiniteScroll
+                    dataLength={contentsCounter * 50} //This is important field to render the next data
+                    next={() => addContents(remoteRequestVideos)}
+                    hasMore={remoteRequestVideos.length > contents.length}
+                    className='sm:px-2 flex flex-wrap justify-start'
+                >
+                    {contents.map((content, key) => (
                         <Card
                             key={key}
                             expandIndex={expandIndex}
                             setExpandIndex={setExpandIndex}
                             cardIndex={key}
                             content={content}
-                            request={request}
                             fetchRemoteRequestVideos={fetchRemoteRequestVideos}
-                        />
-                    )
-                })}
+                        />))}
+                </InfiniteScroll>
                 <ul>
                     <li className='py-2 px-3 mb-5 border bg-white mt-5'>
                         <h3 className='border-b pb-2'><span className='text-red-600 font-bold'>Q. </span>リクエストしたのに一覧にないよ！</h3>
@@ -76,7 +106,7 @@ export default () => {
                     </li>
                 </ul>
             </div>
-        </Layout>
+        </div>
     )
 }
 
@@ -85,33 +115,44 @@ const Card = ({
     setExpandIndex,
     cardIndex,
     content,
-    request,
     fetchRemoteRequestVideos,
 }) => {
-
+    const [status, setStatus] = useState(false)
     return (
-        <article className='w-full mb-2 bg-white border select-none rounded shadow-sm'>
-            <h2 className={`relative cursor-pointer sm:hover:bg-red-50 px-5 leading-8 ${expandIndex === cardIndex && 'bg-red-100'}`} onClick={() => setExpandIndex(cardIndex)}>
+        <article className={`w-full mb-2 bg-white select-none rounded shadow-sm ${status === 'failed' ? 'border-4 border-red-500' : 'border'} ${status === 'success' ? 'hidden' : ''}`}>
+            <h2 className={`relative cursor-pointer sm:hover:bg-red-50 px-5 leading-8 ${expandIndex === cardIndex && 'bg-red-100'}`}>
                 <span className='pr-2 text-red-600'>{content.stage}</span>
                 <span className='pr-2 text-gray-800'>{content.singers.map(i=>i.name).join(' & ')}</span>
                 <span className='pr-2 text-gray-500'>{content.music.title}</span>
-                {request.is_issue && <span className='inline-block right-0 bg-yellow-500 h-3 w-3'/>}
-                {request.stage === 5 && getContributorTwitterId() === 'VtuberMusicCom' &&
+                {content.is_issue && <span className='inline-block right-0 bg-yellow-500 h-3 w-3'/>}
+                <div className='absolute top-0 left-0 w-full h-full' onClick={() => setExpandIndex(cardIndex)}/>
+                {content.stage === 5 && getContributorTwitterId() === 'VtuberMusicCom' &&
                     <button
-                        className='absolute right-0 h-full px-1 py-1 bg-blue-500 sm:hover:bg-blue-400 text-xs text-white shadow rounded'
+                        className='absolute right-0 z-10 h-full px-1 py-1 bg-blue-500 sm:hover:bg-blue-400 text-xs text-white shadow rounded'
                         onClick={() => {
+                            setStatus('sending')
                             upsertVideo(content)
                             .then(res => {
                                 console.log(res)
                                 content.is_done = true
-                                upsertRequestVideo(content).then(() => fetchRemoteRequestVideos())
+                                upsertRequestVideo(content).then(() => setStatus('success'))
                             })
-                            .catch(e => console.log(e))
+                            .catch(e => {
+                                setStatus('failed')
+                                console.log(e)
+                            })
                         }}
-                    >送信</button>
+                    >{status === 'sending' ? <span className='text-xl'>🔄</span> : '送信'}</button>
                 }
             </h2>
             <div className={`card-container ${expandIndex === cardIndex ? 'show mx-5 mb-3' : 'm-0'}`}>
+                {expandIndex === cardIndex &&
+                    <Youtube
+                        videoId={content.id}
+                        opts={{}}
+                        containerClassName={"youtubeContainer"}
+                    />
+                }
                 <Row l='STAGE' m={content.stage === 5 ? 'READY' : content.stage}/>
                 <Row l='ID' m={<a href={`https://www.youtube.com/watch?v=${content.id}`} target='_blank' className='border-b-2'>{content.id}</a>}/>
                 <Row l='オリジナル' m={content.is_original_music ? 'YES' : 'NO'}/>
@@ -128,32 +169,36 @@ const Card = ({
                     ?   <Row l='リクエスト' m={<a href={`https://twitter.com/${content.contributor_twitter_id}`} target='_blank' className='border-b-2'>@{content.contributor_twitter_id}</a>}/>
                     :   <Row l='リクエスト' m='匿名'/>
                 }
-                <Row l='更新日時' m={request.updated_at}/>
-                {request.stage < 5 && 
-                    <Link to={`/request_add_video?id=${request.id}`}>
+                <Row l='更新日時' m={content.updated_at}/>
+                {content.stage < 5 && 
+                    <Link to={`/request_add_video?id=${content.id}`}>
                         <button className='mx-auto mt-3 block px-4 py-2 bg-red-600 sm:hover:bg-red-500 text-white shadow rounded-full'>データを追加！</button>
                     </Link>}
-                {request.stage === 5 && 
-                    <Link to={`/request_add_video?id=${request.id}`}>
+                {content.stage === 5 && 
+                    <Link to={`/request_add_video?id=${content.id}`}>
                         <button className='mx-auto mt-3 block px-4 py-2 bg-red-600 sm:hover:bg-red-500 text-white shadow rounded-full'>編集！</button>
                     </Link>}
-                {request.is_issue && <button className='mx-auto mt-3 block px-4 py-2 bg-yellow-500 text-white shadow'>確認中</button>}
+                {content.is_issue && <button className='mx-auto mt-3 block px-4 py-2 bg-yellow-500 text-white shadow'>確認中</button>}
                 <div className='flex justify-around'>
-                    {request.stage === 5 && getContributorTwitterId() === 'VtuberMusicCom' &&
+                    {content.stage === 5 && getContributorTwitterId() === 'VtuberMusicCom' &&
                         <button
                             className='mt-3 block px-4 py-2 bg-blue-500 sm:hover:bg-blue-400 text-white shadow rounded-full'
                             onClick={() => {
+                                setStatus('sending')
                                 upsertVideo(content)
                                 .then(res => {
                                     console.log(res)
                                     content.is_done = true
-                                    upsertRequestVideo(content).then(() => fetchRemoteRequestVideos())
+                                    upsertRequestVideo(content).then(() => setStatus('success'))
                                 })
-                                .catch(e => console.log(e))
+                                .catch(e => {
+                                    setStatus('failed')
+                                    console.log(e)
+                                })
                             }}
                         >問題なし！</button>
                     }
-                    {!request.is_issue && getContributorTwitterId() &&
+                    {!content.is_issue && getContributorTwitterId() &&
                         <button
                             className='mt-3 block px-4 py-2 bg-red-600 sm:hover:bg-red-500 text-white shadow rounded-full'
                             onClick={() => {

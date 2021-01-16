@@ -145,7 +145,6 @@ const convArtistLess = artists => {
 }
 
 export const upsertVideo = (requestVideo) => {
-    console.log(requestVideo)
     return client.mutate({
         mutation: UPSERT_VIDEO,
         variables: {

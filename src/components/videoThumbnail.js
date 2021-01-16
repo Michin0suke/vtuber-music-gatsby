@@ -4,9 +4,9 @@ import { Link } from 'gatsby'
 import './videoThumbnail.css'
 
 export default ({ video, to, withHoverLink, className }) => {
-    if(!video.music?.title) {
-        console.log('alt属性が設定されていません。', video)
-    }
+    // if(!video.music?.title) {
+    //     console.log('alt属性が設定されていません。', video)
+    // }
     return(
         <div className={`${className}`}>
             <div className='relative'>
