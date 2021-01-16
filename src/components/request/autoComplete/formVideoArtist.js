@@ -52,6 +52,7 @@ const createAutoComplete = (requestVideo, remoteAllArtist, roleIndex, artistInde
     searchEngine: 'loose',
       // ハイライト
     highlight: true,
+    diacritics: false,
       // 最大表示数
     maxResults: 5,
       // 結果表示の詳細

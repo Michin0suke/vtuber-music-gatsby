@@ -98,7 +98,7 @@ export default ({ data: { artist }}) => {
     const singerVideoCount = artist.singer_videos.length + artist.childrenArtist.map(child=>child.singer_videos).flat().length
 
     return (
-    <div>
+    <div className='w-full'>
         <SEO
             title={`${artist.name}`}
             description={`${artist.name}${honorific}のプロフィールページです。${singerVideoCount > 0 ? `${singerVideoCount}本の歌ってみた動画が登録されています。` : ''}`}
@@ -211,7 +211,7 @@ export default ({ data: { artist }}) => {
                 </div>
             }
             <a
-                className='block mx-auto py-1 px-3 w-44 max-w-md border bg-white sm:hover:bg-gray-200 text-center'
+                className='block mx-auto py-1 px-3 mb-5 w-44 max-w-md border bg-white sm:hover:bg-gray-200 text-center'
                 href={`https://ws.formzu.net/dist/S956931/?importv=${artist.id}`}
             >編集リクエスト</a>
         </div>

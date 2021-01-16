@@ -16,6 +16,17 @@ import { allArtist } from '../queries/artist'
 import { allMusic } from '../queries/music'
 import { upsertRequestVideo } from '../queries/requestVideo'
 import Youtube from 'react-youtube'
+import { upsertArtistLess } from '../queries/mutate'
+
+// singerを全てmutationし、帰ってきたidが違ったらそれにする
+const syncArtist = (videoRequest) => {
+    const roles = ['mixers', 'off_vocals', 'arrangers']
+    roles.forEach(role => {
+        videoRequest[role].forEach(artist => {
+            upsertArtistLess(artist).then(artist => console.log(`success upsert`, artist))
+        })
+    })
+}
 
 const getContributorTwitterId = () => {
     if (typeof window === 'undefined') return null
@@ -212,8 +223,8 @@ export default ({ data: { allVideo }}) => {
     //     setContributorTwitterId(requestVideo.contributor_twitter_id)
     // }
 
-    const Choose = ({yes, no}) => (
-        <ul className='flex justify-around'>
+    const Choose = ({yes, no, className}) => (
+        <ul className={`flex justify-around ${className}`}>
             <li className='px-5 py-3 bg-blue-400 sm:hover:bg-blue-300 text-white rounded-lg cursor-pointer transform scale-90 shadow-lg' onClick={_=> setStep(no)}>あとで！</li>
             <li className='px-5 py-3 bg-red-500 sm:hover:bg-red-400 text-white rounded-lg cursor-pointer shadow-lg' onClick={_=>setStep(yes)}>いいよ！</li>
         </ul>
@@ -524,7 +535,24 @@ export default ({ data: { allVideo }}) => {
         },
         video_artist_ask: {
             message: 'MIXとかしてる人を教えてくれる？',
-            children: <Choose yes={steps.VIDEO_ARTIST_INPUT} no={steps.TWITTER_ASK_LAST}/>,
+            children: 
+                <div>
+                    <Choose yes={steps.VIDEO_ARTIST_INPUT} no={steps.TWITTER_ASK_LAST} className='mb-5'/>
+                    <div>
+                        <button
+                            className='mx-auto block px-4 py-2 bg-white sm:hover:bg-gray-50 text-red-600 border border-red-600 shadow rounded-full'
+                            onClick={() => {
+                                updateRequestVideo(v => {
+                                    setStep(steps.TWITTER_ASK_LAST)
+                                    if (v.stage < 5) v.stage = 5
+                                    syncArtist(v)
+                                    upsertRequestVideo(v)
+                                    return v
+                                })
+                            }}
+                        >概要欄にMIXとか書いてない！</button>
+                    </div>
+                </div>,
             qa: [
                 {
                     q: 'MIXとか良くわからない...',
@@ -643,7 +671,7 @@ export default ({ data: { allVideo }}) => {
     // if (videoId && !videoIdList.includes(videoId)) window.location.href = `https://ws.formzu.net/dist/S31309131/?importv=${encodeURIComponent('https://youtu.be/' + videoId)}`
 
     return(
-        <div>
+        <div className='w-full'>
             <div className='max-w-2xl mx-auto bg-white h-full py-5'>
                 <StepButtons
                     requestVideo={requestVideo}
@@ -652,20 +680,24 @@ export default ({ data: { allVideo }}) => {
                     setStep={setStep}
                     stepToStage={stepToStage}
                     stageToStep={stageToStep}
+                    isEditMode={isEditMode}
                 />
                 <Heading className='mb-3 mx-3' text='動画を追加してみよう！'/>
 
-                {/* <div className={`flex ${Object.values(steps).indexOf(step) <= Object.values(steps).indexOf(steps.ORIGINAL_MUSIC_ASK) ? 'flex-col-reverse' : 'flex-col'}`}> */}
-                    <div className='px-4 mb-14'>
-                        <h2 className='mx-auto px-2 py-3 mb-5 leading-7 text-center border whitespace-pre-wrap'>
-                            {isEditMode && <div className='mb-4'><span className='py-1 px-1 mx-auto border border-red-500 text-red-600'>編集モード</span></div>}
-                            {step_elements[step].message}
-                            <p className='text-red-600'>
-                                {errorMessage}
-                            </p>
-                        </h2>
-                        {step_elements[step].children}
-                    </div>
+                <div className='px-4 mb-14'>
+                    <h2 className='mx-auto px-2 py-3 mb-5 leading-7 text-center border whitespace-pre-wrap'>
+                        {isEditMode && 
+                        <div className='mb-4'>
+                            <span className='py-1 px-1 mb-3 mx-auto border border-red-500 text-red-600'>編集モード</span>
+                            <p className='text-red-600'>※「決定」ボタンを押さないと変更が保存されません！</p>
+                        </div>}
+                        {step_elements[step].message}
+                        <p className='text-red-600'>
+                            {errorMessage}
+                        </p>
+                    </h2>
+                    {step_elements[step].children}
+                </div>
 
                 {(step === steps.INIT || step === steps.FIN) &&
                     <Link to={'/request_add_video_preview'}>
@@ -675,16 +707,15 @@ export default ({ data: { allVideo }}) => {
                     </Link>
                 }
 
-                    {step !== steps.INIT &&
-                        <div className='mb-10'>
-                            <Youtube
-                                videoId={requestVideo.id}
-                                opts={{}}
-                                containerClassName={"youtubeContainer"}
-                            />
-                        </div>
-                    }
-                {/* </div> */}
+                {step !== steps.INIT &&
+                    <div className='mb-10'>
+                        <Youtube
+                            videoId={requestVideo.id}
+                            opts={{}}
+                            containerClassName={"youtubeContainer"}
+                        />
+                    </div>
+                }
 
                 <ul className='mx-5'>
                     {
@@ -698,7 +729,7 @@ export default ({ data: { allVideo }}) => {
                 </ul>
 
                 {step !== steps.INIT && step !== steps.FIN &&
-                    <div>
+                    <div className='mb-10'>
                         <a href={`https://www.youtube.com/watch?v=${requestVideo.id}`} target='_blank' className='block mb-5'>
                             <button
                                 className='mx-auto block px-4 py-2 bg-red-600 sm:hover:bg-red-500 text-white shadow rounded-full'
@@ -714,6 +745,21 @@ export default ({ data: { allVideo }}) => {
                         >この動画の登録を中断する</button>
                         <p className='text-xs text-gray-400 text-center'>登録を中断しても、データは保存されるよ!</p>
                     </div>
+                }
+
+                {step !== steps.INIT && step !== steps.FIN &&
+                    <Link to={'/request_add_video_preview'}>
+                        <button
+                            className='mx-auto block px-4 py-2 mb-10 bg-red-600 sm:hover:bg-red-500 text-white shadow rounded-full'
+                        >リクエスト一覧</button>
+                    </Link>
+                }
+
+                {step === steps.INIT && getContributorTwitterId() &&
+                    <button
+                        className='mx-auto block px-4 py-2 bg-red-600 sm:hover:bg-red-500 text-white shadow rounded-full'
+                        onClick={() => setContributorTwitterId('')}
+                    >入力したTwitterID(@{getContributorTwitterId()})の訂正</button>
                 }
             </div>
         </div>

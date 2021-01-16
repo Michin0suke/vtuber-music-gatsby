@@ -31,7 +31,7 @@ export default ({ data: { music } }) => {
     
 
 return (
-<div>
+<div className='w-full'>
     <SEO
         title={music.title}
         description={`楽曲 ${music.title}(${creators.join('&')})のページです。${music.videos.length}本の歌ってみた動画が登録されています。`}

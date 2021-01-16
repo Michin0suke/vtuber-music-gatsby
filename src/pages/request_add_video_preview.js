@@ -62,7 +62,7 @@ export default () => {
     }, [isLoading])
 
     return (
-        <div>
+        <div className='w-full'>
             <div className='max-w-2xl mx-auto'>
                 {isLoading
                 ? <p className='text-center text-xl'>読み込み中...🤔</p>
@@ -119,7 +119,7 @@ const Card = ({
 }) => {
     const [status, setStatus] = useState(false)
     return (
-        <article className={`w-full mb-2 bg-white select-none rounded shadow-sm ${status === 'failed' ? 'border-4 border-red-500' : 'border'} ${status === 'success' ? 'hidden' : ''}`}>
+        <article className={`w-full mb-2 bg-white select-none rounded shadow-sm ${status === 'failed' ? 'border-4 border-red-500' : 'border'} ${status === 'success' || status === 'sending' ? 'hidden' : ''}`}>
             <h2 className={`relative cursor-pointer sm:hover:bg-red-50 px-5 leading-8 ${expandIndex === cardIndex && 'bg-red-100'}`}>
                 <span className='pr-2 text-red-600'>{content.stage}</span>
                 <span className='pr-2 text-gray-800'>{content.singers.map(i=>i.name).join(' & ')}</span>

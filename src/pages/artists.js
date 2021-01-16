@@ -60,7 +60,7 @@ export default ({ data: { allArtist, vtuberMusicIcon } }) => {
     }
 
     return (
-        <div>
+        <div className='w-full'>
             <SEO title='アーティスト一覧' description='アーティスト一覧のページです。' imgUrl={`https://vtuber-music.com${vtuberMusicIcon.childImageSharp.fixed.src}`}/>
             {/* <Breadcrumb type='artist'/> */}
             <p className='px-2 py-1 text-gray-500 text-xs'>{allArtist.nodes.filter(artist => artist.singer_videos.length !== 0).length}人のアーティストが登録されています。</p>

@@ -39,7 +39,13 @@ export default ({
                     updateRequestVideo={updateRequestVideo}
                 />
             ))}
-            { requestVideo.music.composers[0]?.name !== '' && requestVideo.music.lyricists[0]?.name !== '' &&
+            {!(
+                requestVideo.music.composers.find(i => i.name === '') ||
+                requestVideo.music.lyricists.find(i => i.name === '') ||
+                requestVideo.music.arrangers.find(i => i.name === '')
+            ) &&
+            requestVideo.music.composers.length > 0 &&
+            requestVideo.music.lyricists.length > 0 &&
                 <div>
                     <button
                         className='mx-auto block px-4 py-2 bg-red-600 sm:hover:bg-red-500 text-white shadow rounded-full'

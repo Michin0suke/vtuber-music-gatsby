@@ -118,7 +118,7 @@ export default ({ data: { video, allVideo }, setVideoPlayer }) => {
     }
     
     return (
-        <div>
+        <div className='w-full'>
             <SEO
                 title={`${video.music.title}`}
                 description={`${video.music.title}を${video.singers.map(a => a.name).join('さんと')}さんが歌っている動画です。`}

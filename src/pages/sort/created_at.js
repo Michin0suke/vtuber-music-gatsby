@@ -13,10 +13,9 @@ const IndexPage = ({ data: { allVideo, vtuberMusicIcon }}) => {
     const [sortSelected, setSortSelected] = useState(0)
 
     return (
-    <div>
+    <div className='w-full'>
         <SEO isTop imgUrl={`https://vtuber-music.com${vtuberMusicIcon.childImageSharp.fixed.src}`}/>
-        <p className='px-2 py-1 text-gray-500 text-xs'>Vtuberの歌ってみた動画をまとめたサイトです。</p>
-        {/* {allVideo.nodes.length}本の動画が登録されています。 */}
+        <p className='px-2 py-1 text-gray-500 text-xs'>Vtuberの歌ってみた動画をまとめたサイトです。{allVideo.totalCount}本の動画が登録されています。</p>
         <SortBar path='/sort/created_at'/>
 
         <InfiniteScroll
@@ -38,7 +37,8 @@ export default IndexPage
 
 export const query = graphql`
 {
-    allVideo(sort: {order: DESC, fields: created_at}, limit: 200) {
+    allVideo(sort: {order: DESC, fields: created_at}, limit: 300) {
+        totalCount
         nodes {
             id
             release_date
