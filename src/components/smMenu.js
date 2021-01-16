@@ -11,9 +11,9 @@ import Plus from './svg/plus'
 const Col = ({path, match, href, Img, imgStyle}) => (
     <li className='relative w-1/4 flex justify-center'>
             <div style={imgStyle}>
-                <Img color={path.split('/')[1] === match ? 'red' : '#555'} className='block h-full'/>
+                <Img color={path?.split('/')[1] === match ? 'red' : '#555'} className='block h-full'/>
             </div>
-            {/* <span className={`inline-block mx-auto text-xs ${path.split('/')[1] === match ? 'text-red-500' : 'text-gray-700'}`}>{text}</span> */}
+            {/* <span className={`inline-block mx-auto text-xs ${path?.split('/')[1] === match ? 'text-red-500' : 'text-gray-700'}`}>{text}</span> */}
         
             <Link to={href} className='absolute top-0 right-0 bottom:0 left-0 h-full w-full'/>
     </li>

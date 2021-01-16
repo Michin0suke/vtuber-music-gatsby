@@ -48,7 +48,7 @@ export default ({ children, path }) => {
       <Header/>
       <div className='flex w-full'>
         <PCMenuLeft path={path}/>
-        <main className={`z-10 relative w-full gb-white sm:bg-gray-50 ${path.split('/')[1] === 'video' ? 'video-page' : 'not-video-page'}`}>
+        <main className={`z-10 relative w-full gb-white sm:bg-gray-50 ${path?.split('/')[1] === 'video' ? 'video-page' : 'not-video-page'}`}>
           {videoPlayer}
           {childrenWithProps}
         </main>

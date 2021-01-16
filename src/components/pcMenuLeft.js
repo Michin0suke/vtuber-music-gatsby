@@ -12,9 +12,9 @@ const Row = ({ path, match, href, text, Img, imgClassName }) => (
     <li className='sm:hover:bg-gray-100 h-10'>
         <Link to={href} className='h-full py-3 flex items-center'>
             <div className='w-12'>
-                <Img color={path.split('/')[1] === match ? 'red' : '#333'} className={`mx-auto ${imgClassName}`}/>
+                <Img color={path?.split('/')[1] === match ? 'red' : '#333'} className={`mx-auto ${imgClassName}`}/>
             </div>
-            <span className={`text-sm ${path.split('/')[1] === match ? 'text-red-500' : 'text-gray-800'}`}>{text}</span>
+            <span className={`text-sm ${path?.split('/')[1] === match ? 'text-red-500' : 'text-gray-800'}`}>{text}</span>
         </Link>
     </li>
 )
