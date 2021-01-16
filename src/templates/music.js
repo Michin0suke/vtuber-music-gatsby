@@ -99,8 +99,8 @@ query($id: String!) {
             name
             profile_image {
                 childImageSharp {
-                    fluid {
-                        ...GatsbyImageSharpFluid_withWebp
+                    fluid(maxWidth: 80) {
+                        ...GatsbyImageSharpFluid
                     }
                 }
             }
@@ -110,8 +110,8 @@ query($id: String!) {
             name
             profile_image {
                 childImageSharp {
-                    fluid {
-                        ...GatsbyImageSharpFluid_withWebp
+                    fluid(maxWidth: 80) {
+                        ...GatsbyImageSharpFluid
                     }
                 }
             }
@@ -121,8 +121,8 @@ query($id: String!) {
             name
             profile_image {
                 childImageSharp {
-                    fluid {
-                        ...GatsbyImageSharpFluid_withWebp
+                    fluid(maxWidth: 80) {
+                        ...GatsbyImageSharpFluid
                     }
                 }
             }
@@ -134,8 +134,8 @@ query($id: String!) {
                 name
                 profile_image {
                     childImageSharp {
-                        fluid {
-                            ...GatsbyImageSharpFluid_withWebp
+                        fluid(maxWidth: 80) {
+                            ...GatsbyImageSharpFluid
                         }
                     }
                 }
@@ -146,8 +146,8 @@ query($id: String!) {
             }
             thumbnail_image {
                 childImageSharp {
-                    fluid {
-                        ...GatsbyImageSharpFluid_withWebp
+                    fluid(maxWidth: 300) {
+                        ...GatsbyImageSharpFluid
                     }
                     fixed(width: 600) {
                         ...GatsbyImageSharpFixed

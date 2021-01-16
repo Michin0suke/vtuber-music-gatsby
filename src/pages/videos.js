@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { graphql } from 'gatsby'
-import Layout from '../components/layout'
-import Breadcrumb from '../components/breadcrumb'
 import VideoCard from '../components/videoCard'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import SearchIcon from '../components/svg/search'
@@ -84,7 +82,7 @@ export const query = graphql`
                     childImageSharp {
                         id
                         fluid(maxWidth: 60) {
-                            ...GatsbyImageSharpFluid_withWebp
+                            ...GatsbyImageSharpFluid
                         }
                     }
                 }
@@ -110,8 +108,8 @@ export const query = graphql`
             thumbnail_image {
                 childImageSharp {
                     id
-                    fluid(maxWidth: 200) {
-                        ...GatsbyImageSharpFluid_withWebp
+                    fluid(maxWidth: 60) {
+                        ...GatsbyImageSharpFluid
                     }
                 }
             }

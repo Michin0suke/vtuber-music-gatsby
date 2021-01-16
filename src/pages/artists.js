@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { graphql } from 'gatsby'
 import Heading from '../components/heading'
-import Layout from '../components/layout'
 import InfiniteScroll from 'react-infinite-scroll-component';
-import Breadcrumb from '../components/breadcrumb'
 import ArtistCard from '../components/artistCard'
 import SEO from '../components/seo'
 import SearchIcon from '../components/svg/search'
@@ -109,8 +107,8 @@ export const query = graphql`
             birthday
             profile_image {
                 childImageSharp {
-                    fluid {
-                        ...GatsbyImageSharpFluid_withWebp
+                    fluid(maxWidth: 60) {
+                        ...GatsbyImageSharpFluid
                     }
                 }
             }
@@ -124,7 +122,7 @@ export const query = graphql`
     }
     vtuberMusicIcon:file(base: {eq: "vtuber-music-icon-for-ogp.png"}) {
         childImageSharp {
-            fixed(width: 500) {
+            fixed(width: 300) {
                 src
             }
         }

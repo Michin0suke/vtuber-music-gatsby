@@ -3,12 +3,10 @@ import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import { format, differenceInYears } from 'date-fns';
 import SEO from '../components/seo'
-import Layout from '../components/layout'
 import ArtistCard from '../components/artistCard'
 import ProfileImg from '../components/profileImage'
 import Heading from '../components/heading'
 import VideoCard from '../components/videoCard'
-import Breadcrumb from '../components/breadcrumb'
 import ArtistCardLinks from '../components/artistLinks'
 import MusicTitle from '../components/musicTitle'
 
@@ -95,20 +93,6 @@ export default ({ data: { artist }}) => {
     if (isGroup) artistType = 'グループ'
 
     let honorific = isGroup ? '' : 'さん'
-
-    // let ringColorStyle = ''
-    // if (withSexColor) {
-    //     switch(artist.sex) {
-    //         case 'male':
-    //             ringColorStyle += 'border-2 border-blue-500'
-    //             break;
-    //         case 'female':
-    //             ringColorStyle += 'border-2 border-pink-500'
-    //             break
-    //         default:
-    //             ringColorStyle += 'border-2 border-white'
-    //     }
-    // }
 
     // 歌っている動画の本数(子も含む)
     const singerVideoCount = artist.singer_videos.length + artist.childrenArtist.map(child=>child.singer_videos).flat().length
@@ -266,21 +250,18 @@ query($id: String!){
         image_url_profile_header_source_url
         profile_image {
             childImageSharp {
-                fluid {
-                    ...GatsbyImageSharpFluid_withWebp
+                fluid(maxWidth: 80) {
+                    ...GatsbyImageSharpFluid
                 }
-                fixed(width: 300) {
+                fixed(width: 200) {
                     ...GatsbyImageSharpFixed
                 }
             }
         }
         header_image {
             childImageSharp {
-                fluid {
-                    ...GatsbyImageSharpFluid_withWebp
-                }
-                fixed {
-                    ...GatsbyImageSharpFixed
+                fluid(maxHeight: 200) {
+                    ...GatsbyImageSharpFluid
                 }
             }
         }
@@ -289,8 +270,8 @@ query($id: String!){
             name
             profile_image {
                 childImageSharp {
-                    fluid {
-                        ...GatsbyImageSharpFluid_withWebp
+                    fluid(maxWidth: 80) {
+                        ...GatsbyImageSharpFluid
                     }
                 }
             }
@@ -308,16 +289,16 @@ query($id: String!){
                     name
                     profile_image {
                         childImageSharp {
-                            fluid {
-                                ...GatsbyImageSharpFluid_withWebp
+                            fluid(maxWidth: 80) {
+                                ...GatsbyImageSharpFluid
                             }
                         }
                     }
                 }
                 thumbnail_image {
                     childImageSharp {
-                        fluid {
-                            ...GatsbyImageSharpFluid_withWebp
+                        fluid(maxWidth: 300) {
+                            ...GatsbyImageSharpFluid
                         }
                     }
                 }
@@ -328,8 +309,8 @@ query($id: String!){
             name
             profile_image {
                 childImageSharp {
-                    fluid {
-                        ...GatsbyImageSharpFluid_withWebp
+                    fluid(maxWidth: 80) {
+                        ...GatsbyImageSharpFluid
                     }
                 }
             }
@@ -339,8 +320,8 @@ query($id: String!){
             name
             profile_image {
                 childImageSharp {
-                    fluid {
-                        ...GatsbyImageSharpFluid_withWebp
+                    fluid(maxWidth: 80) {
+                        ...GatsbyImageSharpFluid
                     }
                 }
             }
@@ -372,16 +353,16 @@ query($id: String!){
                 name
                 profile_image {
                     childImageSharp {
-                        fluid {
-                            ...GatsbyImageSharpFluid_withWebp
+                        fluid(maxWidth: 80) {
+                            ...GatsbyImageSharpFluid
                         }
                     }
                 }
             }
             thumbnail_image {
                 childImageSharp {
-                    fluid {
-                        ...GatsbyImageSharpFluid_withWebp
+                    fluid(maxWidth: 300) {
+                        ...GatsbyImageSharpFluid
                     }
                 }
             }
@@ -401,16 +382,16 @@ query($id: String!){
                 name
                 profile_image {
                     childImageSharp {
-                        fluid {
-                            ...GatsbyImageSharpFluid_withWebp
+                        fluid(maxWidth: 80) {
+                            ...GatsbyImageSharpFluid
                         }
                     }
                 }
             }
             thumbnail_image {
                 childImageSharp {
-                    fluid {
-                        ...GatsbyImageSharpFluid_withWebp
+                    fluid(maxWidth: 300) {
+                        ...GatsbyImageSharpFluid
                     }
                 }
             }
@@ -430,16 +411,16 @@ query($id: String!){
                 name
                 profile_image {
                     childImageSharp {
-                        fluid {
-                            ...GatsbyImageSharpFluid_withWebp
+                        fluid(maxWidth: 80) {
+                            ...GatsbyImageSharpFluid
                         }
                     }
                 }
             }
             thumbnail_image {
                 childImageSharp {
-                    fluid {
-                        ...GatsbyImageSharpFluid_withWebp
+                    fluid(maxWidth: 300) {
+                        ...GatsbyImageSharpFluid
                     }
                 }
             }
@@ -459,16 +440,16 @@ query($id: String!){
                 name
                 profile_image {
                     childImageSharp {
-                        fluid {
-                            ...GatsbyImageSharpFluid_withWebp
+                        fluid(maxWidth: 80) {
+                            ...GatsbyImageSharpFluid
                         }
                     }
                 }
             }
             thumbnail_image {
                 childImageSharp {
-                    fluid {
-                        ...GatsbyImageSharpFluid_withWebp
+                    fluid(maxWidth: 300) {
+                        ...GatsbyImageSharpFluid
                     }
                 }
             }

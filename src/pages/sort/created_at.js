@@ -1,13 +1,11 @@
 import React, { useState } from "react"
-import { graphql } from "gatsby"
-import SEO from '../components/seo'
-import Layout from "../components/layout"
-import VideoCard from '../components/videoCard'
+import { graphql, navigate } from "gatsby"
+import SEO from '../../components/seo'
+import VideoCard from '../../components/videoCard'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import './index.css'
 import InfiniteScroll from 'react-infinite-scroll-component'
-import SortBar from '../components/sortBar'
+import SortBar from '../../components/sortBar'
 
 const IndexPage = ({ data: { allVideo, vtuberMusicIcon }}) => {
     const [showVideoIndex, setShowVideoIndex] = useState(24)
@@ -18,14 +16,8 @@ const IndexPage = ({ data: { allVideo, vtuberMusicIcon }}) => {
     <div>
         <SEO isTop imgUrl={`https://vtuber-music.com${vtuberMusicIcon.childImageSharp.fixed.src}`}/>
         <p className='px-2 py-1 text-gray-500 text-xs'>Vtuberの歌ってみた動画をまとめたサイトです。</p>
-        {/* {allVideoSortByReleaseDate.nodes.length}本の動画が登録されています。 */}
-        <SortBar path='/'/>
-
-        <div className='sm:px-2 flex flex-wrap justify-between'>
-            {showVideos.slice(0, 12).map((video, key) => (
-                <VideoCard video={video} className='mb-5 sm:px-1 w-full sm:w-1/2 md:w-1/3 xl:w-1/4' key={key} withPublishDate/>
-            ))}
-        </div>
+        {/* {allVideo.nodes.length}本の動画が登録されています。 */}
+        <SortBar path='/sort/created_at'/>
 
         <InfiniteScroll
             dataLength={showVideoIndex - 12} //This is important field to render the next data
@@ -46,7 +38,7 @@ export default IndexPage
 
 export const query = graphql`
 {
-    allVideo(sort: {order: DESC, fields: release_date}, limit: 200) {
+    allVideo(sort: {order: DESC, fields: created_at}, limit: 200) {
         nodes {
             id
             release_date

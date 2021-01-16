@@ -198,30 +198,6 @@ export const pageQuery = graphql`
     allVideo {
         nodes {
             id
-            # custom_music_name
-            # music {
-            #     id
-            #     title
-            # }
-            # singers {
-            #     id
-            #     name
-            #     profile_image {
-            #         childImageSharp {
-            #             fluid {
-            #                 ...GatsbyImageSharpFluid_withWebp
-            #             }
-            #         }
-            #     }
-            # }
-            # thumbnail_image {
-            #     id
-            #     childImageSharp {
-            #         fluid {
-            #             ...GatsbyImageSharpFluid_withWebp
-            #         }
-            #     }
-            # }
         }
     }
     video(id: {eq: $id}) {
@@ -237,8 +213,8 @@ export const pageQuery = graphql`
                 name
                 profile_image {
                     childImageSharp {
-                        fluid {
-                            ...GatsbyImageSharpFluid_withWebp
+                        fluid(maxWidth: 80) {
+                            ...GatsbyImageSharpFluid
                         }
                     }
                 }
@@ -251,8 +227,8 @@ export const pageQuery = graphql`
                 name
                 profile_image {
                     childImageSharp {
-                        fluid {
-                            ...GatsbyImageSharpFluid_withWebp
+                        fluid(maxWidth: 80) {
+                            ...GatsbyImageSharpFluid
                         }
                     }
                 }
@@ -265,8 +241,8 @@ export const pageQuery = graphql`
                 name
                 profile_image {
                     childImageSharp {
-                        fluid {
-                            ...GatsbyImageSharpFluid_withWebp
+                        fluid(maxWidth: 80) {
+                            ...GatsbyImageSharpFluid
                         }
                     }
                 }
@@ -284,8 +260,8 @@ export const pageQuery = graphql`
             name
             profile_image {
                 childImageSharp {
-                    fluid {
-                        ...GatsbyImageSharpFluid_withWebp
+                    fluid(maxWidth: 80) {
+                        ...GatsbyImageSharpFluid
                     }
                 }
             }
@@ -306,8 +282,8 @@ export const pageQuery = graphql`
                     name
                     profile_image {
                         childImageSharp {
-                            fluid {
-                                ...GatsbyImageSharpFluid_withWebp
+                            fluid(maxWidth: 80) {
+                                ...GatsbyImageSharpFluid
                             }
                         }
                     }
@@ -315,8 +291,8 @@ export const pageQuery = graphql`
                 thumbnail_image {
                     id
                     childImageSharp {
-                        fluid {
-                            ...GatsbyImageSharpFluid_withWebp
+                        fluid(maxWidth: 300) {
+                            ...GatsbyImageSharpFluid
                         }
                     }
                 }
@@ -324,140 +300,35 @@ export const pageQuery = graphql`
             children:childrenArtist {
                 singer_videos {
                     id
-                    # custom_music_name
-                    # music {
-                    #     id
-                    #     title
-                    # }
                     singers {
                         id
-                        # name
-                        # profile_image {
-                        #     childImageSharp {
-                        #         fluid {
-                        #             ...GatsbyImageSharpFluid_withWebp
-                        #         }
-                        #     }
-                        # }
                     }
-                    # thumbnail_image {
-                    #     id
-                    #     childImageSharp {
-                    #         id
-                    #         fluid {
-                    #             ...GatsbyImageSharpFluid_withWebp
-                    #         }
-                    #     }
-                    # }
                 }
                 parents {
                     id
-                    # name
-                    # profile_image {
-                    #     childImageSharp {
-                    #         fluid {
-                    #             ...GatsbyImageSharpFluid_withWebp
-                    #         }
-                    #     }
-                    # }
                     singer_videos {
                         id
-                        # custom_music_name
-                        # music {
-                        #     id
-                        #     title
-                        # }
                         singers {
                             id
-                            # name
-                            # profile_image {
-                            #     childImageSharp {
-                            #         fluid {
-                            #             ...GatsbyImageSharpFluid_withWebp
-                            #         }
-                            #     }
-                            # }
                         }
-                        # thumbnail_image {
-                        #     id
-                        #     childImageSharp {
-                        #         id
-                        #         fluid {
-                        #             ...GatsbyImageSharpFluid_withWebp
-                        #         }
-                        #     }
-                        # }
                     }
                 }
             }
             parents {
                 id
-                # name
-                # profile_image {
-                #     childImageSharp {
-                #         fluid {
-                #             ...GatsbyImageSharpFluid_withWebp
-                #         }
-                #     }
-                # }
                 singer_videos {
                     id
-                    # custom_music_name
-                    # music {
-                    #     id
-                    #     title
-                    # }
                     singers {
                         id
-                        # name
-                        # profile_image {
-                        #     childImageSharp {
-                        #         fluid {
-                        #             ...GatsbyImageSharpFluid_withWebp
-                        #         }
-                        #     }
-                        # }
                     }
-                    # thumbnail_image {
-                    #     id
-                    #     childImageSharp {
-                    #         id
-                    #         fluid {
-                    #             ...GatsbyImageSharpFluid_withWebp
-                    #         }
-                    #     }
-                    # }
                 }
                 children:childrenArtist {
                     id
-                    # name
                     singer_videos {
                         id
-                        # custom_music_name
-                        # music {
-                        #     id
-                        #     title
-                        # }
                         singers {
                             id
-                            # name
-                            # profile_image {
-                            #     childImageSharp {
-                            #         fluid {
-                            #             ...GatsbyImageSharpFluid_withWebp
-                            #         }
-                            #     }
-                            # }
                         }
-                        # thumbnail_image {
-                        #     id
-                        #     childImageSharp {
-                        #         id
-                        #         fluid {
-                        #             ...GatsbyImageSharpFluid_withWebp
-                        #         }
-                        #     }
-                        # }
                     }
                 }
             }
@@ -467,8 +338,8 @@ export const pageQuery = graphql`
             name
             profile_image {
                 childImageSharp {
-                    fluid {
-                        ...GatsbyImageSharpFluid_withWebp
+                    fluid(maxWidth: 80) {
+                        ...GatsbyImageSharpFluid
                     }
                 }
             }
@@ -481,8 +352,8 @@ export const pageQuery = graphql`
             name
             profile_image {
                 childImageSharp {
-                    fluid {
-                        ...GatsbyImageSharpFluid_withWebp
+                    fluid(maxWidth: 80) {
+                        ...GatsbyImageSharpFluid
                     }
                 }
             }
@@ -495,8 +366,8 @@ export const pageQuery = graphql`
             name
             profile_image {
                 childImageSharp {
-                    fluid {
-                        ...GatsbyImageSharpFluid_withWebp
+                    fluid(maxWidth: 80) {
+                        ...GatsbyImageSharpFluid
                     }
                 }
             }
@@ -511,8 +382,8 @@ export const pageQuery = graphql`
             id
             childImageSharp {
                 id
-                fluid {
-                    ...GatsbyImageSharpFluid_withWebp
+                fluid(maxWidth: 600) {
+                    ...GatsbyImageSharpFluid
                 }
                 fixed(width: 600) {
                     ...GatsbyImageSharpFixed
