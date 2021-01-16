@@ -52,7 +52,7 @@ const createAutoComplete = (requestVideo, remoteAllMusic, updateRequestVideo, st
         source.setAttribute('id', `#autoComplete-list-music-title`);
         source.classList.add('relative')
       },
-      destination: document.querySelector(`#autoComplete-music-title`),
+      destination: () => document.querySelector(`#autoComplete-music-title`),
       position: 'afterend',
       element: 'ul'
     },

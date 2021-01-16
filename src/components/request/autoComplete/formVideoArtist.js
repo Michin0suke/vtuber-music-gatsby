@@ -60,7 +60,7 @@ const createAutoComplete = (requestVideo, remoteAllArtist, roleIndex, artistInde
       container: (source) => {
         source.setAttribute('id', `autoComplete-list-video-artist-${roleIndex}-${artistIndex}-${artistElement.en}`);
       },
-      destination: document.querySelector(`#autoComplete-list-container-video-artist-${roleIndex}-${artistIndex}-${artistElement.en}`),
+      destination: () => document.querySelector(`#autoComplete-list-container-video-artist-${roleIndex}-${artistIndex}-${artistElement.en}`),
       position: 'afterend',
       element: 'ul'
     },

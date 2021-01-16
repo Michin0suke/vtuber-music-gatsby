@@ -7,6 +7,7 @@ module.exports = {
     siteUrl: `https://vtuber-music.com`,
   },
   plugins: [
+    `gatsby-plugin-netlify-cache`,
     '@bumped-inc/gatsby-plugin-optional-chaining',
     `gatsby-plugin-postcss`,
     {

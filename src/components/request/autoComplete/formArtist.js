@@ -63,7 +63,7 @@ const createAutoComplete = (requestVideo, remoteAllArtist, singerIndex, singerEl
       container: (source) => {
         source.setAttribute('id', `autoComplete-list-artist-${singerIndex}-${singerElement}`);
       },
-      destination: document.querySelector(`#autoComplete-artist-${singerIndex}-${singerElement}`),
+      destination: () => document.querySelector(`#autoComplete-artist-${singerIndex}-${singerElement}`),
       position: 'afterend',
       element: 'ul'
     },
