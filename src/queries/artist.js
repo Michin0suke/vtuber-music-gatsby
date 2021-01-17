@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 import { client } from './client';
 
-const ALL_ARTIST = gql`
+const ALL_ARTIST_FULL = gql`
 query {
     allArtist {
       id
@@ -15,6 +15,17 @@ query {
 }
 `
 ;
+
+const ALL_ARTIST_ONLY_COMPLETE = gql`
+query {
+    allArtist {
+      id
+      name
+      name_ruby
+      id_twitter
+    }
+}
+`
 ;
 
 const FIND_ARTIST_BY_ID = gql`
@@ -48,7 +59,12 @@ export const queryArtist = id => client.query({
 });
 
 export const allArtist = () => client.query({
-  query: ALL_ARTIST,
+  query: ALL_ARTIST_FULL,
+})
+;
+
+export const allArtistOnlyComplete = () => client.query({
+  query: ALL_ARTIST_ONLY_COMPLETE,
 })
 ;
 

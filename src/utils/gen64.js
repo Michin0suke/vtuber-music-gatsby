@@ -14,7 +14,7 @@ const gen64 = () => {
         let cn = chars.length;
         let str = [];
         let a1 , a2;
-        while (num != 0) {
+        while (num !== 0) {
             a1 = parseInt(num / cn);
             a2 = num - (a1 * cn);
             str.unshift(chars.substr(a2,1));
@@ -24,22 +24,19 @@ const gen64 = () => {
         res = (!res) ? '0' : res
         return res;
     }
-
-    // console.log(encode(range64.min))
-    // console.log(encode(range64.max))
     
-    const decode = (num) => {
-        let char2 = {};
-        let cn = chars.length;
-        for (let i=0; i< cn; i++) {
-            char2[chars[i]] = i;
-        }
-        let str = 0;
-        for (let i=0; i<num.toString().length; i++) {
-            str += char2[num.substr((i+1)*-1, 1)] * Math.pow(cn, i);
-        }
-        return str;
-    }
+    // const decode = (num) => {
+    //     let char2 = {};
+    //     let cn = chars.length;
+    //     for (let i=0; i< cn; i++) {
+    //         char2[chars[i]] = i;
+    //     }
+    //     let str = 0;
+    //     for (let i=0; i<num.toString().length; i++) {
+    //         str += char2[num.substr((i+1)*-1, 1)] * Math.pow(cn, i);
+    //     }
+    //     return str;
+    // }
 
     const randomInt = Math.random() * (range64.max - range64.min) + range64.min
     return encode(randomInt)

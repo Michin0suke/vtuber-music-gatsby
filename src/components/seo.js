@@ -1,9 +1,23 @@
 import React from "react"
 import { Helmet } from "react-helmet"
+import { useStaticQuery } from 'gatsby'
 
-function SEO({ description, lang, meta, title, url, imgUrl, isTop, isLargeCard}) {
+function SEO({ description, lang, title, url, imgUrl, isTop, isLargeCard, isFollow }) {
   const metaTitle = isTop ? `Vtuber Music | バーチャルYouTuberの歌ってみた動画まとめ` : `${title} | Vtuber Music`
   const metaDescription = isTop ? `Vtuberの歌ってみた動画をまとめたサイトです。` : description
+
+  const { vtuberMusicIcon } = useStaticQuery(
+    graphql`
+      query {
+        vtuberMusicIcon:file(base: {eq: "vtuber-music-icon-for-ogp.png"}) {
+          childImageSharp {
+              fixed(width: 300) {
+                  src
+              }
+          }
+        }
+      }
+    `)
 
   return (
     <Helmet
@@ -34,7 +48,7 @@ function SEO({ description, lang, meta, title, url, imgUrl, isTop, isLargeCard})
         },
         {
           property: `og:image`,
-          content: imgUrl || '',
+          content: imgUrl || vtuberMusicIcon.childImageSharp.fixed.src,
         },
         {
           name: `twitter:card`,
@@ -42,7 +56,7 @@ function SEO({ description, lang, meta, title, url, imgUrl, isTop, isLargeCard})
         },
         {
           name: `twitter:creator`,
-          content: `@VtuberMusicCom` || ``,
+          content: `@VtuberMusicCom`,
         },
         {
           name: `twitter:title`,
@@ -52,6 +66,10 @@ function SEO({ description, lang, meta, title, url, imgUrl, isTop, isLargeCard})
           name: `twitter:description`,
           content: metaDescription,
         },
+        isFollow ? {} : {
+          name: `robots`,
+          content: `noindex`
+        }
       ]}
     >
       <script data-ad-client="ca-pub-5595803406159604" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

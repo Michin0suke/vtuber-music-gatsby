@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'gatsby'
-import Layout from '../components/layout'
 import { requestVideos, upsertRequestVideo } from '../queries/requestVideo'
 import { upsertVideo } from '../queries/video'
 import './request_add_video_preview.css'
@@ -19,40 +18,45 @@ const Row = ({l, m, r}) => (
     </div>
 )
 
+const parseOnce = 20
+
 export default () => {
-    const [remoteRequestVideosAll, setRemoteRequestVideosAll] = useState([])
     const [remoteRequestVideos, setRemoteRequestVideos] = useState([])
     const [expandIndex, setExpandIndex] = useState(false)
     const [isLoading, setIsLoading] = useState(true)
     const [contents, setContents] = useState([])
     const [contentsCounter, setContentsCounter] = useState(0)
+    const [remoteRequestVideosCount, setRemoteRequestVideoCount] = useState(0)
 
     const addContents = (requestVideos, isFresh) => {
         const newContents = isFresh ? [] : contents.slice()
-        const range = 50
-        requestVideos
-            .slice(contentsCounter * range, (contentsCounter + 1) * range)
-            .forEach(requestVideo => {
-                try {
-                    const parsedContent = JSON.parse(requestVideo.content)
-                    newContents.push(parsedContent)
-                } catch(e) {
-                    console.log(`failed parse content: ${requestVideo.content}`)
-                    console.log(e)
-                }
-            })
-        setContentsCounter(contentsCounter + 1)
-        setContents(newContents)
+        Promise.all(
+            requestVideos
+                .slice(contentsCounter * parseOnce, (contentsCounter + 1) * parseOnce)
+                .map(async requestVideo => {
+                    try {
+                        const parsedContent = JSON.parse(requestVideo.content)
+                        parsedContent.updated_at = requestVideo.updated_at
+                        newContents.push(parsedContent)
+                    } catch(e) {
+                        console.log(`failed parse content: ${requestVideo.content}`)
+                        console.log(e)
+                    }
+                })
+        ).then(() => {
+            setContents(newContents)
+            setContentsCounter(contentsCounter + 1)
+        })
     }
 
-    const fetchRemoteRequestVideos = () => {
+    const fetchRemoteRequestVideos = async () => {
         requestVideos()
-            .then(result => result.data?.requestVideos)
-            .then(requestVideos => {
-                setRemoteRequestVideosAll(requestVideos)
-                setRemoteRequestVideos(requestVideos.filter(i=>!i.is_done))
+            .then(result => {
+                const { requestVideos, requestVideosCount } = result.data
+                setRemoteRequestVideoCount(requestVideosCount)
+                setRemoteRequestVideos(requestVideos)
+                addContents(requestVideos, true)
                 setIsLoading(false)
-                addContents(requestVideos.filter(i=>!i.is_done), true)
             })
     }
 
@@ -66,7 +70,7 @@ export default () => {
             <div className='max-w-2xl mx-auto'>
                 {isLoading
                 ? <p className='text-center text-xl'>読み込み中...🤔</p>
-                : <p className='text-sm text-gray-600 leading-6'>{remoteRequestVideos.length}件の待機中リクエストがあります。<span className='text-gray-400'>総リクエスト数:{remoteRequestVideosAll.length}件</span></p>}
+                : <p className='text-sm text-gray-600 leading-6'>{remoteRequestVideos.length}件の待機中リクエストがあります。<span className='text-gray-400'>総リクエスト数:{remoteRequestVideosCount}件</span></p>}
                 
                 <button className='block mx-auto text-3xl' onClick={() => {
                     setContentsCounter(0)
@@ -74,7 +78,7 @@ export default () => {
                 }}>🔄</button>
 
                 <InfiniteScroll
-                    dataLength={contentsCounter * 50} //This is important field to render the next data
+                    dataLength={contentsCounter * parseOnce} //This is important field to render the next data
                     next={() => addContents(remoteRequestVideos)}
                     hasMore={remoteRequestVideos.length > contents.length}
                     className='sm:px-2 flex flex-wrap justify-start'
@@ -119,12 +123,19 @@ const Card = ({
 }) => {
     const [status, setStatus] = useState(false)
     return (
-        <article className={`w-full mb-2 bg-white select-none rounded shadow-sm ${status === 'failed' ? 'border-4 border-red-500' : 'border'} ${status === 'success' || status === 'sending' ? 'hidden' : ''}`}>
+        <article className={`w-full mb-2 bg-white select-none rounded overflow-hidden shadow-sm ${status === 'failed' ? 'border-4 border-red-500' : 'border'} ${status === 'success' || status === 'sending' ? 'hidden' : ''}`}>
             <h2 className={`relative cursor-pointer sm:hover:bg-red-50 px-5 leading-8 ${expandIndex === cardIndex && 'bg-red-100'}`}>
+                <div className='absolute left-0 right-0 h-full w-3 flex flex-col'>
+                    <span className={`h-full w-3 ${content.mixers.length > 0 && 'bg-gray-200'}`}/>
+                    <span className={`h-full w-3 ${content.off_vocals.length > 0 && 'bg-gray-200'}`}/>
+                    <span className={`h-full w-3 ${content.arrangers.length > 0 && 'bg-gray-200'}`}/>
+                </div>
                 <span className='pr-2 text-red-600'>{content.stage}</span>
                 <span className='pr-2 text-gray-800'>{content.singers.map(i=>i.name).join(' & ')}</span>
                 <span className='pr-2 text-gray-500'>{content.music.title}</span>
-                {content.is_issue && <span className='inline-block right-0 bg-yellow-500 h-3 w-3'/>}
+                {content.is_original_music && <span className='inline-block right-0 bg-blue-500 h-3 w-3'/>}
+                {!content.contributor_twitter_id && <span className='inline-block right-0 bg-yellow-500 h-3 w-3'/>}
+                {content.is_issue && <span className='inline-block right-0 bg-red-600 h-3 w-3'/>}
                 <div className='absolute top-0 left-0 w-full h-full' onClick={() => setExpandIndex(cardIndex)}/>
                 {content.stage === 5 && getContributorTwitterId() === 'VtuberMusicCom' &&
                     <button

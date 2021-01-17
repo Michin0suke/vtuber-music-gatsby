@@ -13,6 +13,7 @@ const REQUEST_VIDEOS = gql`
     updated_at
     created_at
   }
+  requestVideosCount
 }
 `
 

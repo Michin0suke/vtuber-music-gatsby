@@ -7,14 +7,13 @@ import "slick-carousel/slick/slick-theme.css";
 import InfiniteScroll from 'react-infinite-scroll-component'
 import SortBar from '../../components/sortBar'
 
-const IndexPage = ({ data: { allVideo, vtuberMusicIcon }}) => {
+const IndexPage = ({ data: { allVideo }}) => {
     const [showVideoIndex, setShowVideoIndex] = useState(24)
     const [showVideos, setShowVideos] = useState(allVideo.nodes)
-    const [sortSelected, setSortSelected] = useState(0)
 
     return (
     <div className='w-full'>
-        <SEO isTop imgUrl={`https://vtuber-music.com${vtuberMusicIcon.childImageSharp.fixed.src}`}/>
+        <SEO isTop isFollow/>
         <p className='px-2 py-1 text-gray-500 text-xs'>Vtuberの歌ってみた動画をまとめたサイトです。{allVideo.totalCount}本の動画が登録されています。</p>
         <SortBar path='/sort/created_at'/>
 

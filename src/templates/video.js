@@ -1,17 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { graphql, Link } from 'gatsby'
-import Layout from '../components/layout'
 import ArtistCard from '../components/artistCard'
 import VideoCard from '../components/videoCard'
-import Breadcrumb from '../components/breadcrumb'
 import YouTubePlayer from '../components/youtube-player'
-import Heading, { HeadingH2 } from '../components/heading'
+import Heading from '../components/heading'
 import MusicTitle from '../components/musicTitle'
 import SEO from '../components/seo'
 
 export default ({ data: { video, allVideo }, setVideoPlayer }) => {
-    const [nextVideoId, setNextVideoId] = useState(undefined)
-    const [nextVideoChoicesId, setNextVideoChoicesId] = useState([])
     const [sameSingerVideos, setSameSingerVideos] = useState([])
 
     const setVideoPlayerAsync = async () => {
@@ -30,16 +26,14 @@ export default ({ data: { video, allVideo }, setVideoPlayer }) => {
         decideNextVideoId(video, allVideo)
 
         const sameSingerVideos = video.singers
-            .map(singer => (
-                singer.singer_videos)
-            )
+            .map(singer => singer.singer_videos)
             .flat()
             .reduce((acc, cur) => {
                 if(acc.map(i=>i.id).includes(cur.id) || cur.id === video.id) return acc
                 else return acc.concat(cur)
             },[])
         setSameSingerVideos(sameSingerVideos)
-    }, [video, allVideo])
+    })
 
     const decideNextVideoId = async (video, allVideo) => {
         let nextVideoChoicesId = []
@@ -112,25 +106,18 @@ export default ({ data: { video, allVideo }, setVideoPlayer }) => {
             )
         }
 
-        setNextVideoChoicesId(nextVideoChoicesId)
-        setNextVideoId(nextVideoChoicesId[Math.floor(nextVideoChoicesId.length * Math.random())])
         return nextVideoChoicesId[Math.floor(nextVideoChoicesId.length * Math.random())]
     }
     
     return (
         <div className='w-full'>
             <SEO
-                title={`${video.music.title}`}
+                title={`${video.music.title} / ${video.singers.map(a => a.name).join('&')}`}
                 description={`${video.music.title}を${video.singers.map(a => a.name).join('さんと')}さんが歌っている動画です。`}
                 url={`https://vtuber-music.com/video/${video.id}`}
                 imgUrl={`https://vtuber-music.com${video.thumbnail_image?.childImageSharp?.fixed?.src}`}
                 isLargeCard
             />
-            {/* <Breadcrumb
-                type='video'
-                text={video.music.title}
-                subText={video.singers.map(singer => singer.name).join(' & ')}
-            /> */}
             <div className='w-full max-w-4xl mx-auto'>
                 <div className='w-full bg-white' style={{ paddingBottom: '56.25%' }}/>
                 <div className='mb-4 bg-white lg:shadow'>
@@ -166,9 +153,6 @@ export default ({ data: { video, allVideo }, setVideoPlayer }) => {
                         歌詞：<a href={video.music.lyrics_url} className='inline-block sm:hover:bg-gray-200 rounded p-3'>外部サイトへジャンプ</a>
                     </div>
                 }
-
-                {/* <Heading text='次に再生' className='mb-5'/>
-                {nextVideo && <VideoCard video={nextVideo} className='mx-auto w-full max-w-md mb-16'/>} */}
 
                 {sameSingerVideos.length !== 0 &&
                     <div className='lg:px-5 py-2 bg-white lg:shadow'>

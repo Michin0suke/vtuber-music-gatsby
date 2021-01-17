@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import Layout from '../components/layout'
 import { Link, navigate } from 'gatsby'
 import Heading from '../components/heading'
-import { validateChannelUrl } from '../utils/validateUrl'
-import { queryRequestVideos, createRequestVideo } from '../queries/request'
+import { requestVideos as queryRequestVideos } from '../queries/requestVideo'
 import { parse } from 'date-fns'
 import FormYoutubeUrl from '../components/request/formYoutubeUrl'
 import StepButtons from '../components/request/stepButtons'
@@ -124,6 +122,8 @@ const initStateArtist = {
 
 const initRequestVideo = {
     id: null,
+    title: null,
+    description: null,
     custom_music_name: '',
     is_original_music: false,
     music: {
@@ -197,6 +197,29 @@ export default ({ data: { allVideo }}) => {
         }
         return newRequestVideo
     }
+
+    useEffect(() => {
+        if (step === steps.INIT || requestVideo.id === null || requestVideo.description !== null || requestVideo.title !== null) return
+        fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet&key=AIzaSyBkn0LB-sw4ZiPEs069rCEotczo1Qi6ZPY&id=${requestVideo.id}`)
+            .then(res => res.json())
+            .then(json => {
+                console.log(json)
+                return json
+            })
+            .then(json => json.items?.[0]?.snippet)
+            .then(snippet => {
+                updateRequestVideo(v => {
+                    v.title = snippet?.title || false
+                    v.description = snippet?.description || false
+                    return v
+                })
+            })
+            .catch(updateRequestVideo(v => {
+                v.title = false
+                v.description = false
+                return v
+            }))
+    }, [requestVideo])
 
     useEffect(() => {
         refreshState()
@@ -714,6 +737,17 @@ export default ({ data: { allVideo }}) => {
                             opts={{}}
                             containerClassName={"youtubeContainer"}
                         />
+                    </div>
+                }
+
+                {requestVideo.id &&
+                    <div className>
+                        {requestVideo.title === false && <p>タイトルの取得に失敗しました😨</p>}
+                        {requestVideo.title === false && <p>タイトルを読み込み中🤔</p>}
+                        {requestVideo.title === false && <h3 className='whitespace-pre-wrap text-sm border mx-2 my-4 px-2 py-3 overflow-hidden'>{requestVideo.description}</h3>}
+                        {requestVideo.description === false && <p>概要欄の取得に失敗しました😨</p>}
+                        {requestVideo.description === null && <p>概要欄を読み込み中🤔</p>}
+                        {requestVideo.description && <p className='whitespace-pre-wrap text-sm border mx-2 my-4 px-2 py-3 overflow-hidden'>{requestVideo.description}</p>}
                     </div>
                 }
 

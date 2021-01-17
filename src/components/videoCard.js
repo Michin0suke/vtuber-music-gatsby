@@ -7,7 +7,6 @@ export const VideoCardHeader = ({ video, className }) => (
     <div className={`relative overflow-hidden ${className}`}>
         <VideoThumbnail video={video} className='mb-2'/>
         <Link to={`/video/${video.id}`} className='absolute top-0 right-0 bottom-0 left-0 w-full h-full opacity-10 sm:hover:bg-white'/>
-        {/* <div className='absolute bottom-0 left-0 w-100 h-30 bg-white'/> */}
         <div className='absolute bottom-5 left-3'>
             <div className='pr-10'>
                 <div className='absolute top-0 right-0 w-full h-full rounded-full bg-white opacity-50'/>

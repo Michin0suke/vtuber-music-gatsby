@@ -54,6 +54,8 @@ exports.sourceNodes = async ({ actions: { createNode }, createContentDigest }) =
                 off_vocal_videos: artist.off_vocal_videos.map(i => i.id),
                 arranger_videos: artist.arranger_videos.map(i => i.id),
                 singer_videos: artist.singer_videos.map(i => i.id),
+                is_singer: artist.singer_videos.length > 0,
+                is_mixer: artist.mixer_videos.length > 0,
                 internal: {
                     type: 'Artist',
                     contentDigest: createContentDigest(artist)
@@ -246,6 +248,8 @@ exports.createSchemaCustomization = ({ actions: { createTypes } }) => {
             header_source_type: String
             created_at: Date! @dateformat
             updated_at: Date! @dateformat
+            is_singer: Boolean!,
+            is_mixer: Boolean!,
         }
     `)
 }

@@ -3,10 +3,8 @@ import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import SEO from '../components/seo'
 import ArtistCard from '../components/artistCard'
-import Layout from '../components/layout'
 import VideoCard from '../components/videoCard'
-import Breadcrumb from '../components/breadcrumb'
-import Heading, { HeadingH2 } from '../components/heading'
+import Heading from '../components/heading'
 import PhotoFrame from '../components/svg/photoFrame'
 import Please from 'pleasejs'
 import './music.css'
@@ -29,7 +27,6 @@ export default ({ data: { music } }) => {
             }
         })
     
-
 return (
 <div className='w-full'>
     <SEO
@@ -38,7 +35,6 @@ return (
         imgUrl={`https://vtuber-music.com${music.videos?.[Math.floor(Math.random() * music.videos.length)]?.thumbnail_image?.childImageSharp?.fixed?.src}`}
         isLargeCard
     />
-    {/* <Breadcrumb type='music' text={music.title}/> */}
 
     <div className='max-w-4xl mx-auto'>
         <div className={`mb-7 pb-3 bg-white lg:shadow`}>

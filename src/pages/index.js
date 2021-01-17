@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import { graphql } from "gatsby"
 import SEO from '../components/seo'
-import Layout from "../components/layout"
 import VideoCard from '../components/videoCard'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -9,31 +8,22 @@ import './index.css'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import SortBar from '../components/sortBar'
 
-const IndexPage = ({ data: { allVideo, vtuberMusicIcon }}) => {
+const IndexPage = ({ data: { allVideo }}) => {
     const [showVideoIndex, setShowVideoIndex] = useState(24)
-    const [showVideos, setShowVideos] = useState(allVideo.nodes)
-    const [sortSelected, setSortSelected] = useState(0)
 
     return (
     <div className='w-full'>
-        <SEO isTop imgUrl={`https://vtuber-music.com${vtuberMusicIcon.childImageSharp.fixed.src}`}/>
+        <SEO isTop isFollow/>
         <p className='px-2 py-1 text-gray-500 text-xs'>Vtuberの歌ってみた動画をまとめたサイトです。{allVideo.totalCount}本の動画が登録されています。</p>
-        {/* {allVideoSortByReleaseDate.nodes.length}本の動画が登録されています。 */}
         <SortBar path='/'/>
 
-        <div className='sm:px-2 flex flex-wrap justify-between'>
-            {showVideos.slice(0, 12).map((video, key) => (
-                <VideoCard video={video} className='mb-5 sm:px-1 w-full sm:w-1/2 md:w-1/3 xl:w-1/4' key={key} withPublishDate/>
-            ))}
-        </div>
-
         <InfiniteScroll
-            dataLength={showVideoIndex - 12} //This is important field to render the next data
+            dataLength={showVideoIndex - 12}
             next={() => setShowVideoIndex(showVideoIndex + 12)}
-            hasMore={showVideos.length > showVideoIndex}
+            hasMore={allVideo.nodes.length > showVideoIndex}
             className='sm:px-2 flex flex-wrap justify-start'
         >
-            {showVideos.slice(0, showVideoIndex).map((video, key) => (
+            {allVideo.nodes.slice(0, showVideoIndex).map((video, key) => (
                 <VideoCard video={video} className='mb-5 sm:px-1 w-full sm:w-1/2 md:w-1/3 xl:w-1/4' key={key} withPublishDate/>
             ))}
         </InfiniteScroll>
@@ -74,13 +64,6 @@ export const query = graphql`
                         }
                     }
                 }
-            }
-        }
-    }
-    vtuberMusicIcon:file(base: {eq: "vtuber-music-icon-for-ogp.png"}) {
-        childImageSharp {
-            fixed(width: 300) {
-                src
             }
         }
     }

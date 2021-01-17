@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Heading from '../components/heading'
 import InfiniteScroll from 'react-infinite-scroll-component';
 import ArtistCard from '../components/artistCard'
@@ -12,8 +12,8 @@ const initialShowCount = 42
 
 const today = new Date()
 
-export default ({ data: { allArtist, vtuberMusicIcon } }) => {
-    const [birthdayArtists, setBirthdayArtists] = useState(allArtist.nodes.filter(artist => {
+export default ({ data: { allArtist } }) => {
+    const [birthdayArtists] = useState(allArtist.nodes.filter(artist => {
         if (!artist.birthday) return false
         try{
             const birthday = parse(artist.birthday, 'yyyy-MM-dd', today)
@@ -28,7 +28,6 @@ export default ({ data: { allArtist, vtuberMusicIcon } }) => {
     const [showBirthdayArtists, setShowBirthdayArtists] = useState(true)
     const [artists, setArtists] = useState(
         allArtist.nodes
-            .filter(artist => artist.singer_videos.length !== 0)
             .sort((a, b) => b.singer_videos.length - a.singer_videos.length)
     )
     const [showCount, setShowCount] = useState(initialShowCount)
@@ -43,14 +42,14 @@ export default ({ data: { allArtist, vtuberMusicIcon } }) => {
             includeScore: false,
             keys: ['name', 'name_ruby']
         }
-        const fuse = new Fuse(allArtist.nodes.filter(artist => artist.singer_videos.length !== 0), options)
+        const fuse = new Fuse(allArtist.nodes, options)
         setSearch(fuse)
     }
 
     const searchVideo = async (e) => {
         setShowCount(initialShowCount)
         if (e.target.value === '') {
-            setArtists(allArtist.nodes.filter(artist => artist.singer_videos.length !== 0))
+            setArtists(allArtist.nodes)
             setShowBirthdayArtists(true)
         } else {
             const result = search.search(e.target.value).map(r => r.item)
@@ -61,9 +60,9 @@ export default ({ data: { allArtist, vtuberMusicIcon } }) => {
 
     return (
         <div className='w-full'>
-            <SEO title='アーティスト一覧' description='アーティスト一覧のページです。' imgUrl={`https://vtuber-music.com${vtuberMusicIcon.childImageSharp.fixed.src}`}/>
-            {/* <Breadcrumb type='artist'/> */}
-            <p className='px-2 py-1 text-gray-500 text-xs'>{allArtist.nodes.filter(artist => artist.singer_videos.length !== 0).length}人のアーティストが登録されています。</p>
+            <SEO title='アーティスト一覧' description='アーティスト一覧のページです。' isFollow/>
+            <p className='px-2 py-1 text-gray-500 text-xs'>{allArtist.nodes.length}人のアーティストが登録されています。</p>
+            <Link to='/mixers'><button className='absolute top-1 right-5 py-1 px-2 bg-red-600 sm:hover:bg-red-400 text-white rounded-full'>MIXer</button></Link>
             <div className='flex mx-auto px-2 mt-4 mb-7 w-full max-w-xl h-10'>
                 <SearchIcon color='#555' className='w-10 p-2'/>
                 <input
@@ -82,7 +81,7 @@ export default ({ data: { allArtist, vtuberMusicIcon } }) => {
                 </div>
             }
             <InfiniteScroll
-                dataLength={showCount} //This is important field to render the next data
+                dataLength={showCount}
                 next={() => setShowCount(showCount + 6)}
                 hasMore={artists.length > showCount}
                 className='sm:flex flex-wrap px-5 mt-5'
@@ -100,7 +99,7 @@ export default ({ data: { allArtist, vtuberMusicIcon } }) => {
 
 export const query = graphql`
 {
-    allArtist(sort: {order: ASC, fields: name_ruby}) {
+    allArtist(filter: {is_singer: {eq: true}}, sort: {order: ASC, fields: name_ruby}) {
         nodes {
             id
             name
@@ -117,13 +116,6 @@ export const query = graphql`
             }
             parents {
                 name
-            }
-        }
-    }
-    vtuberMusicIcon:file(base: {eq: "vtuber-music-icon-for-ogp.png"}) {
-        childImageSharp {
-            fixed(width: 300) {
-                src
             }
         }
     }

@@ -4,6 +4,7 @@ import VideoCard from '../components/videoCard'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import SearchIcon from '../components/svg/search'
 import Fuse from 'fuse.js'
+import SEO from '../components/seo'
 
 export default ({ data: { allVideo } }) => {
     const [videos, setVideos] = useState(allVideo.nodes)
@@ -35,7 +36,7 @@ export default ({ data: { allVideo } }) => {
 
     return (
         <div>
-            {/* <Breadcrumb type='video'/> */}
+            <SEO title='検索ページ' description='Vtuberの歌を検索できるページです。' isFollow/>
             <div className='flex mx-auto px-2 mt-4 mb-7 w-full max-w-xl h-10'>
                 <SearchIcon color='#555' className='w-10 p-2'/>
                 <input
@@ -47,7 +48,7 @@ export default ({ data: { allVideo } }) => {
             </div>
             
             <InfiniteScroll
-                dataLength={showVideoIndex} //This is important field to render the next data
+                dataLength={showVideoIndex}
                 next={() => setShowVideoIndex(showVideoIndex + 12)}
                 hasMore={videos.length > showVideoIndex}
                 className='sm:px-2 flex flex-wrap justify-start'
@@ -108,7 +109,7 @@ export const query = graphql`
             thumbnail_image {
                 childImageSharp {
                     id
-                    fluid(maxWidth: 60) {
+                    fluid(maxWidth: 300) {
                         ...GatsbyImageSharpFluid
                     }
                 }
