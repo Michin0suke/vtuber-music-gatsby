@@ -720,6 +720,40 @@
                 "__typename": "Video"
             },
             {
+                "id": "-8rLVuTrwu0",
+                "music": {
+                    "id": "qUco2GzU",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-05-19",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "Lg7ogzgy",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "suzushiro_cocone",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "SyX9Apzu",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "-aB6MQU8l1s",
                 "music": {
                     "id": "indoor_kei_nara_trackmaker",
@@ -1048,7 +1082,7 @@
             {
                 "id": "-jlvI-Zsn4M",
                 "music": {
-                    "id": "dadadada_tenshi",
+                    "id": "3wcUTpr6",
                     "__typename": "Music"
                 },
                 "release_date": "2020-09-10",
@@ -1383,6 +1417,36 @@
                 "recommends": [],
                 "created_at": "2020-12-12 00:00:00",
                 "updated_at": "2020-12-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "0-sRCbclWWw",
+                "music": {
+                    "id": "wMxt-Yku",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-12-19",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "mix_katamuchi",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -2004,6 +2068,36 @@
                         "__typename": "Artist"
                     }
                 ],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "0xO-JLSnVdY",
+                "music": {
+                    "id": "WSEHmwS9",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-06-21",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "ZJsb3sk9",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
                 "recommends": [],
                 "created_at": "2021-01-17 00:00:00",
                 "updated_at": "2021-01-17 00:00:00",
@@ -4069,6 +4163,31 @@
                 "__typename": "Video"
             },
             {
+                "id": "44HfjB9Kdsw",
+                "music": {
+                    "id": "koshi_tantan",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-05-29",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "4b-FHsCdP_Y",
                 "music": {
                     "id": "IrODA-oL",
@@ -4811,6 +4930,36 @@
                 "__typename": "Video"
             },
             {
+                "id": "4zYpQMxI4Xc",
+                "music": {
+                    "id": "iG2H80GG",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-01-18",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [
+                    {
+                        "id": "_eQzwIKw",
+                        "__typename": "Artist"
+                    }
+                ],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "5_d4kY6zvP8",
                 "music": {
                     "id": "anata_kranken",
@@ -5213,6 +5362,36 @@
                     }
                 ],
                 "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "5qJza4xwVVI",
+                "music": {
+                    "id": "only_my_railgun",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-01-03",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "L8wjbWXw",
+                        "__typename": "Artist"
+                    }
+                ],
                 "off_vocals": [],
                 "arrangers": [],
                 "recommends": [],
@@ -6442,7 +6621,7 @@
             {
                 "id": "7BO3nK5NYZA",
                 "music": {
-                    "id": "dadadada_tenshi",
+                    "id": "3wcUTpr6",
                     "__typename": "Music"
                 },
                 "release_date": "2019-10-22",
@@ -6537,6 +6716,31 @@
                 "recommends": [],
                 "created_at": "2021-01-16 00:00:00",
                 "updated_at": "2021-01-16 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "7DD0D5ZKGkw",
+                "music": {
+                    "id": "frw8hfbI",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-09-04",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -7199,6 +7403,31 @@
                 "recommends": [],
                 "created_at": "2021-01-16 00:00:00",
                 "updated_at": "2021-01-16 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "8c68uV-MqEw",
+                "music": {
+                    "id": "641qtIyQ",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-04-05",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -8105,6 +8334,31 @@
                 "__typename": "Video"
             },
             {
+                "id": "9J9hRbYRt8o",
+                "music": {
+                    "id": "5MtZMxEX",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-09-06",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "9kg7mk_q3nU",
                 "music": {
                     "id": "SfLreecO",
@@ -8186,6 +8440,36 @@
                 "recommends": [],
                 "created_at": "2020-12-30 00:00:00",
                 "updated_at": "2020-12-30 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "9OMrN0Of5g4",
+                "music": {
+                    "id": "viRtK2yp",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-11-01",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "ZJsb3sk9",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -8399,6 +8683,31 @@
                 "recommends": [],
                 "created_at": "2021-01-16 00:00:00",
                 "updated_at": "2021-01-16 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "9VKKxPkG27g",
+                "music": {
+                    "id": "n7sV1ZY1",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-05-17",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -9349,6 +9658,65 @@
                 "__typename": "Video"
             },
             {
+                "id": "agrj3efvfC0",
+                "music": {
+                    "id": "febUQXM6",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-01-08",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "DSxqYADA",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "suzushiro_cocone",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "mix_kawamoto",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "Agw4cCxV7GM",
+                "music": {
+                    "id": "Ov8u8UT9",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-06-26",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "aH0SdgEfoIc",
                 "music": {
                     "id": "eba",
@@ -9463,6 +9831,36 @@
                         "__typename": "Artist"
                     }
                 ],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "AjgzbpDQS58",
+                "music": {
+                    "id": "pBm4ySKL",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-12-20",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "f5DpSg1a",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "f5DpSg1a",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
                 "recommends": [],
                 "created_at": "2021-01-17 00:00:00",
                 "updated_at": "2021-01-17 00:00:00",
@@ -9661,6 +10059,36 @@
                 "__typename": "Video"
             },
             {
+                "id": "aQG-qc9YdTc",
+                "music": {
+                    "id": "pr0JOBhr",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-03-08",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "ZJsb3sk9",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "aqRIPFT-EUw",
                 "music": {
                     "id": "gnzFGNPi",
@@ -9797,6 +10225,31 @@
                 "recommends": [],
                 "created_at": "2021-01-16 00:00:00",
                 "updated_at": "2021-01-16 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "ARTtJf3dp08",
+                "music": {
+                    "id": "GpTiSfOV",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-04-27",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -10035,6 +10488,31 @@
                 "recommends": [],
                 "created_at": "2020-12-30 00:00:00",
                 "updated_at": "2020-12-30 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "AzyWRwAShis",
+                "music": {
+                    "id": "8Vx_pD7l",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-11-08",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -10964,6 +11442,31 @@
                 "__typename": "Video"
             },
             {
+                "id": "bQdH2LAazoU",
+                "music": {
+                    "id": "XwWTNPTJ",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-04-03",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "BRW4gG0qhpM",
                 "music": {
                     "id": "6vZdMtuT",
@@ -11792,6 +12295,36 @@
                 "recommends": [],
                 "created_at": "2020-12-10 00:00:00",
                 "updated_at": "2020-12-10 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "CEOFX0RYaPU",
+                "music": {
+                    "id": "lisa_homura",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-11-27",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "mix_katamuchi",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -13242,6 +13775,36 @@
                 "__typename": "Video"
             },
             {
+                "id": "diXYtt23aqw",
+                "music": {
+                    "id": "KTdwhh5q",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-08-28",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "7HIRNeCs",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "djlVBtFtS7g",
                 "music": {
                     "id": "j04m_npy",
@@ -14092,7 +14655,7 @@
                 "arrangers": [],
                 "recommends": [],
                 "created_at": "2021-01-17 00:00:00",
-                "updated_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 11:03:53",
                 "__typename": "Video"
             },
             {
@@ -14287,6 +14850,36 @@
                 "__typename": "Video"
             },
             {
+                "id": "dY03-HVa0m4",
+                "music": {
+                    "id": "v5czHkIZ",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-07-03",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "7HIRNeCs",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "DYAAdgnQ6lo",
                 "music": {
                     "id": "tecNiiGJ",
@@ -14339,6 +14932,36 @@
                 "recommends": [],
                 "created_at": "2020-12-31 00:00:00",
                 "updated_at": "2020-12-31 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "DyLRr6Rl8dA",
+                "music": {
+                    "id": "XyRn7IFe",
+                    "__typename": "Music"
+                },
+                "release_date": "2021-01-15",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "DHIcK56k",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "HU5Tz4DQ",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -14578,6 +15201,31 @@
                 "recommends": [],
                 "created_at": "2021-01-13 00:00:00",
                 "updated_at": "2021-01-13 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "e7sQxNEm6mo",
+                "music": {
+                    "id": "A95WT4aV",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-07-26",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -18034,6 +18682,36 @@
                 "__typename": "Video"
             },
             {
+                "id": "gJbvgoYB4rw",
+                "music": {
+                    "id": "happy_synthesizer",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-01-11",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "L8wjbWXw",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "Gjk5cBIxRRk",
                 "music": {
                     "id": "melancholy_of_diamond_princess",
@@ -18548,6 +19226,36 @@
                 "__typename": "Video"
             },
             {
+                "id": "gWI-VUdZJTs",
+                "music": {
+                    "id": "i_g6YKFf",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-02-21",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "L8wjbWXw",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "GXxKyYolChs",
                 "music": {
                     "id": "qi4eT3ZT",
@@ -18600,6 +19308,31 @@
                 "recommends": [],
                 "created_at": "2021-01-16 00:00:00",
                 "updated_at": "2021-01-16 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "gZFraC_DgLA",
+                "music": {
+                    "id": "xnkYV3wJ",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-08-02",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -18938,6 +19671,31 @@
                         "__typename": "Artist"
                     }
                 ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "hChSa28eFn0",
+                "music": {
+                    "id": "3wcUTpr6",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-04-11",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
                 "off_vocals": [],
                 "arrangers": [],
                 "recommends": [],
@@ -20346,6 +21104,36 @@
                 "__typename": "Video"
             },
             {
+                "id": "IBp1y0CXUks",
+                "music": {
+                    "id": "SRZ9rghb",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-03-20",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "L8wjbWXw",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "iC8VZpZtPJo",
                 "music": {
                     "id": "love_new_york_from_tokyo",
@@ -21734,6 +22522,31 @@
                         "__typename": "Artist"
                     }
                 ],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "JAqFUv0ZZlM",
+                "music": {
+                    "id": "69L_jdXT",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-08-09",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
                 "arrangers": [],
                 "recommends": [],
                 "created_at": "2021-01-17 00:00:00",
@@ -23777,6 +24590,31 @@
                 "__typename": "Video"
             },
             {
+                "id": "kpKZWJcMvZA",
+                "music": {
+                    "id": "D7--0T-j",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-02-28",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "KQPr8Qde22w",
                 "music": {
                     "id": "QSwS13Jb",
@@ -25606,6 +26444,31 @@
                 "__typename": "Video"
             },
             {
+                "id": "M3cOt8Xmo9g",
+                "music": {
+                    "id": "GcEsZ7qt",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-08-07",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "m4hu1fWyPmM",
                 "music": {
                     "id": "AR5HAz5T",
@@ -26552,6 +27415,36 @@
                 "__typename": "Video"
             },
             {
+                "id": "mVVGhAjsKa4",
+                "music": {
+                    "id": "roki",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-03-22",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "7HIRNeCs",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "mw4W1CL0iRM",
                 "music": {
                     "id": "_YO2BXSp",
@@ -27342,6 +28235,31 @@
                 "__typename": "Video"
             },
             {
+                "id": "NehWgOvOzVI",
+                "music": {
+                    "id": "Shtml6ST",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-09-18",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "NeNI7J7dT84",
                 "music": {
                     "id": "one_room_sugar_life",
@@ -27828,6 +28746,31 @@
                 "__typename": "Video"
             },
             {
+                "id": "nspVuQwfGUc",
+                "music": {
+                    "id": "HirQwrWW",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-12-31",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "NSY-W18z5I0",
                 "music": {
                     "id": "byoshin_wo_kamu",
@@ -27954,6 +28897,31 @@
                 "recommends": [],
                 "created_at": "2021-01-13 00:00:00",
                 "updated_at": "2021-01-13 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "nxqceWLDpXU",
+                "music": {
+                    "id": "yoru_ni_kakeru",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-11-13",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -28134,7 +29102,7 @@
             {
                 "id": "O8v5S1nhKzo",
                 "music": {
-                    "id": "dadadada_tenshi",
+                    "id": "3wcUTpr6",
                     "__typename": "Music"
                 },
                 "release_date": "2019-08-17",
@@ -29143,6 +30111,31 @@
                 "__typename": "Video"
             },
             {
+                "id": "p5Ak71L6QVU",
+                "music": {
+                    "id": "hibana",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-05-03",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "p7sUv8R-XzE",
                 "music": {
                     "id": "JJEhB1IF",
@@ -29645,6 +30638,36 @@
                 "__typename": "Video"
             },
             {
+                "id": "PjFOTzZhnxw",
+                "music": {
+                    "id": "qbRbVnAe",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-12-03",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "MANxgpRX",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "MANxgpRX",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "pl_LN1N7uoo",
                 "music": {
                     "id": "VqUS8SjJ",
@@ -29702,6 +30725,36 @@
                 "recommends": [],
                 "created_at": "2021-01-12 00:00:00",
                 "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "Pl85zCoxabg",
+                "music": {
+                    "id": "byoshin_wo_kamu",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-02-16",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "ZJsb3sk9",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -30106,6 +31159,31 @@
                 "recommends": [],
                 "created_at": "2021-01-12 00:00:00",
                 "updated_at": "2021-01-12 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "pUInGumYmLQ",
+                "music": {
+                    "id": "qUco2GzU",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-04-24",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -30847,6 +31925,36 @@
                 "__typename": "Video"
             },
             {
+                "id": "QgouH0x07_Y",
+                "music": {
+                    "id": "kokoronashi",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-03-01",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "ZJsb3sk9",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "QhNE4Ky5Je4",
                 "music": {
                     "id": "GqKyg9Tv",
@@ -31183,7 +32291,7 @@
             {
                 "id": "qpiSbxC_k8c",
                 "music": {
-                    "id": "dadadada_tenshi",
+                    "id": "3wcUTpr6",
                     "__typename": "Music"
                 },
                 "release_date": "2020-10-22",
@@ -31423,6 +32531,31 @@
                 "__typename": "Video"
             },
             {
+                "id": "qSFnc7SHnmM",
+                "music": {
+                    "id": "KQ9WUHxh",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-08-23",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "qtoMyzeYHhs",
                 "music": {
                     "id": "V8WF6FEX",
@@ -31593,6 +32726,31 @@
                         "__typename": "Artist"
                     }
                 ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "qYtSAgxr7YI",
+                "music": {
+                    "id": "Ugdanr17",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-09-27",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
                 "off_vocals": [],
                 "arrangers": [],
                 "recommends": [],
@@ -32479,6 +33637,36 @@
                         "__typename": "Artist"
                     }
                 ],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "RKpkYwiHKXQ",
+                "music": {
+                    "id": "Eg1F_JGL",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-04-19",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "ZJsb3sk9",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
                 "recommends": [],
                 "created_at": "2021-01-17 00:00:00",
                 "updated_at": "2021-01-17 00:00:00",
@@ -33597,6 +34785,36 @@
                 "__typename": "Video"
             },
             {
+                "id": "s6N2aArkbB8",
+                "music": {
+                    "id": "gurenge",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-12-30",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "mix_katamuchi",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "S7dUxOAf4w0",
                 "music": {
                     "id": "GKpNmteB",
@@ -33723,7 +34941,7 @@
             {
                 "id": "S9MVR3SEHMk",
                 "music": {
-                    "id": "dadadada_tenshi",
+                    "id": "3wcUTpr6",
                     "__typename": "Music"
                 },
                 "release_date": "2020-02-08",
@@ -34653,6 +35871,31 @@
                         "__typename": "Artist"
                     }
                 ],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "sq7rVi5wX5E",
+                "music": {
+                    "id": "_N3oNhkM",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-02-27",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "rcnU8Q5d",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
                 "recommends": [],
                 "created_at": "2021-01-17 00:00:00",
                 "updated_at": "2021-01-17 00:00:00",
@@ -35697,6 +36940,40 @@
                 "__typename": "Video"
             },
             {
+                "id": "Th99Euj2ZvU",
+                "music": {
+                    "id": "3jw5XLax",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-05-15",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "nanaminami",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "suzushiro_cocone",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "a6NxXY_H",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "THIVxa55Xy8",
                 "music": {
                     "id": "inochi_ni_kirawareteiru",
@@ -36450,7 +37727,7 @@
             {
                 "id": "TzVPSPRa8Vc",
                 "music": {
-                    "id": "dadadada_tenshi",
+                    "id": "3wcUTpr6",
                     "__typename": "Music"
                 },
                 "release_date": "2020-12-20",
@@ -37324,6 +38601,31 @@
                 "__typename": "Video"
             },
             {
+                "id": "umHhriJ8n7U",
+                "music": {
+                    "id": "hibana",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-02-22",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "UmqhdNpoH-U",
                 "music": {
                     "id": "inochi_ni_kirawareteiru",
@@ -37346,6 +38648,31 @@
                 "recommends": [],
                 "created_at": "2020-11-30 00:00:00",
                 "updated_at": "2020-03-03 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "UMt3f4R4CmE",
+                "music": {
+                    "id": "fhnjQrmK",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-11-22",
+                "is_mv": true,
+                "is_original_music": true,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "ZzPsa1N_",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
                 "__typename": "Video"
             },
             {
@@ -39175,6 +40502,36 @@
                 "__typename": "Video"
             },
             {
+                "id": "VOX1V58jY_s",
+                "music": {
+                    "id": "backnumber_christmas_song",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-12-23",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "ZJsb3sk9",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "vozjCNxLQOQ",
                 "music": {
                     "id": "gVpgOQuJ",
@@ -39805,6 +41162,31 @@
                     },
                     {
                         "id": "ZJ9JjFSd",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "w6IgnKR3LHY",
+                "music": {
+                    "id": "GpTiSfOV",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-02-15",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
                         "__typename": "Artist"
                     }
                 ],
@@ -40889,6 +42271,36 @@
                 "__typename": "Video"
             },
             {
+                "id": "WwxHzuU91Q0",
+                "music": {
+                    "id": "7hBqNi6w",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-11-08",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "MANxgpRX",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "MANxgpRX",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "Wwyk7kwsTEM",
                 "music": {
                     "id": "zenmai_shojo_dokei",
@@ -41476,6 +42888,36 @@
                 "__typename": "Video"
             },
             {
+                "id": "xbBbF2s7ZK4",
+                "music": {
+                    "id": "IGZSgPUx",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-10-09",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "L8wjbWXw",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "xc_DslXkOzQ",
                 "music": {
                     "id": "king",
@@ -41993,6 +43435,40 @@
                         "__typename": "Artist"
                     }
                 ],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "xt_e7c4gv48",
+                "music": {
+                    "id": "E68bValB",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-01-24",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "AvpmEqfK",
+                        "__typename": "Artist"
+                    },
+                    {
+                        "id": "suzushiro_cocone",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "mix_katamuchi",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
                 "recommends": [],
                 "created_at": "2021-01-17 00:00:00",
                 "updated_at": "2021-01-17 00:00:00",
@@ -44395,6 +45871,36 @@
                 "__typename": "Video"
             },
             {
+                "id": "ZbHh_SEVY5k",
+                "music": {
+                    "id": "bZKHtApj",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-03-13",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "MIyvjBCo",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "ZcBMj7_Er80",
                 "music": {
                     "id": "KVx5dDG0",
@@ -44643,6 +46149,31 @@
                 "__typename": "Video"
             },
             {
+                "id": "ZGt1jheH52o",
+                "music": {
+                    "id": "l6Myju8S",
+                    "__typename": "Music"
+                },
+                "release_date": "2020-08-21",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
                 "id": "zhLk6QQbCxM",
                 "music": {
                     "id": "8qmBZW79",
@@ -44791,6 +46322,36 @@
                         "__typename": "Artist"
                     }
                 ],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "ZjNsHd9lLaw",
+                "music": {
+                    "id": "retto_joto",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-12-06",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [
+                    {
+                        "id": "MIyvjBCo",
+                        "__typename": "Artist"
+                    }
+                ],
+                "off_vocals": [],
+                "arrangers": [],
                 "recommends": [],
                 "created_at": "2021-01-17 00:00:00",
                 "updated_at": "2021-01-17 00:00:00",
@@ -45286,6 +46847,31 @@
                 "recommends": [],
                 "created_at": "2020-11-30 00:00:00",
                 "updated_at": "2020-02-28 00:00:00",
+                "__typename": "Video"
+            },
+            {
+                "id": "ZPNM8XRaYyk",
+                "music": {
+                    "id": "NQMRWhtd",
+                    "__typename": "Music"
+                },
+                "release_date": "2019-10-25",
+                "is_mv": true,
+                "is_original_music": false,
+                "original_video_id": null,
+                "custom_music_name": null,
+                "singers": [
+                    {
+                        "id": "cocotsuki",
+                        "__typename": "Artist"
+                    }
+                ],
+                "mixers": [],
+                "off_vocals": [],
+                "arrangers": [],
+                "recommends": [],
+                "created_at": "2021-01-17 00:00:00",
+                "updated_at": "2021-01-17 00:00:00",
                 "__typename": "Video"
             },
             {
