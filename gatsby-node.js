@@ -3,9 +3,9 @@ const gracefulFs = require('graceful-fs')
 gracefulFs.gracefulify(realFs)
 
 exports.sourceNodes = async ({ actions: { createNode }, createContentDigest }) => {
-    gracefulFs.readFile(`api/allVideo.json`, (err, data) => {
+    gracefulFs.readFile(`api/allVideoPaginate.json`, (err, data) => {
         if (err) throw new Error(err)
-        JSON.parse(data).data.allVideo.forEach(video => {
+        JSON.parse(data).data.allVideoPaginate.forEach(video => {
             createNode({
                 ...video,
                 music: video.music.id,
@@ -22,9 +22,9 @@ exports.sourceNodes = async ({ actions: { createNode }, createContentDigest }) =
         })
     })
 
-    gracefulFs.readFile(`api/allMusic.json`, (err, data) => {
+    gracefulFs.readFile(`api/allMusicPaginate.json`, (err, data) => {
         if (err) throw new Error(err)
-        JSON.parse(data).data.allMusic.forEach(music => {
+        JSON.parse(data).data.allMusicPaginate.forEach(music => {
             createNode({
                 ...music,
                 videos: music.videos.map(i => i.id),
@@ -39,9 +39,9 @@ exports.sourceNodes = async ({ actions: { createNode }, createContentDigest }) =
         })
     })
 
-    gracefulFs.readFile(`api/allArtist.json`, (err, data) => {
+    gracefulFs.readFile(`api/allArtistPaginate.json`, (err, data) => {
         if (err) throw new Error(err)
-        JSON.parse(data).data.allArtist.forEach(artist => {
+        JSON.parse(data).data.allArtistPaginate.forEach(artist => {
             createNode({
                 ...artist,
                 recommends: artist.recommends.map(i => i.id),
