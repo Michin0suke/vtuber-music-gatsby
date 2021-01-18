@@ -11,6 +11,7 @@ export default ({ data: { video, allVideo }, setVideoPlayer }) => {
     const [sameSingerVideos, setSameSingerVideos] = useState([])
 
     const setVideoPlayerAsync = async () => {
+        console.log(`setVideoPlayerAsync`)
         const nextVideoId = await decideNextVideoId(video, allVideo)
         setVideoPlayer(
             <YouTubePlayer
@@ -21,6 +22,7 @@ export default ({ data: { video, allVideo }, setVideoPlayer }) => {
     }
 
     useEffect(() => {
+        console.log(`useEffect`)
         setVideoPlayerAsync()
 
         decideNextVideoId(video, allVideo)
@@ -33,7 +35,7 @@ export default ({ data: { video, allVideo }, setVideoPlayer }) => {
                 else return acc.concat(cur)
             },[])
         setSameSingerVideos(sameSingerVideos)
-    })
+    }, [])
 
     const decideNextVideoId = async (video, allVideo) => {
         let nextVideoChoicesId = []

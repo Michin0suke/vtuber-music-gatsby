@@ -1,16 +1,8 @@
 import React, { cloneElement, useState } from "react"
-// import { Link } from "gatsby"
-// import VtuberMusic from './svg/vtuberMusic'
 import Header from "./header"
 import Footer from "./footer"
 import SMMenu from './smMenu'
 import PCMenuLeft from './pcMenuLeft'
-// import Headroom from 'react-headroom'
-
-// const playerClassNameStyle={
-//   videoPage: `z-50 fixed sm:absolute mx-auto sm:left-0 sm:right-0 w-full max-w-4xl mb-2`,
-//   otherPage: `z-50 fixed left-0 bottom-12 sm:bottom-0 w-1/2 sm:w-full max-w-sm`
-// }
 
 export default ({ children, path }) => {
   const [videoPlayer, setVideoPlayer] = useState(null)
