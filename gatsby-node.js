@@ -67,7 +67,7 @@ exports.sourceNodes = async ({ actions: { createNode }, createContentDigest }) =
 
 exports.createPages = async ({ graphql, actions: { createPage }, getNode }) => {
     const artistImageFileNode = async (type, id) => {
-        if (!['header', 'icon', 'video_thumbnail'].includes(type)) throw new Error(`invalid augment ${type}`)
+        if (!['header', 'icon'].includes(type)) throw new Error(`invalid augment ${type}`)
 
         let fileId
 

@@ -122,106 +122,125 @@ const Card = ({
     fetchRemoteRequestVideos,
 }) => {
     const [status, setStatus] = useState(false)
+    const [pos, setPos] = useState({ y: (Math.random()) * 500 + 20, x: (Math.random()) * 1000 + 20 })
     return (
-        <article className={`w-full mb-2 bg-white select-none rounded overflow-hidden shadow-sm ${status === 'failed' ? 'border-4 border-red-500' : 'border'} ${status === 'success' || status === 'sending' ? 'hidden' : ''}`}>
-            <h2 className={`relative cursor-pointer sm:hover:bg-red-50 px-5 leading-8 ${expandIndex === cardIndex && 'bg-red-100'}`}>
-                <div className='absolute left-0 right-0 h-full w-3 flex flex-col'>
-                    <span className={`h-full w-3 ${content.mixers.length > 0 && 'bg-gray-200'}`}/>
-                    <span className={`h-full w-3 ${content.off_vocals.length > 0 && 'bg-gray-200'}`}/>
-                    <span className={`h-full w-3 ${content.arrangers.length > 0 && 'bg-gray-200'}`}/>
-                </div>
-                <span className='pr-2 text-red-600'>{content.stage}</span>
-                <span className='pr-2 text-gray-800'>{content.singers.map(i=>i.name).join(' & ')}</span>
-                <span className='pr-2 text-gray-500'>{content.music.title}</span>
-                {content.is_original_music && <span className='inline-block right-0 bg-blue-500 h-3 w-3'/>}
-                {!content.contributor_twitter_id && <span className='inline-block right-0 bg-yellow-500 h-3 w-3'/>}
-                {content.is_issue && <span className='inline-block right-0 bg-red-600 h-3 w-3'/>}
-                <div className='absolute top-0 left-0 w-full h-full' onClick={() => setExpandIndex(cardIndex)}/>
-                {content.stage === 5 && getContributorTwitterId() === 'VtuberMusicCom' &&
-                    <button
-                        className='absolute right-0 z-10 h-full px-1 py-1 bg-blue-500 sm:hover:bg-blue-400 text-xs text-white shadow rounded'
-                        onClick={() => {
-                            setStatus('sending')
-                            upsertVideo(content)
-                            .then(res => {
-                                console.log(res)
-                                content.is_done = true
-                                upsertRequestVideo(content).then(() => setStatus('success'))
-                            })
-                            .catch(e => {
-                                setStatus('failed')
-                                console.log(e)
-                            })
-                        }}
-                    >{status === 'sending' ? <span className='text-xl'>🔄</span> : '送信'}</button>
-                }
-            </h2>
-            <div className={`card-container ${expandIndex === cardIndex ? 'show mx-5 mb-3' : 'm-0'}`}>
-                {expandIndex === cardIndex &&
-                    <Youtube
-                        videoId={content.id}
-                        opts={{}}
-                        containerClassName={"youtubeContainer"}
-                    />
-                }
-                <Row l='STAGE' m={content.stage === 5 ? 'READY' : content.stage}/>
-                <Row l='ID' m={<a href={`https://www.youtube.com/watch?v=${content.id}`} target='_blank' className='border-b-2'>{content.id}</a>}/>
-                <Row l='オリジナル' m={content.is_original_music ? 'YES' : 'NO'}/>
-                <Row l='楽曲名' m={content.music.title} r={`(${content.music.id})`}/>
-                {content.music.custom_music_name && <Row l='カスタム楽曲名' m={content.music.custom_music_name}/>}
-                {content.singers.map((artist, key2) => <Row key={key2} l='歌' m={artist.name} r={`@${artist.id_twitter} (${artist.id})`}/>)}
-                {content.music.composers.map((artist, key2) => <Row key={key2} l='作曲' m={artist.name} r={`@${artist.id_twitter} (${artist.id})`}/>)}
-                {content.music.lyricists.map((artist, key2) => <Row key={key2} l='作詞' m={artist.name} r={`@${artist.id_twitter} (${artist.id})`}/>)}
-                {content.music.arrangers.map((artist, key2) => <Row key={key2} l='編曲' m={artist.name} r={`@${artist.id_twitter} (${artist.id})`}/>)}
-                {content.mixers.map((artist, key2) => <Row key={key2} l='ミックス' m={artist.name} r={`@${artist.id_twitter} (${artist.id})`}/>)}
-                {content.off_vocals.map((artist, key2) => <Row key={key2} l='オフボーカル' m={artist.name} r={`@${artist.id_twitter} (${artist.id})`}/>)}
-                {content.arrangers.map((artist, key2) => <Row key={key2} l='アレンジ' m={artist.name} r={`@${artist.id_twitter} (${artist.id})`}/>)}
-                {content.contributor_twitter_id
-                    ?   <Row l='リクエスト' m={<a href={`https://twitter.com/${content.contributor_twitter_id}`} target='_blank' className='border-b-2'>@{content.contributor_twitter_id}</a>}/>
-                    :   <Row l='リクエスト' m='匿名'/>
-                }
-                <Row l='更新日時' m={content.updated_at}/>
-                {content.stage < 5 && 
-                    <Link to={`/request_add_video?id=${content.id}`}>
-                        <button className='mx-auto mt-3 block px-4 py-2 bg-red-600 sm:hover:bg-red-500 text-white shadow rounded-full'>データを追加！</button>
-                    </Link>}
-                {content.stage === 5 && 
-                    <Link to={`/request_add_video?id=${content.id}`}>
-                        <button className='mx-auto mt-3 block px-4 py-2 bg-red-600 sm:hover:bg-red-500 text-white shadow rounded-full'>編集！</button>
-                    </Link>}
-                {content.is_issue && <button className='mx-auto mt-3 block px-4 py-2 bg-yellow-500 text-white shadow'>確認中</button>}
-                <div className='flex justify-around'>
-                    {content.stage === 5 && getContributorTwitterId() === 'VtuberMusicCom' &&
+        <div className={`w-full`}>
+            <article className={`w-full mb-2 bg-white select-none rounded overflow-hidden shadow-sm ${status === 'failed' ? 'border-4 border-red-500' : 'border'} ${status === 'success' || status === 'sending' ? 'hidden' : ''}`}>
+                <h2 className={`relative cursor-pointer sm:hover:bg-red-50 px-5 leading-8 ${expandIndex === cardIndex && 'bg-red-100'}`}>
+                    <div className='absolute left-0 right-0 h-full w-3 flex flex-col'>
+                        <span className={`h-full w-3 ${content.mixers.length > 0 && 'bg-gray-200'}`}/>
+                        <span className={`h-full w-3 ${content.off_vocals.length > 0 && 'bg-gray-200'}`}/>
+                        <span className={`h-full w-3 ${content.arrangers.length > 0 && 'bg-gray-200'}`}/>
+                    </div>
+                    <span className='pr-2 text-red-600'>{content.stage}</span>
+                    <span className='pr-2 text-gray-800'>{content.singers.map(i=>i.name).join(' & ')}</span>
+                    <span className='pr-2 text-gray-500'>{content.music.title}</span>
+                    {content.is_original_music && <span className='inline-block right-0 bg-blue-500 h-3 w-3'/>}
+                    {!content.contributor_twitter_id && <span className='inline-block right-0 bg-yellow-500 h-3 w-3'/>}
+                    {content.is_issue && <span className='inline-block right-0 bg-red-600 h-3 w-3'/>}
+                    <div className='absolute top-0 left-0 w-full h-full' onClick={() => setExpandIndex(cardIndex)}/>
+                    {(content.stage === 4 || content.stage === 5 ) && getContributorTwitterId() === 'VtuberMusicCom' &&
                         <button
-                            className='mt-3 block px-4 py-2 bg-blue-500 sm:hover:bg-blue-400 text-white shadow rounded-full'
+                            className={`absolute right-0 z-10 h-full px-1 py-1 ${content.stage === 4 ? 'bg-red-500 sm:hover:bg-red-400' : 'bg-blue-500 sm:hover:bg-blue-400'} text-xs text-white shadow rounded`}
                             onClick={() => {
                                 setStatus('sending')
                                 upsertVideo(content)
                                 .then(res => {
                                     console.log(res)
                                     content.is_done = true
-                                    upsertRequestVideo(content).then(() => setStatus('success'))
+                                    upsertRequestVideo(content)
+                                        .then(() => setStatus('success'))
+                                        .catch(e => {
+                                            setStatus('failed')
+                                            console.log(e)
+                                        })
                                 })
                                 .catch(e => {
                                     setStatus('failed')
                                     console.log(e)
                                 })
                             }}
-                        >問題なし！</button>
+                        >{status === 'sending' ? <span className='text-xl'>🔄</span> : '送信'}</button>
                     }
-                    {!content.is_issue && getContributorTwitterId() &&
-                        <button
-                            className='mt-3 block px-4 py-2 bg-red-600 sm:hover:bg-red-500 text-white shadow rounded-full'
-                            onClick={() => {
-                                content.is_issue = true
-                                upsertRequestVideo(content)
-                                    .then(() => fetchRemoteRequestVideos())
-                                    .catch(e => console.log(e))
-                            }}
-                        >問題あり！</button>
+                </h2>
+                <div className={`card-container ${expandIndex === cardIndex ? 'show mx-5 mb-3' : 'm-0'}`}>
+                    {expandIndex === cardIndex &&
+                        <Youtube
+                            videoId={content.id}
+                            opts={{}}
+                            containerClassName={"youtubeContainer"}
+                        />
                     }
+                    <Row l='STAGE' m={content.stage === 5 ? 'READY' : content.stage}/>
+                    <Row l='ID' m={<a href={`https://www.youtube.com/watch?v=${content.id}`} target='_blank' className='border-b-2'>{content.id}</a>}/>
+                    <Row l='オリジナル' m={content.is_original_music ? 'YES' : 'NO'}/>
+                    <Row l='楽曲名' m={content.music.title} r={`(${content.music.id})`}/>
+                    {content.music.custom_music_name && <Row l='カスタム楽曲名' m={content.music.custom_music_name}/>}
+                    {content.singers.map((artist, key2) => <Row key={key2} l='歌' m={artist.name} r={`@${artist.id_twitter} (${artist.id})`}/>)}
+                    {content.music.composers.map((artist, key2) => <Row key={key2} l='作曲' m={artist.name} r={`@${artist.id_twitter} (${artist.id})`}/>)}
+                    {content.music.lyricists.map((artist, key2) => <Row key={key2} l='作詞' m={artist.name} r={`@${artist.id_twitter} (${artist.id})`}/>)}
+                    {content.music.arrangers.map((artist, key2) => <Row key={key2} l='編曲' m={artist.name} r={`@${artist.id_twitter} (${artist.id})`}/>)}
+                    {content.mixers.map((artist, key2) => <Row key={key2} l='ミックス' m={artist.name} r={`@${artist.id_twitter} (${artist.id})`}/>)}
+                    {content.off_vocals.map((artist, key2) => <Row key={key2} l='オフボーカル' m={artist.name} r={`@${artist.id_twitter} (${artist.id})`}/>)}
+                    {content.arrangers.map((artist, key2) => <Row key={key2} l='アレンジ' m={artist.name} r={`@${artist.id_twitter} (${artist.id})`}/>)}
+                    {content.contributor_twitter_id
+                        ?   <Row l='リクエスト' m={<a href={`https://twitter.com/${content.contributor_twitter_id}`} target='_blank' className='border-b-2'>@{content.contributor_twitter_id}</a>}/>
+                        :   <Row l='リクエスト' m='匿名'/>
+                    }
+                    <Row l='更新日時' m={content.updated_at}/>
+                    {content.stage < 5 && 
+                        <Link to={`/request_add_video?id=${content.id}`}>
+                            <button className='mx-auto mt-3 block px-4 py-2 bg-red-600 sm:hover:bg-red-500 text-white shadow rounded-full'>データを追加！</button>
+                        </Link>}
+                    {content.stage === 5 && 
+                        <Link to={`/request_add_video?id=${content.id}`}>
+                            <button className='mx-auto mt-3 block px-4 py-2 bg-red-600 sm:hover:bg-red-500 text-white shadow rounded-full'>編集！</button>
+                        </Link>}
+                    {content.is_issue && <button className='mx-auto mt-3 block px-4 py-2 bg-yellow-500 text-white shadow'>確認中</button>}
+                    <div className='flex justify-around'>
+                        {content.stage === 5 && getContributorTwitterId() === 'VtuberMusicCom' &&
+                            <button
+                                className='mt-3 block px-4 py-2 bg-blue-500 sm:hover:bg-blue-400 text-white shadow rounded-full'
+                                onClick={() => {
+                                    setStatus('sending')
+                                    upsertVideo(content)
+                                    .then(res => {
+                                        console.log(res)
+                                        content.is_done = true
+                                        upsertRequestVideo(content)
+                                            .then(() => setStatus('success'))
+                                            .catch(e => {
+                                                setStatus('failed')
+                                                console.log(e)
+                                            })
+                                    })
+                                    .catch(e => {
+                                        setStatus('failed')
+                                        console.log(e)
+                                    })
+                                }}
+                            >問題なし！</button>
+                        }
+                        {!content.is_issue && getContributorTwitterId() &&
+                            <button
+                                className='mt-3 block px-4 py-2 bg-red-600 sm:hover:bg-red-500 text-white shadow rounded-full'
+                                onClick={() => {
+                                    setStatus('sending')
+                                    content.is_issue = true
+                                    upsertRequestVideo(content)
+                                        .then(() => setStatus('success'))
+                                        .catch(e => {
+                                            setStatus('failed')
+                                            console.log(e)
+                                        })
+                                }}
+                            >問題あり！</button>
+                        }
+                    </div>
                 </div>
-            </div>
-        </article>
+            </article>
+            {/* <span className='inline-block ball-animation rounded-full absolute w-32 h-32 bg-red-600 pointer-events-none' style={{ top: Math.random() * 500 + 20, left: Math.random() * 1000 + 20 }}/> */}
+            {status === 'sending' && <span className='inline-block opacity-70 ball-animation rounded-full fixed z-50 w-40 h-40 bg-red-600 pointer-events-none' style={{ top: pos.y, left: pos.x }}/>}
+        </div>
     )
 }

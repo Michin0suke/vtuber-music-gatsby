@@ -48,7 +48,7 @@ function SEO({ description, lang, title, url, imgUrl, isTop, isLargeCard, isFoll
         },
         {
           property: `og:image`,
-          content: imgUrl || vtuberMusicIcon.childImageSharp.fixed.src,
+          content: imgUrl || `https://vtuber-music.com${vtuberMusicIcon.childImageSharp.fixed.src}`,
         },
         {
           name: `twitter:card`,

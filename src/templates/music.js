@@ -8,6 +8,7 @@ import Heading from '../components/heading'
 import PhotoFrame from '../components/svg/photoFrame'
 import Please from 'pleasejs'
 import './music.css'
+import { TwitterShareButton, TwitterIcon } from "react-share";
 
 export default ({ data: { music } }) => {
     const [frameColor, addFrameColor] = useState(Please.make_color({format: 'rgb-string', saturation: 0.2}))
@@ -80,6 +81,15 @@ return (
                 </div>
             </div>
         }
+
+        <TwitterShareButton
+            url={`https://vtuber-music.com/music/${music.id}/`}
+            title={`#VtuberMusic には「${music.title}」の歌ってみた動画が${music.videos.length}本登録されているよ！`}
+            related={[`VtuberMusicCom`]}
+            className="flex items-center mb-3 mx-5"
+        >
+            <TwitterIcon size={42} round className='mr-3'/><span className='text-xs text-gray-600 text-left'>Twitterで共有して、{music.title}をたくさんの人に聞いてもらおう！</span>
+        </TwitterShareButton>
     </div>
 </div>
 )

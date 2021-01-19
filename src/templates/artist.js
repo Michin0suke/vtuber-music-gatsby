@@ -9,6 +9,7 @@ import Heading from '../components/heading'
 import VideoCard from '../components/videoCard'
 import ArtistCardLinks from '../components/artistLinks'
 import MusicTitle from '../components/musicTitle'
+import { TwitterShareButton, TwitterIcon } from "react-share";
 
 const sortVideosByReleaseDate = (videos) => videos.sort((a, b) => {
     if (!a.release_date) throw new Error('[error] release_date is undefined')
@@ -84,7 +85,7 @@ const dateFormatter = (string) => {
     }
 }
 
-export default ({ data: { artist }}) => {
+export default ({ data: { artist } }) => {
     const isVtuber = artist.singer_videos.length !== 0
     const isGroup = artist.childrenArtist.length !== 0
 
@@ -143,6 +144,17 @@ export default ({ data: { artist }}) => {
                     <Heading text={artistType} className='mb-2'/>
                     <ArtistCard artist={artist} cardSize='xl' noLink withRuby/>
                 </div>
+            }
+
+            {artist.singer_videos.length > 0 &&
+                <TwitterShareButton
+                        url={`https://vtuber-music.com/artist/${artist.id}/`}
+                        title={`#VtuberMusic で #${artist.name} ${honorific}の歌を聞いているよ！`}
+                        related={[`VtuberMusicCom`]}
+                        className="flex items-center mb-3 mx-5"
+                    >
+                    <TwitterIcon size={42} round className='mr-3'/><span className='text-xs text-gray-600 text-left'>Twitterで共有して、{artist.name}{honorific}の歌をたくさんの人に聞いてもらおう！</span>
+                </TwitterShareButton>
             }
 
             {artist.name_original &&
@@ -215,6 +227,7 @@ export default ({ data: { artist }}) => {
                 className='block mx-auto py-1 px-3 mb-5 w-44 max-w-md border bg-white sm:hover:bg-gray-200 text-center'
                 href={`https://ws.formzu.net/dist/S956931/?importv=${artist.id}`}
             >編集リクエスト</a>
+            <p className='text-center text-xs text-gray-400'>動画ページの編集リクエストからだと、アーティストを直接変更できるよ！</p>
         </div>
     </div>
     )

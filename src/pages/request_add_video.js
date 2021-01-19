@@ -15,6 +15,7 @@ import { allMusic } from '../queries/music'
 import { upsertRequestVideo } from '../queries/requestVideo'
 import Youtube from 'react-youtube'
 import { upsertArtistLess } from '../queries/mutate'
+import { TwitterShareButton, TwitterIcon } from "react-share";
 
 // singerを全てmutationし、帰ってきたidが違ったらそれにする
 const syncArtist = (videoRequest) => {
@@ -219,7 +220,7 @@ export default ({ data: { allVideo }}) => {
                 v.description = false
                 return v
             }))
-    }, [requestVideo])
+    }, [requestVideo.id])
 
     useEffect(() => {
         refreshState()
@@ -681,6 +682,15 @@ export default ({ data: { allVideo }}) => {
                         +`あなたのおかげでより良いサイトになります！！`,
             children: 
                 <div>
+                    <TwitterShareButton
+                        url={`https://vtuber-music.com/`}
+                        title={`#VtuberMusic に${requestVideo.singers.map(i=>` #${i.name} さん`).join('と')}が歌っている「${requestVideo.music.title}」をリクエストしたよ！`}
+                        related={[`VtuberMusicCom`]}
+                        className="flex items-center mb-7 mx-5"
+                    >
+                        <TwitterIcon size={42} round className='mr-3'/><span className='text-xs text-gray-600 text-left'>Twitterで{requestVideo.singers.map(i=>i.name).join('さん&')}さんの{requestVideo.music.title}をリクエストしたことを共有しよう！</span>
+                    </TwitterShareButton>
+
                     <button
                         className='mx-auto block px-4 py-2 bg-red-600 sm:hover:bg-red-500 text-white shadow rounded-full'
                         onClick={() => refreshState()}
@@ -743,8 +753,8 @@ export default ({ data: { allVideo }}) => {
                 {requestVideo.id &&
                     <div className>
                         {requestVideo.title === false && <p>タイトルの取得に失敗しました😨</p>}
-                        {requestVideo.title === false && <p>タイトルを読み込み中🤔</p>}
-                        {requestVideo.title === false && <h3 className='whitespace-pre-wrap text-sm border mx-2 my-4 px-2 py-3 overflow-hidden'>{requestVideo.description}</h3>}
+                        {requestVideo.title === null && <p>タイトルを読み込み中🤔</p>}
+                        {requestVideo.title && <h3 className='whitespace-pre-wrap text-lg border mx-2 my-4 px-2 py-3 overflow-hidden'>{requestVideo.title}</h3>}
                         {requestVideo.description === false && <p>概要欄の取得に失敗しました😨</p>}
                         {requestVideo.description === null && <p>概要欄を読み込み中🤔</p>}
                         {requestVideo.description && <p className='whitespace-pre-wrap text-sm border mx-2 my-4 px-2 py-3 overflow-hidden'>{requestVideo.description}</p>}

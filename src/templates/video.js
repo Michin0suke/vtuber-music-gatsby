@@ -6,12 +6,12 @@ import YouTubePlayer from '../components/youtube-player'
 import Heading from '../components/heading'
 import MusicTitle from '../components/musicTitle'
 import SEO from '../components/seo'
+import { TwitterShareButton, TwitterIcon } from "react-share";
 
 export default ({ data: { video, allVideo }, setVideoPlayer }) => {
     const [sameSingerVideos, setSameSingerVideos] = useState([])
 
     const setVideoPlayerAsync = async () => {
-        console.log(`setVideoPlayerAsync`)
         const nextVideoId = await decideNextVideoId(video, allVideo)
         setVideoPlayer(
             <YouTubePlayer
@@ -22,7 +22,6 @@ export default ({ data: { video, allVideo }, setVideoPlayer }) => {
     }
 
     useEffect(() => {
-        console.log(`useEffect`)
         setVideoPlayerAsync()
 
         decideNextVideoId(video, allVideo)
@@ -115,7 +114,7 @@ export default ({ data: { video, allVideo }, setVideoPlayer }) => {
         <div className='w-full'>
             <SEO
                 title={`${video.music.title} / ${video.singers.map(a => a.name).join('&')}`}
-                description={`${video.music.title}を${video.singers.map(a => a.name).join('さんと')}さんが歌っている動画です。`}
+                description={`${video.music.title}を${video.singers.map(i => `${i.name}${i.children.length === 0 ?'さん':''}`).join('と')}が歌っている動画です。`}
                 url={`https://vtuber-music.com/video/${video.id}`}
                 imgUrl={`https://vtuber-music.com${video.thumbnail_image?.childImageSharp?.fixed?.src}`}
                 isLargeCard
@@ -150,6 +149,15 @@ export default ({ data: { video, allVideo }, setVideoPlayer }) => {
                     {video.arrangers.map((arranger, key) => <ArtistCard artist={arranger} key={key} className='mb-3' roleText='アレンジ'/>)}
                 </div>
 
+                <TwitterShareButton
+                    url={`https://vtuber-music.com/video/${video.id}/`}
+                    title={`#VtuberMusic で「${video.music.title}」(${video.singers.map(i=>`#${i.name}`).join(' & ')})を聞いているよ！`}
+                    related={[`VtuberMusicCom`]}
+                    className="flex items-center mb-3 mx-5"
+                >
+                    <TwitterIcon size={42} round className='mr-3'/><span className='text-xs text-gray-600 text-left'>Twitterで共有して、{video.music.title}をたくさんの人に聞いてもらおう！</span>
+                </TwitterShareButton>
+
                 {video.music.lyrics_url &&
                     <div className='mb-4 text-gray-700 ml-5 py-5'>
                         歌詞：<a href={video.music.lyrics_url} className='inline-block sm:hover:bg-gray-200 rounded p-3'>外部サイトへジャンプ</a>
@@ -175,6 +183,10 @@ export default ({ data: { video, allVideo }, setVideoPlayer }) => {
                 }
 
             </div>
+            <Link
+                className='block mx-auto py-1 px-3 mt-5 mb-5 w-44 max-w-md border bg-white sm:hover:bg-gray-200 text-center'
+                to={`/request_add_video?id=${video.id}`}
+            >編集リクエスト</Link>
         </div>
     )
 }

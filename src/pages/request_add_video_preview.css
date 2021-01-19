@@ -20,3 +20,17 @@
     /* animation: show 1s linear 0s; */
     max-height: 9999px;
 }
+
+
+@keyframes ball {
+    from {
+        transform: scale(0.1)
+    }
+    to {
+        transform: scale(1)
+    }
+}
+
+.ball-animation {
+    animation: ball 4s ease-in 0s both;
+}
