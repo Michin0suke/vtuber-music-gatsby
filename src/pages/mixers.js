@@ -106,7 +106,7 @@ export const query = graphql`
             birthday
             profile_image {
                 childImageSharp {
-                    fluid(maxWidth: 60) {
+                    fluid(maxWidth: 160) {
                         ...GatsbyImageSharpFluid
                     }
                 }

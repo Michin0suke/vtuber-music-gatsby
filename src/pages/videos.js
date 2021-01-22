@@ -82,7 +82,7 @@ export const query = graphql`
                 profile_image {
                     childImageSharp {
                         id
-                        fluid(maxWidth: 60) {
+                        fluid(maxWidth: 160) {
                             ...GatsbyImageSharpFluid
                         }
                     }
@@ -109,7 +109,7 @@ export const query = graphql`
             thumbnail_image {
                 childImageSharp {
                     id
-                    fluid(maxWidth: 300) {
+                    fluid(maxWidth: 330) {
                         ...GatsbyImageSharpFluid
                     }
                 }

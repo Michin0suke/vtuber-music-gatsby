@@ -33,7 +33,7 @@ return (
     <SEO
         title={music.title}
         description={`楽曲 ${music.title}(${creators.join('&')})のページです。${music.videos.length}本の歌ってみた動画が登録されています。`}
-        imgUrl={`https://vtuber-music.com${music.videos?.[Math.floor(Math.random() * music.videos.length)]?.thumbnail_image?.childImageSharp?.fixed?.src}`}
+        imgUrl={`https://vtuber-music.com${music.videos?.[Math.floor(Math.random() * music.videos.length)]?.thumbnail_image?.childImageSharp?.fluid?.src}`}
         isLargeCard
     />
 
@@ -105,7 +105,7 @@ query($id: String!) {
             name
             profile_image {
                 childImageSharp {
-                    fluid(maxWidth: 80) {
+                    fluid(maxWidth: 160) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -116,7 +116,7 @@ query($id: String!) {
             name
             profile_image {
                 childImageSharp {
-                    fluid(maxWidth: 80) {
+                    fluid(maxWidth: 160) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -127,7 +127,7 @@ query($id: String!) {
             name
             profile_image {
                 childImageSharp {
-                    fluid(maxWidth: 80) {
+                    fluid(maxWidth: 160) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -140,7 +140,7 @@ query($id: String!) {
                 name
                 profile_image {
                     childImageSharp {
-                        fluid(maxWidth: 80) {
+                        fluid(maxWidth: 160) {
                             ...GatsbyImageSharpFluid
                         }
                     }
@@ -152,11 +152,8 @@ query($id: String!) {
             }
             thumbnail_image {
                 childImageSharp {
-                    fluid(maxWidth: 300) {
+                    fluid(maxWidth: 330) {
                         ...GatsbyImageSharpFluid
-                    }
-                    fixed(width: 600) {
-                        ...GatsbyImageSharpFixed
                     }
                 }
             }

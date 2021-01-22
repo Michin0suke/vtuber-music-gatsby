@@ -116,7 +116,7 @@ export default ({ data: { video, allVideo }, setVideoPlayer }) => {
                 title={`${video.music.title} / ${video.singers.map(a => a.name).join('&')}`}
                 description={`${video.music.title}を${video.singers.map(i => `${i.name}${i.children.length === 0 ?'さん':''}`).join('と')}が歌っている動画です。`}
                 url={`https://vtuber-music.com/video/${video.id}`}
-                imgUrl={`https://vtuber-music.com${video.thumbnail_image?.childImageSharp?.fixed?.src}`}
+                imgUrl={`https://vtuber-music.com${video.thumbnail_image?.childImageSharp?.fluid?.src}`}
                 isLargeCard
             />
             <div className='w-full max-w-4xl mx-auto'>
@@ -211,7 +211,7 @@ export const pageQuery = graphql`
                 name
                 profile_image {
                     childImageSharp {
-                        fluid(maxWidth: 80) {
+                        fluid(maxWidth: 160) {
                             ...GatsbyImageSharpFluid
                         }
                     }
@@ -225,7 +225,7 @@ export const pageQuery = graphql`
                 name
                 profile_image {
                     childImageSharp {
-                        fluid(maxWidth: 80) {
+                        fluid(maxWidth: 160) {
                             ...GatsbyImageSharpFluid
                         }
                     }
@@ -239,7 +239,7 @@ export const pageQuery = graphql`
                 name
                 profile_image {
                     childImageSharp {
-                        fluid(maxWidth: 80) {
+                        fluid(maxWidth: 160) {
                             ...GatsbyImageSharpFluid
                         }
                     }
@@ -258,7 +258,7 @@ export const pageQuery = graphql`
             name
             profile_image {
                 childImageSharp {
-                    fluid(maxWidth: 80) {
+                    fluid(maxWidth: 160) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -280,7 +280,7 @@ export const pageQuery = graphql`
                     name
                     profile_image {
                         childImageSharp {
-                            fluid(maxWidth: 80) {
+                            fluid(maxWidth: 160) {
                                 ...GatsbyImageSharpFluid
                             }
                         }
@@ -289,7 +289,7 @@ export const pageQuery = graphql`
                 thumbnail_image {
                     id
                     childImageSharp {
-                        fluid(maxWidth: 300) {
+                        fluid(maxWidth: 330) {
                             ...GatsbyImageSharpFluid
                         }
                     }
@@ -336,7 +336,7 @@ export const pageQuery = graphql`
             name
             profile_image {
                 childImageSharp {
-                    fluid(maxWidth: 80) {
+                    fluid(maxWidth: 160) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -350,7 +350,7 @@ export const pageQuery = graphql`
             name
             profile_image {
                 childImageSharp {
-                    fluid(maxWidth: 80) {
+                    fluid(maxWidth: 160) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -364,7 +364,7 @@ export const pageQuery = graphql`
             name
             profile_image {
                 childImageSharp {
-                    fluid(maxWidth: 80) {
+                    fluid(maxWidth: 160) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -380,11 +380,8 @@ export const pageQuery = graphql`
             id
             childImageSharp {
                 id
-                fluid(maxWidth: 600) {
+                fluid(maxWidth: 330) {
                     ...GatsbyImageSharpFluid
-                }
-                fixed(width: 600) {
-                    ...GatsbyImageSharpFixed
                 }
             }
         }

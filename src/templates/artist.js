@@ -104,7 +104,7 @@ export default ({ data: { artist } }) => {
             title={`${artist.name}`}
             description={`${artist.name}${honorific}のプロフィールページです。${singerVideoCount > 0 ? `${singerVideoCount}本の歌ってみた動画が登録されています。` : ''}`}
             url={`https://vtuber-music.com/artist/${artist.id}`}
-            imgUrl={`https://vtuber-music.com${artist.profile_image?.childImageSharp?.fixed?.src}`}
+            imgUrl={`https://vtuber-music.com${artist.profile_image?.childImageSharp?.fluid?.src}`}
             isFollow={artist.singer_videos.length > 0}
         />
         {/* <Breadcrumb type='artist' text={artist.name}/> */}
@@ -264,11 +264,8 @@ query($id: String!){
         image_url_profile_header_source_url
         profile_image {
             childImageSharp {
-                fluid(maxWidth: 80) {
+                fluid(maxWidth: 160) {
                     ...GatsbyImageSharpFluid
-                }
-                fixed(width: 200) {
-                    ...GatsbyImageSharpFixed
                 }
             }
         }
@@ -284,7 +281,7 @@ query($id: String!){
             name
             profile_image {
                 childImageSharp {
-                    fluid(maxWidth: 80) {
+                    fluid(maxWidth: 160) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -303,7 +300,7 @@ query($id: String!){
                     name
                     profile_image {
                         childImageSharp {
-                            fluid(maxWidth: 80) {
+                            fluid(maxWidth: 160) {
                                 ...GatsbyImageSharpFluid
                             }
                         }
@@ -311,7 +308,7 @@ query($id: String!){
                 }
                 thumbnail_image {
                     childImageSharp {
-                        fluid(maxWidth: 300) {
+                        fluid(maxWidth: 330) {
                             ...GatsbyImageSharpFluid
                         }
                     }
@@ -323,7 +320,7 @@ query($id: String!){
             name
             profile_image {
                 childImageSharp {
-                    fluid(maxWidth: 80) {
+                    fluid(maxWidth: 160) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -334,7 +331,7 @@ query($id: String!){
             name
             profile_image {
                 childImageSharp {
-                    fluid(maxWidth: 80) {
+                    fluid(maxWidth: 160) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -367,7 +364,7 @@ query($id: String!){
                 name
                 profile_image {
                     childImageSharp {
-                        fluid(maxWidth: 80) {
+                        fluid(maxWidth: 160) {
                             ...GatsbyImageSharpFluid
                         }
                     }
@@ -375,7 +372,7 @@ query($id: String!){
             }
             thumbnail_image {
                 childImageSharp {
-                    fluid(maxWidth: 300) {
+                    fluid(maxWidth: 330) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -396,7 +393,7 @@ query($id: String!){
                 name
                 profile_image {
                     childImageSharp {
-                        fluid(maxWidth: 80) {
+                        fluid(maxWidth: 160) {
                             ...GatsbyImageSharpFluid
                         }
                     }
@@ -404,7 +401,7 @@ query($id: String!){
             }
             thumbnail_image {
                 childImageSharp {
-                    fluid(maxWidth: 300) {
+                    fluid(maxWidth: 330) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -425,7 +422,7 @@ query($id: String!){
                 name
                 profile_image {
                     childImageSharp {
-                        fluid(maxWidth: 80) {
+                        fluid(maxWidth: 160) {
                             ...GatsbyImageSharpFluid
                         }
                     }
@@ -433,7 +430,7 @@ query($id: String!){
             }
             thumbnail_image {
                 childImageSharp {
-                    fluid(maxWidth: 300) {
+                    fluid(maxWidth: 330) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -454,7 +451,7 @@ query($id: String!){
                 name
                 profile_image {
                     childImageSharp {
-                        fluid(maxWidth: 80) {
+                        fluid(maxWidth: 160) {
                             ...GatsbyImageSharpFluid
                         }
                     }
@@ -462,7 +459,7 @@ query($id: String!){
             }
             thumbnail_image {
                 childImageSharp {
-                    fluid(maxWidth: 300) {
+                    fluid(maxWidth: 330) {
                         ...GatsbyImageSharpFluid
                     }
                 }

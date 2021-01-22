@@ -63,7 +63,7 @@ export const query = graphql`
             custom_music_name
             thumbnail_image {
                 childImageSharp {
-                    fluid(maxWidth: 300) {
+                    fluid(maxWidth: 330) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -77,7 +77,7 @@ export const query = graphql`
                 name
                 profile_image {
                     childImageSharp {
-                        fluid(maxWidth: 60) {
+                        fluid(maxWidth: 160) {
                             ...GatsbyImageSharpFluid
                         }
                     }
