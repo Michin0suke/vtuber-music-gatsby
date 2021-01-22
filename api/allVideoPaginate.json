@@ -9696,7 +9696,12 @@
                 "is_original_music": false,
                 "original_video_id": null,
                 "custom_music_name": null,
-                "singers": [],
+                "singers": [
+                    {
+                        "id": "urQ7iyAq",
+                        "__typename": "Artist"
+                    }
+                ],
                 "mixers": [
                     {
                         "id": "5abTzP2X",
@@ -20831,7 +20836,12 @@
                 "is_original_music": false,
                 "original_video_id": null,
                 "custom_music_name": null,
-                "singers": [],
+                "singers": [
+                    {
+                        "id": "nabana_nana",
+                        "__typename": "Artist"
+                    }
+                ],
                 "mixers": [],
                 "off_vocals": [
                     {
@@ -34778,7 +34788,12 @@
                 "is_original_music": true,
                 "original_video_id": null,
                 "custom_music_name": null,
-                "singers": [],
+                "singers": [
+                    {
+                        "id": "8EzIUyU_",
+                        "__typename": "Artist"
+                    }
+                ],
                 "mixers": [],
                 "off_vocals": [],
                 "arrangers": [],
@@ -41358,7 +41373,12 @@
                 "is_original_music": false,
                 "original_video_id": null,
                 "custom_music_name": null,
-                "singers": [],
+                "singers": [
+                    {
+                        "id": "o38i-WxD",
+                        "__typename": "Artist"
+                    }
+                ],
                 "mixers": [
                     {
                         "id": "kokorobeats",
@@ -57305,7 +57325,12 @@
                 "is_original_music": false,
                 "original_video_id": null,
                 "custom_music_name": null,
-                "singers": [],
+                "singers": [
+                    {
+                        "id": "RRrAY0dN",
+                        "__typename": "Artist"
+                    }
+                ],
                 "mixers": [],
                 "off_vocals": [],
                 "arrangers": [],
@@ -59848,7 +59873,12 @@
                 "is_original_music": false,
                 "original_video_id": null,
                 "custom_music_name": null,
-                "singers": [],
+                "singers": [
+                    {
+                        "id": "wYP46baC",
+                        "__typename": "Artist"
+                    }
+                ],
                 "mixers": [],
                 "off_vocals": [],
                 "arrangers": [],
@@ -68708,7 +68738,12 @@
                 "is_original_music": false,
                 "original_video_id": null,
                 "custom_music_name": null,
-                "singers": [],
+                "singers": [
+                    {
+                        "id": "_LkT-QWr",
+                        "__typename": "Artist"
+                    }
+                ],
                 "mixers": [
                     {
                         "id": "YHJBLzry",
@@ -74139,7 +74174,12 @@
                 "is_original_music": false,
                 "original_video_id": null,
                 "custom_music_name": null,
-                "singers": [],
+                "singers": [
+                    {
+                        "id": "5-lKHAQ4",
+                        "__typename": "Artist"
+                    }
+                ],
                 "mixers": [
                     {
                         "id": "team_suzu",
@@ -85556,7 +85596,12 @@
                 "is_original_music": false,
                 "original_video_id": null,
                 "custom_music_name": null,
-                "singers": [],
+                "singers": [
+                    {
+                        "id": "4skK4ldg",
+                        "__typename": "Artist"
+                    }
+                ],
                 "mixers": [
                     {
                         "id": "ittou_s_soundworks",
@@ -94873,7 +94918,12 @@
                 "is_original_music": true,
                 "original_video_id": null,
                 "custom_music_name": null,
-                "singers": [],
+                "singers": [
+                    {
+                        "id": "lize_helesta",
+                        "__typename": "Artist"
+                    }
+                ],
                 "mixers": [
                     {
                         "id": "tomobop",
@@ -98424,7 +98474,12 @@
                 "is_original_music": false,
                 "original_video_id": null,
                 "custom_music_name": null,
-                "singers": [],
+                "singers": [
+                    {
+                        "id": "aid_noa",
+                        "__typename": "Artist"
+                    }
+                ],
                 "mixers": [],
                 "off_vocals": [],
                 "arrangers": [],
@@ -100604,7 +100659,12 @@
                 "is_original_music": false,
                 "original_video_id": null,
                 "custom_music_name": null,
-                "singers": [],
+                "singers": [
+                    {
+                        "id": "RRrAY0dN",
+                        "__typename": "Artist"
+                    }
+                ],
                 "mixers": [
                     {
                         "id": "zGBbC3N4",
@@ -102935,7 +102995,12 @@
                 "is_original_music": false,
                 "original_video_id": null,
                 "custom_music_name": null,
-                "singers": [],
+                "singers": [
+                    {
+                        "id": "vpoyn5Ni",
+                        "__typename": "Artist"
+                    }
+                ],
                 "mixers": [
                     {
                         "id": "vpoyn5Ni",
