@@ -227,7 +227,7 @@ export default ({ data: { artist } }) => {
                 className='block mx-auto py-1 px-3 mb-5 w-44 max-w-md border bg-white sm:hover:bg-gray-200 text-center'
                 href={`https://ws.formzu.net/dist/S956931/?importv=${artist.id}`}
             >編集リクエスト</a>
-            <p className='text-center text-xs text-gray-400'>動画ページの編集リクエストからだと、アーティストを直接変更できるよ！</p>
+            {/* <p className='text-center text-xs text-gray-400'>動画ページの編集リクエストからだと、アーティストを直接変更できるよ！</p> */}
         </div>
     </div>
     )

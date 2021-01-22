@@ -32,7 +32,7 @@ function SEO({ description, lang, title, url, imgUrl, isTop, isLargeCard, isFoll
         },
         {
           property: `og:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           property: `og:description`,

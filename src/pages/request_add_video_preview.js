@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'gatsby'
-import { requestVideos, upsertRequestVideo } from '../queries/requestVideo'
+import { upsertRequestVideo } from '../queries/requestVideo'
 import { upsertVideo } from '../queries/video'
 import './request_add_video_preview.css'
 import Youtube from 'react-youtube'
 import InfiniteScroll from 'react-infinite-scroll-component'
+import { requestVideosPaginate, queryRequestCountByDay } from '../queries/requestVideo'
+import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Legend } from 'recharts';
 
 const getContributorTwitterId = () => {
     return window.localStorage.getItem('twitter_id')
@@ -18,70 +20,112 @@ const Row = ({l, m, r}) => (
     </div>
 )
 
-const parseOnce = 20
+const fetchOnce = 100
 
 export default () => {
-    const [remoteRequestVideos, setRemoteRequestVideos] = useState([])
     const [expandIndex, setExpandIndex] = useState(false)
     const [isLoading, setIsLoading] = useState(true)
     const [contents, setContents] = useState([])
-    const [contentsCounter, setContentsCounter] = useState(0)
-    const [remoteRequestVideosCount, setRemoteRequestVideoCount] = useState(0)
+    const [currentPage, setCurrentPage] = useState(0)
+    const [remoteRequestVideosCountAll, setRemoteRequestVideoCountAll] = useState(0)
+    const [remoteRequestVideosCountIsNotDone, setRemoteRequestVideoCountIsNotDone] = useState(0)
+    const [hasMore, setHasMore] = useState(true)
+    const [requestCountData, setRequestCountData] = useState([{count: 0, date: '2021/1/1 0'}])
 
-    const addContents = (requestVideos, isFresh) => {
-        const newContents = isFresh ? [] : contents.slice()
-        Promise.all(
+    const resetContents = () => {
+        setIsLoading(true)
+        setContents([])
+        fetchRemoteRequestVideos(1)
+    }
+
+    const addContents = (newContents, currentContents) => {
+        const contentsCopy = currentContents ? JSON.parse(JSON.stringify(contents)) : []
+        contentsCopy.push(...newContents)
+        setContents(contentsCopy)
+    }
+
+    const parseContents = async (requestVideos) => {
+        return await Promise.all(
             requestVideos
-                .slice(contentsCounter * parseOnce, (contentsCounter + 1) * parseOnce)
                 .map(async requestVideo => {
                     try {
                         const parsedContent = JSON.parse(requestVideo.content)
                         parsedContent.updated_at = requestVideo.updated_at
-                        newContents.push(parsedContent)
+                        return parsedContent
                     } catch(e) {
                         console.log(`failed parse content: ${requestVideo.content}`)
                         console.log(e)
+                        return null
                     }
                 })
-        ).then(() => {
-            setContents(newContents)
-            setContentsCounter(contentsCounter + 1)
-        })
+        )
     }
 
-    const fetchRemoteRequestVideos = async () => {
-        requestVideos()
+    const fetchRemoteRequestVideos = async (page, currentContents) => {
+        const parsedContents = await requestVideosPaginate(fetchOnce, page)
             .then(result => {
-                const { requestVideos, requestVideosCount } = result.data
-                setRemoteRequestVideoCount(requestVideosCount)
-                setRemoteRequestVideos(requestVideos)
-                addContents(requestVideos, true)
-                setIsLoading(false)
+                setCurrentPage(page)
+                const hasMore = result.data.requestVideosPaginate.paginatorInfo.hasMorePages
+                const countAll = result.data.requestVideosCount
+                const countIsNotDone = result.data.requestVideosPaginate.paginatorInfo.total
+
+                if (!hasMore) setHasMore(false)
+                setRemoteRequestVideoCountAll(countAll)
+                setRemoteRequestVideoCountIsNotDone(countIsNotDone)
+
+                return parseContents(result.data.requestVideosPaginate.data)
             })
+            .catch(e => {throw new Error(e)})
+
+        addContents(parsedContents, currentContents)
+        setIsLoading(false)
     }
 
     useEffect(() => {
-        console.log('useEffect')
-        fetchRemoteRequestVideos()
-    }, [isLoading])
+        queryRequestCountByDay().then(result => {
+            let acc = 0
+            const accResult = result.data.requestVideosCountByDay.map(cur => {
+                const nextAcc = acc + cur.count
+                acc += cur.count
+                cur.count = nextAcc
+                return cur
+            })
+            setRequestCountData(accResult)
+        })
+    }, [])
+
+    useEffect(() => {
+        fetchRemoteRequestVideos(1)
+    }, [])
 
     return (
         <div className='w-full'>
             <div className='max-w-2xl mx-auto'>
                 {isLoading
-                ? <p className='text-center text-xl'>読み込み中...🤔</p>
-                : <p className='text-sm text-gray-600 leading-6'>{remoteRequestVideos.length}件の待機中リクエストがあります。<span className='text-gray-400'>総リクエスト数:{remoteRequestVideosCount}件</span></p>}
-                
-                <button className='block mx-auto text-3xl' onClick={() => {
-                    setContentsCounter(0)
-                    setIsLoading(true)
-                }}>🔄</button>
+                ? <p className='text-center text-gray-600 leading-6'>Loading...🤔</p>
+                : <p className='text-sm text-gray-600 leading-6'>{remoteRequestVideosCountIsNotDone}件の待機中リクエストがあります。<span className='text-gray-400'>総リクエスト数:{remoteRequestVideosCountAll}件</span></p>}
+
+                {requestCountData.length > 1 &&
+                    <div className='w-full h-60'>
+                        <ResponsiveContainer width="95%">
+                            <LineChart width={600} height={300} data={requestCountData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+                                <XAxis dataKey='date' tickFormatter={(props) => props.match(/\d+\/(\d+\/\d+) \d+/)[1]}/>
+                                <YAxis />
+                                <CartesianGrid stroke="#ccc" strokeDasharray="5 5"/>
+                                <Legend verticalAlign="top" height={36}/>
+                                <Line dataKey="count" stroke="#DC2626" dot={false} strokeWidth={5} />
+                            </LineChart>
+                        </ResponsiveContainer>
+                    </div>}
+
+                <button className='block mx-auto text-3xl mb-3' onClick={() => resetContents()}>🔄</button>
 
                 <InfiniteScroll
-                    dataLength={contentsCounter * parseOnce} //This is important field to render the next data
-                    next={() => addContents(remoteRequestVideos)}
-                    hasMore={remoteRequestVideos.length > contents.length}
+                    dataLength={contents.length} //This is important field to render the next data
+                    next={() => fetchRemoteRequestVideos(currentPage + 1, contents)}
+                    hasMore={hasMore}
                     className='sm:px-2 flex flex-wrap justify-start'
+                    loader={<p className="loader w-full text-lg text-center leading-8" key={0}>Loading ...🤔</p>}
                 >
                     {contents.map((content, key) => (
                         <Card
@@ -90,7 +134,6 @@ export default () => {
                             setExpandIndex={setExpandIndex}
                             cardIndex={key}
                             content={content}
-                            fetchRemoteRequestVideos={fetchRemoteRequestVideos}
                         />))}
                 </InfiniteScroll>
                 <ul>
@@ -119,18 +162,29 @@ const Card = ({
     setExpandIndex,
     cardIndex,
     content,
-    fetchRemoteRequestVideos,
 }) => {
     const [status, setStatus] = useState(false)
     const [pos, setPos] = useState({ y: (Math.random()) * 500 + 20, x: (Math.random()) * 1000 + 20 })
     return (
         <div className={`w-full`}>
             <article className={`w-full mb-2 bg-white select-none rounded overflow-hidden shadow-sm ${status === 'failed' ? 'border-4 border-red-500' : 'border'} ${status === 'success' || status === 'sending' ? 'hidden' : ''}`}>
-                <h2 className={`relative cursor-pointer sm:hover:bg-red-50 px-5 leading-8 ${expandIndex === cardIndex && 'bg-red-100'}`}>
-                    <div className='absolute left-0 right-0 h-full w-3 flex flex-col'>
-                        <span className={`h-full w-3 ${content.mixers.length > 0 && 'bg-gray-200'}`}/>
-                        <span className={`h-full w-3 ${content.off_vocals.length > 0 && 'bg-gray-200'}`}/>
-                        <span className={`h-full w-3 ${content.arrangers.length > 0 && 'bg-gray-200'}`}/>
+                <h2 className={`relative cursor-pointer sm:hover:bg-red-50 pl-7 pr-5 leading-8 ${expandIndex === cardIndex && 'bg-red-100'}`}>
+                    <div className='absolute left-0 h-full flex flex-col'>
+                        <span className={`h-full w-1.5 ${content.singers.name_ruby !== '' && 'bg-green-300'}`}/>
+                        <span className={`h-full w-1.5 ${content.singers.profile !== '' && 'bg-green-200'}`}/>
+                        <span className={`h-full w-1.5 ${content.singers.birthday && 'bg-green-300'}`}/>
+                        <span className={`h-full w-1.5 ${content.singers.id_youtube && 'bg-green-200'}`}/>
+                        <span className={`h-full w-1.5 ${content.singers.id_twitter != '' && 'bg-green-300'}`}/>
+                    </div>
+                    <div className='absolute left-1.5 h-full flex flex-col'>
+                        <span className={`h-full w-1.5 ${content.music.composers.length > 0 && 'bg-yellow-300'}`}/>
+                        <span className={`h-full w-1.5 ${content.music.lyricists.length > 0 && 'bg-yellow-300'}`}/>
+                        <span className={`h-full w-1.5 ${content.music.arrangers.length > 0 && 'bg-yellow-300'}`}/>
+                    </div>
+                    <div className='absolute left-3 h-full flex flex-col'>
+                        <span className={`h-full w-1.5 ${content.mixers.length > 0 && 'bg-red-300'}`}/>
+                        <span className={`h-full w-1.5 ${content.off_vocals.length > 0 && 'bg-red-300'}`}/>
+                        <span className={`h-full w-1.5 ${content.arrangers.length > 0 && 'bg-red-300'}`}/>
                     </div>
                     <span className='pr-2 text-red-600'>{content.stage}</span>
                     <span className='pr-2 text-gray-800'>{content.singers.map(i=>i.name).join(' & ')}</span>
@@ -146,7 +200,6 @@ const Card = ({
                                 setStatus('sending')
                                 upsertVideo(content)
                                 .then(res => {
-                                    console.log(res)
                                     content.is_done = true
                                     upsertRequestVideo(content)
                                         .then(() => setStatus('success'))
@@ -162,6 +215,7 @@ const Card = ({
                             }}
                         >{status === 'sending' ? <span className='text-xl'>🔄</span> : '送信'}</button>
                     }
+                    {content.title && <p className='text-xs text-gray-400'>{content.title}</p>}
                 </h2>
                 <div className={`card-container ${expandIndex === cardIndex ? 'show mx-5 mb-3' : 'm-0'}`}>
                     {expandIndex === cardIndex &&
@@ -205,7 +259,6 @@ const Card = ({
                                     setStatus('sending')
                                     upsertVideo(content)
                                     .then(res => {
-                                        console.log(res)
                                         content.is_done = true
                                         upsertRequestVideo(content)
                                             .then(() => setStatus('success'))

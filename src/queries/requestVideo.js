@@ -1,9 +1,17 @@
 import { gql } from '@apollo/client';
 import { client } from './client';
 
-const REQUEST_VIDEOS = gql`
+const REQUEST_COUNT_BY_DAY = gql`
 {
-  requestVideos(orderBy: [{field: STAGE, order: ASC}, {field: IS_ISSUE, order: DESC}, {field: CONTRIBUTOR_TWITTER_ID, order: DESC}, {field: UPDATED_AT, order: DESC}]) {
+  requestVideosCountByDay {
+    count
+    date
+  }
+}`
+
+const REQUEST_VIDEOS = gql`
+query($id: String){
+  requestVideos(id: $id, orderBy: [{field: STAGE, order: ASC}, {field: IS_ISSUE, order: DESC}, {field: CONTRIBUTOR_TWITTER_ID, order: DESC}, {field: UPDATED_AT, order: DESC}]) {
     id
     stage
     content
@@ -12,6 +20,52 @@ const REQUEST_VIDEOS = gql`
     is_issue
     updated_at
     created_at
+  }
+  requestVideosCount
+}
+`
+
+const REQUEST_VIDEOS_PAGINATE = gql`
+query($first: Int!, $page: Int!){
+  requestVideosPaginate(first: $first, page: $page, orderBy: [{field: STAGE, order: ASC}, {field: IS_ISSUE, order: DESC}, {field: CONTRIBUTOR_TWITTER_ID, order: DESC}, {field: UPDATED_AT, order: DESC}]) {
+    paginatorInfo {
+      total
+      hasMorePages
+      currentPage
+    }
+    data {
+      id
+      stage
+      content
+      contributor_twitter_id
+      is_done
+      is_issue
+      updated_at
+      created_at
+    }
+  }
+  requestVideosCount
+}
+`
+
+const REQUEST_VIDEOS_PAGINATE_ALL = gql`
+query($contributor_twitter_id: String){
+  requestVideosPaginate(contributor_twitter_id: $contributor_twitter_id, first: 1) {
+    paginatorInfo {
+      total
+    }
+  }
+  requestVideosCount
+}
+`
+
+const REQUEST_VIDEOS_LESS = gql`
+{
+  requestVideos {
+    id
+    contributor_twitter_id
+    is_done
+    is_issue
   }
   requestVideosCount
 }
@@ -47,9 +101,46 @@ mutation(
 }
 `
 
+export const queryRequestCountByDay = () => {
+  return client.query({
+    query: REQUEST_COUNT_BY_DAY
+  })
+}
+
 export const requestVideos = () => {
   return client.query({
     query: REQUEST_VIDEOS
+  })
+}
+export const findRequestVideo = (id) => {
+  return client.query({
+    query: REQUEST_VIDEOS,
+    variables: { id }
+  })
+}
+
+export const requestVideosPaginate = (first, page) => {
+  return client.query({
+    query: REQUEST_VIDEOS_PAGINATE,
+    variables: {
+      first,
+      page,
+    }
+  })
+}
+
+export const requestVideosCountByTwitterId = (contributor_twitter_id) => {
+  return client.query({
+    query: REQUEST_VIDEOS_PAGINATE_ALL,
+    variables: { contributor_twitter_id }
+  })
+  .then(result => result.data?.requestVideosPaginate?.paginatorInfo?.total)
+  .catch(e => console.log(e))
+}
+
+export const requestVideosLess = () => {
+  return client.query({
+    query: REQUEST_VIDEOS_LESS
   })
 }
 

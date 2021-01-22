@@ -4,7 +4,9 @@ import Footer from "./footer"
 import SMMenu from './smMenu'
 import PCMenuLeft from './pcMenuLeft'
 
-export default ({ children, path }) => {
+export default (props) => {
+  const { children } = props
+  const path = props.location.pathname
   const [videoPlayer, setVideoPlayer] = useState(null)
 
   const childrenWithProps = cloneElement(children, { setVideoPlayer })

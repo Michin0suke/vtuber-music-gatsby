@@ -1666,10 +1666,10 @@
   dependencies:
     defer-to-connect "^2.0.0"
 
-"@tarekraafat/autocomplete.js@^8.2.1":
-  version "8.2.1"
-  resolved "https://registry.yarnpkg.com/@tarekraafat/autocomplete.js/-/autocomplete.js-8.2.1.tgz#624ab982710e37dceba5eb0cc4673d012df01ccc"
-  integrity sha512-J5udvCRu4K/gHb0xBb0Sk9ac4apK8b3D+1TEgXaDQu7atGE1H5B68thPeriSB6o0lrR3/Ixq2nGeI6fzRZL98w==
+"@tarekraafat/autocomplete.js@^8.2":
+  version "8.2.2"
+  resolved "https://registry.yarnpkg.com/@tarekraafat/autocomplete.js/-/autocomplete.js-8.2.2.tgz#57e9bfc65b32d5760c9e871efbaa8877f088657c"
+  integrity sha512-0sZTmIhO3lkHNrNyNsKE8Rk05HkedB8xjzshLznmtRIPg6I1OHRPvL6Uw2AiPgUA9/6D+dAwO8+1CfV/QBu3rg==
 
 "@tokenizer/token@^0.1.0", "@tokenizer/token@^0.1.1":
   version "0.1.1"

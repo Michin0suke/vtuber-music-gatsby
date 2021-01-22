@@ -50,6 +50,7 @@ const createAutoComplete = (requestVideo, remoteAllArtist, roleIndex, artistInde
     debounce: 0,
       // 検索モード
     searchEngine: 'loose',
+    // searchEngine: (query, record) => record,
       // ハイライト
     highlight: true,
     diacritics: false,

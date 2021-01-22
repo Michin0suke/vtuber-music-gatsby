@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, navigate } from 'gatsby'
 import Heading from '../components/heading'
-import { requestVideos as queryRequestVideos } from '../queries/requestVideo'
+import { requestVideos, requestVideosLess } from '../queries/requestVideo'
 import { parse } from 'date-fns'
 import FormYoutubeUrl from '../components/request/formYoutubeUrl'
 import StepButtons from '../components/request/stepButtons'
@@ -10,14 +10,13 @@ import FormMusic from '../components/request/formMusic'
 import FormMusicArtist from '../components/request/formMusicArtist'
 import FormVideoArtist from '../components/request/formVideoArtist'
 import FormTwitter from '../components/request/formTwitter'
-import { allArtist } from '../queries/artist'
+import { allArtist, queryAllArtistOnlySingerFull, queryAllArtistWithoutSingerLess } from '../queries/artist'
 import { allMusic } from '../queries/music'
-import { upsertRequestVideo } from '../queries/requestVideo'
+import { upsertRequestVideo, requestVideosCountByTwitterId } from '../queries/requestVideo'
 import Youtube from 'react-youtube'
 import { upsertArtistLess } from '../queries/mutate'
 import { TwitterShareButton, TwitterIcon } from "react-share";
 
-// singerを全てmutationし、帰ってきたidが違ったらそれにする
 const syncArtist = (videoRequest) => {
     const roles = ['mixers', 'off_vocals', 'arrangers']
     roles.forEach(role => {
@@ -159,7 +158,7 @@ export default ({ data: { allVideo }}) => {
     }
 
     const refreshState = () => {
-        queryRequestVideos().then(result => {
+        requestVideosLess().then(result => {
             setRemoteRequestVideos(result.data.requestVideos)
         })
         fetchRemoteData.artist()
@@ -170,16 +169,16 @@ export default ({ data: { allVideo }}) => {
     }
 
     const fetchRemoteData = {
-        artist: () => {
-            allArtist()
-                .then(result => {
-                    console.log(result)
-                    return result
-                })
-                .then(result => setRemoteAllArtist(result.data?.allArtist))
-                .catch(e => console.log(e))
+        artist: async () => {
+            Promise.all(
+                [
+                    queryAllArtistOnlySingerFull(),
+                    queryAllArtistWithoutSingerLess(),
+                ]
+            ).then(result => setRemoteAllArtist(result.flat()))
+                // .then(result => setRemoteAllArtist(result))
         },
-        music: () => {
+        music: async () => {
             allMusic()
                 .then(result => setRemoteAllMusic(result.data?.allMusic))
                 .catch(e => console.log(e))
@@ -201,12 +200,9 @@ export default ({ data: { allVideo }}) => {
 
     useEffect(() => {
         if (step === steps.INIT || requestVideo.id === null || requestVideo.description !== null || requestVideo.title !== null) return
+
         fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet&key=AIzaSyBkn0LB-sw4ZiPEs069rCEotczo1Qi6ZPY&id=${requestVideo.id}`)
             .then(res => res.json())
-            .then(json => {
-                console.log(json)
-                return json
-            })
             .then(json => json.items?.[0]?.snippet)
             .then(snippet => {
                 updateRequestVideo(v => {
@@ -259,9 +255,7 @@ export default ({ data: { allVideo }}) => {
             message: '動画のURLをコピペしよう',
             children: 
                 <div>
-                    {(remoteRequestVideos.length > 0
-                    && remoteAllArtist.length > 0
-                    && remoteAllMusic.length > 0)
+                    {(remoteRequestVideos.length > 0)
                     ?
                         <FormYoutubeUrl
                             remoteRequestVideos={remoteRequestVideos}
@@ -672,14 +666,7 @@ export default ({ data: { allVideo }}) => {
                 />
         },
         fin: {
-            message: `${requestVideo.contributor_twitter_id ? `@${requestVideo.contributor_twitter_id}さん` : ''}リクエストありがとうございました！\n`
-                        +`${
-                            requestVideo.contributor_twitter_id
-                            && remoteRequestVideos.filter(v => v.contributor_twitter_id === requestVideo.contributor_twitter_id).length > 0
-                                ? `これで${remoteRequestVideos.filter(v => v.contributor_twitter_id === requestVideo.contributor_twitter_id).length + 1}本目のリクエストですね！！\nいつもありがとうございます！！！\n`
-                                : ''
-                        }`
-                        +`あなたのおかげでより良いサイトになります！！`,
+            message: <ClosingMessage requestVideo={requestVideo}/>,
             children: 
                 <div>
                     <TwitterShareButton
@@ -715,6 +702,7 @@ export default ({ data: { allVideo }}) => {
                     stageToStep={stageToStep}
                     isEditMode={isEditMode}
                 />
+
                 <Heading className='mb-3 mx-3' text='動画を追加してみよう！'/>
 
                 <div className='px-4 mb-14'>
@@ -751,12 +739,12 @@ export default ({ data: { allVideo }}) => {
                 }
 
                 {requestVideo.id &&
-                    <div className>
-                        {requestVideo.title === false && <p>タイトルの取得に失敗しました😨</p>}
-                        {requestVideo.title === null && <p>タイトルを読み込み中🤔</p>}
+                    <div>
+                        {requestVideo.title === false && <p className='text-center'>タイトルの取得に失敗しました😨</p>}
+                        {requestVideo.title === null && <p className='text-center'>タイトルを読み込み中🤔</p>}
                         {requestVideo.title && <h3 className='whitespace-pre-wrap text-lg border mx-2 my-4 px-2 py-3 overflow-hidden'>{requestVideo.title}</h3>}
-                        {requestVideo.description === false && <p>概要欄の取得に失敗しました😨</p>}
-                        {requestVideo.description === null && <p>概要欄を読み込み中🤔</p>}
+                        {requestVideo.description === false && <p className='text-center'>概要欄の取得に失敗しました😨</p>}
+                        {requestVideo.description === null && <p className='text-center'>概要欄を読み込み中🤔</p>}
                         {requestVideo.description && <p className='whitespace-pre-wrap text-sm border mx-2 my-4 px-2 py-3 overflow-hidden'>{requestVideo.description}</p>}
                     </div>
                 }
@@ -805,8 +793,55 @@ export default ({ data: { allVideo }}) => {
                         onClick={() => setContributorTwitterId('')}
                     >入力したTwitterID(@{getContributorTwitterId()})の訂正</button>
                 }
+
+
+                <table className='mx-auto text-xs text-gray-400'>
+                    <thead>
+                        <tr>
+                            <th colSpan={2}>DEBUG</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>allVideo</td><td>{allVideo.nodes.length}</td>
+                        </tr>
+                        <tr>
+                            <td>remoteAllMusic</td><td>{remoteAllMusic.length}</td>
+                        </tr>
+                        <tr>
+                            <td>remoteAllArtist</td><td>{remoteAllArtist.length}</td>
+                        </tr>
+                        <tr>
+                            <td>remoteRequestVideos</td><td>{remoteRequestVideos.length}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
+    )
+}
+
+const ClosingMessage = ({ requestVideo }) => {
+    const [requestCount, setRequestCount] = useState(0)
+
+    const fetchRequestCount = async (twitterId) => {
+        const count = await requestVideosCountByTwitterId(twitterId)
+        setRequestCount(count)
+    }
+
+    useEffect(() => {
+        const twitterId = requestVideo.contributor_twitter_id
+        if (twitterId) {
+            fetchRequestCount(twitterId)
+        }
+    }, [])
+
+    return (
+        <p>
+            {requestVideo.contributor_twitter_id ? `@${requestVideo.contributor_twitter_id}さん` : ''}リクエストありがとうございました！
+            {requestCount > 0 && `これで${requestCount + 1}本目のリクエストですね！！\nいつもありがとうございます！！！`}
+            あなたのおかげでより良いサイトになります！！
+        </p>
     )
 }
 

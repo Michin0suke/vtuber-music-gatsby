@@ -39,7 +39,7 @@ export default ({
                     updateRequestVideoBirthday={updateRequestVideoBirthday}
                 />
             ))}
-            <div class='mb-3'>
+            <div className='mb-3'>
                 <button
                     className='h-7 w-7 mr-3 bg-red-500 sm:hover:bg-red-400 text-xl font-bold text-white rounded-full'
                     onClick={_=> updateRequestVideo(v => {
