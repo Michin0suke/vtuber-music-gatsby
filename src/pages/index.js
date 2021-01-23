@@ -54,7 +54,7 @@ export default IndexPage
 
 export const query = graphql`
 {
-    allVideo(sort: {order: DESC, fields: release_date}, limit: 300) {
+    allVideo(sort: {order: DESC, fields: release_date}, limit: 100) {
         totalCount
         nodes {
             id
@@ -63,7 +63,7 @@ export const query = graphql`
             custom_music_name
             thumbnail_image {
                 childImageSharp {
-                    fluid(maxWidth: 330) {
+                    fluid(quality: 70, pngQuality: 70, maxWidth: 330) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -77,7 +77,7 @@ export const query = graphql`
                 name
                 profile_image {
                     childImageSharp {
-                        fluid(maxWidth: 160) {
+                        fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
                             ...GatsbyImageSharpFluid
                         }
                     }

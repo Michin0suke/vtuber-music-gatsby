@@ -211,7 +211,7 @@ export const pageQuery = graphql`
                 name
                 profile_image {
                     childImageSharp {
-                        fluid(maxWidth: 160) {
+                        fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
                             ...GatsbyImageSharpFluid
                         }
                     }
@@ -225,7 +225,7 @@ export const pageQuery = graphql`
                 name
                 profile_image {
                     childImageSharp {
-                        fluid(maxWidth: 160) {
+                        fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
                             ...GatsbyImageSharpFluid
                         }
                     }
@@ -239,7 +239,7 @@ export const pageQuery = graphql`
                 name
                 profile_image {
                     childImageSharp {
-                        fluid(maxWidth: 160) {
+                        fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
                             ...GatsbyImageSharpFluid
                         }
                     }
@@ -258,7 +258,7 @@ export const pageQuery = graphql`
             name
             profile_image {
                 childImageSharp {
-                    fluid(maxWidth: 160) {
+                    fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -280,7 +280,7 @@ export const pageQuery = graphql`
                     name
                     profile_image {
                         childImageSharp {
-                            fluid(maxWidth: 160) {
+                            fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
                                 ...GatsbyImageSharpFluid
                             }
                         }
@@ -289,7 +289,7 @@ export const pageQuery = graphql`
                 thumbnail_image {
                     id
                     childImageSharp {
-                        fluid(maxWidth: 330) {
+                        fluid(quality: 70, pngQuality: 70, maxWidth: 330) {
                             ...GatsbyImageSharpFluid
                         }
                     }
@@ -336,7 +336,7 @@ export const pageQuery = graphql`
             name
             profile_image {
                 childImageSharp {
-                    fluid(maxWidth: 160) {
+                    fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -350,7 +350,7 @@ export const pageQuery = graphql`
             name
             profile_image {
                 childImageSharp {
-                    fluid(maxWidth: 160) {
+                    fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -364,7 +364,7 @@ export const pageQuery = graphql`
             name
             profile_image {
                 childImageSharp {
-                    fluid(maxWidth: 160) {
+                    fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -380,7 +380,7 @@ export const pageQuery = graphql`
             id
             childImageSharp {
                 id
-                fluid(maxWidth: 330) {
+                fluid(quality: 70, pngQuality: 70, maxWidth: 330) {
                     ...GatsbyImageSharpFluid
                 }
             }

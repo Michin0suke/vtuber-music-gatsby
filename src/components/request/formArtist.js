@@ -93,6 +93,7 @@ const Form = ({
         }
 
         // const autoCompleteKeys = ['name', 'name_ruby', 'id_twitter', 'id_youtube']
+        console.log(remoteAllArtist)
         const autoCompleteKeys = ['name', 'name_ruby', 'id_twitter']
         autoCompleteKeys.forEach(singerElement => {
             createAutoComplete(requestVideo, remoteAllArtist, singerIndex, singerElement, updateRequestVideo)

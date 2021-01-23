@@ -264,14 +264,14 @@ query($id: String!){
         image_url_profile_header_source_url
         profile_image {
             childImageSharp {
-                fluid(maxWidth: 160) {
+                fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
                     ...GatsbyImageSharpFluid
                 }
             }
         }
         header_image {
             childImageSharp {
-                fluid(maxHeight: 200) {
+                fluid(quality: 70, pngQuality: 70, maxHeight: 200) {
                     ...GatsbyImageSharpFluid
                 }
             }
@@ -281,7 +281,7 @@ query($id: String!){
             name
             profile_image {
                 childImageSharp {
-                    fluid(maxWidth: 160) {
+                    fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -300,7 +300,7 @@ query($id: String!){
                     name
                     profile_image {
                         childImageSharp {
-                            fluid(maxWidth: 160) {
+                            fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
                                 ...GatsbyImageSharpFluid
                             }
                         }
@@ -308,7 +308,7 @@ query($id: String!){
                 }
                 thumbnail_image {
                     childImageSharp {
-                        fluid(maxWidth: 330) {
+                        fluid(quality: 70, pngQuality: 70, maxWidth: 330) {
                             ...GatsbyImageSharpFluid
                         }
                     }
@@ -320,7 +320,7 @@ query($id: String!){
             name
             profile_image {
                 childImageSharp {
-                    fluid(maxWidth: 160) {
+                    fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -331,7 +331,7 @@ query($id: String!){
             name
             profile_image {
                 childImageSharp {
-                    fluid(maxWidth: 160) {
+                    fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -364,7 +364,7 @@ query($id: String!){
                 name
                 profile_image {
                     childImageSharp {
-                        fluid(maxWidth: 160) {
+                        fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
                             ...GatsbyImageSharpFluid
                         }
                     }
@@ -372,7 +372,7 @@ query($id: String!){
             }
             thumbnail_image {
                 childImageSharp {
-                    fluid(maxWidth: 330) {
+                    fluid(quality: 70, pngQuality: 70, maxWidth: 330) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -393,7 +393,7 @@ query($id: String!){
                 name
                 profile_image {
                     childImageSharp {
-                        fluid(maxWidth: 160) {
+                        fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
                             ...GatsbyImageSharpFluid
                         }
                     }
@@ -401,7 +401,7 @@ query($id: String!){
             }
             thumbnail_image {
                 childImageSharp {
-                    fluid(maxWidth: 330) {
+                    fluid(quality: 70, pngQuality: 70, maxWidth: 330) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -422,7 +422,7 @@ query($id: String!){
                 name
                 profile_image {
                     childImageSharp {
-                        fluid(maxWidth: 160) {
+                        fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
                             ...GatsbyImageSharpFluid
                         }
                     }
@@ -430,7 +430,7 @@ query($id: String!){
             }
             thumbnail_image {
                 childImageSharp {
-                    fluid(maxWidth: 330) {
+                    fluid(quality: 70, pngQuality: 70, maxWidth: 330) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -451,7 +451,7 @@ query($id: String!){
                 name
                 profile_image {
                     childImageSharp {
-                        fluid(maxWidth: 160) {
+                        fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
                             ...GatsbyImageSharpFluid
                         }
                     }
@@ -459,7 +459,7 @@ query($id: String!){
             }
             thumbnail_image {
                 childImageSharp {
-                    fluid(maxWidth: 330) {
+                    fluid(quality: 70, pngQuality: 70, maxWidth: 330) {
                         ...GatsbyImageSharpFluid
                     }
                 }

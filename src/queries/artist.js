@@ -27,7 +27,13 @@ query($first: Int!, $page: Int!) {
       lastPage
     }
     data {
+      id
       name
+      name_ruby
+      profile
+      birthday
+      id_youtube
+      id_twitter
     }
   }
 }
