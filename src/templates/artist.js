@@ -87,7 +87,7 @@ const dateFormatter = (string) => {
 
 export default ({ data: { artist } }) => {
     const isVtuber = artist.singer_videos.length !== 0
-    const isGroup = artist.childrenArtist.length !== 0
+    const isGroup = artist.children_artist.length !== 0
 
     let artistType = 'アーティスト'
     // if (isVtuber) artistType = 'Vtuber'
@@ -96,7 +96,7 @@ export default ({ data: { artist } }) => {
     let honorific = isGroup ? '' : 'さん'
 
     // 歌っている動画の本数(子も含む)
-    const singerVideoCount = artist.singer_videos.length + artist.childrenArtist.map(child=>child.singer_videos).flat().length
+    const singerVideoCount = artist.singer_videos.length + artist.children_artist.map(child=>child.singer_videos).flat().length
 
     return (
     <div className='w-full'>
@@ -183,7 +183,7 @@ export default ({ data: { artist } }) => {
                 </div>
             }
 
-            <ArtistSection headingText='所属しているアーティスト' artists={artist.childrenArtist}/>
+            <ArtistSection headingText='所属しているアーティスト' artists={artist.children_artist}/>
             <ArtistSection headingText='所属しているグループ' artists={artist.parents}/>
             <ArtistSection headingText='似ているタイプのアーティスト' artists={artist.recommends}/>
             
@@ -194,7 +194,7 @@ export default ({ data: { artist } }) => {
             <MusicSection headingText='編曲した楽曲' music={artist.arranger_music}/>
 
             <VideoSection headingText='歌っている動画' videos={artist.singer_videos}/>
-            <VideoSection headingText='所属しているアーティストが歌っている動画' videos={artist.childrenArtist.map(child=>child.singer_videos).flat()}/>
+            <VideoSection headingText='所属しているアーティストが歌っている動画' videos={artist.children_artist.map(child=>child.singer_videos).flat()}/>
             <VideoSection headingText='アレンジを担当した動画' videos={artist.arranger_videos}/>
             <VideoSection headingText='ミックスを担当した動画' videos={artist.mixer_videos}/>
             <VideoSection headingText='オフボーカルを担当した動画' videos={artist.off_vocal_videos}/>
@@ -276,7 +276,7 @@ query($id: String!){
                 }
             }
         }
-        childrenArtist {
+        children_artist {
             id
             name
             profile_image {

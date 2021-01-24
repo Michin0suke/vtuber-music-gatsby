@@ -7,8 +7,10 @@ import "slick-carousel/slick/slick-theme.css";
 import InfiniteScroll from 'react-infinite-scroll-component'
 import SortBar from '../../components/sortBar'
 
+const showAtOnce = 12
+
 const IndexPage = ({ data: { allVideo }}) => {
-    const [showVideoIndex, setShowVideoIndex] = useState(24)
+    const [showVideoIndex, setShowVideoIndex] = useState(showAtOnce)
     const [showVideos, setShowVideos] = useState(allVideo.nodes)
 
     return (
@@ -18,8 +20,8 @@ const IndexPage = ({ data: { allVideo }}) => {
         <SortBar path='/sort/created_at'/>
 
         <InfiniteScroll
-            dataLength={showVideoIndex - 12} //This is important field to render the next data
-            next={() => setShowVideoIndex(showVideoIndex + 12)}
+            dataLength={showVideoIndex - showAtOnce} //This is important field to render the next data
+            next={() => setShowVideoIndex(showVideoIndex + showAtOnce)}
             hasMore={showVideos.length > showVideoIndex}
             className='sm:px-2 flex flex-wrap justify-start'
         >
@@ -36,7 +38,7 @@ export default IndexPage
 
 export const query = graphql`
 {
-    allVideo(sort: {order: DESC, fields: created_at}, limit: 100) {
+    allVideo(sort: {order: DESC, fields: created_at}, limit: 24) {
         totalCount
         nodes {
             id

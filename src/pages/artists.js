@@ -63,7 +63,7 @@ export default ({ data: { allArtist } }) => {
             <SEO title='アーティスト一覧' description='アーティスト一覧のページです。' isFollow/>
             <p className='px-2 py-1 text-gray-500 text-xs'>{allArtist.nodes.length}人のアーティストが登録されています。</p>
             <Link to='/mixers'><button className='absolute top-1 right-5 py-1 px-2 bg-red-600 sm:hover:bg-red-400 text-white rounded-full'>MIXer</button></Link>
-            <div className='flex mx-auto px-2 mt-4 mb-7 w-full max-w-xl h-10'>
+            {/* <div className='flex mx-auto px-2 mt-4 mb-7 w-full max-w-xl h-10'>
                 <SearchIcon color='#555' className='w-10 p-2'/>
                 <input
                     type='text'
@@ -71,15 +71,15 @@ export default ({ data: { allArtist } }) => {
                     placeholder='キーワードを入力してください。'
                     onChange={(e) => searchVideo(e)}
                 />
-            </div>
-            {showBirthdayArtists && birthdayArtists.length > 0 &&
+            </div> */}
+            {/* {showBirthdayArtists && birthdayArtists.length > 0 &&
                 <div>
                     <Heading text='今日が誕生日のアーティスト'/>
                     <div className='sm:flex flex-wrap mx-5 pb-5 border-b-4 border-dotted'>
                         {birthdayArtists.map((artist, key) => <ArtistCard key={key} artist={artist} className='w-full md:w-1/2 lg:w-1/3' cardSize='lg' withParent withVideoCount/>)}
                     </div>
                 </div>
-            }
+            } */}
             <InfiniteScroll
                 dataLength={showCount}
                 next={() => setShowCount(showCount + 6)}
@@ -99,7 +99,7 @@ export default ({ data: { allArtist } }) => {
 
 export const query = graphql`
 {
-    allArtist(filter: {is_singer: {eq: true}}, sort: {order: ASC, fields: name_ruby}) {
+    allArtist(filter: {is_singer: {eq: true}}, sort: {order: ASC, fields: name_ruby}, limit: 36) {
         nodes {
             id
             name

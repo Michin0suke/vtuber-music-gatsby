@@ -16,7 +16,7 @@ export default ({ data: { allArtist, allVideo }, isRandomMode, setIsRandomMode, 
 
     const setNextVideoId = async () => {
         const startTime = Date.now()
-        Promise.all([decideNextVideoId(), sleep(1000)])
+        Promise.all([decideNextVideoId(), sleep(800)])
             .then(result => {
                 console.log(Date.now() - startTime)
                 navigate(`/video/${result[0]}`)
@@ -26,15 +26,7 @@ export default ({ data: { allArtist, allVideo }, isRandomMode, setIsRandomMode, 
     const decideNextVideoId = async () => {
         const nextArtist = allArtist.nodes[Math.floor(allArtist.nodes.length * Math.random())]
         setNextArtist(nextArtist)
-
-        const nextArtistId = nextArtist.id
-        const choicesVideos = allVideo.nodes.filter(v => 
-            v.singers
-                .map(i => i.id)
-                .includes(nextArtistId)
-        )
-        const nextVideoId = choicesVideos[Math.floor(choicesVideos.length * Math.random())].id
-
+        const nextVideoId = nextArtist.singer_videos[Math.floor(nextArtist.singer_videos.length * Math.random())].id
         return nextVideoId
     }
     
@@ -60,18 +52,12 @@ export default ({ data: { allArtist, allVideo }, isRandomMode, setIsRandomMode, 
 
 export const pageQuery = graphql`
  query {
-    allVideo {
-        nodes {
-            id
-            singers {
-                id
-            }
-        }
-    }
     allArtist(filter: {is_singer: {eq: true}}) {
         nodes {
-            id
             name
+            singer_videos {
+                id
+            }
             profile_image {
                 childImageSharp {
                     fluid(quality: 70, pngQuality: 70, maxWidth: 160) {

@@ -295,7 +295,7 @@ export const pageQuery = graphql`
                     }
                 }
             }
-            children:childrenArtist {
+            children:children_artist {
                 singer_videos {
                     id
                     singers {
@@ -320,7 +320,7 @@ export const pageQuery = graphql`
                         id
                     }
                 }
-                children:childrenArtist {
+                children:children_artist {
                     id
                     singer_videos {
                         id

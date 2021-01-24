@@ -2,8 +2,14 @@ const realFs = require('fs')
 const gracefulFs = require('graceful-fs')
 gracefulFs.gracefulify(realFs)
 
+const apiFileName = {
+    allVideo: process.env === `production` ? `allVideoPaginate.json` : `allVideoPaginateDev.json`,
+    allMusic: process.env === `production` ? `allMusicPaginate.json` : `allMusicPaginateDev.json`,
+    allArtist: process.env === `production` ? `allArtistPaginate.json` : `allArtistPaginateDev.json`,
+}
+
 exports.sourceNodes = async ({ actions: { createNode }, createContentDigest }) => {
-    gracefulFs.readFile(`api/allVideoPaginate.json`, (err, data) => {
+    gracefulFs.readFile(`api/${apiFileName.allVideo}`, (err, data) => {
         if (err) throw new Error(err)
         JSON.parse(data).data.allVideoPaginate.forEach(video => {
             createNode({
@@ -22,7 +28,7 @@ exports.sourceNodes = async ({ actions: { createNode }, createContentDigest }) =
         })
     })
 
-    gracefulFs.readFile(`api/allMusicPaginate.json`, (err, data) => {
+    gracefulFs.readFile(`api/${apiFileName.allMusic}`, (err, data) => {
         if (err) throw new Error(err)
         JSON.parse(data).data.allMusicPaginate.forEach(music => {
             createNode({
@@ -39,13 +45,13 @@ exports.sourceNodes = async ({ actions: { createNode }, createContentDigest }) =
         })
     })
 
-    gracefulFs.readFile(`api/allArtistPaginate.json`, (err, data) => {
+    gracefulFs.readFile(`api/${apiFileName.allArtist}`, (err, data) => {
         if (err) throw new Error(err)
         JSON.parse(data).data.allArtistPaginate.forEach(artist => {
             createNode({
                 ...artist,
                 recommends: artist.recommends.map(i => i.id),
-                children: artist.children.map(i => i.id),
+                children_artist: artist.children.map(i => i.id),
                 parents: artist.parents.map(i => i.id),
                 composer_music: artist.composer_music.map(i => i.id),
                 lyricist_music: artist.lyricist_music.map(i => i.id),
@@ -233,7 +239,7 @@ exports.createSchemaCustomization = ({ actions: { createTypes } }) => {
             image_front_type_header: String
             youtube_channel_is_user: Boolean!
             recommends: [Artist]! @link
-            children: [Artist]! @link
+            children_artist: [Artist]! @link
             parents: [Artist]! @link
             composer_music: [Music]! @link
             lyricist_music: [Music]! @link
