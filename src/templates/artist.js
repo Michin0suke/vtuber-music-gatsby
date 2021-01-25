@@ -12,7 +12,7 @@ import MusicTitle from '../components/musicTitle'
 import { TwitterShareButton, TwitterIcon } from "react-share";
 
 const sortVideosByReleaseDate = (videos) => videos.sort((a, b) => {
-    if (!a.release_date) throw new Error('[error] release_date is undefined')
+    if (!a.release_date) console.log('[error] release_date is undefined')
     if (a.release_date > b.release_date) return -1
     if (a.release_date < b.release_date) return 1
     return 0
@@ -53,7 +53,7 @@ const MusicSection = ({ headingText, music }) => {
 
 const VideoSection = ({ headingText, videos }) => {
     const sortedVideos = sortVideosByReleaseDate(videos)
-    if (sortedVideos.length !== 0) {
+    if (videos.length !== 0) {
         return (
             <div className='mb-4 pb-5 lg:px-5 bg-white lg:shadow'>
                 <Heading text={headingText} count={sortedVideos.length} className='mb-2'/>
