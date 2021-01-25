@@ -7,6 +7,7 @@ import Youtube from 'react-youtube'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import { requestVideosPaginate, queryRequestCountByDay } from '../queries/requestVideo'
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Legend } from 'recharts';
+import Loading from '../components/svg/loading'
 
 const getContributorTwitterId = () => {
     return window.localStorage.getItem('twitter_id')
@@ -33,8 +34,11 @@ export default () => {
     const [requestCountData, setRequestCountData] = useState([{count: 0, date: '2021/1/1 0'}])
 
     const resetContents = () => {
+        setExpandIndex(false)
         setIsLoading(true)
         setContents([])
+        setCurrentPage(0)
+        setHasMore(true)
         fetchRemoteRequestVideos(1)
     }
 
@@ -102,7 +106,7 @@ export default () => {
         <div className='w-full'>
             <div className='max-w-2xl mx-auto'>
                 {isLoading
-                ? <p className='text-center text-gray-600 leading-6'>Loading...🤔</p>
+                ? <Loading className='w-10 h-10 mx-auto'/>
                 : <p className='text-sm text-gray-600 leading-6'>{remoteRequestVideosCountIsNotDone}件の待機中リクエストがあります。<span className='text-gray-400'>総リクエスト数:{remoteRequestVideosCountAll}件</span></p>}
 
                 {requestCountData.length > 1 &&
@@ -125,7 +129,7 @@ export default () => {
                     next={() => fetchRemoteRequestVideos(currentPage + 1, contents)}
                     hasMore={hasMore}
                     className='sm:px-2 flex flex-wrap justify-start'
-                    loader={<p className="loader w-full text-lg text-center leading-8" key={0}>Loading ...🤔</p>}
+                    loader={<Loading className='w-10 h-10 mx-auto'/>}
                 >
                     {contents.map((content, key) => (
                         <Card

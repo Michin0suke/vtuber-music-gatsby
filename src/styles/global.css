@@ -1,5 +1,5 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Kosugi+Maru&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap'); */
 
 @tailwind base;
 @tailwind components;
@@ -7,9 +7,7 @@
 
 @layer base {
     body {
-        font-family: 'M PLUS Rounded 1c', sans-serif;
-        /* font-family: 'Comfortaa', 'Kosugi Maru', sans-serif; */
-        /* font-family: 'Kosugi Maru', sans-serif; */
-        /* font-family: 'Comfortaa', cursive; */
+        /* font-family: 'M PLUS Rounded 1c', sans-serif; */
+        font-family: YuGothic,'Yu Gothic','ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN','ヒラギノ角ゴシック','Hiragino Sans','Arial', sans-serif;
     }
 }

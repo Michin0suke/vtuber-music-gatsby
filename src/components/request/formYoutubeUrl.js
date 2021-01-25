@@ -75,7 +75,6 @@ export default ({
         if (remoteRequestVideoFull) {
             try {
                 const parsedContent = JSON.parse(remoteRequestVideoFull.content)
-                console.log(parsedContent)
                 if (parsedContent.stage === 5) {
                     // 編集モードへ
                     setIsEditMode(true)

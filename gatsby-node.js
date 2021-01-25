@@ -3,12 +3,14 @@ const gracefulFs = require('graceful-fs')
 gracefulFs.gracefulify(realFs)
 
 const apiFileName = {
-    allVideo: process.env === `production` ? `allVideoPaginate.json` : `allVideoPaginateDev.json`,
-    allMusic: process.env === `production` ? `allMusicPaginate.json` : `allMusicPaginateDev.json`,
-    allArtist: process.env === `production` ? `allArtistPaginate.json` : `allArtistPaginateDev.json`,
+    allVideo: process.env.MODE === `development` ? `allVideoPaginateDev.json` : `allVideoPaginate.json`,
+    allMusic: process.env.MODE === `development` ? `allMusicPaginateDev.json` : `allMusicPaginate.json`,
+    allArtist: process.env.MODE === `development` ? `allArtistPaginateDev.json` : `allArtistPaginate.json`,
 }
 
 exports.sourceNodes = async ({ actions: { createNode }, createContentDigest }) => {
+    console.log(JSON.stringify(process.env, null, 4))
+    console.log(`${process.env.MODE} api/${apiFileName.allVideo}`)
     gracefulFs.readFile(`api/${apiFileName.allVideo}`, (err, data) => {
         if (err) throw new Error(err)
         JSON.parse(data).data.allVideoPaginate.forEach(video => {
@@ -60,8 +62,18 @@ exports.sourceNodes = async ({ actions: { createNode }, createContentDigest }) =
                 off_vocal_videos: artist.off_vocal_videos.map(i => i.id),
                 arranger_videos: artist.arranger_videos.map(i => i.id),
                 singer_videos: artist.singer_videos.map(i => i.id),
+
                 is_singer: artist.singer_videos.length > 0,
                 is_mixer: artist.mixer_videos.length > 0,
+                
+                count_composer_music: artist.composer_music.length,
+                count_lyricist_music: artist.lyricist_music.length,
+                count_arranger_music: artist.arranger_music.length,
+                count_singer_videos: artist.singer_videos.length,
+                count_mixer_videos: artist.mixer_videos.length,
+                count_off_vocal_videos: artist.off_vocal_videos.length,
+                count_arranger_videos: artist.arranger_videos.length,
+                
                 internal: {
                     type: 'Artist',
                     contentDigest: createContentDigest(artist)
@@ -254,8 +266,15 @@ exports.createSchemaCustomization = ({ actions: { createTypes } }) => {
             header_source_type: String
             created_at: Date! @dateformat
             updated_at: Date! @dateformat
-            is_singer: Boolean!,
-            is_mixer: Boolean!,
+            is_singer: Boolean!
+            is_mixer: Boolean!
+            count_composer_music: Int!
+            count_lyricist_music: Int!
+            count_arranger_music: Int!
+            count_singer_videos: Int!
+            count_mixer_videos: Int!
+            count_off_vocal_videos: Int!
+            count_arranger_videos: Int!
         }
     `)
 }

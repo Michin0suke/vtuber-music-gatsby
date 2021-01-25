@@ -26,7 +26,7 @@ export default ({ path }) => (
         <Col path={path} match='' href='/' text='ホーム' Img={Home} imgStyle={{marginTop: 3, height: 24}}/>
         {/* <Col path={path} match='videos' href='/videos' text='検索' Img={Search} imgStyle={{marginTop: 3, height: 24}}/> */}
         <Col path={path} match='serendipity' href='/serendipity' text='出会う' Img={Clover} imgStyle={{marginTop: 3, height: 24}}/>
-        <Col path={path} match='artists' href='/artists' text='アーティスト' Img={Profile} imgStyle={{marginTop: 3, height: 24}}/>
+        <Col path={path} match='singers' href='/singers' text='アーティスト' Img={Profile} imgStyle={{marginTop: 3, height: 24}}/>
         <Col path={path} match='request_add_video' href='/request_add_video' text='追加' Img={Plus} imgStyle={{marginTop: 3, height: 24}}/>
       </ul>
     </nav>

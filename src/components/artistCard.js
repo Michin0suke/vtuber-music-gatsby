@@ -30,8 +30,8 @@ const artistCard = ({ artist, className, noLink, roleText, withRuby, cardSize, w
             <ProfileImg artist={artist} className={`flex-shrink-0 w-${size[cardSize].img} h-${size[cardSize].img}`}/>
             <h2 className={`relative pl-5 w-full text-${cardSize}`}>
                 { roleText && <span className='absolute w-full -top-4 text-xs text-gray-700'>{roleText}</span> }
-                { withParent && artist.parents.length > 0 && <span className='absolute w-full -top-4 text-xs text-gray-400'>{artist.parents[0].name}</span> }
-                { withVideoCount && artist.singer_videos.length > 0 && <span className='absolute w-full -bottom-4 text-xs text-gray-400'>{`${artist.singer_videos.length}本の動画`}</span> }
+                { withParent && artist.parents?.length > 0 && <span className='absolute w-full -top-4 text-xs text-gray-400'>{artist.parents[0].name}</span> }
+                { withVideoCount && artist.count_singer_videos > 0 && <span className='absolute w-full -bottom-4 text-xs text-gray-400'>{`${artist.count_singer_videos}本の動画`}</span> }
                 { artist.name }
                 { withRuby && artist.name_ruby && `（${artist.name_ruby}）` }
             </h2>

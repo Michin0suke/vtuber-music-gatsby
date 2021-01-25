@@ -1,37 +1,44 @@
-import React, { useState, useEffect } from 'react'
-import { graphql } from 'gatsby'
-import Heading from '../components/heading'
+import React, { useState } from 'react'
+import { graphql, Link } from 'gatsby'
 import InfiniteScroll from 'react-infinite-scroll-component';
 import ArtistCard from '../components/artistCard'
 import SEO from '../components/seo'
-import SearchIcon from '../components/svg/search'
-import Fuse from 'fuse.js'
-import { parse } from 'date-fns';
 
-const initialShowCount = 42
+export default ({ data: { allArtist } }) => {
+    const [artists, setArtists] = useState(allArtist.nodes)
+    const [page, setPage] = useState(0)
+    const [hasMore, setHasMore] = useState(true)
 
-const today = new Date()
+    const addArtists = async (newArtists) => {
+        const artistsCopy = JSON.parse(JSON.stringify(artists))
+        artistsCopy.push(...newArtists)
+        setArtists(artistsCopy)
+    }
 
-export default ({ data: { allArtist, vtuberMusicIcon } }) => {
-    const [artists, setArtists] = useState(
-        allArtist.nodes
-            .sort((a, b) => b.singer_videos.length - a.singer_videos.length)
-    )
-    const [showCount, setShowCount] = useState(initialShowCount)
+    const fetchArtists = async (newPage) => {
+        console.log('fetch_artists')
+        fetch(`/all_mixer_order_by_count_mixer_videos-${newPage}.json`)
+            .then(response => response.json())
+            .then(json => addArtists(json.items))
+            .then(() => setPage(newPage))
+            .catch(e => {
+                setHasMore(false)
+                console.log(e)
+            })
+    }
 
     return (
         <div className='w-full'>
-            <SEO title='MIXer一覧' description='MIXer一覧のページです。'/>
-            {/* <Breadcrumb type='artist'/> */}
+            <SEO title='アーティスト一覧' description='アーティスト一覧のページです。' isFollow/>
+            <p className='px-2 py-1 text-gray-500 text-xs'>{allArtist.totalCount}人のアーティストが登録されています。</p>
             <InfiniteScroll
-                dataLength={showCount} //This is important field to render the next data
-                next={() => setShowCount(showCount + 6)}
-                hasMore={artists.length > showCount}
+                dataLength={artists.length}
+                next={() => fetchArtists(page + 1)}
+                hasMore={hasMore}
                 className='sm:flex flex-wrap px-5 mt-5'
+                loader={<p className="loader w-full text-lg text-center leading-8" key={0}>Loading ...</p>}
             >
-            {artists
-                .slice(0, showCount)
-                .map((artist, key) => {
+            {artists.map((artist, key) => {
                     return (<ArtistCard key={key} artist={artist} className='w-full md:w-1/2 lg:w-1/3' withParent withVideoCount/>)
                 })
             }
@@ -42,11 +49,13 @@ export default ({ data: { allArtist, vtuberMusicIcon } }) => {
 
 export const query = graphql`
 {
-    allArtist(filter: {is_mixer: {eq: true}}, sort: {order: ASC, fields: name_ruby}, limit: 36) {
+    allArtist(filter: {is_mixer: {eq: true}}, sort: {order: DESC, fields: count_mixer_videos}, limit: 36) {
+        totalCount
         nodes {
             id
             name
             birthday
+            count_singer_videos:count_mixer_videos
             profile_image {
                 childImageSharp {
                     fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
