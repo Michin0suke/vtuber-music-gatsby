@@ -24,7 +24,6 @@ module.exports = {
               thumbnail_image {
                   childImageSharp {
                       fluid(quality: 70, pngQuality: 70, maxWidth: 330) {
-                        base64
                         aspectRatio
                         src
                         srcSet
@@ -42,7 +41,6 @@ module.exports = {
                 profile_image {
                     childImageSharp {
                         fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
-                          base64
                           aspectRatio
                           src
                           srcSet
