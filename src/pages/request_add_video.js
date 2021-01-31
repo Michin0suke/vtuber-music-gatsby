@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link, navigate } from 'gatsby'
+import { graphql, Link, navigate } from 'gatsby'
 import Heading from '../components/heading'
 import { requestVideos, requestVideosLess } from '../queries/requestVideo'
 import { parse } from 'date-fns'
@@ -839,7 +839,7 @@ const ClosingMessage = ({ requestVideo }) => {
     return (
         <p>
             {requestVideo.contributor_twitter_id ? `@${requestVideo.contributor_twitter_id}さん` : ''}リクエストありがとうございました！
-            {requestCount > 0 && `これで${requestCount + 1}本目のリクエストですね！！\nいつもありがとうございます！！！`}
+            {requestCount > 0 && `これで${requestCount}本目のリクエストですね！！\nいつもありがとうございます！！！`}
             あなたのおかげでより良いサイトになります！！
         </p>
     )

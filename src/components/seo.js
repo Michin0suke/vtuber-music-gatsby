@@ -1,6 +1,6 @@
 import React from "react"
 import { Helmet } from "react-helmet"
-import { useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 
 function SEO({ description, lang, title, url, imgUrl, isTop, isLargeCard, isFollow }) {
   const metaTitle = isTop ? `Vtuber Music | バーチャルYouTuberの歌ってみた動画まとめ` : `${title} | Vtuber Music`
@@ -72,7 +72,7 @@ function SEO({ description, lang, title, url, imgUrl, isTop, isLargeCard, isFoll
         }
       ]}
     >
-      <script data-ad-client="ca-pub-5595803406159604" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      {/* <script data-ad-client="ca-pub-5595803406159604" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> */}
     </Helmet>
   )
 }

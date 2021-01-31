@@ -1,4 +1,6 @@
+.DS_Store
 /.cache
 /node_modules
 /public*
-.DS_Store
+/api
+/assets
