@@ -33,6 +33,7 @@
     "gatsby-plugin-zopfli": "^2.0.0",
     "gatsby-source-filesystem": "^2.7.0",
     "gatsby-transformer-sharp": "^2.6.0",
+    "graceful-fs": "^4.2.4",
     "graphql-tag": "^2.11.0",
     "js-search": "^2.0.0",
     "lunr": "^2.3.9",
