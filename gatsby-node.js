@@ -1,182 +1,135 @@
+const {
+    queryAllVideo,
+    queryAllMusic,
+    queryAllArtist
+} = require('./gatsby-node-query')
+
 const realFs = require('fs')
 const gracefulFs = require('graceful-fs')
 gracefulFs.gracefulify(realFs)
 
-const apiFileName = {
-    allVideo: process.env.MODE === `development` ? `allVideoPaginateDev.json` : `allVideoPaginate.json`,
-    allMusic: process.env.MODE === `development` ? `allMusicPaginateDev.json` : `allMusicPaginate.json`,
-    allArtist: process.env.MODE === `development` ? `allArtistPaginateDev.json` : `allArtistPaginate.json`,
-}
-
 exports.sourceNodes = async ({ actions: { createNode }, createContentDigest }) => {
-    console.log(JSON.stringify(process.env, null, 4))
-    console.log(`${process.env.MODE} api/${apiFileName.allVideo}`)
-    gracefulFs.readFile(`api/${apiFileName.allVideo}`, (err, data) => {
-        if (err) throw new Error(err)
-        JSON.parse(data).data.allVideoPaginate.forEach(video => {
-            createNode({
-                ...video,
-                music: video.music.id,
-                singers: video.singers.map(i => i.id),
-                mixers: video.mixers.map(i => i.id),
-                off_vocals: video.off_vocals.map(i => i.id),
-                arrangers: video.arrangers.map(i => i.id),
-                recommends: video.recommends.map(i => i.id),
-                internal: {
-                    type: 'Video',
-                    contentDigest: createContentDigest(video)
+    // console.log(JSON.stringify(process.env, null, 4))
+    const allVideo = await queryAllVideo()
+    console.log(allVideo.slice(0, 3))
+    allVideo.forEach(video => {
+        createNode({
+            ...video,
+            music: video.music.id,
+            singers: video.singers.map(i => i.id),
+            mixers: video.mixers.map(i => i.id),
+            off_vocals: video.off_vocals.map(i => i.id),
+            arrangers: video.arrangers.map(i => i.id),
+            recommends: video.recommends.map(i => i.id),
+            thumbnail_image: {
+                childImageSharp: {
+                    fluid: {
+                        aspectRatio: 1.76,
+                        src: `https://assets.vtuber-music.com/img/video/${video.id}/thumbnail/01_600x337.jpg`,
+                        sizes: `(max-width: 600px) 100vw, 600px`
+                    }
                 }
-            })
+            },
+            internal: {
+                type: 'Video',
+                contentDigest: createContentDigest(video)
+            }
         })
     })
 
-    gracefulFs.readFile(`api/${apiFileName.allMusic}`, (err, data) => {
-        if (err) throw new Error(err)
-        JSON.parse(data).data.allMusicPaginate.forEach(music => {
-            createNode({
-                ...music,
-                videos: music.videos.map(i => i.id),
-                composers: music.composers.map(i => i.id),
-                lyricists: music.lyricists.map(i => i.id),
-                arrangers: music.arrangers.map(i => i.id),
-                internal: {
-                    type: 'Music',
-                    contentDigest: createContentDigest(music)
-                }
-            })
+    const allMusic = await queryAllMusic()
+    allMusic.forEach(music => {
+        createNode({
+            ...music,
+            videos: music.videos.map(i => i.id),
+            composers: music.composers.map(i => i.id),
+            lyricists: music.lyricists.map(i => i.id),
+            arrangers: music.arrangers.map(i => i.id),
+            internal: {
+                type: 'Music',
+                contentDigest: createContentDigest(music)
+            }
         })
     })
 
-    gracefulFs.readFile(`api/${apiFileName.allArtist}`, (err, data) => {
-        if (err) throw new Error(err)
-        JSON.parse(data).data.allArtistPaginate.forEach(artist => {
-            createNode({
-                ...artist,
-                recommends: artist.recommends.map(i => i.id),
-                children_artist: artist.children.map(i => i.id),
-                parents: artist.parents.map(i => i.id),
-                composer_music: artist.composer_music.map(i => i.id),
-                lyricist_music: artist.lyricist_music.map(i => i.id),
-                arranger_music: artist.arranger_music.map(i => i.id),
-                mixer_videos: artist.mixer_videos.map(i => i.id),
-                off_vocal_videos: artist.off_vocal_videos.map(i => i.id),
-                arranger_videos: artist.arranger_videos.map(i => i.id),
-                singer_videos: artist.singer_videos.map(i => i.id),
+    const allArtist = await queryAllArtist()
+    allArtist.forEach(artist => {
+        createNode({
+            ...artist,
+            recommends: artist.recommends.map(i => i.id),
+            children_artist: artist.children.map(i => i.id),
+            parents: artist.parents.map(i => i.id),
+            composer_music: artist.composer_music.map(i => i.id),
+            lyricist_music: artist.lyricist_music.map(i => i.id),
+            arranger_music: artist.arranger_music.map(i => i.id),
+            mixer_videos: artist.mixer_videos.map(i => i.id),
+            off_vocal_videos: artist.off_vocal_videos.map(i => i.id),
+            arranger_videos: artist.arranger_videos.map(i => i.id),
+            singer_videos: artist.singer_videos.map(i => i.id),
 
-                is_singer: artist.singer_videos.length > 0,
-                is_mixer: artist.mixer_videos.length > 0,
-                
-                count_composer_music: artist.composer_music.length,
-                count_lyricist_music: artist.lyricist_music.length,
-                count_arranger_music: artist.arranger_music.length,
-                count_singer_videos: artist.singer_videos.length,
-                count_mixer_videos: artist.mixer_videos.length,
-                count_off_vocal_videos: artist.off_vocal_videos.length,
-                count_arranger_videos: artist.arranger_videos.length,
-                
-                internal: {
-                    type: 'Artist',
-                    contentDigest: createContentDigest(artist)
+            is_singer: artist.singer_videos.length > 0,
+            is_mixer: artist.mixer_videos.length > 0,
+            
+            count_composer_music: artist.composer_music.length,
+            count_lyricist_music: artist.lyricist_music.length,
+            count_arranger_music: artist.arranger_music.length,
+            count_singer_videos: artist.singer_videos.length,
+            count_mixer_videos: artist.mixer_videos.length,
+            count_off_vocal_videos: artist.off_vocal_videos.length,
+            count_arranger_videos: artist.arranger_videos.length,
+
+            profile_image: {
+                childImageSharp: {
+                    fluid: {
+                        aspectRatio: 1,
+                        src: `https://assets.vtuber-music.com/img/artist/${artist.id}/icon/twitter/01_160x160.jpg`,
+                        sizes: `(max-width: 160px) 100vw, 160px`
+                    }
                 }
-            })
+            },
+            header_image: {
+                childImageSharp: {
+                    fluid: {
+                        aspectRatio: 3,
+                        src: `https://assets.vtuber-music.com/img/artist/${artist.id}/header/twitter/01_600x200.jpg`,
+                        sizes: `(max-width: 600px) 100vw, 600px`
+                    }
+                }
+            },
+            
+            internal: {
+                type: 'Artist',
+                contentDigest: createContentDigest(artist)
+            }
         })
     })
 }
 
-exports.createPages = async ({ graphql, actions: { createPage }, getNode }) => {
-    const artistImageFileNode = async (type, id) => {
-        if (!['header', 'icon'].includes(type)) throw new Error(`invalid augment ${type}`)
+exports.createPages = async ({ graphql, actions: { createPage }}) => {
 
-        let fileId
 
-        const frontTypes = ['primary', 'twitter', 'youtube']
-
-        for (const i in frontTypes) {
-            if (!fileId) {
-                const result = await graphql(`
-                    {
-                        file(relativeDirectory: {eq: "img/${type}/${frontTypes[i]}"}, name: {eq: "${id}"}) {
-                            id
-                        }
-                    }
-                `)
-                const resultDataFileId = result && result.data && result.data.file && result.data.file.id
-                if (resultDataFileId) fileId = resultDataFileId
-            }
-        }
-
-        return fileId && getNode(fileId)
-    }
-
-    const videoImageFileNode = async id => {
-        const { data: { file } } = await graphql(`
-            {
-                file(relativeDirectory: {eq: "img/video_thumbnail/youtube"}, name: {eq: "${id}"}) {
-                    id
-                }
-            }`)
-        return file && file.id && getNode(file.id)
-    }
-
-    const { data: { allArtist } } = await graphql(`
+    const { data: { allVideo, allMusic, allArtist } } = await graphql(`
         {
+            allVideo {
+                nodes { id }
+            }
+            allMusic {
+                nodes { id }
+            }
             allArtist {
                 nodes { id }
             }
         }
     `)
-    allArtist.nodes.forEach(async ({ id }) => {
-        createPage({
-            path: `/artist/${id}`,
-            component: require.resolve('./src/templates/artist.js'),
-            context: { id }
-        })
 
-        const currentNode = getNode(id)
-
-        const headerImageNode = await artistImageFileNode('header', id)
-        if (headerImageNode) {
-            currentNode.header_image = headerImageNode.id
-            headerImageNode.parent = currentNode.id
-        }
-
-        const iconImageNode = await artistImageFileNode('icon', id)
-        if (iconImageNode) {
-            currentNode.profile_image = iconImageNode.id
-            iconImageNode.parent = currentNode.id
-        }
-    })
-
-    const { data: { allVideo }} = await graphql(`
-    {
-        allVideo {
-            nodes { id }
-        }
-    }
-    `)
     allVideo.nodes.forEach(async ({ id }) => {
         createPage({
             path: `/video/${id}`,
             component: require.resolve('./src/templates/video.js'),
             context: { id }
         })
-
-        const currentNode = getNode(id)
-        
-        const thumbnailNode = await videoImageFileNode(id)
-        if (thumbnailNode) {
-            currentNode.thumbnail_image = thumbnailNode.id
-            thumbnailNode.parent = currentNode.id
-        }
     })
 
-    const { data: { allMusic }} = await graphql(`
-    {
-        allMusic {
-            nodes { id }
-        }
-    }
-    `)
     allMusic.nodes.forEach(async ({id}) => {
         createPage({
             path: `/music/${id}`,
@@ -184,10 +137,33 @@ exports.createPages = async ({ graphql, actions: { createPage }, getNode }) => {
             context: { id }
         })
     })
+
+    allArtist.nodes.forEach(async ({ id }) => {
+        createPage({
+            path: `/artist/${id}`,
+            component: require.resolve('./src/templates/artist.js'),
+            context: { id }
+        })
+    })
 }
 
 exports.createSchemaCustomization = ({ actions: { createTypes } }) => {
     createTypes(`
+        type ImageFluid  {
+            aspectRatio: Float
+            src: String!
+            srcSet: String
+            sizes: String
+        }
+
+        type ChildImageSharp {
+            fluid: ImageFluid!
+        }
+
+        type Image {
+            childImageSharp: ChildImageSharp!
+        }
+
         type Video implements Node {
             id: String!
             music: Music! @link
@@ -203,7 +179,7 @@ exports.createSchemaCustomization = ({ actions: { createTypes } }) => {
             recommends: [Video]! @link
             created_at: Date! @dateformat
             updated_at: Date! @dateformat
-            thumbnail_image: File @link
+            thumbnail_image: Image!
         }
 
         type Music implements Node {
@@ -260,9 +236,9 @@ exports.createSchemaCustomization = ({ actions: { createTypes } }) => {
             off_vocal_videos: [Video]! @link
             arranger_videos: [Video]! @link
             singer_videos: [Video]! @link
-            profile_image: File @link
+            profile_image: Image!
             profile_source_type: String
-            header_image: File @link
+            header_image: Image!
             header_source_type: String
             created_at: Date! @dateformat
             updated_at: Date! @dateformat

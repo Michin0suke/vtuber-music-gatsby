@@ -839,7 +839,7 @@ const ClosingMessage = ({ requestVideo }) => {
     return (
         <p>
             {requestVideo.contributor_twitter_id ? `@${requestVideo.contributor_twitter_id}さん` : ''}リクエストありがとうございました！
-            {requestCount > 0 && `これで${requestCount}本目のリクエストですね！！\nいつもありがとうございます！！！`}
+            {requestCount > 1 && `これで${requestCount}本目のリクエストですね！！\nいつもありがとうございます！！！`}
             あなたのおかげでより良いサイトになります！！
         </p>
     )
@@ -856,8 +856,8 @@ export const query = graphql`
             custom_music_name
             thumbnail_image {
                 childImageSharp {
-                    fluid(quality: 70, pngQuality: 70, maxWidth: 330) {
-                        ...GatsbyImageSharpFluid
+                    fluid {
+                        ...ImageSharpFluid
                     }
                 }
             }
@@ -872,9 +872,8 @@ export const query = graphql`
                 name_ruby
                 profile_image {
                     childImageSharp {
-                        id
-                        fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
-                            ...GatsbyImageSharpFluid
+                        fluid {
+                            ...ImageSharpFluid
                         }
                     }
                 }

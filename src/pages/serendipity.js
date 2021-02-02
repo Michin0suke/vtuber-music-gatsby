@@ -60,8 +60,8 @@ export const pageQuery = graphql`
             }
             profile_image {
                 childImageSharp {
-                    fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
-                        ...GatsbyImageSharpFluid
+                    fluid {
+                        ...ImageSharpFluid
                     }
                 }
             }

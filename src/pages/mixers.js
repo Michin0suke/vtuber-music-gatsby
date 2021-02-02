@@ -58,8 +58,8 @@ export const query = graphql`
             count_singer_videos:count_mixer_videos
             profile_image {
                 childImageSharp {
-                    fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
-                        ...GatsbyImageSharpFluid
+                    fluid {
+                        ...ImageSharpFluid
                     }
                 }
             }

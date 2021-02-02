@@ -211,8 +211,8 @@ export const pageQuery = graphql`
                 name
                 profile_image {
                     childImageSharp {
-                        fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
-                            ...GatsbyImageSharpFluid
+                        fluid {
+                            ...ImageSharpFluid
                         }
                     }
                 }
@@ -225,8 +225,8 @@ export const pageQuery = graphql`
                 name
                 profile_image {
                     childImageSharp {
-                        fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
-                            ...GatsbyImageSharpFluid
+                        fluid {
+                            ...ImageSharpFluid
                         }
                     }
                 }
@@ -239,8 +239,8 @@ export const pageQuery = graphql`
                 name
                 profile_image {
                     childImageSharp {
-                        fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
-                            ...GatsbyImageSharpFluid
+                        fluid {
+                            ...ImageSharpFluid
                         }
                     }
                 }
@@ -258,8 +258,8 @@ export const pageQuery = graphql`
             name
             profile_image {
                 childImageSharp {
-                    fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
-                        ...GatsbyImageSharpFluid
+                    fluid {
+                        ...ImageSharpFluid
                     }
                 }
             }
@@ -280,17 +280,16 @@ export const pageQuery = graphql`
                     name
                     profile_image {
                         childImageSharp {
-                            fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
-                                ...GatsbyImageSharpFluid
+                            fluid {
+                                ...ImageSharpFluid
                             }
                         }
                     }
                 }
                 thumbnail_image {
-                    id
                     childImageSharp {
-                        fluid(quality: 70, pngQuality: 70, maxWidth: 330) {
-                            ...GatsbyImageSharpFluid
+                        fluid {
+                            ...ImageSharpFluid
                         }
                     }
                 }
@@ -336,8 +335,8 @@ export const pageQuery = graphql`
             name
             profile_image {
                 childImageSharp {
-                    fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
-                        ...GatsbyImageSharpFluid
+                    fluid {
+                        ...ImageSharpFluid
                     }
                 }
             }
@@ -350,8 +349,8 @@ export const pageQuery = graphql`
             name
             profile_image {
                 childImageSharp {
-                    fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
-                        ...GatsbyImageSharpFluid
+                    fluid {
+                        ...ImageSharpFluid
                     }
                 }
             }
@@ -364,8 +363,8 @@ export const pageQuery = graphql`
             name
             profile_image {
                 childImageSharp {
-                    fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
-                        ...GatsbyImageSharpFluid
+                    fluid {
+                        ...ImageSharpFluid
                     }
                 }
             }
@@ -377,11 +376,9 @@ export const pageQuery = graphql`
             id
         }
         thumbnail_image {
-            id
             childImageSharp {
-                id
-                fluid(quality: 70, pngQuality: 70, maxWidth: 330) {
-                    ...GatsbyImageSharpFluid
+                fluid {
+                    ...ImageSharpFluid
                 }
             }
         }

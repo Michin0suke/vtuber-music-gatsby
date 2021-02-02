@@ -76,6 +76,12 @@ const TwitterShareButtonWrapper = ({ videoTotalCount }) => (
 export default IndexPage
 
 export const query = graphql`
+fragment ImageSharpFluid on ImageFluid {
+    aspectRatio
+    src
+    srcSet
+    sizes
+}
 {
     # limitはgatsby-config.jsに依存
     allVideo(sort: {order: DESC, fields: release_date}, limit: 24) {
@@ -87,8 +93,8 @@ export const query = graphql`
             custom_music_name
             thumbnail_image {
                 childImageSharp {
-                    fluid(quality: 70, pngQuality: 70, maxWidth: 330) {
-                        ...GatsbyImageSharpFluid
+                    fluid {
+                        ...ImageSharpFluid
                     }
                 }
             }
@@ -101,8 +107,8 @@ export const query = graphql`
                 name
                 profile_image {
                     childImageSharp {
-                        fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
-                            ...GatsbyImageSharpFluid
+                        fluid {
+                            ...ImageSharpFluid
                         }
                     }
                 }

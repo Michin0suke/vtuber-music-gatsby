@@ -23,7 +23,7 @@ module.exports = {
               custom_music_name
               thumbnail_image {
                   childImageSharp {
-                      fluid(quality: 70, pngQuality: 70, maxWidth: 330) {
+                      fluid {
                         aspectRatio
                         src
                         srcSet
@@ -40,7 +40,7 @@ module.exports = {
                 name
                 profile_image {
                     childImageSharp {
-                        fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
+                        fluid {
                           aspectRatio
                           src
                           srcSet
@@ -74,7 +74,7 @@ module.exports = {
               custom_music_name
               thumbnail_image {
                   childImageSharp {
-                      fluid(quality: 70, pngQuality: 70, maxWidth: 330) {
+                      fluid {
                         aspectRatio
                         src
                         srcSet
@@ -91,7 +91,7 @@ module.exports = {
                 name
                 profile_image {
                     childImageSharp {
-                        fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
+                        fluid {
                           aspectRatio
                           src
                           srcSet
@@ -124,7 +124,7 @@ module.exports = {
               birthday
               profile_image {
                 childImageSharp {
-                  fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
+                  fluid {
                     aspectRatio
                     src
                     srcSet
@@ -163,7 +163,7 @@ module.exports = {
               birthday
               profile_image {
                 childImageSharp {
-                  fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
+                  fluid {
                     aspectRatio
                     src
                     srcSet
@@ -204,20 +204,6 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `api`,
-        path: `${__dirname}/api`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `assets`,
-        path: `${__dirname}/assets`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -269,90 +255,5 @@ module.exports = {
         cookieDomain: "vtuber-music.com",
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-json-output`,
-    //   options: {
-    //     siteUrl: siteUrl, // defined on top of plugins
-    //     graphQLQuery: `
-    //     allVideoallVideo(sort: {order: DESC, fields: release_date}, skip: 24, limit: 240) {
-    //         nodes {
-    //             id
-    //             release_date
-    //             is_original_music
-    //             custom_music_name
-    //             thumbnail_image {
-    //                 childImageSharp {
-    //                     fluid(quality: 70, pngQuality: 70, maxWidth: 330) {
-    //                         ...GatsbyImageSharpFluid
-    //                     }
-    //                 }
-    //             }
-    //             music {
-    //                 id
-    //                 title
-    //             }
-    //             singers {
-    //                 id
-    //                 name
-    //                 profile_image {
-    //                     childImageSharp {
-    //                         fluid(quality: 70, pngQuality: 70, maxWidth: 160) {
-    //                             ...GatsbyImageSharpFluid
-    //                         }
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     `,
-    //     serialize: results => {
-    //       const arr = []
-    //       for (let i = 1; i <= 10; i++) {
-    //         const file = {
-    //           path: ``,
-    //           allVideo: {
-    //             nodes: {}
-    //           }
-    //         }
-    //         file.path = `all_video_order_by_release_date_${i}`
-    //         file.allVideo = results.data.allVideo.nodes
-    //           .slice((i - 1) * 24, i * 24)
-    //         arr.push(file)
-    //       }
-    //       return arr
-    //     },
-        // feedMeta: {
-        //   author: {
-        //     name: author,
-        //   },
-        //   description: siteDescription,
-        //   favicon: `${siteUrl}/icons/icon-48x48.png`,
-        //   title: siteTitle,
-        // },
-        // serializeFeed: results => results.data.allMarkdownRemark.edges.map(({ node }) => ({
-        //   id: node.fields.path,
-        //   url: siteUrl + node.fields.path,
-        //   title: node.frontmatter.title,
-        //   date_published: new Date(node.frontmatter.created).toISOString(),
-        //   date_modified: new Date(node.frontmatter.updated).toISOString(),
-        //   excerpt: node.excerpt,
-        // })),
-        // feedFilename: "exampleFeedFilename",
-        // nodesPerFeedFile: 100,
-    // {
-    //   resolve: 'gatsby-plugin-html2amp',
-    //   options: {
-    //     files: ['index.html'],
-    //     publicPath: 'public',
-    //     gaConfigPath: 'gaConfig.json',
-    //     dist: 'public/amp',
-    //     optimize: true,
-    //     htmlPlugins: [],
-    //     cssPlugins: []
-    //   }
-    // }
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 }
