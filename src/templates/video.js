@@ -116,7 +116,7 @@ export default ({ data: { video, allVideo }, setVideoPlayer }) => {
                 title={`${video.music.title} / ${video.singers.map(a => a.name).join('&')}`}
                 description={`${video.music.title}を${video.singers.map(i => `${i.name}${i.children.length === 0 ?'さん':''}`).join('と')}が歌っている動画です。`}
                 url={`https://vtuber-music.com/video/${video.id}`}
-                imgUrl={`https://vtuber-music.com${video.thumbnail_image?.childImageSharp?.fluid?.src}`}
+                imgUrl={video.thumbnail_image?.childImageSharp?.fluid?.src}
                 isLargeCard
             />
             <div className='w-full max-w-4xl mx-auto'>

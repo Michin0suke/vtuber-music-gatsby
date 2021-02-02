@@ -36,7 +36,6 @@ export default ({ data: { allArtist, allVideo }, isRandomMode, setIsRandomMode, 
                 title={``}
                 description={`Vtuberとの素敵な出会いをあなたに`}
                 url={`https://vtuber-music.com/serendipity`}
-                imgUrl={``}
                 isLargeCard
             />
             <div className='pb-14 flex items-center flex-col'>
