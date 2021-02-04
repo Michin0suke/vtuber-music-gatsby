@@ -91,7 +91,7 @@ exports.sourceNodes = async ({ actions: { createNode }, createContentDigest }) =
                 childImageSharp: {
                     fluid: {
                         aspectRatio: 3,
-                        src: `https://assets.vtuber-music.com/img/artist/${artist.id}/header/twitter/01_600x200.jpg`,
+                        src: `https://assets.vtuber-music.com/img/artist/${artist.id}/header/twitter/01_900x300.jpg`,
                         sizes: `(max-width: 600px) 100vw, 600px`
                     }
                 }
