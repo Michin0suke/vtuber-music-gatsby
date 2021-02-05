@@ -82,7 +82,7 @@ exports.sourceNodes = async ({ actions: { createNode }, createContentDigest }) =
                 childImageSharp: {
                     fluid: {
                         aspectRatio: 1,
-                        src: `https://assets.vtuber-music.com/img/artist/${artist.id}/icon/twitter/01_160x160.jpg`,
+                        src: `https://assets.vtuber-music.com/img/artist/${artist.id}/icon/160x160.jpg`,
                         sizes: `(max-width: 160px) 100vw, 160px`
                     }
                 }
@@ -91,8 +91,8 @@ exports.sourceNodes = async ({ actions: { createNode }, createContentDigest }) =
                 childImageSharp: {
                     fluid: {
                         aspectRatio: 3,
-                        src: `https://assets.vtuber-music.com/img/artist/${artist.id}/header/twitter/01_900x300.jpg`,
-                        sizes: `(max-width: 600px) 100vw, 600px`
+                        src: `https://assets.vtuber-music.com/img/artist/${artist.id}/header/900x300.jpg`,
+                        sizes: `(max-width: 900px) 100vw, 900px`
                     }
                 }
             },
