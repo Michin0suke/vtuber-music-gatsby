@@ -12,7 +12,8 @@ export default ({ data: { video, allVideo }, setVideoPlayer }) => {
     const [sameSingerVideos, setSameSingerVideos] = useState([])
 
     const setVideoPlayerAsync = async () => {
-        const nextVideoId = await decideNextVideoId(video, allVideo)
+        const nextVideoId = allVideo.nodes[Math.floor(Math.random() * allVideo.nodes.length)].id
+        // const nextVideoId = await decideNextVideoId(video, allVideo)
         setVideoPlayer(
             <YouTubePlayer
                 nextVideoId={nextVideoId}
@@ -23,8 +24,6 @@ export default ({ data: { video, allVideo }, setVideoPlayer }) => {
 
     useEffect(() => {
         setVideoPlayerAsync()
-
-        decideNextVideoId(video, allVideo)
 
         const sameSingerVideos = video.singers
             .map(singer => singer.singer_videos)
