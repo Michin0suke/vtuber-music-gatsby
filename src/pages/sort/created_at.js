@@ -31,7 +31,7 @@ const IndexPage = ({ data: { allVideo }}) => {
 
     return (
     <div className='w-full'>
-        <SEO isTop isFollow/>
+        <SEO isTop isIndex/>
         <p className='px-2 py-1 text-gray-500 text-xs'>Vtuberの歌ってみた動画をまとめたサイトです。{allVideo.totalCount}本の動画が登録されています。</p>
         <SortBar path='/sort/created_at'/>
 

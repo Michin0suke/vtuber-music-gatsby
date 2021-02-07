@@ -2,7 +2,7 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import { graphql, useStaticQuery } from 'gatsby'
 
-function SEO({ description, lang, title, url, imgUrl, isTop, isLargeCard, isFollow }) {
+function SEO({ description, lang, title, url, imgUrl, isTop, isLargeCard, isIndex }) {
   const metaTitle = isTop ? `Vtuber Music | バーチャルYouTuberの歌ってみた動画まとめ` : `${title} | Vtuber Music`
   const metaDescription = isTop ? `Vtuberの歌ってみた動画をまとめたサイトです。` : description
 
@@ -66,7 +66,7 @@ function SEO({ description, lang, title, url, imgUrl, isTop, isLargeCard, isFoll
           name: `twitter:description`,
           content: metaDescription,
         },
-        isFollow ? {} : {
+        isIndex ? {} : {
           name: `robots`,
           content: `noindex`
         }

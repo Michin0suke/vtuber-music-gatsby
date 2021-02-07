@@ -29,7 +29,7 @@ export default ({ data: { allArtist } }) => {
 
     return (
         <div className='w-full'>
-            <SEO title='アーティスト一覧' description='アーティスト一覧のページです。' isFollow/>
+            <SEO title='アーティスト一覧' description='アーティスト一覧のページです。' isIndex/>
             <p className='px-2 py-1 text-gray-500 text-xs'>{allArtist.totalCount}人のアーティストが登録されています。</p>
             <Link to='/mixers'>
                 <button className='absolute top-1 right-5 py-1 px-2 bg-red-600 sm:hover:bg-red-400 text-white rounded-full'>MIXer</button>
