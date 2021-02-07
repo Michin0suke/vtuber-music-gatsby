@@ -1,0 +1,1472 @@
+success open and validate gatsby-configs - 0.243s
+
+[2K[1A[2K[Gsuccess load plugins - 1.725s
+
+[2K[1A[2K[Gsuccess onPreInit - 0.066s
+
+[2K[1A[2K[Gsuccess delete html and css files from previous builds - 1.303s
+
+[2K[1A[2K[Ginfo One or more of your plugins have changed since the last time you ran
+Gatsby. As
+a precaution, we're deleting your site's cache to ensure there's no stale data.
+
+[2K[1A[2K[Gsuccess initialize cache - 0.822s
+
+[2K[1A[2K[Gsuccess copy gatsby files - 0.089s
+
+[2K[1A[2K[Gsuccess onPreBootstrap - 0.030s
+
+[2K[1A[2K[Gsuccess createSchemaCustomization - 0.019s
+
+[2K[1A[2K[G{
+    "MANPATH": "/home/michinosuke/.linuxbrew/share/man:",
+    "XDG_SESSION_ID": "5312",
+    "HOSTNAME": "118-27-14-141",
+    "TERM": "xterm-256color",
+    "SHELL": "/bin/bash",
+    "HISTSIZE": "1000",
+    "SSH_CLIENT": "133.186.69.221 52049 22",
+    "OLDPWD": "/home/michinosuke/www",
+    "SSH_TTY": "/dev/pts/0",
+    "USER": "michinosuke",
+    "LD_LIBRARY_PATH": "/home/michinosuke/.linuxbrew/lib:",
+    "LS_COLORS": "rs=0:di=38;5;27:ln=38;5;51:mh=44;38;5;15:pi=40;38;5;11:so=38;5
+;13:do=38;5;5:bd=48;5;232;38;5;11:cd=48;5;232;38;5;3:or=48;5;232;38;5;9:mi=05;48
+;5;232;38;5;15:su=48;5;196;38;5;15:sg=48;5;11;38;5;16:ca=48;5;196;38;5;226:tw=48
+;5;10;38;5;16:ow=48;5;10;38;5;21:st=48;5;21;38;5;15:ex=38;5;34:*.tar=38;5;9:*.tg
+z=38;5;9:*.arc=38;5;9:*.arj=38;5;9:*.taz=38;5;9:*.lha=38;5;9:*.lz4=38;5;9:*.lzh=
+38;5;9:*.lzma=38;5;9:*.tlz=38;5;9:*.txz=38;5;9:*.tzo=38;5;9:*.t7z=38;5;9:*.zip=3
+8;5;9:*.z=38;5;9:*.Z=38;5;9:*.dz=38;5;9:*.gz=38;5;9:*.lrz=38;5;9:*.lz=38;5;9:*.l
+zo=38;5;9:*.xz=38;5;9:*.bz2=38;5;9:*.bz=38;5;9:*.tbz=38;5;9:*.tbz2=38;5;9:*.tz=3
+8;5;9:*.deb=38;5;9:*.rpm=38;5;9:*.jar=38;5;9:*.war=38;5;9:*.ear=38;5;9:*.sar=38;
+5;9:*.rar=38;5;9:*.alz=38;5;9:*.ace=38;5;9:*.zoo=38;5;9:*.cpio=38;5;9:*.7z=38;5;
+9:*.rz=38;5;9:*.cab=38;5;9:*.jpg=38;5;13:*.jpeg=38;5;13:*.gif=38;5;13:*.bmp=38;5
+;13:*.pbm=38;5;13:*.pgm=38;5;13:*.ppm=38;5;13:*.tga=38;5;13:*.xbm=38;5;13:*.xpm=
+38;5;13:*.tif=38;5;13:*.tiff=38;5;13:*.png=38;5;13:*.svg=38;5;13:*.svgz=38;5;13:
+*.mng=38;5;13:*.pcx=38;5;13:*.mov=38;5;13:*.mpg=38;5;13:*.mpeg=38;5;13:*.m2v=38;
+5;13:*.mkv=38;5;13:*.webm=38;5;13:*.ogm=38;5;13:*.mp4=38;5;13:*.m4v=38;5;13:*.mp
+4v=38;5;13:*.vob=38;5;13:*.qt=38;5;13:*.nuv=38;5;13:*.wmv=38;5;13:*.asf=38;5;13:
+*.rm=38;5;13:*.rmvb=38;5;13:*.flc=38;5;13:*.avi=38;5;13:*.fli=38;5;13:*.flv=38;5
+;13:*.gl=38;5;13:*.dl=38;5;13:*.xcf=38;5;13:*.xwd=38;5;13:*.yuv=38;5;13:*.cgm=38
+;5;13:*.emf=38;5;13:*.axv=38;5;13:*.anx=38;5;13:*.ogv=38;5;13:*.ogx=38;5;13:*.aa
+c=38;5;45:*.au=38;5;45:*.flac=38;5;45:*.mid=38;5;45:*.midi=38;5;45:*.mka=38;5;45
+:*.mp3=38;5;45:*.mpc=38;5;45:*.ogg=38;5;45:*.ra=38;5;45:*.wav=38;5;45:*.axa=38;5
+;45:*.oga=38;5;45:*.spx=38;5;45:*.xspf=38;5;45:",
+    "MAIL": "/var/spool/mail/michinosuke",
+    "PATH": "/usr/bin:/home/michinosuke/.linuxbrew/bin:/usr/local/bin:/usr/bin:/
+usr/local/sbin:/usr/sbin:/home/michinosuke/.composer/vendor/bin:/home/michinosuk
+e/.local/bin:/home/michinosuke/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/
+sbin:/home/michinosuke/.local/bin:/home/michinosuke/bin:/home/linuxbrew/.linuxbr
+ew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/michinosuke/.linuxbrew/bin:/usr/loc
+al/go/bin:/home/michinosuke/.nodebrew/current/bin:/home/michinosuke/.linuxbrew/b
+in:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/michinosuke/.composer
+/vendor/bin:/home/michinosuke/.local/bin:/home/michinosuke/bin:/usr/local/bin:/u
+sr/bin:/usr/local/sbin:/usr/sbin:/home/michinosuke/.local/bin:/home/michinosuke/
+bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/michino
+suke/.linuxbrew/bin:/home/michinosuke/.yarn/bin",
+    "PWD": "/home/michinosuke/www/vtuber-music-gatsby",
+    "LANG": "ja_JP.UTF-8",
+    "HISTCONTROL": "ignoredups",
+    "SHLVL": "1",
+    "HOME": "/home/michinosuke",
+    "LOGNAME": "michinosuke",
+    "SSH_CONNECTION": "133.186.69.221 52049 118.27.14.141 22",
+    "GOPATH": "/home/michinosuke/go",
+    "LESSOPEN": "||/usr/bin/lesspipe.sh %s",
+    "INFOPATH": "/home/michinosuke/.linuxbrew/share/info:",
+    "XDG_RUNTIME_DIR": "/run/user/1000",
+    "_": "/usr/bin/nohup",
+    "INTERNAL_GATSBY_TELEMETRY_SESSION_ID":
+"d0ff6865-239e-44f1-baec-c56575df0f3d",
+    "GATSBY_LOGGER": "ink",
+    "gatsby_log_level": "normal",
+    "gatsby_executing_command": "build",
+    "NODE_ENV": "production",
+    "GATSBY_HOT_LOADER": "react-hot-loader",
+    "VIPSHOME": "/target"
+}
+
+[2K[1A[2K[Gundefined api/allVideoPaginate.json
+
+[2K[1A[2K[Gsuccess Checking for changed pages - 0.001s
+
+[2K[1A[2K[Gsuccess source and transform nodes - 26.331s
+
+[2K[1A[2K[G
+ ERROR #11467
+
+The new node didn't pass validation: child "children" fails because ["children"
+at position 0 contains an excluded value]
+
+Failing node:
+
+{
+    "id": "1st_place",
+    "name": "1st PLACE",
+    "name_ruby": "ふぁーすとぷれいす",
+    "name_original": null,
+    "profile": "Lia、じん、しづ、石風呂などのアーティストマネジメントやVOCALOID?
+3対応の歌声ライブラリ [IA -ARIA ON THE PLANETES-]
+の企画・開発、全てのクリエイターの創作活動支援を行うプロジェクト [IA PROJECT]
+を運営をする1st PLACE株式会社。",
+    "sex": null,
+    "birthday": null,
+    "id_youtube": "UCu33JdVED-0vqaNyw_bCTKg",
+    "youtube_registration_date": "2012-11-12",
+    "id_twitter": null,
+    "id_instagram": null,
+    "url_niconico": null,
+    "url_homepage": "http://1stplace.co.jp/",
+    "id_spotify": null,
+    "id_apple_music": null,
+    "id_showroom": null,
+    "id_openrec": null,
+    "id_bilibili": null,
+    "id_tiktok": null,
+    "id_twitcasting": null,
+    "id_facebook": null,
+    "id_pixiv": null,
+    "image_url_profile_icon_source_url": null,
+    "image_url_profile_header_source_url": null,
+    "image_front_type_icon": "youtube",
+    "image_front_type_header": "youtube",
+    "youtube_channel_is_user": false,
+    "recommends": [],
+    "children": [
+        {
+            "id": "jin",
+            "__typename": "Artist"
+        }
+    ],
+    "parents": [],
+    "composer_music": [],
+    "lyricist_music": [],
+    "arranger_music": [],
+    "mixer_videos": [],
+    "off_vocal_videos": [],
+    "arranger_videos": [],
+    "singer_videos": [],
+    "created_at": "-0001-11-30 00:00:00",
+    "updated_at": "2020-02-25 00:00:00",
+    "__typename": "Artist",
+    "children_artist": [
+        "jin"
+    ],
+    "is_singer": false,
+    "is_mixer": false,
+    "count_composer_music": 0,
+    "count_lyricist_music": 0,
+    "count_arranger_music": 0,
+    "count_singer_videos": 0,
+    "count_mixer_videos": 0,
+    "count_off_vocal_videos": 0,
+    "count_arranger_videos": 0,
+    "internal": {
+        "type": "Artist",
+        "contentDigest": "9dcf15f40e7d0d1f4d3b6f68452abf8e",
+        "counter": 30159,
+        "owner": "default-site-plugin"
+    },
+    "parent": null
+}
+
+Note: there might be more nodes that failed validation. Output is limited to one
+ node per type of validation failure to limit terminal spam.
+
+  51 |         if (err) throw new Error(err)
+  52 |         JSON.parse(data).data.allArtistPaginate.forEach(artist => {
+> 53 |             createNode({
+     |             ^
+  54 |                 ...artist,
+  55 |                 recommends: artist.recommends.map(i => i.id),
+  56 |                 children_artist: artist.children.map(i => i.id),
+
+File: gatsby-node.js:53:13
+
+See our docs page for more info on this error:
+https://www.gatsbyjs.org/docs/actions/#createNode
+
+
+[2K[1A[2K[Gsuccess building schema - 7.146s
+
+[2K[1A[2K[Ginfo Total nodes: 44982, SitePage nodes: 11262 (use --verbose for breakdown)
+
+[2K[1A[2K[Gsuccess createPages - 24.216s
+
+[2K[1A[2K[Gsuccess Checking for changed pages - 0.007s
+
+[2K[1A[2K[Gsuccess createPagesStatefully - 0.239s
+
+[2K[1A[2K[Gsuccess Cleaning up stale page-data - 0.803s
+
+[2K[1A[2K[Gsuccess update schema - 0.202s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.007s
+
+[2K[1A[2K[Gsuccess extract queries from components - 1.361s
+
+[2K[1A[2K[Gsuccess write out redirect data - 0.007s
+
+[2K[1A[2K[Gwarn The icon(src/images/vtuber-music-icon.png) you provided to
+'gatsby-plugin-manifest' is not square.
+The icons we generate will be square and for the best results we recommend you
+provide a square icon.
+
+
+[2K[1A[2K[Gsuccess Build manifest and related icons - 0.201s
+
+[2K[1A[2K[Gsuccess onPostBootstrap - 2.657s
+
+[2K[1A[2K[Ginfo bootstrap finished - 91.596s
+
+[2K[1A[2K[Gsuccess run static queries - 0.165s - 2/2 12.11/s
+
+[2K[1A[2K[Gwarn Query takes too long:
+File path: /var/www/vtuber-music-gatsby/src/pages/index.js
+URL path: /
+
+[2K[1A[2K[Gwarn Query takes too long:
+File path: /var/www/vtuber-music-gatsby/src/pages/mixers.js
+URL path: /mixers/
+
+[2K[1A[2K[Gwarn Query takes too long:
+File path: /var/www/vtuber-music-gatsby/src/pages/request_add_video.js
+URL path: /request_add_video/
+
+[2K[1A[2K[Gsuccess run page queries - 1157.495s - 11270/11270 9.74/s
+
+[2K[1A[2K[Gsuccess write out requires - 0.085s
+
+[2K[1A[2K[Gfailed Building production JavaScript and CSS bundles - 52.481s
+
+[2K[1A[2K[G
+ ERROR #98123  WEBPACK
+
+undefined failed
+
+spawn ENOMEM
+
+
+[2K[1A[2K[Gnot finished Generating image thumbnails - 1201.260s
+
+success open and validate gatsby-configs - 0.160s
+
+[2K[1A[2K[Gsuccess load plugins - 1.393s
+
+[2K[1A[2K[Gsuccess onPreInit - 0.075s
+
+[2K[1A[2K[Gsuccess delete html and css files from previous builds - 1.663s
+
+[2K[1A[2K[Gsuccess initialize cache - 0.709s
+
+[2K[1A[2K[Gsuccess copy gatsby files - 0.074s
+
+[2K[1A[2K[Gsuccess onPreBootstrap - 0.021s
+
+[2K[1A[2K[Gsuccess createSchemaCustomization - 0.020s
+
+[2K[1A[2K[G{
+    "MANPATH": "/home/michinosuke/.linuxbrew/share/man:",
+    "XDG_SESSION_ID": "5387",
+    "HOSTNAME": "118-27-14-141",
+    "TERM": "xterm-256color",
+    "SHELL": "/bin/bash",
+    "HISTSIZE": "1000",
+    "SSH_CLIENT": "133.186.69.221 56269 22",
+    "SSH_TTY": "/dev/pts/0",
+    "USER": "michinosuke",
+    "LD_LIBRARY_PATH": "/home/michinosuke/.linuxbrew/lib:",
+    "LS_COLORS": "rs=0:di=38;5;27:ln=38;5;51:mh=44;38;5;15:pi=40;38;5;11:so=38;5
+;13:do=38;5;5:bd=48;5;232;38;5;11:cd=48;5;232;38;5;3:or=48;5;232;38;5;9:mi=05;48
+;5;232;38;5;15:su=48;5;196;38;5;15:sg=48;5;11;38;5;16:ca=48;5;196;38;5;226:tw=48
+;5;10;38;5;16:ow=48;5;10;38;5;21:st=48;5;21;38;5;15:ex=38;5;34:*.tar=38;5;9:*.tg
+z=38;5;9:*.arc=38;5;9:*.arj=38;5;9:*.taz=38;5;9:*.lha=38;5;9:*.lz4=38;5;9:*.lzh=
+38;5;9:*.lzma=38;5;9:*.tlz=38;5;9:*.txz=38;5;9:*.tzo=38;5;9:*.t7z=38;5;9:*.zip=3
+8;5;9:*.z=38;5;9:*.Z=38;5;9:*.dz=38;5;9:*.gz=38;5;9:*.lrz=38;5;9:*.lz=38;5;9:*.l
+zo=38;5;9:*.xz=38;5;9:*.bz2=38;5;9:*.bz=38;5;9:*.tbz=38;5;9:*.tbz2=38;5;9:*.tz=3
+8;5;9:*.deb=38;5;9:*.rpm=38;5;9:*.jar=38;5;9:*.war=38;5;9:*.ear=38;5;9:*.sar=38;
+5;9:*.rar=38;5;9:*.alz=38;5;9:*.ace=38;5;9:*.zoo=38;5;9:*.cpio=38;5;9:*.7z=38;5;
+9:*.rz=38;5;9:*.cab=38;5;9:*.jpg=38;5;13:*.jpeg=38;5;13:*.gif=38;5;13:*.bmp=38;5
+;13:*.pbm=38;5;13:*.pgm=38;5;13:*.ppm=38;5;13:*.tga=38;5;13:*.xbm=38;5;13:*.xpm=
+38;5;13:*.tif=38;5;13:*.tiff=38;5;13:*.png=38;5;13:*.svg=38;5;13:*.svgz=38;5;13:
+*.mng=38;5;13:*.pcx=38;5;13:*.mov=38;5;13:*.mpg=38;5;13:*.mpeg=38;5;13:*.m2v=38;
+5;13:*.mkv=38;5;13:*.webm=38;5;13:*.ogm=38;5;13:*.mp4=38;5;13:*.m4v=38;5;13:*.mp
+4v=38;5;13:*.vob=38;5;13:*.qt=38;5;13:*.nuv=38;5;13:*.wmv=38;5;13:*.asf=38;5;13:
+*.rm=38;5;13:*.rmvb=38;5;13:*.flc=38;5;13:*.avi=38;5;13:*.fli=38;5;13:*.flv=38;5
+;13:*.gl=38;5;13:*.dl=38;5;13:*.xcf=38;5;13:*.xwd=38;5;13:*.yuv=38;5;13:*.cgm=38
+;5;13:*.emf=38;5;13:*.axv=38;5;13:*.anx=38;5;13:*.ogv=38;5;13:*.ogx=38;5;13:*.aa
+c=38;5;45:*.au=38;5;45:*.flac=38;5;45:*.mid=38;5;45:*.midi=38;5;45:*.mka=38;5;45
+:*.mp3=38;5;45:*.mpc=38;5;45:*.ogg=38;5;45:*.ra=38;5;45:*.wav=38;5;45:*.axa=38;5
+;45:*.oga=38;5;45:*.spx=38;5;45:*.xspf=38;5;45:",
+    "MAIL": "/var/spool/mail/michinosuke",
+    "PATH": "/usr/bin:/home/michinosuke/.linuxbrew/bin:/usr/local/bin:/usr/bin:/
+usr/local/sbin:/usr/sbin:/home/michinosuke/.composer/vendor/bin:/home/michinosuk
+e/.local/bin:/home/michinosuke/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/
+sbin:/home/michinosuke/.local/bin:/home/michinosuke/bin:/home/linuxbrew/.linuxbr
+ew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/michinosuke/.linuxbrew/bin:/usr/loc
+al/go/bin:/home/michinosuke/.nodebrew/current/bin:/home/michinosuke/.linuxbrew/b
+in:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/michinosuke/.composer
+/vendor/bin:/home/michinosuke/.local/bin:/home/michinosuke/bin:/usr/local/bin:/u
+sr/bin:/usr/local/sbin:/usr/sbin:/home/michinosuke/.local/bin:/home/michinosuke/
+bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/michino
+suke/.linuxbrew/bin:/home/michinosuke/.yarn/bin",
+    "PWD": "/home/michinosuke/www/vtuber-music-gatsby",
+    "LANG": "ja_JP.UTF-8",
+    "HISTCONTROL": "ignoredups",
+    "SHLVL": "1",
+    "HOME": "/home/michinosuke",
+    "LOGNAME": "michinosuke",
+    "SSH_CONNECTION": "133.186.69.221 56269 118.27.14.141 22",
+    "GOPATH": "/home/michinosuke/go",
+    "LESSOPEN": "||/usr/bin/lesspipe.sh %s",
+    "INFOPATH": "/home/michinosuke/.linuxbrew/share/info:",
+    "XDG_RUNTIME_DIR": "/run/user/1000",
+    "OLDPWD": "/home/michinosuke",
+    "_": "/usr/bin/nohup",
+    "INTERNAL_GATSBY_TELEMETRY_SESSION_ID":
+"ef3389b5-308e-4a95-945d-7ccc75e1de52",
+    "GATSBY_LOGGER": "ink",
+    "gatsby_log_level": "normal",
+    "gatsby_executing_command": "build",
+    "NODE_ENV": "production",
+    "GATSBY_HOT_LOADER": "react-hot-loader",
+    "VIPSHOME": "/target"
+}
+
+[2K[1A[2K[Gundefined api/allVideoPaginate.json
+
+[2K[1A[2K[Gsuccess Checking for changed pages - 0.001s
+
+[2K[1A[2K[Gsuccess source and transform nodes - 25.775s
+
+[2K[1A[2K[G
+ ERROR #11467
+
+The new node didn't pass validation: child "children" fails because ["children"
+at position 0 contains an excluded value]
+
+Failing node:
+
+{
+    "id": "1st_place",
+    "name": "1st PLACE",
+    "name_ruby": "ふぁーすとぷれいす",
+    "name_original": null,
+    "profile": "Lia、じん、しづ、石風呂などのアーティストマネジメントやVOCALOID?
+3対応の歌声ライブラリ [IA -ARIA ON THE PLANETES-]
+の企画・開発、全てのクリエイターの創作活動支援を行うプロジェクト [IA PROJECT]
+を運営をする1st PLACE株式会社。",
+    "sex": null,
+    "birthday": null,
+    "id_youtube": "UCu33JdVED-0vqaNyw_bCTKg",
+    "youtube_registration_date": "2012-11-12",
+    "id_twitter": null,
+    "id_instagram": null,
+    "url_niconico": null,
+    "url_homepage": "http://1stplace.co.jp/",
+    "id_spotify": null,
+    "id_apple_music": null,
+    "id_showroom": null,
+    "id_openrec": null,
+    "id_bilibili": null,
+    "id_tiktok": null,
+    "id_twitcasting": null,
+    "id_facebook": null,
+    "id_pixiv": null,
+    "image_url_profile_icon_source_url": null,
+    "image_url_profile_header_source_url": null,
+    "image_front_type_icon": "youtube",
+    "image_front_type_header": "youtube",
+    "youtube_channel_is_user": false,
+    "recommends": [],
+    "children": [
+        {
+            "id": "jin",
+            "__typename": "Artist"
+        }
+    ],
+    "parents": [],
+    "composer_music": [],
+    "lyricist_music": [],
+    "arranger_music": [],
+    "mixer_videos": [],
+    "off_vocal_videos": [],
+    "arranger_videos": [],
+    "singer_videos": [],
+    "created_at": "-0001-11-30 00:00:00",
+    "updated_at": "2020-02-25 00:00:00",
+    "__typename": "Artist",
+    "children_artist": [
+        "jin"
+    ],
+    "is_singer": false,
+    "is_mixer": false,
+    "count_composer_music": 0,
+    "count_lyricist_music": 0,
+    "count_arranger_music": 0,
+    "count_singer_videos": 0,
+    "count_mixer_videos": 0,
+    "count_off_vocal_videos": 0,
+    "count_arranger_videos": 0,
+    "internal": {
+        "type": "Artist",
+        "contentDigest": "9dcf15f40e7d0d1f4d3b6f68452abf8e",
+        "counter": 30159,
+        "owner": "default-site-plugin"
+    },
+    "parent": null
+}
+
+Note: there might be more nodes that failed validation. Output is limited to one
+ node per type of validation failure to limit terminal spam.
+
+  51 |         if (err) throw new Error(err)
+  52 |         JSON.parse(data).data.allArtistPaginate.forEach(artist => {
+> 53 |             createNode({
+     |             ^
+  54 |                 ...artist,
+  55 |                 recommends: artist.recommends.map(i => i.id),
+  56 |                 children_artist: artist.children.map(i => i.id),
+
+File: gatsby-node.js:53:13
+
+See our docs page for more info on this error:
+https://www.gatsbyjs.org/docs/actions/#createNode
+
+
+[2K[1A[2K[Gsuccess building schema - 7.263s
+
+[2K[1A[2K[Ginfo Total nodes: 44982, SitePage nodes: 11262 (use --verbose for breakdown)
+
+[2K[1A[2K[Gsuccess createPages - 23.950s
+
+[2K[1A[2K[Gsuccess Checking for changed pages - 0.004s
+
+[2K[1A[2K[Gsuccess createPagesStatefully - 0.214s
+
+[2K[1A[2K[Gsuccess Cleaning up stale page-data - 1.221s
+
+[2K[1A[2K[Gsuccess update schema - 0.256s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.010s
+
+[2K[1A[2K[Gsuccess extract queries from components - 1.521s
+
+[2K[1A[2K[Gsuccess write out redirect data - 0.003s
+
+[2K[1A[2K[Gwarn The icon(src/images/vtuber-music-icon.png) you provided to
+'gatsby-plugin-manifest' is not square.
+The icons we generate will be square and for the best results we recommend you
+provide a square icon.
+
+
+[2K[1A[2K[Gsuccess Build manifest and related icons - 0.332s
+
+[2K[1A[2K[Gsuccess onPostBootstrap - 0.337s
+
+[2K[1A[2K[Ginfo bootstrap finished - 72.087s
+
+[2K[1A[2K[G
+ ERROR
+
+[object Object] Processing
+/var/www/vtuber-music-gatsby/src/images/gatsby-astronaut.png failed
+
+Original error:
+
+Cannot set property 'then' of undefined
+
+
+[2K[1A[2K[G
+[0m
+[0m  [0m[97m[41mWorkerError[0m[37m[41m:[0m[37m[41m [0m[97m[41mProcessing /var/www/vtuber-music-gatsby/src/images/gatsby-astrona[0m
+  [0m[97m[41mut.png failed[0m
+[0m  [0m[97m[41mOriginal error:[0m
+[0m  [0m[97m[41mCannot set property 'then' of undefined[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mjobs-manager.ts[0m[90m:[0m[93m318[0m[37m [0m[37menqueueJob[0m
+[0m  [0m  [0m[90m[vtuber-music-gatsby]/[gatsby]/src/utils/jobs-manager.ts:318:21[0m
+[0m  [0m
+[0m
+
+[2K[1A[2K[Gnot finished run static queries - 0.430s
+
+[2K[1A[2K[Gnot finished Generating image thumbnails - 0.331s
+
+success open and validate gatsby-configs - 0.172s
+
+[2K[1A[2K[Gsuccess load plugins - 1.541s
+
+[2K[1A[2K[Gsuccess onPreInit - 0.058s
+
+[2K[1A[2K[Gsuccess delete html and css files from previous builds - 0.004s
+
+[2K[1A[2K[Gsuccess initialize cache - 0.009s
+
+[2K[1A[2K[Gsuccess copy gatsby files - 0.097s
+
+[2K[1A[2K[Gsuccess onPreBootstrap - 0.043s
+
+[2K[1A[2K[Gsuccess createSchemaCustomization - 0.017s
+
+[2K[1A[2K[G{
+    "MANPATH": "/home/michinosuke/.linuxbrew/share/man:",
+    "XDG_SESSION_ID": "5424",
+    "HOSTNAME": "118-27-14-141",
+    "TERM": "xterm-256color",
+    "SHELL": "/bin/bash",
+    "HISTSIZE": "1000",
+    "SSH_CLIENT": "133.186.69.221 59036 22",
+    "OLDPWD": "/home/michinosuke/www",
+    "SSH_TTY": "/dev/pts/0",
+    "USER": "michinosuke",
+    "LD_LIBRARY_PATH": "/home/michinosuke/.linuxbrew/lib:",
+    "LS_COLORS": "rs=0:di=38;5;27:ln=38;5;51:mh=44;38;5;15:pi=40;38;5;11:so=38;5
+;13:do=38;5;5:bd=48;5;232;38;5;11:cd=48;5;232;38;5;3:or=48;5;232;38;5;9:mi=05;48
+;5;232;38;5;15:su=48;5;196;38;5;15:sg=48;5;11;38;5;16:ca=48;5;196;38;5;226:tw=48
+;5;10;38;5;16:ow=48;5;10;38;5;21:st=48;5;21;38;5;15:ex=38;5;34:*.tar=38;5;9:*.tg
+z=38;5;9:*.arc=38;5;9:*.arj=38;5;9:*.taz=38;5;9:*.lha=38;5;9:*.lz4=38;5;9:*.lzh=
+38;5;9:*.lzma=38;5;9:*.tlz=38;5;9:*.txz=38;5;9:*.tzo=38;5;9:*.t7z=38;5;9:*.zip=3
+8;5;9:*.z=38;5;9:*.Z=38;5;9:*.dz=38;5;9:*.gz=38;5;9:*.lrz=38;5;9:*.lz=38;5;9:*.l
+zo=38;5;9:*.xz=38;5;9:*.bz2=38;5;9:*.bz=38;5;9:*.tbz=38;5;9:*.tbz2=38;5;9:*.tz=3
+8;5;9:*.deb=38;5;9:*.rpm=38;5;9:*.jar=38;5;9:*.war=38;5;9:*.ear=38;5;9:*.sar=38;
+5;9:*.rar=38;5;9:*.alz=38;5;9:*.ace=38;5;9:*.zoo=38;5;9:*.cpio=38;5;9:*.7z=38;5;
+9:*.rz=38;5;9:*.cab=38;5;9:*.jpg=38;5;13:*.jpeg=38;5;13:*.gif=38;5;13:*.bmp=38;5
+;13:*.pbm=38;5;13:*.pgm=38;5;13:*.ppm=38;5;13:*.tga=38;5;13:*.xbm=38;5;13:*.xpm=
+38;5;13:*.tif=38;5;13:*.tiff=38;5;13:*.png=38;5;13:*.svg=38;5;13:*.svgz=38;5;13:
+*.mng=38;5;13:*.pcx=38;5;13:*.mov=38;5;13:*.mpg=38;5;13:*.mpeg=38;5;13:*.m2v=38;
+5;13:*.mkv=38;5;13:*.webm=38;5;13:*.ogm=38;5;13:*.mp4=38;5;13:*.m4v=38;5;13:*.mp
+4v=38;5;13:*.vob=38;5;13:*.qt=38;5;13:*.nuv=38;5;13:*.wmv=38;5;13:*.asf=38;5;13:
+*.rm=38;5;13:*.rmvb=38;5;13:*.flc=38;5;13:*.avi=38;5;13:*.fli=38;5;13:*.flv=38;5
+;13:*.gl=38;5;13:*.dl=38;5;13:*.xcf=38;5;13:*.xwd=38;5;13:*.yuv=38;5;13:*.cgm=38
+;5;13:*.emf=38;5;13:*.axv=38;5;13:*.anx=38;5;13:*.ogv=38;5;13:*.ogx=38;5;13:*.aa
+c=38;5;45:*.au=38;5;45:*.flac=38;5;45:*.mid=38;5;45:*.midi=38;5;45:*.mka=38;5;45
+:*.mp3=38;5;45:*.mpc=38;5;45:*.ogg=38;5;45:*.ra=38;5;45:*.wav=38;5;45:*.axa=38;5
+;45:*.oga=38;5;45:*.spx=38;5;45:*.xspf=38;5;45:",
+    "MAIL": "/var/spool/mail/michinosuke",
+    "PATH": "/usr/bin:/home/michinosuke/.linuxbrew/bin:/usr/local/bin:/usr/bin:/
+usr/local/sbin:/usr/sbin:/home/michinosuke/.composer/vendor/bin:/home/michinosuk
+e/.local/bin:/home/michinosuke/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/
+sbin:/home/michinosuke/.local/bin:/home/michinosuke/bin:/home/linuxbrew/.linuxbr
+ew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/michinosuke/.linuxbrew/bin:/usr/loc
+al/go/bin:/home/michinosuke/.nodebrew/current/bin:/home/michinosuke/.linuxbrew/b
+in:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/michinosuke/.composer
+/vendor/bin:/home/michinosuke/.local/bin:/home/michinosuke/bin:/usr/local/bin:/u
+sr/bin:/usr/local/sbin:/usr/sbin:/home/michinosuke/.local/bin:/home/michinosuke/
+bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/michino
+suke/.linuxbrew/bin:/home/michinosuke/.yarn/bin",
+    "PWD": "/home/michinosuke/www/vtuber-music-gatsby",
+    "LANG": "ja_JP.UTF-8",
+    "HISTCONTROL": "ignoredups",
+    "SHLVL": "1",
+    "HOME": "/home/michinosuke",
+    "LOGNAME": "michinosuke",
+    "SSH_CONNECTION": "133.186.69.221 59036 118.27.14.141 22",
+    "GOPATH": "/home/michinosuke/go",
+    "LESSOPEN": "||/usr/bin/lesspipe.sh %s",
+    "INFOPATH": "/home/michinosuke/.linuxbrew/share/info:",
+    "XDG_RUNTIME_DIR": "/run/user/1000",
+    "_": "/usr/bin/nohup",
+    "INTERNAL_GATSBY_TELEMETRY_SESSION_ID":
+"0f620607-e143-4781-ae3b-894fe7c3aede",
+    "GATSBY_LOGGER": "ink",
+    "gatsby_log_level": "normal",
+    "gatsby_executing_command": "build",
+    "NODE_ENV": "production",
+    "GATSBY_HOT_LOADER": "react-hot-loader",
+    "VIPSHOME": "/target"
+}
+
+[2K[1A[2K[Gundefined api/allVideoPaginate.json
+
+[2K[1A[2K[Gsuccess Checking for changed pages - 0.001s
+
+[2K[1A[2K[Gsuccess source and transform nodes - 25.218s
+
+[2K[1A[2K[Gnot finished building schema - 1.522s
+
+success open and validate gatsby-configs - 0.179s
+
+[2K[1A[2K[Gsuccess load plugins - 1.371s
+
+[2K[1A[2K[Gsuccess onPreInit - 0.087s
+
+[2K[1A[2K[Gsuccess delete html and css files from previous builds - 0.006s
+
+[2K[1A[2K[Gsuccess initialize cache - 0.021s
+
+[2K[1A[2K[Gsuccess copy gatsby files - 0.100s
+
+[2K[1A[2K[Gsuccess onPreBootstrap - 0.024s
+
+[2K[1A[2K[Gsuccess createSchemaCustomization - 0.015s
+
+[2K[1A[2K[G{
+    "MANPATH": "/home/michinosuke/.linuxbrew/share/man:",
+    "XDG_SESSION_ID": "5424",
+    "HOSTNAME": "118-27-14-141",
+    "TERM": "xterm-256color",
+    "SHELL": "/bin/bash",
+    "HISTSIZE": "1000",
+    "SSH_CLIENT": "133.186.69.221 59036 22",
+    "OLDPWD": "/home/michinosuke/www",
+    "SSH_TTY": "/dev/pts/0",
+    "USER": "michinosuke",
+    "LD_LIBRARY_PATH": "/home/michinosuke/.linuxbrew/lib:",
+    "LS_COLORS": "rs=0:di=38;5;27:ln=38;5;51:mh=44;38;5;15:pi=40;38;5;11:so=38;5
+;13:do=38;5;5:bd=48;5;232;38;5;11:cd=48;5;232;38;5;3:or=48;5;232;38;5;9:mi=05;48
+;5;232;38;5;15:su=48;5;196;38;5;15:sg=48;5;11;38;5;16:ca=48;5;196;38;5;226:tw=48
+;5;10;38;5;16:ow=48;5;10;38;5;21:st=48;5;21;38;5;15:ex=38;5;34:*.tar=38;5;9:*.tg
+z=38;5;9:*.arc=38;5;9:*.arj=38;5;9:*.taz=38;5;9:*.lha=38;5;9:*.lz4=38;5;9:*.lzh=
+38;5;9:*.lzma=38;5;9:*.tlz=38;5;9:*.txz=38;5;9:*.tzo=38;5;9:*.t7z=38;5;9:*.zip=3
+8;5;9:*.z=38;5;9:*.Z=38;5;9:*.dz=38;5;9:*.gz=38;5;9:*.lrz=38;5;9:*.lz=38;5;9:*.l
+zo=38;5;9:*.xz=38;5;9:*.bz2=38;5;9:*.bz=38;5;9:*.tbz=38;5;9:*.tbz2=38;5;9:*.tz=3
+8;5;9:*.deb=38;5;9:*.rpm=38;5;9:*.jar=38;5;9:*.war=38;5;9:*.ear=38;5;9:*.sar=38;
+5;9:*.rar=38;5;9:*.alz=38;5;9:*.ace=38;5;9:*.zoo=38;5;9:*.cpio=38;5;9:*.7z=38;5;
+9:*.rz=38;5;9:*.cab=38;5;9:*.jpg=38;5;13:*.jpeg=38;5;13:*.gif=38;5;13:*.bmp=38;5
+;13:*.pbm=38;5;13:*.pgm=38;5;13:*.ppm=38;5;13:*.tga=38;5;13:*.xbm=38;5;13:*.xpm=
+38;5;13:*.tif=38;5;13:*.tiff=38;5;13:*.png=38;5;13:*.svg=38;5;13:*.svgz=38;5;13:
+*.mng=38;5;13:*.pcx=38;5;13:*.mov=38;5;13:*.mpg=38;5;13:*.mpeg=38;5;13:*.m2v=38;
+5;13:*.mkv=38;5;13:*.webm=38;5;13:*.ogm=38;5;13:*.mp4=38;5;13:*.m4v=38;5;13:*.mp
+4v=38;5;13:*.vob=38;5;13:*.qt=38;5;13:*.nuv=38;5;13:*.wmv=38;5;13:*.asf=38;5;13:
+*.rm=38;5;13:*.rmvb=38;5;13:*.flc=38;5;13:*.avi=38;5;13:*.fli=38;5;13:*.flv=38;5
+;13:*.gl=38;5;13:*.dl=38;5;13:*.xcf=38;5;13:*.xwd=38;5;13:*.yuv=38;5;13:*.cgm=38
+;5;13:*.emf=38;5;13:*.axv=38;5;13:*.anx=38;5;13:*.ogv=38;5;13:*.ogx=38;5;13:*.aa
+c=38;5;45:*.au=38;5;45:*.flac=38;5;45:*.mid=38;5;45:*.midi=38;5;45:*.mka=38;5;45
+:*.mp3=38;5;45:*.mpc=38;5;45:*.ogg=38;5;45:*.ra=38;5;45:*.wav=38;5;45:*.axa=38;5
+;45:*.oga=38;5;45:*.spx=38;5;45:*.xspf=38;5;45:",
+    "MAIL": "/var/spool/mail/michinosuke",
+    "PATH": "/usr/bin:/home/michinosuke/.linuxbrew/bin:/usr/local/bin:/usr/bin:/
+usr/local/sbin:/usr/sbin:/home/michinosuke/.composer/vendor/bin:/home/michinosuk
+e/.local/bin:/home/michinosuke/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/
+sbin:/home/michinosuke/.local/bin:/home/michinosuke/bin:/home/linuxbrew/.linuxbr
+ew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/michinosuke/.linuxbrew/bin:/usr/loc
+al/go/bin:/home/michinosuke/.nodebrew/current/bin:/home/michinosuke/.linuxbrew/b
+in:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/michinosuke/.composer
+/vendor/bin:/home/michinosuke/.local/bin:/home/michinosuke/bin:/usr/local/bin:/u
+sr/bin:/usr/local/sbin:/usr/sbin:/home/michinosuke/.local/bin:/home/michinosuke/
+bin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/michino
+suke/.linuxbrew/bin:/home/michinosuke/.yarn/bin",
+    "PWD": "/home/michinosuke/www/vtuber-music-gatsby",
+    "LANG": "ja_JP.UTF-8",
+    "HISTCONTROL": "ignoredups",
+    "SHLVL": "1",
+    "HOME": "/home/michinosuke",
+    "LOGNAME": "michinosuke",
+    "SSH_CONNECTION": "133.186.69.221 59036 118.27.14.141 22",
+    "GOPATH": "/home/michinosuke/go",
+    "LESSOPEN": "||/usr/bin/lesspipe.sh %s",
+    "INFOPATH": "/home/michinosuke/.linuxbrew/share/info:",
+    "XDG_RUNTIME_DIR": "/run/user/1000",
+    "_": "/usr/bin/nohup",
+    "INTERNAL_GATSBY_TELEMETRY_SESSION_ID":
+"f7f5df29-7643-4c9a-a992-df52b529debc",
+    "GATSBY_LOGGER": "ink",
+    "gatsby_log_level": "normal",
+    "gatsby_executing_command": "build",
+    "NODE_ENV": "production",
+    "GATSBY_HOT_LOADER": "react-hot-loader",
+    "VIPSHOME": "/target"
+}
+
+[2K[1A[2K[Gundefined api/allVideoPaginate.json
+
+[2K[1A[2K[Gsuccess Checking for changed pages - 0.002s
+
+[2K[1A[2K[Gsuccess source and transform nodes - 27.978s
+
+[2K[1A[2K[G
+ ERROR #11467
+
+The new node didn't pass validation: child "children" fails because ["children"
+at position 0 contains an excluded value]
+
+Failing node:
+
+{
+    "id": "1st_place",
+    "name": "1st PLACE",
+    "name_ruby": "ふぁーすとぷれいす",
+    "name_original": null,
+    "profile": "Lia、じん、しづ、石風呂などのアーティストマネジメントやVOCALOID?
+3対応の歌声ライブラリ [IA -ARIA ON THE PLANETES-]
+の企画・開発、全てのクリエイターの創作活動支援を行うプロジェクト [IA PROJECT]
+を運営をする1st PLACE株式会社。",
+    "sex": null,
+    "birthday": null,
+    "id_youtube": "UCu33JdVED-0vqaNyw_bCTKg",
+    "youtube_registration_date": "2012-11-12",
+    "id_twitter": null,
+    "id_instagram": null,
+    "url_niconico": null,
+    "url_homepage": "http://1stplace.co.jp/",
+    "id_spotify": null,
+    "id_apple_music": null,
+    "id_showroom": null,
+    "id_openrec": null,
+    "id_bilibili": null,
+    "id_tiktok": null,
+    "id_twitcasting": null,
+    "id_facebook": null,
+    "id_pixiv": null,
+    "image_url_profile_icon_source_url": null,
+    "image_url_profile_header_source_url": null,
+    "image_front_type_icon": "youtube",
+    "image_front_type_header": "youtube",
+    "youtube_channel_is_user": false,
+    "recommends": [],
+    "children": [
+        {
+            "id": "jin",
+            "__typename": "Artist"
+        }
+    ],
+    "parents": [],
+    "composer_music": [],
+    "lyricist_music": [],
+    "arranger_music": [],
+    "mixer_videos": [],
+    "off_vocal_videos": [],
+    "arranger_videos": [],
+    "singer_videos": [],
+    "created_at": "-0001-11-30 00:00:00",
+    "updated_at": "2020-02-25 00:00:00",
+    "__typename": "Artist",
+    "children_artist": [
+        "jin"
+    ],
+    "is_singer": false,
+    "is_mixer": false,
+    "count_composer_music": 0,
+    "count_lyricist_music": 0,
+    "count_arranger_music": 0,
+    "count_singer_videos": 0,
+    "count_mixer_videos": 0,
+    "count_off_vocal_videos": 0,
+    "count_arranger_videos": 0,
+    "internal": {
+        "type": "Artist",
+        "contentDigest": "9dcf15f40e7d0d1f4d3b6f68452abf8e",
+        "counter": 30159,
+        "owner": "default-site-plugin"
+    },
+    "parent": null
+}
+
+Note: there might be more nodes that failed validation. Output is limited to one
+ node per type of validation failure to limit terminal spam.
+
+  51 |         if (err) throw new Error(err)
+  52 |         JSON.parse(data).data.allArtistPaginate.forEach(artist => {
+> 53 |             createNode({
+     |             ^
+  54 |                 ...artist,
+  55 |                 recommends: artist.recommends.map(i => i.id),
+  56 |                 children_artist: artist.children.map(i => i.id),
+
+File: gatsby-node.js:53:13
+
+See our docs page for more info on this error:
+https://www.gatsbyjs.org/docs/actions/#createNode
+
+
+[2K[1A[2K[Gsuccess building schema - 7.165s
+
+[2K[1A[2K[Ginfo Total nodes: 44982, SitePage nodes: 11262 (use --verbose for breakdown)
+
+[2K[1A[2K[Gsuccess createPages - 25.175s
+
+[2K[1A[2K[Gsuccess Checking for changed pages - 0.004s
+
+[2K[1A[2K[Gsuccess createPagesStatefully - 0.474s
+
+[2K[1A[2K[Gsuccess update schema - 0.209s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.007s
+
+[2K[1A[2K[Gsuccess extract queries from components - 1.352s
+
+[2K[1A[2K[Gsuccess write out redirect data - 0.005s
+
+[2K[1A[2K[Gwarn The icon(src/images/vtuber-music-icon.png) you provided to
+'gatsby-plugin-manifest' is not square.
+The icons we generate will be square and for the best results we recommend you
+provide a square icon.
+
+
+[2K[1A[2K[Gsuccess Build manifest and related icons - 0.242s
+
+[2K[1A[2K[Gsuccess onPostBootstrap - 0.248s
+
+[2K[1A[2K[Ginfo bootstrap finished - 70.539s
+
+[2K[1A[2K[G
+ ERROR
+
+[object Object] Processing
+/var/www/vtuber-music-gatsby/src/images/gatsby-astronaut.png failed
+
+Original error:
+
+Cannot set property 'then' of undefined
+
+
+[2K[1A[2K[G
+[0m
+[0m  [0m[97m[41mWorkerError[0m[37m[41m:[0m[37m[41m [0m[97m[41mProcessing /var/www/vtuber-music-gatsby/src/images/gatsby-astrona[0m
+  [0m[97m[41mut.png failed[0m
+[0m  [0m[97m[41mOriginal error:[0m
+[0m  [0m[97m[41mCannot set property 'then' of undefined[0m
+[0m  [0m
+[0m  [0m[90m-[0m [0m[93mjobs-manager.ts[0m[90m:[0m[93m318[0m[37m [0m[37menqueueJob[0m
+[0m  [0m  [0m[90m[vtuber-music-gatsby]/[gatsby]/src/utils/jobs-manager.ts:318:21[0m
+[0m  [0m
+[0m
+
+[2K[1A[2K[Gnot finished run static queries - 0.308s
+
+[2K[1A[2K[Gnot finished Generating image thumbnails - 0.224s
+
+success open and validate gatsby-configs - 0.222s
+
+[2K[1A[2K[Gsuccess load plugins - 1.862s
+
+[2K[1A[2K[Gsuccess onPreInit - 0.058s
+
+[2K[1A[2K[Gsuccess delete html and css files from previous builds - 0.004s
+
+[2K[1A[2K[Ginfo One or more of your plugins have changed since the last time you ran
+Gatsby. As
+a precaution, we're deleting your site's cache to ensure there's no stale data.
+
+[2K[1A[2K[Ginfo We've detected that the Gatsby cache is incomplete (the .cache directory
+exists
+but the public directory does not). As a precaution, we're deleting your site's
+cache to ensure there's no stale data.
+
+[2K[1A[2K[Gsuccess initialize cache - 0.673s
+
+[2K[1A[2K[Gsuccess copy gatsby files - 0.196s
+
+[2K[1A[2K[Gsuccess onPreBootstrap - 0.034s
+
+[2K[1A[2K[Gsuccess createSchemaCustomization - 0.017s
+
+[2K[1A[2K[Ghttps://api.vtuber-music.com/graphql
+
+[2K[1A[2K[G[
+  {
+    __typename: 'Video',
+    id: '__lMdzxb5Po',
+    music: { __typename: 'Music', id: 'musica_spotlight' },
+    release_date: '2020-01-26',
+    is_mv: true,
+    is_original_music: true,
+    original_video_id: null,
+    custom_music_name: null,
+    singers: [ [Object] ],
+    mixers: [],
+    off_vocals: [],
+    arrangers: [],
+    recommends: [],
+    created_at: '2021-01-02 00:00:00',
+    updated_at: '2021-01-02 00:00:00'
+  },
+  {
+    __typename: 'Video',
+    id: '_-gjj3w_owo',
+    music: { __typename: 'Music', id: 'nZl1e33f' },
+    release_date: '2020-12-20',
+    is_mv: true,
+    is_original_music: false,
+    original_video_id: null,
+    custom_music_name: null,
+    singers: [ [Object] ],
+    mixers: [ [Object] ],
+    off_vocals: [],
+    arrangers: [],
+    recommends: [],
+    created_at: '2021-01-28 21:16:18',
+    updated_at: '2021-01-28 21:16:18'
+  },
+  {
+    __typename: 'Video',
+    id: '_2kUrDHaEoA',
+    music: { __typename: 'Music', id: 'mfV7zAK6' },
+    release_date: '2020-09-13',
+    is_mv: true,
+    is_original_music: false,
+    original_video_id: null,
+    custom_music_name: null,
+    singers: [ [Object] ],
+    mixers: [ [Object] ],
+    off_vocals: [],
+    arrangers: [],
+    recommends: [],
+    created_at: '2021-01-22 18:11:24',
+    updated_at: '2021-01-22 18:11:24'
+  }
+]
+
+[2K[1A[2K[Ghttps://api.vtuber-music.com/graphql
+
+[2K[1A[2K[Ghttps://api.vtuber-music.com/graphql
+
+[2K[1A[2K[G
+ ERROR #11467
+
+The new node didn't pass validation: child "children" fails because ["children"
+at position 0 contains an excluded value]
+
+Failing node:
+
+{
+    "__typename": "Artist",
+    "id": "1st_place",
+    "name": "1st PLACE",
+    "name_ruby": "ふぁーすとぷれいす",
+    "name_original": null,
+    "profile": "Lia、じん、しづ、石風呂などのアーティストマネジメントやVOCALOID?
+3対応の歌声ライブラリ [IA -ARIA ON THE PLANETES-]
+の企画・開発、全てのクリエイターの創作活動支援を行うプロジェクト [IA PROJECT]
+を運営をする1st PLACE株式会社。",
+    "sex": null,
+    "birthday": null,
+    "id_youtube": "UCu33JdVED-0vqaNyw_bCTKg",
+    "youtube_registration_date": "2012-11-12",
+    "id_twitter": null,
+    "id_instagram": null,
+    "url_niconico": null,
+    "url_homepage": "http://1stplace.co.jp/",
+    "id_spotify": null,
+    "id_apple_music": null,
+    "id_showroom": null,
+    "id_openrec": null,
+    "id_bilibili": null,
+    "id_tiktok": null,
+    "id_twitcasting": null,
+    "id_facebook": null,
+    "id_pixiv": null,
+    "image_url_profile_icon_source_url": null,
+    "image_url_profile_header_source_url": null,
+    "image_front_type_icon": "youtube",
+    "image_front_type_header": "youtube",
+    "youtube_channel_is_user": false,
+    "recommends": [],
+    "children": [
+        {
+            "__typename": "Artist",
+            "id": "jin"
+        }
+    ],
+    "parents": [],
+    "composer_music": [],
+    "lyricist_music": [],
+    "arranger_music": [],
+    "mixer_videos": [],
+    "off_vocal_videos": [],
+    "arranger_videos": [],
+    "singer_videos": [],
+    "created_at": "-0001-11-30 00:00:00",
+    "updated_at": "2020-02-25 00:00:00",
+    "children_artist": [
+        "jin"
+    ],
+    "is_singer": false,
+    "is_mixer": false,
+    "count_composer_music": 0,
+    "count_lyricist_music": 0,
+    "count_arranger_music": 0,
+    "count_singer_videos": 0,
+    "count_mixer_videos": 0,
+    "count_off_vocal_videos": 0,
+    "count_arranger_videos": 0,
+    "profile_image": {
+        "childImageSharp": {
+            "fluid": {
+                "aspectRatio": 1,
+                "src": "https://assets.vtuber-music.com/img/artist/1st_place/ico
+n/twitter/01_160x160.jpg",
+                "sizes": "(max-width: 160px) 100vw, 160px"
+            }
+        }
+    },
+    "header_image": {
+        "childImageSharp": {
+            "fluid": {
+                "aspectRatio": 3,
+                "src": "https://assets.vtuber-music.com/img/artist/1st_place/hea
+der/twitter/01_900x300.jpg",
+                "sizes": "(max-width: 600px) 100vw, 600px"
+            }
+        }
+    },
+    "internal": {
+        "type": "Artist",
+        "contentDigest": "9dcf15f40e7d0d1f4d3b6f68452abf8e",
+        "counter": 8191,
+        "owner": "default-site-plugin"
+    },
+    "parent": null
+}
+
+Note: there might be more nodes that failed validation. Output is limited to one
+ node per type of validation failure to limit terminal spam.
+
+  55 |     const allArtist = await queryAllArtist()
+  56 |     allArtist.forEach(artist => {
+> 57 |         createNode({
+     |         ^
+  58 |             ...artist,
+  59 |             recommends: artist.recommends.map(i => i.id),
+  60 |             children_artist: artist.children.map(i => i.id),
+
+File: gatsby-node.js:57:9
+
+See our docs page for more info on this error:
+https://www.gatsbyjs.org/docs/actions/#createNode
+
+
+[2K[1A[2K[Gsuccess Checking for changed pages - 0.001s
+
+[2K[1A[2K[Gsuccess source and transform nodes - 89.489s
+
+[2K[1A[2K[Gsuccess building schema - 2.957s
+
+[2K[1A[2K[Ginfo Total nodes: 23782, SitePage nodes: 11865 (use --verbose for breakdown)
+
+[2K[1A[2K[Gsuccess createPages - 12.545s
+
+[2K[1A[2K[Gsuccess Checking for changed pages - 0.004s
+
+[2K[1A[2K[Gsuccess createPagesStatefully - 0.265s
+
+[2K[1A[2K[Gsuccess update schema - 0.213s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.008s
+
+[2K[1A[2K[Gsuccess extract queries from components - 1.642s
+
+[2K[1A[2K[Gsuccess write out redirect data - 0.012s
+
+[2K[1A[2K[Gwarn The icon(src/images/vtuber-music-icon.png) you provided to
+'gatsby-plugin-manifest' is not square.
+The icons we generate will be square and for the best results we recommend you
+provide a square icon.
+
+
+[2K[1A[2K[Gsuccess Build manifest and related icons - 0.568s
+
+[2K[1A[2K[Gsuccess onPostBootstrap - 0.581s
+
+[2K[1A[2K[Ginfo bootstrap finished - 120.207s
+
+[2K[1A[2K[Gsuccess run static queries - 0.368s - 1/1 2.72/s
+
+[2K[1A[2K[Gsuccess run page queries - 242.141s - 11873/11873 49.03/s
+
+[2K[1A[2K[Gsuccess write out requires - 0.091s
+
+[2K[1A[2K[Gwarn chunk styles [mini-css-extract-plugin]
+Conflicting order. Following module has been added:
+ * css ./node_modules/css-loader??ref--12-oneOf-1-1!./node_modules/gatsby-plugin
+-postcss/node_modules/postcss-loader/dist/cjs.js??ref--12-oneOf-1-2!./src/compon
+ents/videoThumbnail.css
+despite it was not able to fulfill desired ordering with these modules:
+ * css ./node_modules/css-loader??ref--12-oneOf-1-1!./node_modules/gatsby-plugin
+-postcss/node_modules/postcss-loader/dist/cjs.js??ref--12-oneOf-1-2!./src/compon
+ents/heading.css
+   - couldn't fulfill desired order of chunk group(s)
+component---src-pages-request-add-video-js, component---src-templates-artist-js
+   - while fulfilling desired order of chunk group(s)
+component---src-templates-music-js, component---src-templates-video-js
+
+[2K[1A[2K[Gsuccess Building production JavaScript and CSS bundles - 84.346s
+
+[2K[1A[2K[Gsuccess Rewriting compilation hashes - 0.003s
+
+UC5CwaMl1eIgY8h02uZw7u8A
+hiroyukix
+hiroyukix
+KIYOisGOD
+%25E5%25A4%25A9%25E4%25BD%25BF%25E3%2582%25BB%25E3%2582%25A6
+%E3%81%82%E3%81%84%E3%81%86%E3%81%88%E3%81%8A
+
+qZn8DAM9H5Y
+j1hft9Wjq9U
+gNRp28pKE5A
+UC5CwaMl1eIgY8h02uZw7u8A
+hiroyukix
+hiroyukix
+KIYOisGOD
+%25E5%25A4%25A9%25E4%25BD%25BF%25E3%2582%25BB%25E3%2582%25A6
+%E3%81%82%E3%81%84%E3%81%86%E3%81%88%E3%81%8A
+
+qZn8DAM9H5Y
+j1hft9Wjq9U
+gNRp28pKE5A
+UC5CwaMl1eIgY8h02uZw7u8A
+hiroyukix
+hiroyukix
+KIYOisGOD
+%25E5%25A4%25A9%25E4%25BD%25BF%25E3%2582%25BB%25E3%2582%25A6
+%E3%81%82%E3%81%84%E3%81%86%E3%81%88%E3%81%8A
+
+qZn8DAM9H5Y
+j1hft9Wjq9U
+gNRp28pKE5A
+[2K[1A[2K[Gsuccess Building static HTML for pages - 77.398s - 11873/11873 153.40/s
+
+[2K[1A[2K[GCreating individual JSON files from graphql query
+
+[2K[1A[2K[GFinished creating individual JSON files from graphql query
+
+[2K[1A[2K[GCreating JSON feed files from graphql query
+
+[2K[1A[2K[GFinished creating JSON feed files from graphql query
+
+[2K[1A[2K[GCreating individual JSON files from graphql query
+
+[2K[1A[2K[GFinished creating individual JSON files from graphql query
+
+[2K[1A[2K[GCreating JSON feed files from graphql query
+
+[2K[1A[2K[GFinished creating JSON feed files from graphql query
+
+[2K[1A[2K[GCreating individual JSON files from graphql query
+
+[2K[1A[2K[GFinished creating individual JSON files from graphql query
+
+[2K[1A[2K[GCreating JSON feed files from graphql query
+
+[2K[1A[2K[GFinished creating JSON feed files from graphql query
+
+[2K[1A[2K[GCreating individual JSON files from graphql query
+
+[2K[1A[2K[GFinished creating individual JSON files from graphql query
+
+[2K[1A[2K[GCreating JSON feed files from graphql query
+
+[2K[1A[2K[GFinished creating JSON feed files from graphql query
+
+[2K[1A[2K[Gsuccess Generating image thumbnails - 462.199s - 2/2 0.00/s
+
+[2K[1A[2K[Gsuccess onPostBuild - 2.302s
+
+[2K[1A[2K[Ginfo Done building in 584.550043145 sec
+
+success open and validate gatsby-configs - 0.172s
+
+[2K[1A[2K[Gsuccess load plugins - 1.838s
+
+[2K[1A[2K[Gsuccess onPreInit - 0.056s
+
+[2K[1A[2K[Gsuccess delete html and css files from previous builds - 3.974s
+
+[2K[1A[2K[Gsuccess initialize cache - 0.014s
+
+[2K[1A[2K[Gsuccess copy gatsby files - 0.100s
+
+[2K[1A[2K[Gsuccess onPreBootstrap - 0.039s
+
+[2K[1A[2K[Gsuccess createSchemaCustomization - 0.012s
+
+[2K[1A[2K[Ghttps://api.vtuber-music.com/graphql
+
+[2K[1A[2K[G[
+  {
+    __typename: 'Video',
+    id: '__lMdzxb5Po',
+    music: { __typename: 'Music', id: 'musica_spotlight' },
+    release_date: '2020-01-26',
+    is_mv: true,
+    is_original_music: true,
+    original_video_id: null,
+    custom_music_name: null,
+    singers: [ [Object] ],
+    mixers: [],
+    off_vocals: [],
+    arrangers: [],
+    recommends: [],
+    created_at: '2021-01-02 00:00:00',
+    updated_at: '2021-01-02 00:00:00'
+  },
+  {
+    __typename: 'Video',
+    id: '_-gjj3w_owo',
+    music: { __typename: 'Music', id: 'nZl1e33f' },
+    release_date: '2020-12-20',
+    is_mv: true,
+    is_original_music: false,
+    original_video_id: null,
+    custom_music_name: null,
+    singers: [ [Object] ],
+    mixers: [ [Object] ],
+    off_vocals: [],
+    arrangers: [],
+    recommends: [],
+    created_at: '2021-01-28 21:16:18',
+    updated_at: '2021-01-28 21:16:18'
+  },
+  {
+    __typename: 'Video',
+    id: '_2kUrDHaEoA',
+    music: { __typename: 'Music', id: 'mfV7zAK6' },
+    release_date: '2020-09-13',
+    is_mv: true,
+    is_original_music: false,
+    original_video_id: null,
+    custom_music_name: null,
+    singers: [ [Object] ],
+    mixers: [ [Object] ],
+    off_vocals: [],
+    arrangers: [],
+    recommends: [],
+    created_at: '2021-01-22 18:11:24',
+    updated_at: '2021-01-22 18:11:24'
+  }
+]
+
+[2K[1A[2K[Ghttps://api.vtuber-music.com/graphql
+
+[2K[1A[2K[Ghttps://api.vtuber-music.com/graphql
+
+[2K[1A[2K[G
+ ERROR #11467
+
+The new node didn't pass validation: child "children" fails because ["children"
+at position 0 contains an excluded value]
+
+Failing node:
+
+{
+    "__typename": "Artist",
+    "id": "1st_place",
+    "name": "1st PLACE",
+    "name_ruby": "ふぁーすとぷれいす",
+    "name_original": null,
+    "profile": "Lia、じん、しづ、石風呂などのアーティストマネジメントやVOCALOID?
+3対応の歌声ライブラリ [IA -ARIA ON THE PLANETES-]
+の企画・開発、全てのクリエイターの創作活動支援を行うプロジェクト [IA PROJECT]
+を運営をする1st PLACE株式会社。",
+    "sex": null,
+    "birthday": null,
+    "id_youtube": "UCu33JdVED-0vqaNyw_bCTKg",
+    "youtube_registration_date": "2012-11-12",
+    "id_twitter": null,
+    "id_instagram": null,
+    "url_niconico": null,
+    "url_homepage": "http://1stplace.co.jp/",
+    "id_spotify": null,
+    "id_apple_music": null,
+    "id_showroom": null,
+    "id_openrec": null,
+    "id_bilibili": null,
+    "id_tiktok": null,
+    "id_twitcasting": null,
+    "id_facebook": null,
+    "id_pixiv": null,
+    "image_url_profile_icon_source_url": null,
+    "image_url_profile_header_source_url": null,
+    "image_front_type_icon": "youtube",
+    "image_front_type_header": "youtube",
+    "youtube_channel_is_user": false,
+    "recommends": [],
+    "children": [
+        {
+            "__typename": "Artist",
+            "id": "jin"
+        }
+    ],
+    "parents": [],
+    "composer_music": [],
+    "lyricist_music": [],
+    "arranger_music": [],
+    "mixer_videos": [],
+    "off_vocal_videos": [],
+    "arranger_videos": [],
+    "singer_videos": [],
+    "created_at": "-0001-11-30 00:00:00",
+    "updated_at": "2020-02-25 00:00:00",
+    "children_artist": [
+        "jin"
+    ],
+    "is_singer": false,
+    "is_mixer": false,
+    "count_composer_music": 0,
+    "count_lyricist_music": 0,
+    "count_arranger_music": 0,
+    "count_singer_videos": 0,
+    "count_mixer_videos": 0,
+    "count_off_vocal_videos": 0,
+    "count_arranger_videos": 0,
+    "profile_image": {
+        "childImageSharp": {
+            "fluid": {
+                "aspectRatio": 1,
+                "src": "https://assets.vtuber-music.com/img/artist/1st_place/ico
+n/twitter/01_160x160.jpg",
+                "sizes": "(max-width: 160px) 100vw, 160px"
+            }
+        }
+    },
+    "header_image": {
+        "childImageSharp": {
+            "fluid": {
+                "aspectRatio": 3,
+                "src": "https://assets.vtuber-music.com/img/artist/1st_place/hea
+der/twitter/01_900x300.jpg",
+                "sizes": "(max-width: 600px) 100vw, 600px"
+            }
+        }
+    },
+    "internal": {
+        "type": "Artist",
+        "contentDigest": "9dcf15f40e7d0d1f4d3b6f68452abf8e",
+        "counter": 8414,
+        "owner": "default-site-plugin"
+    },
+    "parent": null
+}
+
+Note: there might be more nodes that failed validation. Output is limited to one
+ node per type of validation failure to limit terminal spam.
+
+  55 |     const allArtist = await queryAllArtist()
+  56 |     allArtist.forEach(artist => {
+> 57 |         createNode({
+     |         ^
+  58 |             ...artist,
+  59 |             recommends: artist.recommends.map(i => i.id),
+  60 |             children_artist: artist.children.map(i => i.id),
+
+File: gatsby-node.js:57:9
+
+See our docs page for more info on this error:
+https://www.gatsbyjs.org/docs/actions/#createNode
+
+
+[2K[1A[2K[Gsuccess Checking for changed pages - 0.001s
+
+[2K[1A[2K[Gsuccess source and transform nodes - 81.703s
+
+[2K[1A[2K[Gsuccess building schema - 2.523s
+
+[2K[1A[2K[Ginfo Total nodes: 24432, SitePage nodes: 12190 (use --verbose for breakdown)
+
+[2K[1A[2K[Gsuccess createPages - 12.457s
+
+[2K[1A[2K[Gsuccess Checking for changed pages - 0.019s
+
+[2K[1A[2K[Gsuccess createPagesStatefully - 0.260s
+
+[2K[1A[2K[Gsuccess Cleaning up stale page-data - 0.958s
+
+[2K[1A[2K[Gsuccess update schema - 0.262s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.011s
+
+[2K[1A[2K[Gsuccess extract queries from components - 1.222s
+
+[2K[1A[2K[Gsuccess write out redirect data - 0.006s
+
+[2K[1A[2K[Gwarn The icon(src/images/vtuber-music-icon.png) you provided to
+'gatsby-plugin-manifest' is not square.
+The icons we generate will be square and for the best results we recommend you
+provide a square icon.
+
+
+[2K[1A[2K[Gsuccess Build manifest and related icons - 0.231s
+
+[2K[1A[2K[Gsuccess onPostBootstrap - 0.240s
+
+[2K[1A[2K[Ginfo bootstrap finished - 115.125s
+
+[2K[1A[2K[Gsuccess run page queries - 200.535s - 7133/7133 35.57/s
+
+[2K[1A[2K[Gsuccess write out requires - 0.094s
+
+[2K[1A[2K[Gwarn chunk styles [mini-css-extract-plugin]
+Conflicting order. Following module has been added:
+ * css ./node_modules/css-loader??ref--12-oneOf-1-1!./node_modules/gatsby-plugin
+-postcss/node_modules/postcss-loader/dist/cjs.js??ref--12-oneOf-1-2!./src/compon
+ents/videoThumbnail.css
+despite it was not able to fulfill desired ordering with these modules:
+ * css ./node_modules/css-loader??ref--12-oneOf-1-1!./node_modules/gatsby-plugin
+-postcss/node_modules/postcss-loader/dist/cjs.js??ref--12-oneOf-1-2!./src/compon
+ents/heading.css
+   - couldn't fulfill desired order of chunk group(s)
+component---src-pages-request-add-video-js, component---src-templates-artist-js
+   - while fulfilling desired order of chunk group(s)
+component---src-templates-music-js, component---src-templates-video-js
+
+[2K[1A[2K[Gsuccess Building production JavaScript and CSS bundles - 33.555s
+
+UC5CwaMl1eIgY8h02uZw7u8A
+hiroyukix
+hiroyukix
+KIYOisGOD
+%25E5%25A4%25A9%25E4%25BD%25BF%25E3%2582%25BB%25E3%2582%25A6
+%E3%81%82%E3%81%84%E3%81%86%E3%81%88%E3%81%8A
+UC5CwaMl1eIgY8h02uZw7u8A
+hiroyukix
+hiroyukix
+KIYOisGOD
+%25E5%25A4%25A9%25E4%25BD%25BF%25E3%2582%25BB%25E3%2582%25A6
+%E3%81%82%E3%81%84%E3%81%86%E3%81%88%E3%81%8A
+
+
+qZn8DAM9H5Y
+j1hft9Wjq9U
+gNRp28pKE5A
+qZn8DAM9H5Y
+j1hft9Wjq9U
+gNRp28pKE5A
+UC5CwaMl1eIgY8h02uZw7u8A
+hiroyukix
+hiroyukix
+KIYOisGOD
+%25E5%25A4%25A9%25E4%25BD%25BF%25E3%2582%25BB%25E3%2582%25A6
+%E3%81%82%E3%81%84%E3%81%86%E3%81%88%E3%81%8A
+
+qZn8DAM9H5Y
+j1hft9Wjq9U
+gNRp28pKE5A
+[2K[1A[2K[Gsuccess Building static HTML for pages - 55.777s - 12198/12198 218.69/s
+
+[2K[1A[2K[GCreating individual JSON files from graphql query
+
+[2K[1A[2K[GFinished creating individual JSON files from graphql query
+
+[2K[1A[2K[GCreating JSON feed files from graphql query
+
+[2K[1A[2K[GFinished creating JSON feed files from graphql query
+
+[2K[1A[2K[GCreating individual JSON files from graphql query
+
+[2K[1A[2K[GFinished creating individual JSON files from graphql query
+
+[2K[1A[2K[GCreating JSON feed files from graphql query
+
+[2K[1A[2K[GFinished creating JSON feed files from graphql query
+
+[2K[1A[2K[GCreating individual JSON files from graphql query
+
+[2K[1A[2K[GFinished creating individual JSON files from graphql query
+
+[2K[1A[2K[GCreating JSON feed files from graphql query
+
+[2K[1A[2K[GFinished creating JSON feed files from graphql query
+
+[2K[1A[2K[GCreating individual JSON files from graphql query
+
+[2K[1A[2K[GFinished creating individual JSON files from graphql query
+
+[2K[1A[2K[GCreating JSON feed files from graphql query
+
+[2K[1A[2K[GFinished creating JSON feed files from graphql query
+
+[2K[1A[2K[Gsuccess onPostBuild - 1.876s
+
+[2K[1A[2K[Ginfo Done building in 464.903776029 sec
+
