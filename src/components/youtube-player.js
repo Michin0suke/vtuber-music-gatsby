@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { navigate, Link } from 'gatsby'
 import Youtube from 'react-youtube'
 import VideoThumbnail from './videoThumbnail'
+import Expand from './svg/expand'
 import './youtube-player.css'
 
 const YouTubePlayer = ({ nextVideoId, video, className }) => {
@@ -62,7 +63,12 @@ const YouTubePlayer = ({ nextVideoId, video, className }) => {
                     // </div>
                 }
 
-                <Link to={`/video/${videoId}`} />
+                <Link to={`/video/${videoId}`} className='absolute top-0 right-0'>
+                    <div className='relative w-7 h-7 m-1 rounded overflow-hidden'>
+                        <div className='absolute top-0 left-0 w-full h-full bg-white opacity-50'/>
+                        <Expand color='black' className='absolute top-0 left-0 w-full h-full'/>
+                    </div>
+                </Link>
             </div>
         </div>
     )
