@@ -105,9 +105,8 @@ export default ({ data: { artist } }) => {
             description={`${artist.name}${honorific}のプロフィールページです。${singerVideoCount > 0 ? `${singerVideoCount}本の歌ってみた動画が登録されています。` : ''}`}
             url={`https://vtuber-music.com/artist/${artist.id}`}
             imgUrl={artist.profile_image?.childImageSharp?.fluid?.src}
-            isFollow={artist.singer_videos.length > 0}
+            isFollow={artist.singer_videos.length > 0 && artist.profile?.length > 100}
         />
-        {/* <Breadcrumb type='artist' text={artist.name}/> */}
 
         <div className='max-w-4xl mx-auto'>
 
