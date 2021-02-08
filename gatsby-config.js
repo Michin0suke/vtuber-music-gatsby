@@ -10,6 +10,29 @@ module.exports = {
   },
   plugins: [
     ...require('./gatsby-config_json-output.js')(),
+    // {
+    //   resolve: `gatsby-plugin-json-output`,
+    //   options: {
+    //     siteUrl: siteUrl, // defined on top of plugins
+    //     graphQLQuery: `
+    //     {
+    //       allSinger:allArtist(filter: {is_singer: {eq: true}}) {
+    //         nodes {
+    //             singer_videos {
+    //                 id
+    //                 singers {
+    //                     id
+    //                 }
+    //             }
+    //         }
+    //       }
+    //     }`,
+    //     serialize: results => results.data.allSinger.nodes.map(_ => ({
+    //       path: ``, // MUST contain a path
+    //     })),
+    //     feedFilename: `all_singer`,
+    //   }
+    // },
     {
       resolve: `gatsby-plugin-json-output`,
       options: {

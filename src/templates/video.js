@@ -8,7 +8,7 @@ import MusicTitle from '../components/musicTitle'
 import SEO from '../components/seo'
 import { TwitterShareButton, TwitterIcon } from "react-share";
 
-export default ({ data: { video, allSinger }, setVideoPlayer }) => {
+export default ({ data: { video }, setVideoPlayer, allSinger }) => {
     const [sameSingerVideos, setSameSingerVideos] = useState([])
 
     const setVideoPlayerAsync = async () => {
@@ -23,8 +23,11 @@ export default ({ data: { video, allSinger }, setVideoPlayer }) => {
     }
 
     useEffect(() => {
+        if (allSinger.length === 0) return
         setVideoPlayerAsync()
+    }, [allSinger])
 
+    useEffect(() => {
         const sameSingerVideos = video.singers
             .map(singer => singer.singer_videos)
             .flat()
@@ -36,7 +39,7 @@ export default ({ data: { video, allSinger }, setVideoPlayer }) => {
     }, [])
 
     const decideNextVideo = async (allSinger) => {
-        const singer = allSinger.nodes[Math.floor(Math.random() * allSinger.nodes.length)]
+        const singer = allSinger[Math.floor(Math.random() * allSinger.length)]
         let video = singer.singer_videos[Math.floor(Math.random() * singer.singer_videos.length)]
         if (Math.floor(Math.random() * video.singers.length) !== 0) {
             console.log(`再抽選！ videoId: ${video.id}`)
@@ -128,17 +131,7 @@ export default ({ data: { video, allSinger }, setVideoPlayer }) => {
 }
 
 export const pageQuery = graphql`
- query($id: String!) {
-    allSinger:allArtist(filter: {is_singer: {eq: true}}) {
-        nodes {
-            singer_videos {
-                id
-                singers {
-                    id
-                }
-            }
-        }
-    }
+query($id: String!) {
     video(id: {eq: $id}) {
         id
         custom_music_name

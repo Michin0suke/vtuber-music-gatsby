@@ -1,4 +1,5 @@
-import React, { cloneElement, useState } from "react"
+import React, { cloneElement, useState, useEffect } from "react"
+import { useStaticQuery, graphql } from 'gatsby'
 import Header from "./header"
 import Footer from "./footer"
 import SMMenu from './smMenu'
@@ -9,7 +10,22 @@ export default (props) => {
   const path = props.location.pathname
   const [videoPlayer, setVideoPlayer] = useState(null)
 
-  const childrenWithProps = cloneElement(children, { setVideoPlayer })
+  const allSinger = useStaticQuery(graphql`
+      {
+        allSinger:allArtist(filter: {is_singer: {eq: true}}) {
+          nodes {
+              singer_videos {
+                  id
+                  singers {
+                      id
+                  }
+              }
+          }
+        }
+      }
+    `).allSinger.nodes
+
+  const childrenWithProps = cloneElement(children, { setVideoPlayer, allSinger })
 
   return (
     <div className='relative min-h-screen'>
