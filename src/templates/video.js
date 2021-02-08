@@ -8,15 +8,15 @@ import MusicTitle from '../components/musicTitle'
 import SEO from '../components/seo'
 import { TwitterShareButton, TwitterIcon } from "react-share";
 
-export default ({ data: { video, allVideo }, setVideoPlayer }) => {
+export default ({ data: { video, allSinger }, setVideoPlayer }) => {
     const [sameSingerVideos, setSameSingerVideos] = useState([])
 
     const setVideoPlayerAsync = async () => {
-        const nextVideoId = allVideo.nodes[Math.floor(Math.random() * allVideo.nodes.length)].id
-        // const nextVideoId = await decideNextVideoId(video, allVideo)
+        // const nextVideoId = allSinger.nodes[Math.floor(Math.random() * allSinger.nodes.length)].id
+        const nextVideo = await decideNextVideo(allSinger)
         setVideoPlayer(
             <YouTubePlayer
-                nextVideoId={nextVideoId}
+                nextVideoId={nextVideo.id}
                 video={video}
             />
         )
@@ -35,79 +35,16 @@ export default ({ data: { video, allVideo }, setVideoPlayer }) => {
         setSameSingerVideos(sameSingerVideos)
     }, [])
 
-    const decideNextVideoId = async (video, allVideo) => {
-        let nextVideoChoicesId = []
-    
-        video.singers.forEach(singer => {
-            // 動画のアーティストの他の動画
-            singer.singer_videos.forEach(singerVideo => {
-                nextVideoChoicesId.push(singerVideo.id)
-            })
-    
-            singer.parents.forEach(parent => {
-                // 動画のアーティストの所属グループの他の動画
-                parent.singer_videos.forEach(parentSingerVideo => {
-                    nextVideoChoicesId.push(parentSingerVideo.id)
-                })
-                // 動画のアーティストと同じグループに所属しているアーティストの動画
-                parent.children
-                    .filter(child => child.id !== singer)
-                    .forEach(parentChild => {
-                        parentChild.singer_videos.forEach(parentChildVideo => {
-                            nextVideoChoicesId.push(parentChildVideo.id)
-                        }
-                    )
-                })
-            })
-    
-            singer.children.forEach(child => {
-                child.singer_videos.forEach(childVideo => {
-                    nextVideoChoicesId.push(childVideo.id)
-                })
-                child.parents
-                    .filter(parent => parent.id !== singer.id)
-                    .forEach(childParent => {
-                        childParent.singer_videos.forEach(childParentVideo => {
-                            nextVideoChoicesId.push(childParentVideo.id)
-                        })
-                    })
-            })
-        })
-
-        nextVideoChoicesId = nextVideoChoicesId.reduce((acc, cur) => {
-            if (!acc.includes(cur) && cur !== video.id) {
-                return acc.concat(cur)
-            }
-            return acc
-        }, [])
-
-        let countOfAddRandomVideos = 0;
-        switch(nextVideoChoicesId.length) {
-            case 0:
-            case 1:
-                countOfAddRandomVideos = 1
-                break
-            case 2:
-                countOfAddRandomVideos = 2
-                break
-            case 3:
-                countOfAddRandomVideos = 3
-                break
-            case 4:
-                countOfAddRandomVideos = 2
-                break
-            default:
-                countOfAddRandomVideos = 1
+    const decideNextVideo = async (allSinger) => {
+        const singer = allSinger.nodes[Math.floor(Math.random() * allSinger.nodes.length)]
+        let video = singer.singer_videos[Math.floor(Math.random() * singer.singer_videos.length)]
+        if (Math.floor(Math.random() * video.singers.length) !== 0) {
+            console.log(`再抽選！ videoId: ${video.id}`)
+            video = await decideNextVideo(allSinger)
         }
-
-        for(let i = 0; i < countOfAddRandomVideos; i++) {
-            nextVideoChoicesId.push(
-                allVideo.nodes[Math.floor(allVideo.nodes.length * Math.random())].id
-            )
-        }
-
-        return nextVideoChoicesId[Math.floor(nextVideoChoicesId.length * Math.random())]
+        return video
     }
+
     
     return (
         <div className='w-full'>
@@ -192,9 +129,14 @@ export default ({ data: { video, allVideo }, setVideoPlayer }) => {
 
 export const pageQuery = graphql`
  query($id: String!) {
-    allVideo {
+    allSinger:allArtist(filter: {is_singer: {eq: true}}) {
         nodes {
-            id
+            singer_videos {
+                id
+                singers {
+                    id
+                }
+            }
         }
     }
     video(id: {eq: $id}) {
