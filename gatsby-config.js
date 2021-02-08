@@ -9,6 +9,7 @@ module.exports = {
     siteUrl: `https://vtuber-music.com`,
   },
   plugins: [
+    ...require('./gatsby-config_json-output.js')(),
     {
       resolve: `gatsby-plugin-json-output`,
       options: {
@@ -109,84 +110,6 @@ module.exports = {
         serializeFeed: results => results.data.allVideoOrderByCreatedAt.nodes,
         feedFilename: `all_video_order_by_created_at`,
         nodesPerFeedFile: 24,
-      }
-    },
-    {
-      resolve: `gatsby-plugin-json-output`,
-      options: {
-        siteUrl: siteUrl, // defined on top of plugins
-        graphQLQuery: `
-        {
-          allArtistOrderBySingerVideosCount: allArtist(filter: {is_singer: {eq: true}}, sort: {order: DESC, fields: count_singer_videos}, skip: 36) {
-            nodes {
-              id
-              name
-              birthday
-              profile_image {
-                childImageSharp {
-                  fluid {
-                    aspectRatio
-                    src
-                    srcSet
-                    sizes
-                  }
-                }
-              }
-              singer_videos {
-                  id
-              }
-              parents {
-                  name
-              }
-            }
-          }
-        }        
-        `,
-        serialize: results => results.data.allArtistOrderBySingerVideosCount.nodes.map(_ => ({
-          path: ``, // MUST contain a path
-        })),
-        serializeFeed: results => results.data.allArtistOrderBySingerVideosCount.nodes,
-        feedFilename: `all_singer_order_by_count_singer_videos`,
-        nodesPerFeedFile: 36,
-      }
-    },
-    {
-      resolve: `gatsby-plugin-json-output`,
-      options: {
-        siteUrl: siteUrl, // defined on top of plugins
-        graphQLQuery: `
-        {
-          allArtistOrderByMixerVideosCount: allArtist(filter: {is_mixer: {eq: true}}, sort: {order: DESC, fields: count_mixer_videos}, skip: 36) {
-            nodes {
-              id
-              name
-              birthday
-              profile_image {
-                childImageSharp {
-                  fluid {
-                    aspectRatio
-                    src
-                    srcSet
-                    sizes
-                  }
-                }
-              }
-              singer_videos {
-                  id
-              }
-              parents {
-                  name
-              }
-            }
-          }
-        }        
-        `,
-        serialize: results => results.data.allArtistOrderByMixerVideosCount.nodes.map(_ => ({
-          path: ``, // MUST contain a path
-        })),
-        serializeFeed: results => results.data.allArtistOrderByMixerVideosCount.nodes,
-        feedFilename: `all_mixer_order_by_count_mixer_videos`,
-        nodesPerFeedFile: 36,
       }
     },
     `gatsby-plugin-netlify-cache`,

@@ -14,7 +14,7 @@ const size = {
     }
 }
 
-const artistCard = ({ artist, className, noLink, roleText, withRuby, cardSize, withParent, withVideoCount }) => {
+const artistCard = ({ artist, className, noLink, roleText, withRuby, cardSize, withParent, bottomText }) => {
 
     if (cardSize && !['md', 'lg', 'xl'].includes(cardSize)) throw new Error('augment size is invalid.')
 
@@ -31,7 +31,7 @@ const artistCard = ({ artist, className, noLink, roleText, withRuby, cardSize, w
             <h2 className={`relative pl-5 w-full text-${cardSize}`}>
                 { roleText && <span className='absolute w-full -top-4 text-xs text-gray-700'>{roleText}</span> }
                 { withParent && artist.parents?.length > 0 && <span className='absolute w-full -top-4 text-xs text-gray-400'>{artist.parents[0].name}</span> }
-                { withVideoCount && artist.count_singer_videos > 0 && <span className='absolute w-full -bottom-4 text-xs text-gray-400'>{`${artist.count_singer_videos}本の動画`}</span> }
+                { bottomText && <span className='absolute w-full -bottom-4 text-xs text-gray-400'>{bottomText}</span> }
                 { artist.name }
                 { withRuby && artist.name_ruby && `（${artist.name_ruby}）` }
             </h2>

@@ -68,6 +68,8 @@ exports.sourceNodes = async ({ actions: { createNode }, createContentDigest }) =
             singer_videos: artist.singer_videos.map(i => i.id),
 
             is_singer: artist.singer_videos.length > 0,
+            is_composer: artist.composer_music.length > 0,
+            is_lyricist: artist.lyricist_music.length > 0,
             is_mixer: artist.mixer_videos.length > 0,
             
             count_composer_music: artist.composer_music.length,
@@ -107,7 +109,6 @@ exports.sourceNodes = async ({ actions: { createNode }, createContentDigest }) =
 
 exports.createPages = async ({ graphql, actions: { createPage }}) => {
 
-
     const { data: { allVideo, allMusic, allArtist } } = await graphql(`
         {
             allVideo {
@@ -143,6 +144,130 @@ exports.createPages = async ({ graphql, actions: { createPage }}) => {
             path: `/artist/${id}`,
             component: require.resolve('./src/templates/artist.js'),
             context: { id }
+        })
+    })
+
+    const artistsPageInfo = [
+        {
+            pathRole: 'singers',
+            pathSort: null,
+            roleName: 'アーティスト',
+            artistCountKey: `count_singer_videos`,
+            artistCountSuffix: `本の動画`,
+            filter: {is_singer: {"eq": true}},
+            sort: {order: "DESC", fields: "count_singer_videos"},
+        },
+        {
+            pathRole: 'singers',
+            pathSort: 'release_date',
+            roleName: 'アーティスト',
+            artistCountKey: `count_singer_videos`,
+            artistCountSuffix: `本の動画`,
+            filter: {is_singer: {"eq": true}},
+            sort: {order: "DESC", fields: "singer_videos___release_date"},
+        },
+        {
+            pathRole: 'singers',
+            pathSort: 'ruby',
+            roleName: 'アーティスト',
+            artistCountKey: `count_singer_videos`,
+            artistCountSuffix: `本の動画`,
+            filter: {is_singer: {"eq": true}},
+            sort: {order: "DESC", fields: "name_ruby"},
+        },
+
+        {
+            pathRole: 'composers',
+            pathSort: null,
+            roleName: '作曲者',
+            artistCountKey: `count_composer_music`,
+            artistCountSuffix: `本の楽曲`,
+            filter: {is_lyricist: {"eq": true}},
+            sort: {order: "DESC", fields: "count_composer_music"},
+        },
+        {
+            pathRole: 'composers',
+            pathSort: 'release_date',
+            roleName: '作曲者',
+            artistCountKey: `count_composer_music`,
+            artistCountSuffix: `本の楽曲`,
+            filter: {is_lyricist: {"eq": true}},
+            sort: {order: "DESC", fields: "composer_music___videos___release_date"},
+        },
+        {
+            pathRole: 'composers',
+            pathSort: 'ruby',
+            roleName: '作曲者',
+            artistCountKey: `count_composer_music`,
+            artistCountSuffix: `本の楽曲`,
+            filter: {is_lyricist: {"eq": true}},
+            sort: {order: "DESC", fields: "name_ruby"},
+        },
+
+        {
+            pathRole: 'lyricists',
+            pathSort: null,
+            roleName: '作詞者',
+            artistCountKey: `count_lyricist_music`,
+            artistCountSuffix: `本の楽曲`,
+            filter: {is_lyricist: {"eq": true}},
+            sort: {order: "DESC", fields: "count_lyricist_music"},
+        },
+        {
+            pathRole: 'lyricists',
+            pathSort: 'release_date',
+            roleName: '作詞者',
+            artistCountKey: `count_lyricist_music`,
+            artistCountSuffix: `本の楽曲`,
+            filter: {is_lyricist: {"eq": true}},
+            sort: {order: "DESC", fields: "lyricist_music___videos___release_date"},
+        },
+        {
+            pathRole: 'lyricists',
+            pathSort: 'ruby',
+            roleName: '作詞者',
+            artistCountKey: `count_lyricist_music`,
+            artistCountSuffix: `本の楽曲`,
+            filter: {is_lyricist: {"eq": true}},
+            sort: {order: "DESC", fields: "name_ruby"},
+        },
+
+        {
+            pathRole: 'mixers',
+            pathSort: null,
+            roleName: 'Mixer',
+            artistCountKey: `count_mixer_videos`,
+            artistCountSuffix: `本の動画`,
+            filter: {is_mixer: {"eq": true}},
+            sort: {order: "DESC", fields: "count_singer_videos"},
+        },
+        {
+            pathRole: 'mixers',
+            pathSort: 'release_date',
+            roleName: 'Mixer',
+            artistCountKey: `count_mixer_videos`,
+            artistCountSuffix: `本の動画`,
+            filter: {is_mixer: {"eq": true}},
+            sort: {order: "DESC", fields: "mixer_videos___release_date"},
+        },
+        {
+            pathRole: 'mixers',
+            pathSort: 'ruby',
+            roleName: 'Mixer',
+            artistCountKey: `count_mixer_videos`,
+            artistCountSuffix: `本の動画`,
+            filter: {is_mixer: {"eq": true}},
+            sort: {order: "DESC", fields: "name_ruby"},
+        }
+    ]
+
+    artistsPageInfo.forEach(info => {
+        const { pathRole, pathSort, artistCountSuffix } = info
+        const path = pathSort ? `/${pathRole}/sort/${pathSort}` : `/${pathRole}`
+        createPage({
+            path,
+            component: require.resolve('./src/templates/artists.js'),
+            context: info
         })
     })
 }
@@ -243,6 +368,8 @@ exports.createSchemaCustomization = ({ actions: { createTypes } }) => {
             created_at: Date! @dateformat
             updated_at: Date! @dateformat
             is_singer: Boolean!
+            is_composer: Boolean!
+            is_lyricist: Boolean!
             is_mixer: Boolean!
             count_composer_music: Int!
             count_lyricist_music: Int!
