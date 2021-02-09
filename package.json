@@ -51,6 +51,7 @@
     "react-infinite-scroll-component": "^5.1.0",
     "react-share": "^4.3.1",
     "react-slick": "^0.27.13",
+    "react-toggle": "^4.1.1",
     "react-youtube": "^7.13.0",
     "recharts": "^2.0.3",
     "slick-carousel": "^1.8.1",

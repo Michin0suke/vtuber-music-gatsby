@@ -1,10 +1,10 @@
 import React, { useState } from "react"
 import { graphql, navigate } from "gatsby"
-import SEO from '../../components/seo'
-import VideoCard from '../../components/videoCard'
-import '../index.css'
+import SEO from '../../../components/seo'
+import VideoCard from '../../../components/videoCard'
+import '../../index.css'
 import InfiniteScroll from 'react-infinite-scroll-component'
-import SortBar from '../../components/sortBar'
+import SortBar from '../../../components/sortBar'
 import { TwitterShareButton, TwitterIcon } from "react-share";
 import Toggle from 'react-toggle'
 import "react-toggle/style.css"
@@ -38,8 +38,8 @@ const IndexPage = ({ data: { allVideo }}) => {
         <SortBar path='/sort/created_at'/>
 
         <Toggle
-        defaultChecked={false}
-        onChange={() => navigate('/original/sort/created_at')} />
+        defaultChecked={true}
+        onChange={() => navigate('/sort/created_at')} />
 
         <div className='sm:px-2 flex flex-wrap justify-start'>
             {allVideo.nodes.map((video, key) => (
@@ -82,7 +82,7 @@ export default IndexPage
 export const query = graphql`
 {
     # limitはgatsby-config.jsに依存
-    allVideo(sort: {order: DESC, fields: created_at}, limit: 24) {
+    allVideo(filter: {is_original_music: {eq: true}}, sort: {order: DESC, fields: created_at}, limit: 24) {
         totalCount
         nodes {
             id

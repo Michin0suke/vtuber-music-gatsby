@@ -6,6 +6,7 @@ import '../index.css'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import SortBar from '../../components/sortBar'
 import { TwitterShareButton, TwitterIcon } from "react-share";
+import Loading from '../../components/svg/loading'
 import Toggle from 'react-toggle'
 import "react-toggle/style.css"
 
@@ -21,7 +22,7 @@ const IndexPage = ({ data: { allVideo }}) => {
     }
 
     const fetchVideos = (nextPage) => {
-        fetch(`/all_video_order_by_created_at-${nextPage}.json`)
+        fetch(`/all_video_order_by_release_date-${nextPage}.json`)
             .then(response => response.json())
             .then(json => addVideos(json.items))
             .then(() => setPage(nextPage))
@@ -35,11 +36,11 @@ const IndexPage = ({ data: { allVideo }}) => {
     <div className='w-full'>
         <SEO isTop isIndex/>
         <p className='px-2 py-1 text-gray-500 text-xs'>Vtuberの歌ってみた動画をまとめたサイトです。{allVideo.totalCount}本の動画が登録されています。</p>
-        <SortBar path='/sort/created_at'/>
+        <SortBar path='/'/>
 
         <Toggle
-        defaultChecked={false}
-        onChange={() => navigate('/original/sort/created_at')} />
+        defaultChecked={true}
+        onChange={() => navigate('/')} />
 
         <div className='sm:px-2 flex flex-wrap justify-start'>
             {allVideo.nodes.map((video, key) => (
@@ -54,6 +55,7 @@ const IndexPage = ({ data: { allVideo }}) => {
             next={() => fetchVideos(page + 1)}
             hasMore={hasMore}
             className='sm:px-2 flex flex-wrap justify-start'
+            loader={<Loading className='w-10 h-10 mx-auto'/>}
             // loader={<p className="loader w-full text-lg text-center leading-8" key={0}>Loading ...</p>}
         >
             {videos.map((video, key) => (
@@ -68,7 +70,7 @@ const IndexPage = ({ data: { allVideo }}) => {
 const TwitterShareButtonWrapper = ({ videoTotalCount }) => (
     <TwitterShareButton
         url={`https://vtuber-music.com/`}
-        title={`#VtuberMusic でVtuberの歌を聞こう！${videoTotalCount}本の歌が登録されているよ！`}
+        title={`#VtuberMusic でVtuberの歌を聞こう！${videoTotalCount}本のオリジナル曲が登録されているよ！`}
         related={[`VtuberMusicCom`]}
         className="flex items-center mb-3 mx-5"
     >
@@ -80,9 +82,15 @@ const TwitterShareButtonWrapper = ({ videoTotalCount }) => (
 export default IndexPage
 
 export const query = graphql`
+fragment ImageSharpFluid on ImageFluid {
+    aspectRatio
+    src
+    srcSet
+    sizes
+}
 {
     # limitはgatsby-config.jsに依存
-    allVideo(sort: {order: DESC, fields: created_at}, limit: 24) {
+    allVideo(filter: {is_original_music: {eq: true}}, sort: {order: DESC, fields: release_date}, limit: 24) {
         totalCount
         nodes {
             id

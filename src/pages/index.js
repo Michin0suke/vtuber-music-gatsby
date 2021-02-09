@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { graphql } from "gatsby"
+import { graphql, navigate } from "gatsby"
 import SEO from '../components/seo'
 import VideoCard from '../components/videoCard'
 import './index.css'
@@ -7,6 +7,8 @@ import InfiniteScroll from 'react-infinite-scroll-component'
 import SortBar from '../components/sortBar'
 import { TwitterShareButton, TwitterIcon } from "react-share";
 import Loading from '../components/svg/loading'
+import Toggle from 'react-toggle'
+import "react-toggle/style.css"
 
 const IndexPage = ({ data: { allVideo }}) => {
     const [page, setPage] = useState(0)
@@ -35,6 +37,10 @@ const IndexPage = ({ data: { allVideo }}) => {
         <SEO isTop isIndex/>
         <p className='px-2 py-1 text-gray-500 text-xs'>Vtuberの歌ってみた動画をまとめたサイトです。{allVideo.totalCount}本の動画が登録されています。</p>
         <SortBar path='/'/>
+
+        <Toggle
+        defaultChecked={false}
+        onChange={() => navigate('/original')} />
 
         <div className='sm:px-2 flex flex-wrap justify-start'>
             {allVideo.nodes.map((video, key) => (
