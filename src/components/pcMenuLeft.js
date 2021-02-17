@@ -25,7 +25,7 @@ export default ({ path }) => (
             <Row path={path} match='singers' href='/singers' text='アーティスト' Img={Profile} imgClassName='w-3'/>
             <Row path={path} match='serendipity' href='/serendipity' text='出会う' Img={Clover} imgClassName='w-5'/>
             {/* <Row path={path} match='videos' href='/videos' text='検索' Img={Search} imgClassName='w-5'/> */}
-            <Row path={path} match='request_add_video' href='/request_add_video' text='動画の追加' Img={Plus} imgClassName='w-5'/>
+            {/* <Row path={path} match='request_add_video' href='/request_add_video' text='動画の追加' Img={Plus} imgClassName='w-5'/> */}
         </ul>
     </nav>
 )
