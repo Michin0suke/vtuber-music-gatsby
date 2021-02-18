@@ -122,10 +122,6 @@ export default ({ data: { video }, setVideoPlayer, allSinger }) => {
                 }
 
             </div>
-            <Link
-                className='block mx-auto py-1 px-3 mt-5 mb-5 w-44 max-w-md border bg-white sm:hover:bg-gray-200 text-center'
-                to={`/request_add_video?id=${video.id}`}
-            >編集リクエスト</Link>
         </div>
     )
 }
