@@ -1,12 +1,5 @@
-import { gql } from '@apollo/client';
-import { client } from './client';
-import gen64 from '../utils/gen64'
-
-const genId = (artist, retry) => {
-  if (retry) return gen64()
-  if (artist.id_twitter) return artist.id_twitter
-  return artist.id
-}
+import { gql } from '@apollo/client'
+import { client } from './client'
 
 const UPSERT_MUSIC = gql`
 mutation($id: String!, $title: String!) {
@@ -68,7 +61,7 @@ export const upsertMusic = (music) => {
     mutation: UPSERT_MUSIC,
     variables: {
       id: music.id,
-      title: music.title,
+      title: music.title
     }
   })
 }
@@ -81,7 +74,7 @@ export const upsertArtistLess = (artist) => {
       // id: genId(artist, retry),
       id: artist.id,
       name: artist.name,
-      id_twitter: artist.id_twitter,
+      id_twitter: artist.id_twitter
     }
   })
 }
@@ -91,14 +84,13 @@ export const upsertArtistFull = (artist) => {
   return client.mutate({
     mutation: UPSERT_ARTIST_FULL,
     variables: {
-      // id: genId(artist, retry),
       id: artist.id,
       name: artist.name,
       name_ruby: artist.name_ruby,
       profile: artist.profile,
       birthday: artist.birthday,
       id_youtube: artist.id_youtube,
-      id_twitter: artist.id_twitter,
+      id_twitter: artist.id_twitter
     }
   })
 }

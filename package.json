@@ -59,6 +59,12 @@
     "vanilla-autokana": "^1.1.6"
   },
   "devDependencies": {
+    "eslint": "^7.26.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.23.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1",
+    "eslint-plugin-react": "^7.23.2",
     "prettier": "2.1.2"
   },
   "keywords": [
@@ -72,7 +78,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "fix": "eslint --fix ./src/**/*.js"
   },
   "repository": {
     "type": "git",

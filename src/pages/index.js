@@ -1,46 +1,42 @@
-import React, { useState } from "react"
-import { graphql, navigate } from "gatsby"
+import React, { useState } from 'react'
+import { graphql, navigate } from 'gatsby'
 import SEO from '../components/seo'
 import VideoCard from '../components/videoCard'
 import './index.css'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import SortBar from '../components/sortBar'
-import { TwitterShareButton, TwitterIcon } from "react-share";
+import { TwitterShareButton, TwitterIcon } from 'react-share'
 import Loading from '../components/svg/loading'
 import Toggle from 'react-toggle'
-import "react-toggle/style.css"
+import 'react-toggle/style.css'
 
-const IndexPage = ({ data: { allVideo }}) => {
-    const [page, setPage] = useState(0)
-    const [videos, setVideos] = useState([])
-    const [hasMore, setHasMore] = useState(true)
+const IndexPage = ({ data: { allVideo } }) => {
+  const [page, setPage] = useState(0)
+  const [videos, setVideos] = useState([])
+  const [hasMore, setHasMore] = useState(true)
 
-    const addVideos = (newVideos) => {
-        const videosCopy = JSON.parse(JSON.stringify(videos))
-        videosCopy.push(...newVideos)
-        setVideos(videosCopy)
-    }
+  const addVideos = (newVideos) => {
+    const videosCopy = JSON.parse(JSON.stringify(videos))
+    videosCopy.push(...newVideos)
+    setVideos(videosCopy)
+  }
 
-    const fetchVideos = (nextPage) => {
-        fetch(`/all_video_order_by_release_date-${nextPage}.json`)
-            .then(response => response.json())
-            .then(json => addVideos(json.items))
-            .then(() => setPage(nextPage))
-            .catch(e => {
-                setHasMore(true)
-                console.log(e)
-            })
-    }
+  const fetchVideos = (nextPage) => {
+    fetch(`/all_video_order_by_release_date-${nextPage}.json`)
+      .then(response => response.json())
+      .then(json => addVideos(json.items))
+      .then(() => setPage(nextPage))
+      .catch(e => {
+        setHasMore(true)
+        console.log(e)
+      })
+  }
 
-    return (
+  return (
     <div className='w-full'>
         <SEO isTop isIndex/>
         <p className='px-2 py-1 text-gray-500 text-xs'>Vtuberの歌ってみた動画をまとめたサイトです。{allVideo.totalCount}本の動画が登録されています。</p>
         <SortBar path='/'/>
-
-        <Toggle
-        defaultChecked={false}
-        onChange={() => navigate('/original')} />
 
         <div className='sm:px-2 flex flex-wrap justify-start'>
             {allVideo.nodes.map((video, key) => (
@@ -69,9 +65,9 @@ const IndexPage = ({ data: { allVideo }}) => {
 
 const TwitterShareButtonWrapper = ({ videoTotalCount }) => (
     <TwitterShareButton
-        url={`https://vtuber-music.com/`}
+        url={'https://vtuber-music.com/'}
         title={`#VtuberMusic でVtuberの歌を聞こう！${videoTotalCount}本の歌が登録されているよ！`}
-        related={[`VtuberMusicCom`]}
+        related={['VtuberMusicCom']}
         className="flex items-center mb-3 mx-5"
     >
         <TwitterIcon size={42} round className='mr-3'/>

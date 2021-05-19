@@ -6,40 +6,40 @@ import Expand from './svg/expand'
 import './youtube-player.css'
 
 const YouTubePlayer = ({ nextVideoId, video, className }) => {
-    const [isReadyPlayer, setIsReadyPlayer] = useState(false)
-    const [videoId, setVideoId] = useState(video.id)
+  const [isReadyPlayer, setIsReadyPlayer] = useState(false)
+  const [videoId, setVideoId] = useState(video.id)
 
-    useEffect(() => {
-        setVideoId(video.id)
-    }, [video])
-    // const videoId = JSON.parse(JSON.stringify(video.id))
-    // const [a, setA] = useState(false)
+  useEffect(() => {
+    setVideoId(video.id)
+  }, [video])
+  // const videoId = JSON.parse(JSON.stringify(video.id))
+  // const [a, setA] = useState(false)
 
-    const opts = {
-        playerVars: {
-            // https://developers.google.com/youtube/player_parameters
-            autoplay: 1,
-            // controls: 0,
-            disablekb: 0,
-            playsinline: 1,
-            // cc_load_policy: 0,
-            cc_lang_pref: 'ja'
-        },
+  const opts = {
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 1,
+      // controls: 0,
+      disablekb: 0,
+      playsinline: 1,
+      // cc_load_policy: 0,
+      cc_lang_pref: 'ja'
     }
+  }
 
-    // return (
-    //     <div className='relative w-full max-w-4xl overflow-hidden mx-auto'>
-    //         <div className='youtubeContainer'></div>
-    //         {/* <div className='thumbnail-image absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition'>
-    //             <Img fluid={thumbnailFluid} className='w-full' />
-    //         </div> */}
-    //         <VideoThumbnail fluid={thumbnailFluid} className='absolute top-0 left-0 w-full h-full'/>
-    //     </div>
-    // )
+  // return (
+  //     <div className='relative w-full max-w-4xl overflow-hidden mx-auto'>
+  //         <div className='youtubeContainer'></div>
+  //         {/* <div className='thumbnail-image absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition'>
+  //             <Img fluid={thumbnailFluid} className='w-full' />
+  //         </div> */}
+  //         <VideoThumbnail fluid={thumbnailFluid} className='absolute top-0 left-0 w-full h-full'/>
+  //     </div>
+  // )
 
-    return (
+  return (
         <div className='youtube-player-wrapper'>
-            <div className={`relative overflow-hidden`}>
+            <div className={'relative overflow-hidden'}>
                 {/* { isReadyPlayer ? <p>isReadyPlayer: true</p> : <p>isReadyPlayer: false</p>} */}
                 <Youtube
                     videoId={video.id}
@@ -47,13 +47,13 @@ const YouTubePlayer = ({ nextVideoId, video, className }) => {
                     // onPlay={() => setIsReadyPlayer(true)}
                     opts={opts}
                     onEnd={() => {
-                        if (nextVideoId) {
-                            navigate(`/video/${nextVideoId}`)
-                        } else {
-                            console.log('is not set nextVideoId')
-                        }
+                      if (nextVideoId) {
+                        navigate(`/video/${nextVideoId}`)
+                      } else {
+                        console.log('is not set nextVideoId')
+                      }
                     }}
-                    containerClassName={"youtubeContainer"}
+                    containerClassName={'youtubeContainer'}
                 />
 
                 { isReadyPlayer ||
@@ -71,7 +71,7 @@ const YouTubePlayer = ({ nextVideoId, video, className }) => {
                 </Link>
             </div>
         </div>
-    )
+  )
 }
 
 export default YouTubePlayer

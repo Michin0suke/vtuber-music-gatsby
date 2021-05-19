@@ -1,7 +1,7 @@
-import React, { cloneElement, useState, useEffect } from "react"
+import React, { cloneElement, useState } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import Header from "./header"
-import Footer from "./footer"
+import Header from './header'
+import Footer from './footer'
 import SMMenu from './smMenu'
 import PCMenuLeft from './pcMenuLeft'
 

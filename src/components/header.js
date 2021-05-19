@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react"
-import { Link } from "gatsby"
+import React from 'react'
+import { Link } from 'gatsby'
 import VtuberMusic from './svg/vtuberMusic'
 // import Headroom from 'react-headroom'
 // import './header.css'
@@ -8,7 +8,7 @@ const Header = () => {
   // const [isHidden, setIsHidden] = useState(false)
   // const [lastPos, setLastPos] = useState(0)
   // const [pos, setPos] = useState(0)
-  
+
   // useEffect(() => {
   //   window.addEventListener('scroll', e => {
   //     setPos(window.scrollY)

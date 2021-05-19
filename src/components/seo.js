@@ -1,10 +1,10 @@
-import React from "react"
-import { Helmet } from "react-helmet"
+import React from 'react'
+import { Helmet } from 'react-helmet'
 import { graphql, useStaticQuery } from 'gatsby'
 
-function SEO({ description, lang, title, url, imgUrl, isTop, isLargeCard, isIndex }) {
-  const metaTitle = isTop ? `Vtuber Music | バーチャルYouTuberの歌ってみた動画まとめ` : `${title} | Vtuber Music`
-  const metaDescription = isTop ? `Vtuberの歌ってみた動画をまとめたサイトです。` : description
+function SEO ({ description, lang, title, url, imgUrl, isTop, isLargeCard, isIndex }) {
+  const metaTitle = isTop ? 'Vtuber Music | バーチャルYouTuberの歌ってみた動画まとめ' : `${title} | Vtuber Music`
+  const metaDescription = isTop ? 'Vtuberの歌ってみた動画をまとめたサイトです。' : description
 
   const { vtuberMusicIcon } = useStaticQuery(
     graphql`
@@ -22,54 +22,56 @@ function SEO({ description, lang, title, url, imgUrl, isTop, isLargeCard, isInde
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang
       }}
       title={metaTitle}
       meta={[
         {
-          name: `description`,
-          content: metaDescription,
+          name: 'description',
+          content: metaDescription
         },
         {
-          property: `og:title`,
-          content: metaTitle,
+          property: 'og:title',
+          content: metaTitle
         },
         {
-          property: `og:description`,
-          content: metaDescription,
+          property: 'og:description',
+          content: metaDescription
         },
         {
-          property: `og:type`,
-          content: `website`,
+          property: 'og:type',
+          content: 'website'
         },
         {
-          property: `og:url`,
-          content: url || `https://vtuber-music.com/`,
+          property: 'og:url',
+          content: url || 'https://vtuber-music.com/'
         },
         {
-          property: `og:image`,
-          content: imgUrl || `https://vtuber-music.com${vtuberMusicIcon.childImageSharp.fixed.src}`,
+          property: 'og:image',
+          content: imgUrl || `https://vtuber-music.com${vtuberMusicIcon.childImageSharp.fixed.src}`
         },
         {
-          name: `twitter:card`,
-          content: isLargeCard ? `summary_large_image` : `summary`,
+          name: 'twitter:card',
+          content: isLargeCard ? 'summary_large_image' : 'summary'
         },
         {
-          name: `twitter:creator`,
-          content: `@VtuberMusicCom`,
+          name: 'twitter:creator',
+          content: '@VtuberMusicCom'
         },
         {
-          name: `twitter:title`,
-          content: title,
+          name: 'twitter:title',
+          content: title
         },
         {
-          name: `twitter:description`,
-          content: metaDescription,
+          name: 'twitter:description',
+          content: metaDescription
         },
-        isIndex ? {} : {
-          name: `robots`,
-          content: `noindex`
-        }
+        isIndex
+          ? {}
+          : {
+              name: 'robots',
+              content: 'noindex'
+            }
       ]}
     >
       {/* <script data-ad-client="ca-pub-5595803406159604" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> */}

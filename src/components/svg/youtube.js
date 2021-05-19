@@ -1,8 +1,8 @@
 import React from 'react'
 
 const color = {
-    light: '#282828',
-    dark: '#fff'
+  light: '#282828',
+  dark: '#fff'
 }
 
 export default ({ colorMode, className }) => (

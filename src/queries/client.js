@@ -1,5 +1,5 @@
-import { ApolloClient, InMemoryCache, HttpLink } from '@apollo/client';
-import fetch from 'cross-fetch';
+import { ApolloClient, InMemoryCache, HttpLink } from '@apollo/client'
+import fetch from 'cross-fetch'
 
 export const client = new ApolloClient({
   link: new HttpLink({ uri: 'https://api.vtuber-music.com/graphql', fetch }),
@@ -9,11 +9,11 @@ export const client = new ApolloClient({
   defaultOptions: {
     watchQuery: {
       fetchPolicy: 'no-cache',
-      errorPolicy: 'ignore',
+      errorPolicy: 'ignore'
     },
     query: {
       fetchPolicy: 'no-cache',
-      errorPolicy: 'all',
-    },
+      errorPolicy: 'all'
+    }
   }
-});
+})

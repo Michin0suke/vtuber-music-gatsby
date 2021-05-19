@@ -6,54 +6,54 @@ import YouTubePlayer from '../components/youtube-player'
 import Heading from '../components/heading'
 import MusicTitle from '../components/musicTitle'
 import SEO from '../components/seo'
-import { TwitterShareButton, TwitterIcon } from "react-share";
+import { TwitterShareButton, TwitterIcon } from 'react-share'
 
 export default ({ data: { video }, setVideoPlayer, allSinger }) => {
-    const [sameSingerVideos, setSameSingerVideos] = useState([])
+  const [sameSingerVideos, setSameSingerVideos] = useState([])
 
-    const setVideoPlayerAsync = async () => {
-        // const nextVideoId = allSinger.nodes[Math.floor(Math.random() * allSinger.nodes.length)].id
-        const nextVideo = await decideNextVideo(allSinger)
-        setVideoPlayer(
+  const setVideoPlayerAsync = async () => {
+    // const nextVideoId = allSinger.nodes[Math.floor(Math.random() * allSinger.nodes.length)].id
+    const nextVideo = await decideNextVideo(allSinger)
+    setVideoPlayer(
             <YouTubePlayer
                 nextVideoId={nextVideo.id}
                 video={video}
             />
-        )
+    )
+  }
+
+  useEffect(() => {
+    if (allSinger.length === 0) return
+    setVideoPlayerAsync()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  useEffect(() => {
+    const sameSingerVideos = video.singers
+      .map(singer => singer.singer_videos)
+      .flat()
+      .reduce((acc, cur) => {
+        if (acc.map(i => i.id).includes(cur.id) || cur.id === video.id) return acc
+        else return acc.concat(cur)
+      }, [])
+    setSameSingerVideos(sameSingerVideos)
+  }, [video.singers, video.id])
+
+  const decideNextVideo = async (allSinger) => {
+    const singer = allSinger[Math.floor(Math.random() * allSinger.length)]
+    let video = singer.singer_videos[Math.floor(Math.random() * singer.singer_videos.length)]
+    if (Math.floor(Math.random() * video.singers.length) !== 0) {
+      console.log(`再抽選！ videoId: ${video.id}`)
+      video = await decideNextVideo(allSinger)
     }
+    return video
+  }
 
-    useEffect(() => {
-        if (allSinger.length === 0) return
-        setVideoPlayerAsync()
-    }, [allSinger])
-
-    useEffect(() => {
-        const sameSingerVideos = video.singers
-            .map(singer => singer.singer_videos)
-            .flat()
-            .reduce((acc, cur) => {
-                if(acc.map(i=>i.id).includes(cur.id) || cur.id === video.id) return acc
-                else return acc.concat(cur)
-            },[])
-        setSameSingerVideos(sameSingerVideos)
-    }, [])
-
-    const decideNextVideo = async (allSinger) => {
-        const singer = allSinger[Math.floor(Math.random() * allSinger.length)]
-        let video = singer.singer_videos[Math.floor(Math.random() * singer.singer_videos.length)]
-        if (Math.floor(Math.random() * video.singers.length) !== 0) {
-            console.log(`再抽選！ videoId: ${video.id}`)
-            video = await decideNextVideo(allSinger)
-        }
-        return video
-    }
-
-    
-    return (
+  return (
         <div className='w-full'>
             <SEO
                 title={`${video.music.title} / ${video.singers.map(a => a.name).join('&')}`}
-                description={`${video.music.title}を${video.singers.map(i => `${i.name}${i.children.length === 0 ?'さん':''}`).join('と')}が歌っている動画です。`}
+                description={`${video.music.title}を${video.singers.map(i => `${i.name}${i.children.length === 0 ? 'さん' : ''}`).join('と')}が歌っている動画です。`}
                 url={`https://vtuber-music.com/video/${video.id}`}
                 imgUrl={video.thumbnail_image?.childImageSharp?.fluid?.src}
                 isLargeCard
@@ -90,8 +90,8 @@ export default ({ data: { video }, setVideoPlayer, allSinger }) => {
 
                 <TwitterShareButton
                     url={`https://vtuber-music.com/video/${video.id}/`}
-                    title={`#VtuberMusic で「${video.music.title}」(${video.singers.map(i=>`#${i.name}`).join(' & ')})を聞いているよ！`}
-                    related={[`VtuberMusicCom`]}
+                    title={`#VtuberMusic で「${video.music.title}」(${video.singers.map(i => `#${i.name}`).join(' & ')})を聞いているよ！`}
+                    related={['VtuberMusicCom']}
                     className="flex items-center mb-3 mx-5"
                 >
                     <TwitterIcon size={42} round className='mr-3'/><span className='text-xs text-gray-600 text-left'>Twitterで共有して、{video.music.title}をたくさんの人に聞いてもらおう！</span>
@@ -108,7 +108,7 @@ export default ({ data: { video }, setVideoPlayer, allSinger }) => {
                         <Heading text='同じアーティストが歌っている動画' className='mb-2 w-full max-w-4xl mx-auto'/>
                         <div className='w-full sm:flex flex-wrap justify-start'>
                             {
-                                sameSingerVideos.map((video, key) => 
+                                sameSingerVideos.map((video, key) =>
                                     <VideoCard
                                         key={`same-singer-videos-${key}`}
                                         video={video}
@@ -123,7 +123,7 @@ export default ({ data: { video }, setVideoPlayer, allSinger }) => {
 
             </div>
         </div>
-    )
+  )
 }
 
 export const pageQuery = graphql`

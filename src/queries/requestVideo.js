@@ -1,5 +1,5 @@
-import { gql } from '@apollo/client';
-import { client } from './client';
+import { gql } from '@apollo/client'
+import { client } from './client'
 
 const REQUEST_COUNT_BY_DAY = gql`
 {
@@ -124,7 +124,7 @@ export const requestVideosPaginate = (first, page) => {
     query: REQUEST_VIDEOS_PAGINATE,
     variables: {
       first,
-      page,
+      page
     }
   })
 }
@@ -134,8 +134,8 @@ export const requestVideosCountByTwitterId = (contributor_twitter_id) => {
     query: REQUEST_VIDEOS_PAGINATE_ALL,
     variables: { contributor_twitter_id }
   })
-  .then(result => result.data?.requestVideosPaginate?.paginatorInfo?.total)
-  .catch(e => console.log(e))
+    .then(result => result.data?.requestVideosPaginate?.paginatorInfo?.total)
+    .catch(e => console.log(e))
 }
 
 export const requestVideosLess = () => {
@@ -157,11 +157,11 @@ export const upsertRequestVideo = (requestVideo) => {
       content: JSON.stringify(requestVideoCopy, null, 4),
       contributor_twitter_id: requestVideoCopy.contributor_twitter_id,
       is_done: requestVideoCopy.is_done,
-      is_issue: requestVideoCopy.is_issue,
+      is_issue: requestVideoCopy.is_issue
     }
   }).then(result => {
-    console.log(`upsert success requestVideo`, result.data?.upsertRequestVideo)
+    console.log('upsert success requestVideo', result.data?.upsertRequestVideo)
     return result
   })
-  .catch(e => {throw new Error(e)})
+    .catch(e => { throw new Error(e) })
 }

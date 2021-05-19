@@ -10,33 +10,10 @@ module.exports = {
   },
   plugins: [
     ...require('./gatsby-config_json-output.js')(),
-    // {
-    //   resolve: `gatsby-plugin-json-output`,
-    //   options: {
-    //     siteUrl: siteUrl, // defined on top of plugins
-    //     graphQLQuery: `
-    //     {
-    //       allSinger:allArtist(filter: {is_singer: {eq: true}}) {
-    //         nodes {
-    //             singer_videos {
-    //                 id
-    //                 singers {
-    //                     id
-    //                 }
-    //             }
-    //         }
-    //       }
-    //     }`,
-    //     serialize: results => results.data.allSinger.nodes.map(_ => ({
-    //       path: ``, // MUST contain a path
-    //     })),
-    //     feedFilename: `all_singer`,
-    //   }
-    // },
     {
       resolve: `gatsby-plugin-json-output`,
       options: {
-        siteUrl: siteUrl, // defined on top of plugins
+        siteUrl: siteUrl,
         graphQLQuery: `
         {
           allVideoOrderByReleasedAt:allVideo(sort: {order: DESC, fields: release_date}, skip: 24, limit: 240) {
@@ -77,7 +54,7 @@ module.exports = {
           }
         }`,
         serialize: results => results.data.allVideoOrderByReleasedAt.nodes.map(_ => ({
-          path: ``, // MUST contain a path
+          path: ``,
         })),
         serializeFeed: results => results.data.allVideoOrderByReleasedAt.nodes,
         feedFilename: `all_video_order_by_release_date`,
@@ -87,7 +64,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-json-output`,
       options: {
-        siteUrl: siteUrl, // defined on top of plugins
+        siteUrl: siteUrl,
         graphQLQuery: `
         {
           allVideoOrderByCreatedAt:allVideo(sort: {order: DESC, fields: created_at}, skip: 24, limit: 240) {
@@ -163,7 +140,7 @@ module.exports = {
         background_color: `#db2311`,
         theme_color: `#db2311`,
         display: `minimal-ui`,
-        icon: `src/images/vtuber-music-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/vtuber-music-icon.png`,
       },
     },
     {

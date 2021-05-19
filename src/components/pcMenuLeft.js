@@ -18,8 +18,8 @@ const Row = ({ path, match, href, text, Img, imgClassName }) => (
 )
 
 export default ({ path }) => (
-    <nav style={{minHeight: '100vh'}}>
-        <div  className='hidden sm:block w-40 h-full'/>
+    <nav style={{ minHeight: '100vh' }}>
+        <div className='hidden sm:block w-40 h-full'/>
         <ul className='hidden sm:block fixed left-0 top-20 w-40 h-full bg-white'>
             <Row path={path} match='' href='/' text='ホーム' Img={Home} imgClassName='w-5'/>
             <Row path={path} match='singers' href='/singers' text='アーティスト' Img={Profile} imgClassName='w-3'/>

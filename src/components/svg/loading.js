@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default ({className, style}) => (
+export default ({ className, style }) => (
 <svg xmlns="http://www.w3.org/2000/svg" style="shape-rendering: auto;" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" className={className} style={style}>
 <g transform="translate(80,50)">
 <g transform="rotate(0)">

@@ -1,5 +1,5 @@
-import { gql } from '@apollo/client';
-import { client } from './client';
+import { gql } from '@apollo/client'
+import { client } from './client'
 
 const ALL_MUSIC = gql`
 query {
@@ -23,7 +23,7 @@ query {
     }
   }
 }
-`;
+`
 
 const MUSIC = gql`
 query($id: String!) {
@@ -32,7 +32,6 @@ query($id: String!) {
     }
 }
 `
-;
 
 const FIND_MUSIC_BY_ID = gql`
 query($id: String) {
@@ -41,7 +40,7 @@ query($id: String) {
     title
   }
 }
-`;
+`
 
 const FIND_MUSIC_BY_TITLE = gql`
 query($title: String) {
@@ -50,25 +49,23 @@ query($title: String) {
     title
   }
 }
-`;
+`
 
 export const allMusic = () => client.query({
   query: ALL_MUSIC
-});
+})
 
 export const queryMusic = id => client.query({
   query: MUSIC,
   variables: { id }
-});
+})
 
 export const findMusicById = id => client.query({
   query: FIND_MUSIC_BY_ID,
   variables: { id: `%${id}%` }
 })
-;
 
 export const findMusicByTitle = title => client.query({
   query: FIND_MUSIC_BY_TITLE,
   variables: { title: `%${title}%` }
 })
-;
